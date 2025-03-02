@@ -1,6 +1,6 @@
 # Science Fiction in Ukraine (part I)
 
-![Ukrainian Science Fiction](/assets/images/scifi_ws.png)
+![Ukrainian Science Fiction](/assets/images/scifi_ws2.png)
 
 The variability in the genre of Ukrainian science fiction (SF) has always been deter- mined by the requirements of the time and the political situation. That is why the fiction of the 1920s promoted the ideology of naive techno-communism, but during the next forty years it became obvious that the Soviet project had reached a dead end, and its positivist component had not brought the desired results. Ukrainian SF writers then turned to mysticism and denial of a rational view of the world.
 
