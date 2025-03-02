@@ -21,7 +21,84 @@ My professional experience includes over:
 - 20 years in journalism and creative writing,
 - 10 years in video and audio production,
 - 7 years as a technical writer specializing in software and hardware documentation.
-- Academic and Research Interests:
+
+??? note "My CV"
+
+    **GlobalLogic** | *Senior Technical Writer*
+
+    📅 Nov 2021 – Feb 2025 | Kyiv, Ukraine
+
+    Created developer and user documentation using MkDocs, GitHub, and VS Code.
+    Developed and edited manuals, user guides, and API documentation.
+    Prepared change requests, risk assessments, and user stories.
+    Conducted manual testing, reported bugs, and documented test results.
+    Clients: 3M, Verizon, NuvoAir (healthcare, telecom, software industries).
+
+    **BJet** | *Senior Technical Writer*
+
+    📅 Aug 2021 – Nov 2021 | Lviv, Ukraine
+
+    Documented ERP systems (Odoo), dashboards, and legal policies.
+    Created user guides, software documentation, and video tutorials.
+    Worked with RoboHelp, Confluence, and localization tools (Poedit, POEditor).
+
+    **ASBIS Ukraine** | *Technical Writer*
+
+    📅 Sep 2020 – Aug 2021 | Kyiv, Ukraine
+
+    Developed user guides, quickstart manuals, and online help content.
+    Produced video tutorials and managed software documentation.
+
+    **EGIS Ukraina** | *Technical Writer & Project Manager*
+
+    📅 Dec 2018 – Sep 2020 | Kyiv Region, Ukraine
+
+    Created technical reports, executive summaries, and mitigation strategies.
+    Managed web content, social media, and communications.
+
+    **Ukrainian Helsinki Human Rights Union** | *Journalist & Project Manager*
+
+    📅 Jun 2015 – Dec 2018 | Kyiv, Ukraine
+
+    Reported on court cases, legal reforms, and human rights issues.
+    Produced articles, reports, blogs, and social media content.
+    Managed web content, media outreach, and video projects.
+
+    **Hromadske Radio** | *Broadcast Journalist*
+
+    📅 Sep 2013 – Jul 2018 | Kyiv, Ukraine
+
+    Hosted legal and philosophy podcasts (e.g., "Legal Alphabet", "Philosophical Drum").
+    Produced news reports and media content.
+
+    **Previous Journalism Roles**
+
+    **NGO Telekrytyka** (2010 – 2013) – Media analyst, video reporter.
+
+    **Evening News** (2009 – 2010) – Political & economic journalist.
+
+    **Delo Newspaper** (2008 – 2009) – Business & political journalist.
+
+    **Automation & Instrumentation Engineer**
+
+    📅 Jun 2001 – Jul 2007 | Zaporizhzhya, Ukraine
+
+    Managed automation unit and technical documentation in heating networks.
+
+    **Skills & Tools**
+
+    ✔ Technical Documentation: MkDocs, Markdown, GitHub, API Docs, RoboHelp
+
+    ✔ Software & Testing: Manual Testing, Test Planning, Bug Tracking, REST APIs
+
+    ✔ Content Development: User Manuals, Software Guides, Online Help, Video Tutorials
+
+    ✔ Journalism & Media: Report Writing, Content Management, Podcasting
+
+    ✔ Tools: Git, Confluence, OneNote, Microsoft Office, CSS, JavaScript, HTML
+
+
+Academic and Research Interests:
 
 My PhD research, titled **"From Utopia to Dystopia: Ukrainian Science Fiction and the Collapse of Techno-Communism"**, explores Ukrainian science fiction as a form of intellectual resistance and philosophical inquiry. Key areas of focus include:
 
