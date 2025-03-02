@@ -53,6 +53,94 @@
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/adding-a-comment-system/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/adding-a-git-repository/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/building-an-optimized-site/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/building-for-offline-usage/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/changing-the-fonts/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/changing-the-language/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/changing-the-logo-and-icons/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/ensuring-data-privacy/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/kasyanyuk/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-a-blog/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-navigation/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-site-analytics/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-site-search/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-social-cards/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-tags/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-the-footer/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-the-header/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/setting-up-versioning/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/extensions/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/extensions/python-markdown-extensions/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/authors/extensions/python-markdown/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
          <loc>https://sci-fi-ua.netlify.app/blog/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
@@ -97,30 +185,6 @@
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/adding-translations/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/making-a-pull-request/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/reporting-a-bug/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/reporting-a-docs-issue/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/contributing/requesting-a-change/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
          <loc>https://sci-fi-ua.netlify.app/guides/creating-a-reproduction/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
@@ -130,10 +194,6 @@
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/access-management/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/insiders/benefits/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
@@ -166,6 +226,10 @@
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/sf-one/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/insiders/sf-two/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
@@ -309,94 +373,6 @@
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/adding-a-comment-system/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/adding-a-git-repository/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/building-an-optimized-site/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/building-for-offline-usage/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/changing-the-colors/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/changing-the-fonts/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/changing-the-language/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/changing-the-logo-and-icons/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/ensuring-data-privacy/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-a-blog/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-navigation/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-site-analytics/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-site-search/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-social-cards/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-tags/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-the-footer/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-the-header/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/setting-up-versioning/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/extensions/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/extensions/python-markdown-extensions/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/setup/extensions/python-markdown/</loc>
-         <lastmod>2025-03-02</lastmod>
-    </url>
-    <url>
          <loc>https://sci-fi-ua.netlify.app/tutorials/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
@@ -418,6 +394,30 @@
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/tutorials/social/custom/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/adding-translations/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/making-a-pull-request/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/manifesto/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/reporting-a-docs-issue/</loc>
+         <lastmod>2025-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/requesting-a-change/</loc>
          <lastmod>2025-03-02</lastmod>
     </url>
     <url>
