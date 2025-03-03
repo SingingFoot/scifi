@@ -333,6 +333,4 @@ We should anticipate that **Ukrainian directors** will also embrace this **trend
 [^6]: *Donetsk Airport became a symbolic and strategic focal point during the Ukrainian war in 2014-2015. It was fiercely contested between Ukrainian forces and Russian-backed separatists due to its strategic location and modern infrastructure. Despite being heavily damaged, Ukrainian soldiers, nicknamed the "Cyborgs" for their resilience, defended it for 242 days. The intense battles highlighted the broader struggle for control in Donbas and became a symbol of Ukrainian resistance. Ultimately, separatists captured the ruins in January 2015.*  
 [^7]: *The Kadyrovtsy are Chechen paramilitary forces loyal to Ramzan Kadyrov, the leader of Chechnya and an ally of Vladimir Putin. They operate as part of the Russian military and security apparatus. Known for their brutality, they have been involved in various conflicts, including the wars in Ukraine and Syria. The Kadyrovtsy are often accused of human rights abuses and are seen as enforcers of Kadyrov’s and Moscow's influence in Chechnya and beyond.*  
 
----
-
 
