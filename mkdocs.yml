@@ -227,9 +227,9 @@ nav:
   - Authors:
     - authors/index.md
     - Sandro Kasyanyuk: authors/kasyanyuk.md
-    #- Changing the fonts: setup/changing-the-fonts.md
-    #- Changing the language: setup/changing-the-language.md
-    #- Changing the logo and icons: setup/changing-the-logo-and-icons.md
+    - Vasyl Berezhnyi: authors/berezhny.md
+    - Volodymyr Zayets: authors/zayets.md
+    - Viktor Pologyj: authors/polozhiy.md
     #- Ensuring data privacy: setup/ensuring-data-privacy.md
     #- Setting up navigation: setup/setting-up-navigation.md
     #- Setting up site search: setup/setting-up-site-search.md
@@ -287,7 +287,7 @@ nav:
     - About my articles:
       - works/index.md
       - Metamodernism Manifesto: works/manifesto.md
-      #- Reporting a docs issue: contributing/reporting-a-docs-issue.md
+      - The Faces of War: works/faces-of-war.md
       #- Requesting a change: contributing/requesting-a-change.md
       #- Adding translations: contributing/adding-translations.md
       #- Making a pull request: contributing/making-a-pull-request.md
