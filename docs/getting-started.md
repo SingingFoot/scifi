@@ -14,7 +14,7 @@ I am a Ukrainian journalist, writer, and researcher with a lifelong passion for 
 
 ## Professional Background
 
-Born in Zaporizhzhya, Ukraine, I hold a bachelor's degree in Automation of Technological Processes and Production from Zaporizhzhya State Engineering Academy and a postgraduate diploma in English Translation from the Classic Private University in Ukraine. I am currently pursuing my PhD at the University of Pécs, focusing on the intersection of science fiction, philosophy, and cultural studies.
+Born in Zaporizhzhya, Ukraine, I hold a bachelor's degree in Automation of Technological Processes and Production from Zaporizhzhya State Engineering Academy and a postgraduate diploma in English Translation from the Classic Private University in Ukraine. I am currently pursuing my PhD at the University of Pécs[^1], focusing on the intersection of science fiction, philosophy, and cultural studies.
 
 My professional experience includes over:
 
@@ -136,3 +136,5 @@ During my tenure as Public Relations Manager for the **Ukrainian Helsinki Human 
 ## Why Ukrainian Sci-Fi?
 
 Growing up in a society where philosophy was often censored, I found intellectual refuge in Ukrainian science fiction. Works by authors like Volodymyr Savchenko inspired me to explore profound philosophical questions, blending my love for literature and critical thinking. Today, I believe Ukrainian science fiction is not only a lens through which to understand the cultural history of Ukraine but also a key to its future as part of a vibrant, global intellectual community.
+
+[^1]: *Doctoral School of Philosophy - BTK-FILO-DNM, Doctorate course (PhD/DLA, Full-time training, Admission year: 2023/24/1) Start of legal relation: 1 September 2023* 
