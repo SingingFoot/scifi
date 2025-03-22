@@ -288,7 +288,7 @@ nav:
       - works/index.md
       - Metamodernism Manifesto: works/manifesto.md
       - The Faces of War: works/faces-of-war.md
-      #- Requesting a change: contributing/requesting-a-change.md
+      - Struggle for reality: works/struggle-for-reality.md
       #- Adding translations: contributing/adding-translations.md
       #- Making a pull request: contributing/making-a-pull-request.md
       #- Asking a question: https://github.com/squidfunk/mkdocs-material/discussions
