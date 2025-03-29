@@ -128,6 +128,7 @@ I am proud to have presented my research at international conferences, including
 - **Collision Points XI** (2024): Presentation on the genre's transitions in Ukrainian sci-fi literature.
 - **Passau Summer School for Applied Ethics** (2024): Accepted to discuss my topic in a multidisciplinary setting.
 - **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
+- **Collision Points XII** (2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
 
 ## Organizational and Leadership Experience
 
