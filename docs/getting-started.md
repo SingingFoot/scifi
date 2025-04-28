@@ -123,12 +123,15 @@ My work has been published in both Ukrainian and English, with international rec
 
 I am proud to have presented my research at international conferences, including:
 
-- **Budapest Workshop on Philosophy and Technology 2023** (BudPT23): keynote "Science Fiction in Ukraine: 1920–2020."
-- **Interdisciplinary Doctoral Student Conference 2024** (IDK2024): Award-winning presentation on "The Decline of Positivism in the 20th Century through Ukrainian Sci-Fi." 
-- **Collision Points XI** (2024): Presentation on the genre's transitions in Ukrainian sci-fi literature.
-- **Passau Summer School for Applied Ethics** (2024): Accepted to discuss my topic in a multidisciplinary setting.
-- **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
-- **Collision Points XII** (2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
+- **Budapest Workshop on Philosophy and Technology 2023** (Budapest, BudPT23): keynote "Science Fiction in Ukraine: 1920–2020."
+- **Interdisciplinary Doctoral Student Conference 2024** (Pécs, IDK2024): Award-winning presentation on "The Decline of Positivism in the 20th Century through Ukrainian Sci-Fi." 
+- **Collision Points XI** (Szekszárd, 2024): Presentation on the genre's transitions in Ukrainian sci-fi literature.
+- **Passau Summer School for Applied Ethics** (Passau, 2024): Accepted to discuss my topic in a multidisciplinary setting.
+- **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
+- **Collision Points XII** (Veszprém, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
+- **Young Philosophers Conference 10** (Pécs, 2025): Presentation
+
+
 
 ## Organizational and Leadership Experience
 
