@@ -129,7 +129,7 @@ I am proud to have presented my research at international conferences, including
 - **Passau Summer School for Applied Ethics** (Passau, 2024): Accepted to discuss my topic in a multidisciplinary setting.
 - **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
 - **Collision Points XII** (Veszprém, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
-- **Young Philosophers Conference 10** (Pécs, 2025): Presentation
+- **Young Philosophers Conference 10** (Pécs, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
 
 
 
