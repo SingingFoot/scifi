@@ -1,4 +1,4 @@
-<p align="center">
+<!--<p align="center">
   <a href="https://squidfunk.github.io/mkdocs-material/">
     <img src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/logo.svg" width="320" alt="Material for MkDocs">
   </a>
@@ -135,7 +135,7 @@
   <!-- <a href="https://cash.app/" target=_blank><img
     src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-cashapp.png" height="58"
   /></a> -->
-  <a href="https://rackn.com/" target=_blank><img
+  <!--<a href="https://rackn.com/" target=_blank><img
     src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-rackn.png" height="58"
   /></a>
   <a href="https://civicactions.com/" target=_blank><img
@@ -202,7 +202,7 @@
     src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/sponsor-intercomestibles.png" height="58"
   /></a>
 </p>
-<p>&nbsp;</p>
+<p>&nbsp;</p>-->
 
 ## Everything you would expect
 
@@ -341,7 +341,7 @@ For detailed installation instructions, configuration options, and a demo, visit
 [Vapor](https://docs.vapor.codes/),
 [WebKit](https://docs.webkit.org/),
 [WTF](https://wtfutil.com/),
-[ZeroNet](https://zeronet.io/docs/)
+[ZeroNet](https://zeronet.io/docs/) 
 
 ## License
 
