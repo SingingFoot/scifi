@@ -2,7 +2,7 @@
 
 *PhD Candidate in Philosophy University of Pécs, Faculty of Philosophy*
 
-![Oleh Shynkarenko](assets/images/moebius.png)
+![Oleh Shynkarenko](assets/images/oleh.png)
 
 - [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ)
 
