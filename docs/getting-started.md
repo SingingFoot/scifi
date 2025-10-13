@@ -10,6 +10,8 @@
 
 - [Academia](https://medbiotech.academia.edu/OlehShynkarenko)
 
+- [Research Gate](https://www.researchgate.net/profile/Oleh-Shynkarenko)
+
 I am a Ukrainian journalist, writer, and researcher with a lifelong passion for literature, philosophy, and science fiction. My journey spans from engineering to creative writing, from journalism to academic research, and I am excited to share my work and experiences with you.
 
 ## Professional Background
