@@ -133,8 +133,14 @@ I am proud to have presented my research at international conferences, including
 - **Collision Points XII** (Veszprém, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
 - **Young Philosophers Conference 10** (Pécs, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
 - **Interdisciplinary Doctoral Student Conference 2025** (Pécs, IDK2025): Presentation on "An unfortunate Benjamin's mistake". 
-![Interdisciplinary Doctoral Student Conference 2025](assets/images/idk2025.png)
 
+??? note "An unfortunate Benjamin's mistake"
+
+    ![Interdisciplinary Doctoral Student Conference 2025](assets/images/idk2025.png)
+
+- **Budapest Workshop on Philosophy and Technology 2025** (Budapest, BudPT25): Presentation "Ethical Ghosts on a Robotic Battlefield in Ukraine"
+- **Young Philosophers Conference 2025** (Budapest, National University of Public Service): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"
+- **Contexts. Eighth International Interdisciplinary Conference for Young Scholars in Social Sciences and Humanities** (Novi Sad, Serbia): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"  
 
 
 ## Organizational and Leadership Experience
