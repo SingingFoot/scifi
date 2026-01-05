@@ -149,6 +149,6 @@ During my tenure as Public Relations Manager for the **Ukrainian Helsinki Human 
 
 ## Why Ukrainian Sci-Fi?
 
-Growing up in a society where philosophy was often censored, I found intellectual refuge in Ukrainian science fiction. Works by authors like Volodymyr Savchenko inspired me to explore profound philosophical questions, blending my love for literature and critical thinking. Today, I believe Ukrainian science fiction is not only a lens through which to understand the cultural history of Ukraine but also a key to its future as part of a vibrant, global intellectual community.
+Growing up in a society where philosophy was often censored, I found intellectual refuge in Ukrainian sci-fi. Works by authors like Volodymyr Savchenko inspired me to explore profound philosophical questions, blending my love for literature and critical thinking. Today, I believe Ukrainian science fiction is not only a lens through which to understand the cultural history of Ukraine but also a key to its future as part of a vibrant, global intellectual community.
 
 [^1]: *Doctoral School of Philosophy - BTK-FILO-DNM, Doctorate course (PhD/DLA, Full-time training, Admission year: 2023/24/1) Start of legal relation: 1 September 2023* 
