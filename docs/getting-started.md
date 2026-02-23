@@ -125,22 +125,23 @@ My work has been published in both Ukrainian and English, with international rec
 
 I am proud to have presented my research at international conferences, including:
 
-- **Budapest Workshop on Philosophy and Technology 2023** (Budapest, BudPT23): keynote "Science Fiction in Ukraine: 1920–2020."
-- **Interdisciplinary Doctoral Student Conference 2024** (Pécs, IDK2024): Award-winning presentation on "The Decline of Positivism in the 20th Century through Ukrainian Sci-Fi." 
-- **Collision Points XI** (Szekszárd, 2024): Presentation on the genre's transitions in Ukrainian sci-fi literature.
-- **Passau Summer School for Applied Ethics** (Passau, 2024): Accepted to discuss my topic in a multidisciplinary setting.
-- **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
-- **Collision Points XII** (Veszprém, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
-- **Young Philosophers Conference 10** (Pécs, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
-- **Interdisciplinary Doctoral Student Conference 2025** (Pécs, IDK2025): Presentation on "An unfortunate Benjamin's mistake". 
+- **Budapest Workshop on Philosophy and Technology 2023** (Budapest, Hungary, BudPT23): keynote "Science Fiction in Ukraine: 1920–2020."
+- **Interdisciplinary Doctoral Student Conference 2024** (Pécs, Hungary, IDK2024): Award-winning presentation on "The Decline of Positivism in the 20th Century through Ukrainian Sci-Fi." 
+- **Collision Points XI** (Szekszárd, Hungary, 2024): Presentation on the genre's transitions in Ukrainian sci-fi literature.
+- **Passau Summer School for Applied Ethics** (Passau, Germany, 2024): Accepted to discuss my topic in a multidisciplinary setting.
+- **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, Hungary, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
+- **Collision Points XII** (Veszprém, Hungary, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
+- **Young Philosophers Conference 10** (Pécs, Hungary, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
+- **Interdisciplinary Doctoral Student Conference 2025** (Pécs, Hungary, IDK2025): Presentation on "An unfortunate Benjamin's mistake". 
 
 ??? note "An unfortunate Benjamin's mistake"
 
     ![Interdisciplinary Doctoral Student Conference 2025](assets/images/idk2025.png)
 
-- **Budapest Workshop on Philosophy and Technology 2025** (Budapest, BudPT25): Presentation "Ethical Ghosts on a Robotic Battlefield in Ukraine"
-- **Young Philosophers Conference 2025** (Budapest, National University of Public Service): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"
-- **Contexts. Eighth International Interdisciplinary Conference for Young Scholars in Social Sciences and Humanities** (Novi Sad, Serbia): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"  
+- **Budapest Workshop on Philosophy and Technology 2025** (Budapest, Hungary, BudPT25): Presentation "Ethical Ghosts on a Robotic Battlefield in Ukraine"
+- **Young Philosophers Conference 2025** (Budapest, Hungary, National University of Public Service): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"
+- **Contexts. Eighth International Interdisciplinary Conference for Young Scholars in Social Sciences and Humanities 2025** (Novi Sad, Serbia): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"  
+- **The American Association of Teachers of Slavic and East European Languages Conference 2026** (New Orleans, LA, AATSEEL 2026): The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine
 
 
 ## Organizational and Leadership Experience
