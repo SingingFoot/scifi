@@ -142,6 +142,7 @@ I am proud to have presented my research at international conferences, including
 - **Young Philosophers Conference 2025** (Budapest, Hungary, National University of Public Service): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"
 - **Contexts. Eighth International Interdisciplinary Conference for Young Scholars in Social Sciences and Humanities 2025** (Novi Sad, Serbia): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"  
 - **The American Association of Teachers of Slavic and East European Languages Conference 2026** (New Orleans, LA, AATSEEL 2026): The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine
+- **Philosophy in Technology – Different Perspectives, PinT 5th Edition** (Wrocław, Poland, April 10, 2026): The Illusion of Understanding: Beyond the Chinese Room
 
 
 ## Organizational and Leadership Experience
