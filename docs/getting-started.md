@@ -145,10 +145,6 @@ I am proud to have presented my research at international conferences, including
 - **Philosophy in Technology – Different Perspectives, PinT 5th Edition** (Wrocław, Poland, April 10, 2026): The Illusion of Understanding: Beyond the Chinese Room
 
 
-## Organizational and Leadership Experience
-
-During my tenure as Public Relations Manager for the **Ukrainian Helsinki Human Rights Union**, I organized numerous public events, including conferences, workshops, and outreach programs. I excel in event planning, communication, and fostering engagement, skills I now bring to my academic and professional endeavors.
-
 ## Why Ukrainian Sci-Fi?
 
 Growing up in a society where philosophy was often censored, I found intellectual refuge in Ukrainian sci-fi. Works by authors like Volodymyr Savchenko inspired me to explore profound philosophical questions, blending my love for literature and critical thinking. Today, I believe Ukrainian science fiction is not only a lens through which to understand the cultural history of Ukraine but also a key to its future as part of a vibrant, global intellectual community.
