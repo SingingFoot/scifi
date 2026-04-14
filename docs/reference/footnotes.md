@@ -24,7 +24,7 @@ See additional configuration options:
 
 - [Footnotes]
 
-  [Footnotes]: ../setup/extensions/python-markdown.md#footnotes
+  [Footnotes]: ../authors/extensions/python-markdown.md#footnotes
 
 ### Footnote tooltips
 

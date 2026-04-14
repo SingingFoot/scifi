@@ -52,9 +52,9 @@ This transparent approach ensures that solutions can benefit the entire
 community and feature requests can get upvoted by the community which will
 affect the speed of its development.
 
-  [reporting bugs]: contributing/reporting-a-bug.md
-  [change requests]: contributing/requesting-a-change.md
-  [our contributing guides]: ./contributing/index.md
+  [reporting bugs]: guides/creating-a-reproduction.md
+  [change requests]: https://github.com/SingingFoot/scifi/blob/main/CONTRIBUTING.md
+  [our contributing guides]: https://github.com/SingingFoot/scifi/blob/main/CONTRIBUTING.md
   [issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
   [public issue tracker]: https://github.com/squidfunk/mkdocs-material/issues
   [fair use policy]: ./insiders/license.md/#fair-use-policy

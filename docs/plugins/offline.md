@@ -147,7 +147,7 @@ file system:
 - [Versioning]
 - [Comment systems]
 
-  [Instant loading]: ../setup/setting-up-navigation.md#instant-loading
-  [Site analytics]: ../setup/setting-up-site-analytics.md
-  [Versioning]: ../setup/setting-up-versioning.md
-  [Comment systems]: ../setup/adding-a-comment-system.md
+  [Instant loading]: ../authors/setting-up-navigation.md#instant-loading
+  [Site analytics]: ../authors/setting-up-site-analytics.md
+  [Versioning]: ../authors/setting-up-versioning.md
+  [Comment systems]: ../authors/adding-a-comment-system.md

@@ -29,7 +29,7 @@ or needs improvements or additional translations by inspecting the list of
 - __Your language is missing__ – in that case, you can help us add support
   for your language to Material for MkDocs! Read on, to learn how to do this.
 
-  [supported languages]: ../setup/changing-the-language.md#site-language
+  [supported languages]: ../authors/changing-the-language.md#site-language
 
 ### Search our issue tracker
 

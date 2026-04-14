@@ -32,9 +32,9 @@ See additional configuration options:
 - [Caret, Mark & Tilde]
 - [Keys]
 
-  [Critic]: ../setup/extensions/python-markdown-extensions.md#critic
-  [Caret, Mark & Tilde]: ../setup/extensions/python-markdown-extensions.md#caret-mark-tilde
-  [Keys]: ../setup/extensions/python-markdown-extensions.md#keys
+  [Critic]: ../authors/extensions/python-markdown-extensions.md#critic
+  [Caret, Mark & Tilde]: ../authors/extensions/python-markdown-extensions.md#caret-mark-tilde
+  [Keys]: ../authors/extensions/python-markdown-extensions.md#keys
 
 ## Usage
 

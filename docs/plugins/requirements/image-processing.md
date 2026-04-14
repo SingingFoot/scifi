@@ -11,9 +11,9 @@ install those libraries in different environments.
 
   [built-in plugins]: ../index.md
   [social]: ../social.md
-  [social cards]: ../../setup/setting-up-social-cards.md
+  [social cards]: ../../authors/setting-up-social-cards.md
   [optimize]: ../optimize.md
-  [image optimization]: ../../setup/building-an-optimized-site.md
+  [image optimization]: ../../authors/building-an-optimized-site.md
 
 ## Dependencies
 

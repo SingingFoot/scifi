@@ -145,25 +145,21 @@ Furthermore, see the list of supported [Markdown extensions] that are natively
 integrated with Material for MkDocs, delivering an unprecedented low-effort
 technical writing experience.
 
-  [Changing the colors]: setup/changing-the-colors.md
-  [Changing the fonts]: setup/changing-the-fonts.md
-  [Changing the language]: setup/changing-the-language.md
-  [Changing the logo and icons]: setup/changing-the-logo-and-icons.md
-  [Ensuring data privacy]: setup/ensuring-data-privacy.md
-  [Setting up navigation]: setup/setting-up-navigation.md
-  [Setting up site search]: setup/setting-up-site-search.md
-  [Setting up site analytics]: setup/setting-up-site-analytics.md
-  [Setting up social cards]: setup/setting-up-social-cards.md
-  [Setting up a blog]: setup/setting-up-a-blog.md
-  [Setting up tags]: setup/setting-up-tags.md
-  [Setting up versioning]: setup/setting-up-versioning.md
-  [Setting up the header]: setup/setting-up-the-header.md
-  [Setting up the footer]: setup/setting-up-the-footer.md
-  [Adding a git repository]: setup/adding-a-git-repository.md
-  [Adding a comment system]: setup/adding-a-comment-system.md
-  [Building for offline usage]: setup/building-for-offline-usage.md
-  [Building an optimized site]: setup/building-an-optimized-site.md
-  [Markdown extensions]: setup/extensions/index.md
+  [Ensuring data privacy]: authors/ensuring-data-privacy.md
+  [Setting up navigation]: authors/setting-up-navigation.md
+  [Setting up site search]: authors/setting-up-site-search.md
+  [Setting up site analytics]: authors/setting-up-site-analytics.md
+  [Setting up social cards]: authors/setting-up-social-cards.md
+  [Setting up a blog]: authors/setting-up-a-blog.md
+  [Setting up tags]: authors/setting-up-tags.md
+  [Setting up versioning]: authors/setting-up-versioning.md
+  [Setting up the header]: authors/setting-up-the-header.md
+  [Setting up the footer]: authors/setting-up-the-footer.md
+  [Adding a git repository]: authors/adding-a-git-repository.md
+  [Adding a comment system]: authors/adding-a-comment-system.md
+  [Building for offline usage]: authors/building-for-offline-usage.md
+  [Building an optimized site]: authors/building-an-optimized-site.md
+  [Markdown extensions]: authors/extensions/index.md
 
 ## Templates
 
@@ -266,4 +262,4 @@ read from a local filesystem rather than a web server (such as in a
 `.zip` file), please read the notes about [building for offline
 usage].
 
-  [building for offline usage]: setup/building-for-offline-usage.md
+  [building for offline usage]: authors/building-for-offline-usage.md

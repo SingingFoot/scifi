@@ -26,7 +26,7 @@ See additional configuration options:
 
 - [Tables]
 
-  [Tables]: ../setup/extensions/python-markdown.md#tables
+  [Tables]: ../authors/extensions/python-markdown.md#tables
 
 ## Usage
 
@@ -181,7 +181,7 @@ numbers, filesizes, dates and month names. See the [tablesort documentation]
 </script>
 
   [tablesort]: http://tristen.ca/tablesort/demo/
-  [instant loading]: ../setup/setting-up-navigation.md#instant-loading
+  [instant loading]: ../authors/setting-up-navigation.md#instant-loading
 
 ### Import table from file
 

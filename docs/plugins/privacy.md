@@ -91,11 +91,11 @@ pipelines tailored to your project:
 
 </div>
 
-  [Google Fonts]: ../setup/changing-the-fonts.md
+  [Google Fonts]: ../authors/changing-the-fonts.md
   [building your project]: ../creating-your-site.md#building-your-site
   [optimize]: optimize.md
   [offline]: offline.md
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [offline-capable documentation]: ../authors/building-for-offline-usage.md
 
 ## Configuration
 
@@ -402,7 +402,7 @@ plugins:
   [MathJax]: ../reference/math.md
   [MathJax can be self-hosted]: https://docs.mathjax.org/en/latest/web/hosting.html
   [Giscus]: https://giscus.app/
-  [comment system]: ../setup/adding-a-comment-system.md
+  [comment system]: ../authors/adding-a-comment-system.md
   [Giscus can be self-hosted]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
 
 ---

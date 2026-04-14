@@ -8,7 +8,7 @@ categories:
   - Search
 links:
   - blog/posts/search-better-faster-smaller.md
-  - setup/setting-up-site-search.md#search-exclusion
+  - authors/setting-up-site-search.md#search-exclusion
   - insiders/how-to-sponsor.md
 ---
 
@@ -103,8 +103,8 @@ sections, and blocks__][search exclusion] from the search index, implemented
 through front matter, as well as the [Attribute Lists]. Note that it doesn't
 replace the [mkdocs-exclude-search] plugin but __complements__ it.
 
-  [search exclusion]: ../../setup/setting-up-site-search.md#search-exclusion
-  [Attribute Lists]: ../../setup/extensions/python-markdown.md#attribute-lists
+  [search exclusion]: ../../authors/setting-up-site-search.md#search-exclusion
+  [Attribute Lists]: ../../authors/extensions/python-markdown.md#attribute-lists
 
 ### Excluding pages
 

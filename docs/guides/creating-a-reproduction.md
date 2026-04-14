@@ -92,7 +92,7 @@ inside it. Next:
     means that the bug does not occur when they are omitted. Remove all
     non-essential lines and files.
 
-  [bug reporting guide]: ../contributing/reporting-a-bug.md#upgrade-to-latest-version
+  [bug reporting guide]: ../guides/creating-a-reproduction.md#upgrade-to-latest-version
   [minimal configuration]: ../creating-your-site.md#minimal-configuration
 
 ### Creating a `.zip` file

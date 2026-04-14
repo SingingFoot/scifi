@@ -74,7 +74,7 @@ extra_javascript:
     `document$` is an [RxJS Observable] and you can call the `subscribe()`
     method any number of times to attach different functionality.
 
-  [instant loading]: setup/setting-up-navigation.md/#instant-loading
+  [instant loading]: authors/setting-up-navigation.md/#instant-loading
   [RxJS Observable]: https://rxjs.dev/api/index/class/Observable
 
 ## Extending the theme

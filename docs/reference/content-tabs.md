@@ -27,8 +27,8 @@ See additional configuration options:
 - [SuperFences]
 - [Tabbed]
 
-  [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
-  [Tabbed]: ../setup/extensions/python-markdown-extensions.md#tabbed
+  [SuperFences]: ../authors/extensions/python-markdown-extensions.md#superfences
+  [Tabbed]: ../authors/extensions/python-markdown-extensions.md#tabbed
 
 ### Anchor links
 
@@ -68,7 +68,7 @@ or to the [publishing guide for Insiders][tab_2].
   [tab_1]: #anchor-links--or-even-me
   [tab_2]: ../publishing-your-site.md#with-github-actions-insiders
   [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
-  [slugification]: ../setup/extensions/python-markdown-extensions.md#+pymdownx.tabbed.slugify
+  [slugification]: ../authors/extensions/python-markdown-extensions.md#+pymdownx.tabbed.slugify
 
 ### Linked content tabs
 
@@ -98,7 +98,7 @@ integrated with [instant loading] and persisted across page loads.
 
     [![Linked content tabs disabled]][Linked content tabs disabled]
 
-  [instant loading]: ../setup/setting-up-navigation.md#instant-loading
+  [instant loading]: ../authors/setting-up-navigation.md#instant-loading
   [Linked content tabs enabled]: ../assets/screenshots/content-tabs-link.png
   [Linked content tabs disabled]: ../assets/screenshots/content-tabs.png
 

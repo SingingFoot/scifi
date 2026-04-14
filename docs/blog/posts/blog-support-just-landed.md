@@ -7,7 +7,7 @@ description: >
 categories:
   - Blog
 links:
-  - setup/setting-up-a-blog.md
+  - authors/setting-up-a-blog.md
   - plugins/blog.md
 ---
 
@@ -190,15 +190,15 @@ behavior and much more.
   [category]: ../../plugins/blog.md#config.categories
   [Blog]: blog-support-just-landed/blog.png
   [Blog post]: blog-support-just-landed/blog-post.png
-  [Adding an excerpt]: ../../setup/setting-up-a-blog.md#adding-an-excerpt
-  [Adding authors]: ../../setup/setting-up-a-blog.md#adding-authors
-  [Adding categories]: ../../setup/setting-up-a-blog.md#adding-categories
-  [Adding tags]: ../../setup/setting-up-a-blog.md#adding-tags
-  [Adding related links]: ../../setup/setting-up-a-blog.md#adding-related-links
-  [Linking from and to posts]: ../../setup/setting-up-a-blog.md#linking-from-and-to-posts
-  [Setting the reading time]: ../../setup/setting-up-a-blog.md#setting-the-reading-time
-  [Setting defaults]: ../../setup/setting-up-a-blog.md#setting-defaults
-  [configuration options]: ../../setup/setting-up-a-blog.md#configuration
+  [Adding an excerpt]: ../../authors/setting-up-a-blog.md#adding-an-excerpt
+  [Adding authors]: ../../authors/setting-up-a-blog.md#adding-authors
+  [Adding categories]: ../../authors/setting-up-a-blog.md#adding-categories
+  [Adding tags]: ../../authors/setting-up-a-blog.md#adding-tags
+  [Adding related links]: ../../authors/setting-up-a-blog.md#adding-related-links
+  [Linking from and to posts]: ../../authors/setting-up-a-blog.md#linking-from-and-to-posts
+  [Setting the reading time]: ../../authors/setting-up-a-blog.md#setting-the-reading-time
+  [Setting defaults]: ../../authors/setting-up-a-blog.md#setting-defaults
+  [configuration options]: ../../authors/setting-up-a-blog.md#configuration
 
 ## What's next?
 

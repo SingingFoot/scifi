@@ -180,7 +180,7 @@ after `index.md`. The path to the `index.md` file must match
 [blog_dir][config.blog_dir]. This means that you can name the blog navigation
 entry anything you like: 'Blog' or 'News' or perhaps 'Tips'.
 
-[navigation section with an index page]: ../setup/setting-up-navigation.md#section-index-pages
+[navigation section with an index page]: ../authors/setting-up-navigation.md#section-index-pages
 
 ### General
 
@@ -329,7 +329,7 @@ Note that depending on the [site language], results might look different for
 other languages.
 
   [babel]: https://pypi.org/project/Babel/
-  [site language]: ../setup/changing-the-language.md#site-language
+  [site language]: ../authors/changing-the-language.md#site-language
   [pattern syntax]: https://babel.pocoo.org/en/latest/dates.html#pattern-syntax
 
 ---
@@ -479,7 +479,7 @@ plugins:
 <!-- md:version 9.2.0 -->
 <!-- md:default `optional` -->
 
-By default, the plugin makes [post excerpts](../setup/setting-up-a-blog.md#adding-an-excerpt)
+By default, the plugin makes [post excerpts](../authors/setting-up-a-blog.md#adding-an-excerpt)
 optional. When a post doesn't define an excerpt, views include the entire post.
 This setting can be used to make post excerpts required:
 
@@ -1625,7 +1625,7 @@ a post. The property follows the same syntax as [`nav`][mkdocs.nav] in
     ``` yaml
     ---
     links:
-      - setup/setting-up-site-search.md
+      - authors/setting-up-site-search.md
       - insiders/index.md
     ---
 
@@ -1638,7 +1638,7 @@ a post. The property follows the same syntax as [`nav`][mkdocs.nav] in
     ``` yaml
     ---
     links:
-      - setup/setting-up-site-search.md
+      - authors/setting-up-site-search.md
       - Insiders:
         - insiders/index.md
         - insiders/getting-started.md

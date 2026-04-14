@@ -36,7 +36,7 @@ about optimizing them, or even worse, forgetting to do so.
 In order to optimize media files, a few [dependencies] need to be available on
 your system.
 
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [offline-capable documentation]: ../authors/building-for-offline-usage.md
   [dependencies]: #configuration
 
 ### When to use it

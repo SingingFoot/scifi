@@ -28,7 +28,7 @@ developing built-in plugins, we always adhere to the following design principles
 
   [mkdocs]: https://www.mkdocs.org/
   [design principles]: ../design-principles.md
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [offline-capable documentation]: ../authors/building-for-offline-usage.md
 
 ## Categories
 

@@ -39,7 +39,7 @@ images, a few [dependencies] need to be available on your system.
 
   [configuration]: #configuration
   [image processing]: requirements/image-processing.md
-  [custom layouts]: ../setup/setting-up-social-cards.md#customization
+  [custom layouts]: ../authors/setting-up-social-cards.md#customization
   [Puppeteer]: https://github.com/puppeteer/puppeteer
   [GitHub wrote in their blog]: https://github.blog/2021-06-22-framework-building-open-graph-images/
   [cached]: #caching
@@ -84,7 +84,7 @@ pipelines tailored to your project:
 
 </div>
 
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [offline-capable documentation]: ../authors/building-for-offline-usage.md
   [blog]: blog.md
   [meta]: meta.md
 
@@ -792,10 +792,10 @@ The following options are available:
   [Layout default accent]: ../assets/screenshots/social-cards-accent.png
   [Layout default invert]: ../assets/screenshots/social-cards-invert.png
 
-  [primary color]: ../setup/changing-the-colors.md#primary-color
+  [primary color]: ../authors/changing-the-colors.md#primary-color
   [page icon]: ../reference/index.md#setting-the-page-icon
-  [accent color]: ../setup/changing-the-colors.md#accent-color
-  [font]: ../setup/changing-the-fonts.md#regular-font
+  [accent color]: ../authors/changing-the-colors.md#accent-color
+  [font]: ../authors/changing-the-fonts.md#regular-font
 
 ---
 
@@ -1025,8 +1025,8 @@ plugins:
 
 The provided path is resolved from the root directory.
 
-  [theme.logo]: ../setup/changing-the-logo-and-icons.md#logo-image
-  [theme.icon.logo]: ../setup/changing-the-logo-and-icons.md#logo-icon-bundled
+  [theme.logo]: ../authors/changing-the-logo-and-icons.md#logo-image
+  [theme.icon.logo]: ../authors/changing-the-logo-and-icons.md#logo-icon-bundled
 
 ---
 

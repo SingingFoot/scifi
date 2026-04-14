@@ -39,10 +39,10 @@ See additional configuration options:
 - [SuperFences]
 - [Snippets]
 
-  [Highlight]: ../setup/extensions/python-markdown-extensions.md#highlight
-  [InlineHilite]: ../setup/extensions/python-markdown-extensions.md#inlinehilite
-  [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
-  [Snippets]: ../setup/extensions/python-markdown-extensions.md#snippets
+  [Highlight]: ../authors/extensions/python-markdown-extensions.md#highlight
+  [InlineHilite]: ../authors/extensions/python-markdown-extensions.md#inlinehilite
+  [SuperFences]: ../authors/extensions/python-markdown-extensions.md#superfences
+  [Snippets]: ../authors/extensions/python-markdown-extensions.md#snippets
 
 ### Code copy button
 
@@ -159,7 +159,7 @@ theme:
     Note that the language shortcode which has to come first must now also be
     prefixed by a `.`.
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
 
 #### Custom selectors
 
@@ -509,7 +509,7 @@ override it as part of your [additional style sheet]:
     ```
 
   [colors]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss
-  [color schemes]: ../setup/changing-the-colors.md#color-scheme
+  [color schemes]: ../authors/changing-the-colors.md#color-scheme
   [types of string tokens]: https://pygments.org/docs/tokens/#literals
   [additional style sheet]: ../customization.md#additional-css
   [syntax theme definition]: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/extensions/pymdownx/_highlight.scss

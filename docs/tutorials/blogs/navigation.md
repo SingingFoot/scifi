@@ -56,7 +56,7 @@ attach the blog navigation to the rest of the navigation structure.
     The rest of the tutorial assumes that you are integrating the blog with
     a wider site.
 
-[Setting up a blog]: ../../setup/setting-up-a-blog.md#blog-only
+[Setting up a blog]: ../../authors/setting-up-a-blog.md#blog-only
 
 !!! tip "Adding pages"
 

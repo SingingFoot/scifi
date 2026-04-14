@@ -11,7 +11,7 @@ The info plugin is a utility that is solely intended to create self-contained
 easier, as we have a common ground to work on.
 
   [minimal reproductions]: ../guides/creating-a-reproduction.md
-  [reporting bugs]: ../contributing/reporting-a-bug.md
+  [reporting bugs]: ../guides/creating-a-reproduction.md
   [change requests]: ../contributing/requesting-a-change.md
 
 ## Objective
@@ -30,8 +30,8 @@ us to fix the bug as quickly as possible.
 
 The output of the plugin is a `.zip` file that you can share with us maintainers.
 
-  [Upgrade to the latest version]: ../contributing/reporting-a-bug.md#upgrade-to-latest-version
-  [Remove your customizations]: ../contributing/reporting-a-bug.md#remove-customizations
+  [Upgrade to the latest version]: ../guides/creating-a-reproduction.md#upgrade-to-latest-version
+  [Remove your customizations]: ../guides/creating-a-reproduction.md#remove-customizations
 
 
 ### When to use it

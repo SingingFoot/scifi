@@ -32,4 +32,4 @@ plugins that implement caching share – to a folder which you add to your git
 repository.
 
   [built-in plugins]: ../index.md
-  [social cards]: ../../setup/setting-up-social-cards.md
+  [social cards]: ../../authors/setting-up-social-cards.md

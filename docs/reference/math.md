@@ -71,8 +71,8 @@ See additional configuration options:
 
 - [Arithmatex]
 
-  [Arithmatex]: ../setup/extensions/python-markdown-extensions.md#arithmatex
-  [instant loading]: ../setup/setting-up-navigation.md#instant-loading
+  [Arithmatex]: ../authors/extensions/python-markdown-extensions.md#arithmatex
+  [instant loading]: ../authors/setting-up-navigation.md#instant-loading
 
 <script id="MathJax-script" async src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>

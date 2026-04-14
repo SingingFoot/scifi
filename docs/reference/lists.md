@@ -27,8 +27,8 @@ See additional configuration options:
 - [Definition Lists]
 - [Tasklist]
 
-  [Definition Lists]: ../setup/extensions/python-markdown.md#definition-lists
-  [Tasklist]: ../setup/extensions/python-markdown-extensions.md#tasklist
+  [Definition Lists]: ../authors/extensions/python-markdown.md#definition-lists
+  [Tasklist]: ../authors/extensions/python-markdown-extensions.md#tasklist
 
 ## Usage
 

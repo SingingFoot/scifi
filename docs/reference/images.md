@@ -28,9 +28,9 @@ See additional configuration options:
 - [Markdown in HTML]
 - [Caption]
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Markdown in HTML]: ../setup/extensions/python-markdown.md#markdown-in-html
-  [Caption]: ../setup/extensions/python-markdown-extensions.md#caption
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
+  [Markdown in HTML]: ../authors/extensions/python-markdown.md#markdown-in-html
+  [Caption]: ../authors/extensions/python-markdown-extensions.md#caption
 
 ### Lightbox
 
@@ -212,8 +212,8 @@ hash fragment to the image URL:
     Remember to change `#!css "custom-light"` and `#!css "custom-dark"` to the
     name of your scheme.
 
-  [color palette toggle]: ../setup/changing-the-colors.md#color-palette-toggle
+  [color palette toggle]: ../authors/changing-the-colors.md#color-palette-toggle
   [Zelda light world]: ../assets/images/zelda-light-world.png#only-light
   [Zelda dark world]: ../assets/images/zelda-dark-world.png#only-dark
-  [color schemes]: ../setup/changing-the-colors.md#color-scheme
-  [custom color schemes]: ../setup/changing-the-colors.md#custom-color-schemes
+  [color schemes]: ../authors/changing-the-colors.md#color-scheme
+  [custom color schemes]: ../authors/changing-the-colors.md#custom-color-schemes

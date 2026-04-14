@@ -35,9 +35,9 @@ _The next section discusses the architecture and issues of the current search
 implementation. If you immediately want to learn what's new, skip to the
 [section just after that][what's new]._
 
-  [search]: ../../setup/setting-up-site-search.md
+  [search]: ../../authors/setting-up-site-search.md
   [multilingual]: ../../plugins/search.md#config.lang
-  [offline-capable]: ../../setup/building-for-offline-usage.md
+  [offline-capable]: ../../authors/building-for-offline-usage.md
   [what's new]: #whats-new
 
 ## Architecture
@@ -597,7 +597,7 @@ page load. When navigating, the search index is preserved across pages, so the
 cost does only have to be paid once.
 
   [KJV Markdown]: https://github.com/arleym/kjv-markdown
-  [instant loading]: ../../setup/setting-up-navigation.md#instant-loading
+  [instant loading]: ../../authors/setting-up-navigation.md#instant-loading
 
 ### User interface
 

@@ -162,7 +162,7 @@ The provided path is resolved from the [`docs` directory][mkdocs.docs_dir].
 
 </div>
 
-  [listings]: ../setup/setting-up-tags.md#adding-a-tags-index
+  [listings]: ../authors/setting-up-tags.md#adding-a-tags-index
 
 ---
 

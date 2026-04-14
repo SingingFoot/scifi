@@ -42,7 +42,7 @@ No further configuration is necessary. Advantages over a custom integration:
     diagrams. See the section on [other diagrams] for more information why this
     is currently not implemented for all diagrams.
 
-  [instant loading]: ../setup/setting-up-navigation.md#instant-loading
+  [instant loading]: ../authors/setting-up-navigation.md#instant-loading
   [additional style sheets]: ../customization.md#additional-css
   [other diagrams]: #other-diagram-types
 

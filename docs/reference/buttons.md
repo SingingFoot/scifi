@@ -23,7 +23,7 @@ See additional configuration options:
 
 - [Attribute Lists]
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
 
 ## Usage
 
@@ -43,8 +43,8 @@ In order to render a link as a button, suffix it with curly braces and add the
 
 </div>
 
-  [primary color]: ../setup/changing-the-colors.md#primary-color
-  [accent color]: ../setup/changing-the-colors.md#accent-color
+  [primary color]: ../authors/changing-the-colors.md#primary-color
+  [accent color]: ../authors/changing-the-colors.md#accent-color
   [Demo]: javascript:alert$.next("Demo")
 
 ### Adding primary buttons

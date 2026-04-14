@@ -12,7 +12,7 @@ either [publicly] or [privately], according to your preference.
 
 By default, GitHub lists all sponsorships publicly. To sponsor privately, you
 must explicitly select this option. When sponsoring publicly, your GitHub
-account will be listed as part of [our sponsors], @squidfunk's [sponsoring page],
+account will be listed as part of our sponsors, @squidfunk's [sponsoring page],
 and within the "sponsoring" section of your GitHub account.
 
   [our sponsors]: our-sponsors.md

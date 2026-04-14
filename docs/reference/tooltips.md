@@ -28,9 +28,9 @@ See additional configuration options:
 - [Attribute Lists]
 - [Snippets]
 
-  [Abbreviations]: ../setup/extensions/python-markdown.md#abbreviations
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Snippets]: ../setup/extensions/python-markdown-extensions.md#snippets
+  [Abbreviations]: ../authors/extensions/python-markdown.md#abbreviations
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
+  [Snippets]: ../authors/extensions/python-markdown-extensions.md#snippets
 
 ### Improved tooltips
 

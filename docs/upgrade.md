@@ -145,7 +145,7 @@ viewports]:
       - pymdownx.tabbed
     ```
 
-  [Tabbed]: setup/extensions/python-markdown-extensions.md#tabbed
+  [Tabbed]: authors/extensions/python-markdown-extensions.md#tabbed
   [better behavior on mobile viewports]: https://x.com/squidfunk/status/1424740370596958214
 
 #### `pymdownx.superfences`
@@ -176,7 +176,7 @@ using [Mermaid.js]:
               format: !!python/name:pymdownx.superfences.fence_code_format
     ```
 
-  [SuperFences]: setup/extensions/python-markdown-extensions.md#superfences
+  [SuperFences]: authors/extensions/python-markdown-extensions.md#superfences
   [diagrams]: reference/diagrams.md
   [Mermaid.js]: https://mermaid-js.github.io/mermaid/
 
@@ -877,8 +877,8 @@ function they apply to, e.g. `navigation.*`:
         - instant
     ```
 
-  [tabs]: setup/setting-up-navigation.md#navigation-tabs
-  [instant loading]: setup/setting-up-navigation.md#instant-loading
+  [tabs]: authors/setting-up-navigation.md#navigation-tabs
+  [instant loading]: authors/setting-up-navigation.md#instant-loading
 
 ### Changes to `*.html` files { data-search-exclude }
 
@@ -1117,7 +1117,6 @@ matches the new structure:
 - Reduced HTML and CSS footprint due to deprecation of Internet Explorer support
 - Slight facelifting of some UI elements (admonitions, tables, ...)
 
-  [CSS variables]: setup/changing-the-colors.md#custom-colors
   [icon integration]: reference/icons-emojis.md#search
   [prebuilt search indexes]: plugins/search.md
 

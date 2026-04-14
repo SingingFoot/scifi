@@ -30,8 +30,8 @@ check out time was brought down to 2 seconds.
   [GitHub Actions]: ../../publishing-your-site.md#with-github-actions
   [git-revision-date-localized]: https://github.com/timvink/mkdocs-git-revision-date-localized-plugin
   [git-committers]: https://github.com/ojacques/mkdocs-git-committers-plugin-2
-  [document contributors]: ../../setup/adding-a-git-repository.md#document-contributors
-  [dates]: ../../setup/adding-a-git-repository.md#document-dates
+  [document contributors]: ../../authors/adding-a-git-repository.md#document-contributors
+  [dates]: ../../authors/adding-a-git-repository.md#document-dates
 
 <!-- more -->
 

@@ -27,9 +27,9 @@ See additional configuration options:
 - [Markdown in HTML]
 - [SuperFences]
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Markdown in HTML]: ../setup/extensions/python-markdown.md#markdown-in-html
-  [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
+  [Markdown in HTML]: ../authors/extensions/python-markdown.md#markdown-in-html
+  [SuperFences]: ../authors/extensions/python-markdown-extensions.md#superfences
 
 ### Annotation icons
 
@@ -67,7 +67,7 @@ Some popular choices:
 - :material-star-four-points-circle: - `material/star-four-points-circle`
 - :material-plus-circle-outline: - `material/plus-circle-outline`
 
-  [custom icon]: ../setup/changing-the-logo-and-icons.md#additional-icons
+  [custom icon]: ../authors/changing-the-logo-and-icons.md#additional-icons
   [icon search]: icons-emojis.md#search
 
 ## Usage

@@ -30,7 +30,7 @@ title: Lorem ipsum dolor sit amet # (1)!
     site title, which is set via [`site_name`][site_name], is appended with a
     dash.
 
-  [social cards]: ../setup/setting-up-social-cards.md
+  [social cards]: ../authors/setting-up-social-cards.md
   [four step process]: https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
   [title]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title
   [head]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head
@@ -89,7 +89,7 @@ icon: material/emoticon-happy # (1)!
 
   [Insiders]: ../insiders/index.md
   [icon search]: icons-emojis.md#search
-  [navigation tabs]: ../setup/setting-up-navigation.md#navigation-tabs
+  [navigation tabs]: ../authors/setting-up-navigation.md#navigation-tabs
 
 ### Setting the page `status`
 

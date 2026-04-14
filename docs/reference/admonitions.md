@@ -28,9 +28,9 @@ See additional configuration options:
 - [Details]
 - [SuperFences]
 
-  [Admonition]: ../setup/extensions/python-markdown.md#admonition
-  [Details]: ../setup/extensions/python-markdown-extensions.md#details
-  [SuperFences]: ../setup/extensions/python-markdown-extensions.md#superfences
+  [Admonition]: ../authors/extensions/python-markdown.md#admonition
+  [Details]: ../authors/extensions/python-markdown-extensions.md#details
+  [SuperFences]: ../authors/extensions/python-markdown-extensions.md#superfences
 
 ### Admonition icons
 
@@ -101,7 +101,7 @@ theme:
               quote: fontawesome/solid/quote-left
         ```
 
-  [custom icon]: ../setup/changing-the-logo-and-icons.md#additional-icons
+  [custom icon]: ../authors/changing-the-logo-and-icons.md#additional-icons
   [supported types]: #supported-types
   [icon search]: icons-emojis.md#search
 

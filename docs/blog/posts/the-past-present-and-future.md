@@ -162,38 +162,36 @@ __55__ times, `mkdocs-material-insiders` was shipped __72__ times.
   [Insiders]: ../../insiders/index.md
   [Admonition inline blocks]: ../../reference/admonitions.md#inline-blocks
   [Advanced search highlighting]: search-better-faster-smaller.md#accurate-highlighting
-  [Anchor tracking]: ../../setup/setting-up-navigation.md#anchor-tracking
-  [Back-to-top button]: ../../setup/setting-up-navigation.md#back-to-top-button
-  [Boosting pages in search]: ../../setup/setting-up-site-search.md#search-boosting
+  [Anchor tracking]: ../../authors/setting-up-navigation.md#anchor-tracking
+  [Back-to-top button]: ../../authors/setting-up-navigation.md#back-to-top-button
+  [Boosting pages in search]: ../../authors/setting-up-site-search.md#search-boosting
   [Brand new search plugin]: search-better-faster-smaller.md
   [Code annotations]: ../../reference/code-blocks.md#adding-annotations
   [Code annotations: strip comments]: ../../reference/code-blocks.md#stripping-comments
   [Code block titles]: ../../reference/code-blocks.md#adding-a-title
-  [Code block line anchors]: ../../setup/extensions/python-markdown-extensions.md#+pymdownx.highlight.anchor_linenums
-  [Color palette toggle]: ../../setup/changing-the-colors.md#color-palette-toggle
+  [Code block line anchors]: ../../authors/extensions/python-markdown-extensions.md#+pymdownx.highlight.anchor_linenums
   [Content tabs: improved support]: ../../reference/content-tabs.md
   [Content tabs: auto-linking]: ../../reference/content-tabs.md#linked-content-tabs
-  [Cookie consent]: ../../setup/ensuring-data-privacy.md#cookie-consent
+  [Cookie consent]: ../../authors/ensuring-data-privacy.md#cookie-consent
   [Custom admonition icons]: ../../reference/admonitions.md#admonition-icons
   [Dark mode support for images]: ../../reference/images.md#light-and-dark-mode
-  [Dismissable announcement bar]: ../../setup/setting-up-the-header.md#mark-as-read
-  [Excluding content from search]: ../../setup/setting-up-site-search.md#search-exclusion
+  [Dismissable announcement bar]: ../../authors/setting-up-the-header.md#mark-as-read
+  [Excluding content from search]: ../../authors/setting-up-site-search.md#search-exclusion
   [Mermaid.js integration]: ../../reference/diagrams.md
   [Navigation icons]: ../../reference/index.md#setting-the-page-icon
-  [Remove generator notice]: ../../setup/setting-up-the-footer.md#generator-notice
+  [Remove generator notice]: ../../authors/setting-up-the-footer.md#generator-notice
   [Rich search previews]: search-better-faster-smaller.md#rich-search-previews
-  [Search highlighting]: ../../setup/setting-up-site-search.md#search-highlighting
-  [Search sharing]: ../../setup/setting-up-site-search.md#search-sharing
-  [Search suggestions]: ../../setup/setting-up-site-search.md#search-suggestions
-  [Section index pages]: ../../setup/setting-up-navigation.md#section-index-pages
-  [Site language selection]: ../../setup/changing-the-language.md#site-language-selector
-  [Social cards]: ../../setup/setting-up-social-cards.md
-  [Sticky navigation tabs]: ../../setup/setting-up-navigation.md#sticky-navigation-tabs
-  [Tags with search integration]: ../../setup/setting-up-tags.md
+  [Search highlighting]: ../../authors/setting-up-site-search.md#search-highlighting
+  [Search sharing]: ../../authors/setting-up-site-search.md#search-sharing
+  [Search suggestions]: ../../authors/setting-up-site-search.md#search-suggestions
+  [Section index pages]: ../../authors/setting-up-navigation.md#section-index-pages
+  [Social cards]: ../../authors/setting-up-social-cards.md
+  [Sticky navigation tabs]: ../../authors/setting-up-navigation.md#sticky-navigation-tabs
+  [Tags with search integration]: ../../authors/setting-up-tags.md
   [Tokenizer with lookahead]: search-better-faster-smaller.md#tokenizer-lookahead
-  [Versioning]: ../../setup/setting-up-versioning.md#versioning
-  [Version warning]: ../../setup/setting-up-versioning.md#version-warning
-  [Was this page helpful?]: ../../setup/setting-up-site-analytics.md#was-this-page-helpful
+  [Versioning]: ../../authors/setting-up-versioning.md#versioning
+  [Version warning]: ../../authors/setting-up-versioning.md#version-warning
+  [Was this page helpful?]: ../../authors/setting-up-site-analytics.md#was-this-page-helpful
   [changelog]: ../../changelog/index.md
 
 ### Funding

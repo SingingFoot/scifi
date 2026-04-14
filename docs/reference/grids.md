@@ -31,8 +31,8 @@ See additional configuration options:
 
   [icons and emojis]: icons-emojis.md
   [configured separately]: icons-emojis.md#configuration
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Markdown in HTML]: ../setup/extensions/python-markdown.md#markdown-in-html
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
+  [Markdown in HTML]: ../authors/extensions/python-markdown.md#markdown-in-html
 
 ## Usage
 
@@ -177,7 +177,7 @@ when [hiding both sidebars].
   [customization]: ../customization.md
   [license]: ../license.md
   [GitHub]: https://github.com/squidfunk/mkdocs-material
-  [hiding both sidebars]: ../setup/setting-up-navigation.md#hiding-the-sidebars
+  [hiding both sidebars]: ../authors/setting-up-navigation.md#hiding-the-sidebars
 
 #### Block syntax
 

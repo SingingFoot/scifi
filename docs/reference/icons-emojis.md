@@ -10,7 +10,7 @@ documentation with practically zero additional effort. Moreover, [custom icons
 can be added] and used in `mkdocs.yml`, documents and templates.
 
   [icon search]: #search
-  [custom icons can be added]: ../setup/changing-the-logo-and-icons.md#additional-icons
+  [custom icons can be added]: ../authors/changing-the-logo-and-icons.md#additional-icons
 
 ## Search
 
@@ -70,9 +70,9 @@ See additional configuration options:
   [FontAwesome]: https://fontawesome.com/search?m=free
   [Octicons]: https://octicons.github.com/
   [Simple Icons]: https://simpleicons.org/
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
-  [Emoji]: ../setup/extensions/python-markdown-extensions.md#emoji
-  [Emoji with custom icons]: ../setup/extensions/python-markdown-extensions.md#+pymdownx.emoji.options.custom_icons
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
+  [Emoji]: ../authors/extensions/python-markdown-extensions.md#emoji
+  [Emoji with custom icons]: ../authors/extensions/python-markdown-extensions.md#+pymdownx.emoji.options.custom_icons
 
 ## Usage
 
@@ -152,7 +152,7 @@ After applying the customization, add the CSS class to the icon shortcode:
 
 </div>
 
-  [Attribute Lists]: ../setup/extensions/python-markdown.md#attribute-lists
+  [Attribute Lists]: ../authors/extensions/python-markdown.md#attribute-lists
   [inline styles]: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style
   [additional style sheet]: ../customization.md#additional-css
 

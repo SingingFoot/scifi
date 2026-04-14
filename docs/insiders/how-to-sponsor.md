@@ -61,8 +61,8 @@ so for an extended period to help avoid any interruptions in your sponsorship.
 
 On this page, you can also set the visibility of your sponsorship. You have the
 option to keep your [sponsorship private or to make it public], which includes
-listing your name or organization on the list of [our sponsors] and, for
-organizations, the opportunity for [logo placement].
+listing your name or organization on the list of our sponsors and, for
+organizations, the opportunity for logo placement.
 
   [sponsorship private or to make it public]: privacy.md
   [our sponsors]: our-sponsors.md

@@ -11,7 +11,7 @@ for the browser, elimininating the need for external services, and even works
 when building [offline-capable documentation].
 
   [lunr.js]: https://lunrjs.com/
-  [offline-capable documentation]: ../setup/building-for-offline-usage.md
+  [offline-capable documentation]: ../authors/building-for-offline-usage.md
 
 ## Objective
 
@@ -148,7 +148,7 @@ or even multiple languages with:
         language, all before `gzip`.
 
   [stemming]: https://en.wikipedia.org/wiki/Stemming
-  [site language]: ../setup/changing-the-language.md#site-language
+  [site language]: ../authors/changing-the-language.md#site-language
   [lunr languages]: https://github.com/MihaiValentin/lunr-languages
 
 Language support is provided by [lunr languages], a collection of
