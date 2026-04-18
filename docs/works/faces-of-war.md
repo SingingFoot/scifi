@@ -2,7 +2,7 @@
 
 **(Article for "Kino-Kolo" magazine, 24 1 (39) "Ukraine on Fire")**  
 
-![The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine](/assets/images/war/6.jpeg) 
+![The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine](../assets/images/war/6.jpeg) 
 
 Every war has its own face, formed by millions of faces of its participants. All of them eventually become the faces of characters in films about war, and the expressions of these faces—emotions, gazes, gestures—personify these tragic events in history for us. No one knows how everything actually happened, so acting becomes a substitute for real memories. If an actor possesses an expressive appearance and performs convincingly, their portrayal can overshadow the memories of real events and create a "real" reality, which can be used for propaganda if the film's producers so desire.  
 
@@ -20,12 +20,12 @@ Consequently, the authors of the "wrong" script, **Johansen and Tyutyunnyk, were
 
 In this film, Semen Svashenko plays the role of communist **Tymosh**, whose brother **Pavlo**, a *petlyurivets*[^1], flees to Prague after the collapse of the Ukrainian People's Republic, leading a miserable and absurd life, constantly attempting suicide.  
 
-![Tymosh commands his own execution.](/assets/images/war/2.png)  
+![Tymosh commands his own execution.](../assets/images/war/2.png)  
 *Tymosh commands his own execution. Screenshot from Oleksandr Dovzhenko's film “Zvenyhora” (1928).*  
 
 Dovzhenko clearly mocks the UPR, striving to trample its legacy into the dirt. Interestingly, there was [a significant diplomatic presence of the UPR in **Prague** at that time](https://www.istpravda.com.ua/articles/2021/03/4/159087/), which likely bothered loyal Leninists.  
 
-![And in emigration, in Prague, sweeping the street with his wide trousers, walks a cossack](/assets/images/war/1.png)  
+![And in emigration, in Prague, sweeping the street with his wide trousers, walks a cossack](../assets/images/war/1.png)  
 *“And in emigration, in Prague, sweeping the street with his wide trousers, walks a cossack…” A screenshot from Oleksandr Dovzhenko's film “Zvenyhora” (1928).*  
 
 Since the film is **silent**, the actors must compensate for the lack of dialogue with **emphatic theatrical expressions** and strike poster-like, even comical poses. Semen Svashenko frequently flashes his eyes and makes tense gestures with his hands, reminiscent of a worker on a modern automobile assembly line.  
@@ -45,7 +45,7 @@ Buchma was a leading actor in the famous **"Berezil" theater**, an agent of the 
 
 However, it is important to note that Buchma occasionally displayed vivid human emotions. Notably, his three-minute role as a **gasping German soldier** in Dovzhenko’s powerful expressionist film *“Arsenal”* is striking. This crazed, dying laughter, with an open mouth where half the teeth are missing, appears grotesque and especially haunting in context: it seems that death itself is mocking.  
 
-![Amvrosiy Buchma as a German soldier](/assets/images/war/3.png)  
+![Amvrosiy Buchma as a German soldier](../assets/images/war/3.png)  
 *Amvrosiy Buchma as a German soldier in Dovzhenko’s film “Arsenal” (1929).*  
 
 **Nataliya Uzhviy** received the **Order of Lenin** for her role as partisan **Olena Kostiuk** in Mark Donskoy's film *“The Rainbow”* (1943). Once captured by the enemy, she faces a harrowing choice:  
@@ -80,7 +80,7 @@ However, the language retains a **strong local West-Ukrainian accent**, making p
 
 Petro (**Ivan Mykolaichuk**) fights with a **Hutsul-UPA**[^3] member because the latter supports **Hitler**, while Petro’s father has kissed the hand of a **Soviet commander**.  
 
-![Ivan Mykolaichuk as Petro, the son of the musician Dzvonar](/assets/images/war/7.png)  
+![Ivan Mykolaichuk as Petro, the son of the musician Dzvonar](../assets/images/war/7.png)  
 *Ivan Mykolaichuk (in profile) as Petro, the son of the musician Dzvonar in Yuriy Illenko's film “The White Bird Marked with Black” (1971).*  
 
 Unsurprisingly, the son of the **Dzvonar** soon enlists in the **Red Army**, albeit not out of **communist zeal**; rather, his choice stems from a **premonition of Nazi defeat**. Meanwhile, Petro’s brother, **Orest**, has joined the **UPA**, leading to a **tragic conflict within the Dzvonar family**.  
@@ -100,7 +100,7 @@ This no longer concerns anyone; he has merely **served as an inconspicuous backd
 
 Interestingly, Russian actor **Mykola Olyalin**, who portrayed Tsvetaev, **transitioned into a Ukrainian actor** that same year.  
 
-![Ivan Mykolaichuk as artilleryman Savchuk](/assets/images/war/8.png)  
+![Ivan Mykolaichuk as artilleryman Savchuk](../assets/images/war/8.png)  
 *Ivan Mykolaichuk as artilleryman Savchuk in Yuri Ozerov’s TV series “Liberation” (1968).*  
 
 Though he spoke **no Ukrainian**, he starred in **Dovzhenko Film Studio projects**, performed at **Ukrainian cultural venues**, received the **Order of Prince Yaroslav the Wise**, earned the title of **People’s Artist of Ukraine**, was awarded a **lifetime scholarship** from **President Viktor Yushchenko** and buried at **the Baikove cemetery**[^4] in Kyiv.  
@@ -113,7 +113,7 @@ Leonid Bykov's role as **Captain Oleksiy Tytarenko**, nicknamed **Maestro**—th
 
 Bykov also **directed this film**, allowing himself **liberties** that might not have been well-received even in the USSR of 1974.  
 
-![Leonid Bykov as Captain Oleksiy Tytarenko](/assets/images/war/9.png)  
+![Leonid Bykov as Captain Oleksiy Tytarenko](../assets/images/war/9.png)  
 *Leonid Bykov portrays Captain Oleksiy “Maestro” Tytarenko in “Only Old Men Are Going to Battle” (1974).*  
 
 His monologue:  
@@ -162,7 +162,7 @@ After the USSR’s **disintegration**, actors, liberated from **Soviet censorshi
 
 **Hryhoriy Gladiy** managed to appear in Leonid Bykov’s *“Only Old Men Are Going to Battle”* (**as an unnamed technician of the “Colt,” Oleksandrov**), but his **most significant role** was as **Roman Shukhevych** in **Oles Yanchuk’s** *“Undefeated”* (**2000**).  
 
-![Hryhoriy Gladiy as Roman Shukhevych](/assets/images/war/10.png)  
+![Hryhoriy Gladiy as Roman Shukhevych](../assets/images/war/10.png)  
 *Hryhoriy Gladiy as Roman Shukhevych in Oles Yanchuk’s “Undefeated” (2000).*  
 
 Unfortunately, despite the **guidance of Askold Lozynskyi, president of the World Congress of Ukrainians**, this film took a **close-to-Soviet "realist" approach**, lacking vivid **artistic discoveries** or compelling portrayals.  
@@ -181,7 +181,7 @@ The work of a **true artist** demands more; each project presents a **challengin
 
 Conversely, **Yevhen Lamakh**, playing **senior sailor Mishka** in **Timur Yashchenko’s** *“Cherkasy”* (**2014**), achieved **impressive results** in understanding and portraying his character, despite his youth.  
 
-![Yevhen Lamakh as senior sailor Mishka](/assets/images/war/11.png)  
+![Yevhen Lamakh as senior sailor Mishka](../assets/images/war/11.png)  
 *Yevhen Lamakh as a senior sailor Mishka in Timur Yashchenko’s “Cherkasy” (2014).*  
 
 Mishko emerged as a **complex and captivating figure**:  
@@ -197,7 +197,7 @@ Importantly, director **Timur Yashchenko** sidesteps **excessive pathos and prop
 
 **Yevhen Lamakh** also takes on a more **ornamental role** as student **Andriy Savytskyi** in **Oleksiy Shaparev’s** *“Kruty 1918”* (**2019**), which feels **too ordinarily directed**—akin to a **costume drama** where Kyiv students engage in **artificial dialogues** more suitable for **puppet theater** than for a **story about Ukrainian heroes**.  
 
-![Yevhen Lamakh as Andriy Savytskyi](/assets/images/war/12.png)  
+![Yevhen Lamakh as Andriy Savytskyi](../assets/images/war/12.png)  
 *Yevhen Lamakh as a student Andriy Savytskyi in Oleksiy Shaparev’s “Kruty 1918” (2019).*  
 
 > Their lines appear as **clumsy and forced** as the **French accents** of counter-spies played by **Ukrainian actors**.  
@@ -208,7 +208,7 @@ Importantly, director **Timur Yashchenko** sidesteps **excessive pathos and prop
 
 This film captivates with its **unique and unprecedented precision** in capturing on-screen events.  
 
-![Oksana Cherkashyna as Tetyana](/assets/images/war/13.png)  
+![Oksana Cherkashyna as Tetyana](../assets/images/war/13.png)  
 *Oksana Cherkashyna as a combat medic Tetyana in Natalia Vorozhbyt’s “Bad Roads” (2020).*  
 
 It feels as though the **director timed every scene with a stopwatch** during filming, with:  
@@ -235,7 +235,7 @@ In her portrayal, **every line, exclamation, whimper, and sudden fainting spell*
 
 **Natalya Polovynka**, cast as the **mother of missing military pilot Sofia Kulyk** in **Zaza Buadze’s** *“Mothers of the Apostles”* (**2020**), embodies the **stereotypical image** of a soldier’s mother at war, **willing to do anything for her child**.  
 
-![Natalya Polovynka as Sofia Kulyk's mother](/assets/images/war/14.png)  
+![Natalya Polovynka as Sofia Kulyk's mother](../assets/images/war/14.png)  
 *Natalya Polovynka as the mother of missing military pilot Sofia Kulyk in Zaza Buadze’s “Mothers of the Apostles” (2020).*  
 
 Sofia ventures into **occupied Donbas**, where she encounters:  
@@ -258,7 +258,7 @@ It is clear that he is **selling this story to the audience using well-establish
 
 **Comedian Heorhiy Deliev**, in the role of **terrorist Batianya (Pop)** in **Serhii Loznytsia’s** *“Donbas”* (**2018**), proves to be **quite organic**.  
 
-![Heorhiy Deliev as terrorist Batianya](/assets/images/war/16.png)  
+![Heorhiy Deliev as terrorist Batianya](../assets/images/war/16.png)  
 *Heorhiy Deliev as terrorist Batianya (Pop) in Serhii Loznytsia’s “Donbas” (2018).*  
 
 All the terrorists in **occupied territories** are, in essence, **clowns**, lending a **circus-like atmosphere** not only to this film but also to the **documentary footage emerging from those regions**.  
@@ -271,7 +271,7 @@ This is partly because **director Loznytsia captures the tone of a tale that res
 
 **Vyacheslav Dovzhenko**, as the **commander of the Donetsk Airport[^6]defense group** with the call sign **"Serpen" (August)** in **Akhtem Seitablaev’s** *“Cyborgs”* (**2017**), faced the **complex challenge** of authentically representing a **heroic struggle**.  
 
-![Vyacheslav Dovzhenko in Cyborgs](/assets/images/war/15.png)  
+![Vyacheslav Dovzhenko in Cyborgs](../assets/images/war/15.png)  
 *Vyacheslav Dovzhenko as the commander of the Donetsk Airport defense group in Akhtem Seitablaev’s “Cyborgs” (2017).*  
 
 ### **The challenge:**  

@@ -1,6 +1,6 @@
 # **Metamodernism Manifesto**
 
-![Metamodernism Manifesto](/assets/images/meta/1.png) 
+![Metamodernism Manifesto](../assets/images/meta/1.png) 
 
 ## **The reality has not become more complicated.**
 
@@ -28,7 +28,7 @@ The modern man reminds a patient of **Asperger’s Syndrome**, who notices all t
 >  - In Wes Anderson’s films, **everything** is true.
 >  - Dogs and foxes really talk, all events are interconnected, and every object moves in a perfect **symmetrical** and **nested** fashion, and nested ninety degrees in exquisite nolling.
 
-![Metamodernism Manifesto - nolling](/assets/images/meta/2.png) 
+![Metamodernism Manifesto - nolling](../assets/images/meta/2.png) 
 
 ---
 
@@ -50,7 +50,7 @@ To acknowledge modernity and escape the **sweet captivity** of archaic conscious
 
 ## **The Value of Authorial Purity and the Ideal of Metamodernism**
 
-![Metamodernism Manifesto - The Value of Authorial Purity and the Ideal of Metamodernism](/assets/images/meta/3.png) 
+![Metamodernism Manifesto - The Value of Authorial Purity and the Ideal of Metamodernism](../assets/images/meta/3.png) 
 
 The phenomenon of the value of the author’s purity is very widespread among literary critics. Purity is a set of specific characteristics of the direction. An author must comply with them in order to be acclaimed by a critic. The impurity of another’s paradigm is felt by the critic literally as dirt. This is the source of mutual contempt. It is similar to the caste system in ancient India.
 
@@ -66,7 +66,7 @@ Each time there are different forms of purity. There are romantic-realistic, mod
 
 Metamodernism should look like **nightmarish chaos**, but instead, it preserves **snippets**, small **interludes** that prevent confusion.
 
-![Metamodernism Manifesto - Snippets in Metamodernism](/assets/images/meta/4.png) 
+![Metamodernism Manifesto - Snippets in Metamodernism](../assets/images/meta/4.png) 
 
 ---
 
@@ -83,13 +83,13 @@ Suzy Bishop carries six books she borrowed but never returned:
 5. *The Light of Seven Matchsticks*
 6. *The Return of Auntie Lorraine*
 
-![Metamodernism Manifesto - Suzy Bishop's books](/assets/images/meta/5.png) 
+![Metamodernism Manifesto - Suzy Bishop's books](../assets/images/meta/5.png) 
 
 None of these books actually exist. Anderson came up with all these names and wrote snippets of these books to cite aloud in the movie. The artists commissioned by the director painted the covers. All of these books are fantasy novels for teenage girls. Such novels occupy a significant place in English-speaking culture, so much so that they have already begun to transcend their traditional area of existence. For example, British singer and leader of **The Cure** band **Robert Smith** used the figurative system of fantasy novel of **Penelope Farmer** *“Charlotte Sometimes”* for one of his songs of the same title.
 
 Of course, snippets have existed in art for a very long time, but only in metamodernism they are always simulated by the author, present in large numbers and characterized by excessive detailization.
 
-![Metamodernism Manifesto - Suzy Bishop's books](/assets/images/meta/6.png) 
+![Metamodernism Manifesto - Suzy Bishop's books](../assets/images/meta/6.png) 
 
 ---
 
@@ -117,7 +117,7 @@ Much conflict in the modern world arises from a **misunderstanding** of its **na
 2. **There are no such things as are defined in such a way that they can be said to be certain.**
 3. **There are no things that can be said to be in place.**
 
-![Metamodernism Manifesto - Triad of Uncertainty](/assets/images/meta/7.png) 
+![Metamodernism Manifesto - Triad of Uncertainty](../assets/images/meta/7.png) 
 
 ---
 

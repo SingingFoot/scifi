@@ -1,6 +1,6 @@
 # Volodymyr Apollinaryovych Zayets
 
-![Volodymyr Zayets](/assets/images/zayets2.jpg)
+![Volodymyr Zayets](../assets/images/zayets2.jpg)
 
 **Birth:** September 9, 1949, Velyka Bugayivka, Vasylkiv Raion, Kyiv Oblast, Ukrainian SSR  
 **Death:** December 20, 2002, Yemen  

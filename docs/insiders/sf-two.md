@@ -1,6 +1,6 @@
 # Science Fiction in Ukraine (part II)
 
-![Ukrainian Science Fiction](/assets/images/scifi_ws2.png)
+![Ukrainian Science Fiction](../assets/images/scifi_ws2.png)
 
 The Ukrainian authors of the 1970s focused on the search for the purpose of human existence, which led to the beginning of the **Golden Age of Ukrainian science fiction (SF)**. In the 1980s, a national revival began, and SF developed greater local markets and themes. The economic crisis of the 1990s nearly destroyed SF literature in Ukraine. Subsequently, the Russification of the 2000s emerged, and, in the 2010s–2020s, an era of **metamodernism** began, resulting in a second wave of national revival.
 

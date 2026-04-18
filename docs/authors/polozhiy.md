@@ -1,6 +1,6 @@
 # Viktor Ivanovych Polozhiy
 
-![Viktor Ivanovych Polozhiy](/assets/images/polozhiy.jpg)
+![Viktor Ivanovych Polozhiy](../assets/images/polozhiy.jpg)
 
 **Birth:** August 11, 1949, Staroziniv, Bilopillia Raion, Sumy Oblast, Ukrainian SSR  
 **Death:** May 21, 2004, Ukraine  

@@ -180,6 +180,40 @@ not_in_nav: |
   /tutorials/**/*.md
 
 # Page tree
+exclude_docs: |
+  conventions.md
+  alternatives.md
+  browser-support.md
+  creating-your-site.md
+  customization.md
+  enterprise-support.md
+  license.md
+  philosophy.md
+  publishing-your-site.md
+  support.md
+  upgrade.md
+  blog/**/*
+  changelog/**/*
+  guides/**/*
+  plugins/**/*
+  reference/**/*
+  schema/**/*
+  tutorials/**/*
+  authors/extensions/**/*
+  insiders/changelog/**/*
+  insiders/community-experts-program/**/*
+  insiders/getting-started.md
+  insiders/upgrade.md
+  insiders/sponsoring-tiers.md
+  insiders/how-to-sponsor.md
+  insiders/payment-and-billing.md
+  insiders/access-management.md
+  insiders/runtime-and-cancellation.md
+  insiders/privacy.md
+  insiders/license.md
+  works/adding-translations.md
+  works/making-a-pull-request.md
+
 nav:
   - Home: index.md
   - About me:
