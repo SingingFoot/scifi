@@ -244,6 +244,7 @@ nav:
     - Science Fiction in Ukraine (part I): insiders/sf-one.md
     - Science Fiction in Ukraine (part II): insiders/sf-two.md
     - MT 180: insiders/mt-180.md
+    - Sandro Kasyanyuk: insiders/kasyanyuk.md
     #- Sponsoring tiers: insiders/sponsoring-tiers.md
     #- How to sponsor: insiders/how-to-sponsor.md
     #- Additional information:
@@ -323,6 +324,7 @@ nav:
       - Metamodernism Manifesto: works/manifesto.md
       - The Faces of War: works/faces-of-war.md
       - Struggle for reality: works/struggle-for-reality.md
+      - Metamodern oscillation: works/ostrykov.md
       #- Adding translations: contributing/adding-translations.md
       #- Making a pull request: contributing/making-a-pull-request.md
       #- Asking a question: https://github.com/squidfunk/mkdocs-material/discussions
