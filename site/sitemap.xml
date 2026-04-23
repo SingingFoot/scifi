@@ -2,66 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sci-fi-ua.netlify.app/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/getting-started/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/authors/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/authors/berezhny/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/authors/kasyanyuk/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/authors/polozhiy/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/authors/zayets/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/blog/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/insiders/kasyanyuk/</loc>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/mt-180/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/sf-one/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/insiders/sf-two/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/works/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/works/faces-of-war/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/works/manifesto/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/works/ostrykov/</loc>
+         <lastmod>2026-04-23</lastmod>
     </url>
     <url>
          <loc>https://sci-fi-ua.netlify.app/works/struggle-for-reality/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-23</lastmod>
     </url>
 </urlset>
