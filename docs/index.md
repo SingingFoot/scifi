@@ -6,4 +6,3 @@ social:
     title: Ukrainian Sci-fi
 ---
 
-Welcome to Material for MkDocs.
