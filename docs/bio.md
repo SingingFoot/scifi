@@ -38,7 +38,7 @@ My professional experience includes over:
 
     **GlobalLogic** | *Senior Technical Writer*
 
-    📅 Nov 2021 – Feb 2025 | Kyiv, Ukraine
+    📅 Nov 2021 – Jul 2023 | Kyiv, Ukraine
 
     Created developer and user documentation using MkDocs, GitHub, and VS Code.
     Developed and edited manuals, user guides, and API documentation.
