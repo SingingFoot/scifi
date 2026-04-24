@@ -26,6 +26,16 @@ My professional experience includes over:
 
 ??? note "My CV"
 
+    **SimpliGov** | *Senior Technical Writer*
+
+    📅 Jul 2023 – Apr 2026 | Budapest, Hungary (Remote)
+
+    API & Developer Documentation: Designing and maintaining comprehensive API references to ensure a seamless integration experience for external developers.
+    Release Management: Owning the end-to-end process for Release Notes and Status Page updates, ensuring transparent communication regarding product evolution and system reliability.
+    Internal Knowledge Base: Architecting and managing complex internal documentation on Confluence, streamlining onboarding and technical alignment for engineering teams.
+    User Empowerment: Creating high-quality User Guides and engaging video tutorials to reduce support tickets and enhance user self-service capabilities.
+    Full-Cycle Content Strategy: Translating complex technical requirements into clear, actionable documentation for both technical and non-technical stakeholders.
+
     **GlobalLogic** | *Senior Technical Writer*
 
     📅 Nov 2021 – Feb 2025 | Kyiv, Ukraine
