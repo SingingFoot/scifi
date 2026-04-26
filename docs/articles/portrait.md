@@ -16,7 +16,6 @@ explained in light of the realities of 1969 (the year the ﬁrst cartoon about h
 *Fig.1 The only noticeable book in Crocodile Ghena’s library is Marx’s “Capital”*
 
 
-
 Ghena is a young Marxist of the 1960s, from the circle of Genrikh Batishchev[^2]. Obsessed
 with the idea of returning to “true socialism”, he avidly reads the young Marx, Gramsci,
 Marcuse, and Ivan Illich. He tries to preach to the Pioneers[^3]. He works in a cushy but
@@ -33,14 +32,7 @@ arrived from Africa. For a short time he works at Levada’s Institute for Concr
 Studies. He lives in a one-room apartment near Aeroport metro, inherited from his
 grandmother, a star of Stalin-era cinema (who had already gotten him out of trouble more
 than once, and would do so again). His circle of acquaintances and interests naturally leads
-him into the editorial oﬃces of Problems of Peace and Socialism[^5]. In the 1990s, watching the
-
-
-
-
-
-
-astonishing career turns of his colleagues at the journal — Yuri Kariakin and Vladimir Lukin —
+him into the editorial oﬃces of Problems of Peace and Socialism[^5]. In the 1990s, watching the astonishing career turns of his colleagues at the journal — Yuri Kariakin and Vladimir Lukin —
 he too prepares to enter politics. And so the aging, heavier, disillusioned Ghena — Gennady
 Andreyevich — embarks on a new life.” (Munipov 2016)
 
@@ -75,9 +67,7 @@ of revolutionary legitimacy, it also produced tensions: Soviet inﬂuence fueled
 factionalism, particularly after Khrushchev’s de-Stalinization in 1956, and eventually led to
 the 1962 split that created the Communist Party of Brazil (PCdoB). Moreover, conservatives
 and the military exploited fears of “international Bolshevism” to justify the 1964 coup,
-demonstrating how Soviet authority over Brazilian Marxism, much like Gena’s tutelage of
-
-Cheburashka, was both formative and destabilizing—at once a source of identity and a cause
+demonstrating how Soviet authority over Brazilian Marxism, much like Gena’s tutelage of Cheburashka, was both formative and destabilizing—at once a source of identity and a cause
 of dependence and conﬂict.
 
 ![Fig.2](../assets/images/portrait/img-001.jpg)
@@ -125,31 +115,22 @@ generations of Russians (and many people in former Soviet republics including Uk
 Cheburashka represents innocence, childhood, and shared Soviet identity. By co-opting this
 ﬁgure, Russia tries to get many goals.
 
-   ●   Mobilize nostalgia – Cheburashka is a character almost every Russian recognizes
-       with affection. Using it in war propaganda evokes emotional unity and taps into
-       Soviet-era pride.
-
-   ●   Mask aggression with innocence – a “cute” character softens the image of war,
-       making military actions appear less brutal or even playful.
-
-   ●   Reassert cultural dominance – just as Lenin statues once symbolized Soviet power
-       across Ukraine, using Cheburashka signals that Russian culture still claims
-       ownership of shared Soviet heritage.
-
-   ●   Produce propaganda for children – Cheburashka toys made by schoolchildren for
-       soldiers normalize war, turning participation in aggression into a patriotic duty
-       disguised as play.
+- **Mobilize nostalgia** – Cheburashka is a character almost every Russian recognizes with affection. Using it in war propaganda evokes emotional unity and taps into Soviet-era pride.
+- **Mask aggression with innocence** – a “cute” character softens the image of war, making military actions appear less brutal or even playful.
+- **Reassert cultural dominance** – just as Lenin statues once symbolized Soviet power across Ukraine, using Cheburashka signals that Russian culture still claims ownership of shared Soviet heritage.
+- **Produce propaganda for children** – Cheburashka toys made by schoolchildren for soldiers normalize war, turning participation in aggression into a patriotic duty disguised as play.
 
 This whimsical cartoon image took on a darker meaning in today’s Russia: Cheburashka is
 now deployed as a talisman by Russian invading forces in Ukraine, with toys and symbols
 sent to the front to inspire soldiers and “soften” the public image of aggression.
 
-Bibliography
+### Bibliography
 
 Munipov 2016: Munipov, Alexey. Facebook post, 30 March 2016.
 https://www.facebook.com/munipov/posts/10207862382130548
 
 ---
+### Footnotes
 
 [^1]: Crocodile Ghena and Cheburashka are characters from a popular Soviet children’s cartoon
 created in the 1960s by Eduard Uspensky. Ghena is depicted as a crocodile who works in a zoo and
