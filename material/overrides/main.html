@@ -4,6 +4,59 @@
 {% extends "base.html" %}
 {% block extrahead %}
   <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.7c86dd97.min.css' | url }}">
+
+  {#- Canonical URL -#}
+  <link rel="canonical" href="{{ config.site_url }}{{ page.url }}" />
+
+  {#- Open Graph -#}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="{{ config.site_name }}" />
+  <meta property="og:title" content="{{ page.title }} — {{ config.site_name }}" />
+  <meta property="og:description" content="{{ config.site_description }}" />
+  <meta property="og:url" content="{{ config.site_url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ config.site_url }}assets/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ page.title }} — {{ config.site_name }}" />
+  <meta name="twitter:description" content="{{ config.site_description }}" />
+
+  {#- Author & geo -#}
+  <meta name="author" content="Oleh Shynkarenko" />
+  <meta name="geo.region" content="UA" />
+
+  {#- JSON-LD structured data (homepage only) -#}
+  {% if page.url == "" or page.url == "./" %}
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Oleh Shynkarenko",
+      "url": "{{ config.site_url }}",
+      "sameAs": [
+        "https://github.com/SingingFoot",
+        "https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ",
+        "https://orcid.org/0009-0001-1690-8967",
+        "https://www.researchgate.net/profile/Oleh-Shynkarenko",
+        "https://medbiotech.academia.edu/OlehShynkarenko"
+      ],
+      "jobTitle": "PhD Candidate, Writer, Journalist",
+      "description": "Ukrainian journalist, writer, and researcher specialising in science fiction literature and philosophy.",
+      "knowsAbout": ["Ukrainian science fiction", "Metamodernism", "Philosophy", "Ukrainian literature"]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ config.site_name }}",
+      "url": "{{ config.site_url }}",
+      "description": "{{ config.site_description }}",
+      "author": {
+        "@type": "Person",
+        "name": "Oleh Shynkarenko"
+      }
+    }
+  ]
+  </script>
+  {% endif %}
 {% endblock %}
 {% block announce %}
 {#

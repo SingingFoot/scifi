@@ -23,7 +23,9 @@ site_name: Ukrainian Sci-Fi
 site_url: https://sci-fi-ua.netlify.app/
 site_author: Oleh Shynkarenko
 site_description: >-
-  Exploring the past, present, and future of Ukrainian science fiction literature.
+  Ukrainian science fiction literature — past, present, and future.
+  Research by Oleh Shynkarenko: PhD candidate, writer, journalist from Ukraine.
+  Articles, books, authors, and academic work on Ukrainian sci-fi.
 
 # Repository
 repo_name: SingingFoot
@@ -88,6 +90,7 @@ plugins:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
       minify_html: true
+  - meta
 
 # Hooks
 hooks:
@@ -102,19 +105,22 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-  social: 
+  social:
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/bluesky
-      link: https://bsky.app/profile/squidfunk.bsky.social
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
+      link: https://github.com/SingingFoot
+      name: Oleh Shynkarenko on GitHub
     - icon: fontawesome/brands/x-twitter
-      link: https://x.com/squidfunk
+      link: https://x.com/OlehShynkarenko
+      name: Oleh Shynkarenko on X
+    - icon: fontawesome/solid/graduation-cap
+      link: https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ
+      name: Google Scholar
+    - icon: fontawesome/brands/orcid
+      link: https://orcid.org/0009-0001-1690-8967
+      name: ORCID
+    - icon: fontawesome/solid/book
+      link: https://www.researchgate.net/profile/Oleh-Shynkarenko
+      name: ResearchGate
 
 # Extensions
 markdown_extensions:
