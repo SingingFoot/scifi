@@ -1,0 +1,46 @@
+{#-
+  Dark content page — matches the site's cosmic dark background.
+  Used by: all individual article and book pages.
+-#}
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>
+    /* ── dark background matching the hero pages ── */
+    body,
+    .md-main,
+    .md-main__inner,
+    .md-content,
+    .md-content__inner {
+      background: #05050f !important;
+    }
+
+    /* ── hide edit / view-source buttons ── */
+    .md-content__button { display: none !important }
+
+    /* ── hide right-hand ToC sidebar (optional: remove if you want to keep it) ── */
+    /* @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } } */
+
+    /* ── subtle top glow to echo the hero ── */
+    .md-content__inner::before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0; right: 0;
+      width: 500px; height: 400px;
+      background: radial-gradient(ellipse at top right, rgba(16,80,255,.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── readable text on dark bg ── */
+    .md-typeset {
+      --md-default-fg-color:           #e8e8f0;
+      --md-default-fg-color--light:    rgba(232,232,240,.65);
+      --md-default-fg-color--lighter:  rgba(232,232,240,.40);
+      --md-default-fg-color--lightest: rgba(232,232,240,.12);
+      --md-default-bg-color:           #05050f;
+    }
+  </style>
+{% endblock %}

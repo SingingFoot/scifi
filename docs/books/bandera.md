@@ -1,4 +1,5 @@
 ---
+template: dark-page.html
 description: A novel that refuses to resolve Stepan Bandera into a single meaning — exposing how the desire for a flawless national symbol is itself a form of dangerous simplification.
 tags:
   - Novel

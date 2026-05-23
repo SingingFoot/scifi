@@ -146,11 +146,11 @@ I am proud to have presented my research at international conferences, including
 - **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, Hungary, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
 - **Collision Points XII** (Veszprém, Hungary, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
 - **Young Philosophers Conference 10** (Pécs, Hungary, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
-- **Interdisciplinary Doctoral Student Conference 2025** (Pécs, Hungary, IDK2025): Presentation on "An unfortunate Benjamin's mistake". 
+- **Interdisciplinary Doctoral Student Conference 2025** (Pécs, Hungary, IDK2025): Presentation on "An unfortunate Benjamin's mistake".
 
-??? note "An unfortunate Benjamin's mistake"
+    ??? note "An unfortunate Benjamin's mistake"
 
-    ![Interdisciplinary Doctoral Student Conference 2025](assets/images/idk2025.png)
+        ![Interdisciplinary Doctoral Student Conference 2025](assets/images/idk2025.png)
 
 - **Budapest Workshop on Philosophy and Technology 2025** (Budapest, Hungary, BudPT25): Presentation "Ethical Ghosts on a Robotic Battlefield in Ukraine"
 - **Young Philosophers Conference 2025** (Budapest, Hungary, National University of Public Service): Presentation "Vasyl Berezhnyi: Collapse of Techno-Communism"
@@ -158,6 +158,17 @@ I am proud to have presented my research at international conferences, including
 - **The American Association of Teachers of Slavic and East European Languages Conference 2026** (New Orleans, LA, AATSEEL 2026): The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine
 - **Philosophy in Technology – Different Perspectives, PinT 5th Edition** (Wrocław, Poland, April 10, 2026): The Illusion of Understanding: Beyond the Chinese Room
 
+
+## Research Internship
+
+**Ilko Kucheriv Democracy Partnership Programme**
+Institute for Public Affairs (IVO), Bratislava · July – August 2014
+
+Supported by PASOS (Prague) and the National Endowment for Democracy (USA).
+
+Activities included research on the transformation of the Ukrainian media market after the Euromaidan, meetings with Slovak scholars and journalists, and a comparative study of democratic transitions in Central Europe.
+
+Research output: [Ukrainian Media after Euromaidan](https://www.ivo.sk/buxus/docs//rozne/Shynkarenko_UkrainianMediaAfterEuromaidan_2014.pdf) (PDF)
 
 ## Why Ukrainian Sci-Fi?
 

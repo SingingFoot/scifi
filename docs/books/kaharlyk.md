@@ -1,4 +1,5 @@
 ---
+template: dark-page.html
 description: A post-apocalyptic novel set a century after Russian-Ukrainian war — where history has become rumors, identity a set of competing uploads, and language the last unstable ground.
 tags:
   - Novel

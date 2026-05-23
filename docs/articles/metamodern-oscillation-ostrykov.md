@@ -1,4 +1,5 @@
 ---
+template: dark-page.html
 description: Analysis of Pavlo Ostrikov's Ukrainian sci-fi film "You Are the Cosmos" (2024) through six interpretive frameworks — courtly love, existentialism, Kubrick, and geopolitical allegory.
 tags:
   - Film Analysis

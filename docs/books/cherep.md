@@ -1,4 +1,5 @@
 ---
+template: dark-page.html
 description: A grotesque journey through propaganda and imperial myth — dissecting the mental machinery that makes Russian imperialism possible from the inside.
 tags:
   - Novel
