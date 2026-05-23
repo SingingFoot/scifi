@@ -58,22 +58,103 @@
   </script>
   {% endif %}
 {% endblock %}
+
+{% block tabs %}
+  {{ super() }}
+
+  {#- ── EN | UA LANGUAGE SWITCHER (shared across all pages) ── -#}
+  <style>
+    #lang-sw {
+      position: fixed;
+      top: 56px;
+      right: 14px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      background: rgba(5,5,15,.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 6px;
+      overflow: hidden;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+    }
+    .ls-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: rgba(232,232,240,.4);
+      padding: .3rem .55rem;
+      transition: color .18s, background .18s;
+      line-height: 1;
+    }
+    .ls-btn:hover { color: #e8e8f0 }
+    .ls-btn.ls-active {
+      color: #4a9eff;
+      background: rgba(74,158,255,.12);
+    }
+    .ls-sep {
+      font-size: .65rem;
+      color: rgba(255,255,255,.15);
+      pointer-events: none;
+      line-height: 1;
+    }
+  </style>
+
+  <div id="lang-sw">
+    <button class="ls-btn ls-active" data-lang="en">EN</button>
+    <span class="ls-sep">|</span>
+    <button class="ls-btn" data-lang="ua">UA</button>
+  </div>
+
+  <script>
+  (function () {
+    var navMap = {
+      en: { 'Home':'Home', 'About me':'About me', 'My PhD':'My PhD',
+            'Authors':'Authors', 'My Articles':'My Articles', 'My Books':'My Books' },
+      ua: { 'Home':'Головна', 'About me':'Про мене', 'My PhD':'Мій PhD',
+            'Authors':'Автори', 'My Articles':'Мої статті', 'My Books':'Мої книги' }
+    };
+
+    var btns = document.querySelectorAll('#lang-sw .ls-btn');
+    var currentLang = localStorage.getItem('site-lang') || 'en';
+
+    function applyLang(lang) {
+      /* swap all data-en / data-ua elements */
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        el.innerHTML = lang === 'ua' ? el.dataset.ua : el.dataset.en;
+      });
+      /* translate main nav tabs */
+      var map = navMap[lang] || navMap.en;
+      document.querySelectorAll('.md-tabs__link').forEach(function(link) {
+        var txt = link.textContent.trim();
+        if (!link.dataset.navOrig) link.dataset.navOrig = txt;
+        if (map[link.dataset.navOrig]) link.textContent = map[link.dataset.navOrig];
+      });
+      /* update switcher button states */
+      btns.forEach(function(b) {
+        b.classList.toggle('ls-active', b.dataset.lang === lang);
+      });
+      currentLang = lang;
+      localStorage.setItem('site-lang', lang);
+    }
+
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
+    });
+
+    /* apply saved preference on load */
+    applyLang(currentLang);
+  }());
+  </script>
+{% endblock %}
+
 {% block announce %}
 {#
-    For updates follow <strong>@squidfunk</strong> on
-  <a rel="me" href="https://fosstodon.org/@squidfunk">
-    <span class="twemoji mastodon">
-      {% include ".icons/fontawesome/brands/mastodon.svg" %}
-    </span>
-    <strong>Fosstodon</strong>
-  </a>
-  and
-  <a href="https://x.com/squidfunk">
-    <span class="twemoji twitter">
-      {% include ".icons/fontawesome/brands/twitter.svg" %}
-    </span>
-    <strong>Twitter</strong>
-  </a>
+  Announce bar — currently unused.
 #}
 {% endblock %}
 {% block scripts %}
