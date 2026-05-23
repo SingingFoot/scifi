@@ -1,3 +1,7 @@
+---
+template: author-page.html
+---
+
 # Sandro Kasyanyuk
 
 ## Sandro Kasyanyuk – Ukrainian Soviet Writer and Pioneer of Proto-Science Fiction

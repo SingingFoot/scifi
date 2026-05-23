@@ -1,3 +1,7 @@
+---
+template: author-page.html
+---
+
 # Viktor Ivanovych Polozhiy
 
 ![Viktor Ivanovych Polozhiy](../assets/images/polozhiy.jpg)

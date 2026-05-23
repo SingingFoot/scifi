@@ -1,3 +1,7 @@
+---
+template: bio.html
+---
+
 # Oleh Shynkarenko
 
 *PhD Candidate in Philosophy University of Pécs, Faculty of Philosophy*

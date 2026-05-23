@@ -1,0 +1,610 @@
+{#-
+  Custom PhD Research page
+  Same dark cosmic design as home.html and bio.html
+-#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── MkDocs overrides ── */
+    .md-header   { position: initial }
+    .md-main__inner { margin: 0 }
+    .md-content  { display: none }
+    @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
+
+    /* ── Design tokens (same as home & bio) ── */
+    :root {
+      --c-bg:       #05050f;
+      --c-surface:  rgba(255,255,255,.04);
+      --c-border:   rgba(255,255,255,.08);
+      --c-blue:     #4a9eff;
+      --c-blue-dim: rgba(74,158,255,.12);
+      --c-gold:     #ffd54f;
+      --c-gold-dim: rgba(255,213,79,.12);
+      --c-text:     #e8e8f0;
+      --c-muted:    rgba(232,232,240,.50);
+      --radius:     12px;
+      --ease:       cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── Base ── */
+    .pp {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    .pp a { color: inherit }
+    .pp-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem }
+    .pp-wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem }
+
+    .pp-pill {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--c-blue); background: var(--c-blue-dim);
+      padding: .25rem .8rem; border-radius: 50px;
+      margin-bottom: .9rem;
+    }
+    .pp-h2 {
+      font-size: clamp(1.6rem,3vw,2.4rem);
+      font-weight: 800; color: #fff;
+      margin: 0 0 1rem; line-height: 1.15;
+    }
+    .pp-sec { padding: 4rem 0 }
+    .pp-divider {
+      border: none;
+      border-top: 1px solid var(--c-border);
+      margin: 0;
+    }
+
+    /* ── PROSE ── */
+    .pp-prose p {
+      color: var(--c-muted); font-size: 1rem;
+      line-height: 1.8; margin-bottom: 1rem;
+    }
+    .pp-prose strong { color: var(--c-text) }
+    .pp-prose em { color: var(--c-blue); font-style: normal; font-weight: 600 }
+
+    /* ── HERO ── */
+    .pp-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0 4.5rem;
+    }
+    #pp-stars { position: absolute; inset: 0; width: 100%; height: 100% }
+    .pp-glow {
+      position: absolute; border-radius: 50%;
+      filter: blur(120px); opacity: .14; pointer-events: none;
+    }
+    .pp-glow-blue { width: 600px; height: 600px; background: #1050ff; top: -20%; right: -10% }
+    .pp-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -15%; left: -8% }
+
+    .pp-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 760px;
+    }
+    .pp-hero-eye {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--c-gold); margin-bottom: 1.1rem;
+    }
+    .pp-hero-eye::before {
+      content: ''; width: 28px; height: 2px;
+      background: var(--c-gold); flex-shrink: 0;
+    }
+    .pp-hero-title {
+      font-size: clamp(1.9rem,4vw,3rem);
+      font-weight: 800; color: #fff;
+      margin: 0 0 1rem; line-height: 1.15;
+    }
+    .pp-hero-sub {
+      font-size: 1rem; color: var(--c-muted);
+      line-height: 1.8; max-width: 680px;
+      margin-bottom: 0;
+    }
+
+    /* ── THESIS CARD ── */
+    .pp-thesis {
+      background: var(--c-surface);
+      border: 1px solid rgba(74,158,255,.2);
+      border-radius: var(--radius);
+      padding: 2rem; margin-top: 2.5rem;
+      position: relative; overflow: hidden;
+      max-width: 760px;
+    }
+    .pp-thesis::before {
+      content: '\201C';
+      position: absolute; top: -.5rem; left: 1.2rem;
+      font-size: 8rem; color: var(--c-blue);
+      opacity: .07; font-family: Georgia, serif;
+      line-height: 1; pointer-events: none;
+    }
+    .pp-thesis-t {
+      font-size: 1.15rem; font-weight: 700; color: #fff;
+      line-height: 1.45; margin-bottom: .7rem;
+    }
+    .pp-thesis-m { font-size: .875rem; color: var(--c-muted) }
+    .pp-thesis-m strong { color: var(--c-blue) }
+
+    /* ── ERA TIMELINE ── */
+    .pp-eras { display: flex; flex-direction: column; gap: 0 }
+
+    .pp-era {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0 2.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--c-border);
+      position: relative;
+    }
+    .pp-era:last-child { border-bottom: none }
+
+    .pp-era-aside {
+      padding-top: .2rem;
+    }
+    .pp-era-decade {
+      font-size: 2rem; font-weight: 800;
+      color: var(--c-gold); line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .pp-era-label {
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--c-muted);
+    }
+    .pp-era-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--c-blue); margin-top: 1.2rem;
+      box-shadow: 0 0 10px var(--c-blue);
+    }
+
+    .pp-era-body h3 {
+      font-size: 1.15rem; font-weight: 800; color: #fff;
+      margin: 0 0 .8rem; line-height: 1.3;
+    }
+    .pp-era-body p {
+      font-size: .95rem; color: var(--c-muted);
+      line-height: 1.8; margin-bottom: .85rem;
+    }
+    .pp-era-body p:last-child { margin-bottom: 0 }
+    .pp-era-body strong { color: var(--c-text) }
+
+    /* author / work pills inside era text */
+    .pp-era-body .pp-ref {
+      display: inline; font-style: normal;
+      color: var(--c-blue); font-weight: 600;
+    }
+
+    /* ── AUTHOR CHIPS ── */
+    .pp-chips {
+      display: flex; flex-wrap: wrap; gap: .5rem;
+      margin-top: 1rem;
+    }
+    .pp-chip {
+      font-size: .78rem; font-weight: 600;
+      color: var(--c-text);
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      padding: .28rem .75rem; border-radius: 50px;
+    }
+
+    /* ── ARTICLE CARDS ── */
+    .pp-articles { display: flex; flex-direction: column; gap: .75rem; margin-top: .5rem }
+    .pp-article-card {
+      display: grid;
+      grid-template-columns: 52px 1fr 28px;
+      gap: 1.2rem;
+      align-items: center;
+      padding: 1.25rem 1.4rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color .22s var(--ease), background .22s var(--ease);
+    }
+    .pp-article-card:hover {
+      border-color: rgba(74,158,255,.35);
+      background: rgba(74,158,255,.05);
+    }
+    .pp-article-num {
+      font-size: 1.6rem; font-weight: 800;
+      color: rgba(74,158,255,.25);
+      line-height: 1; font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+    .pp-article-card:hover .pp-article-num { color: var(--c-blue) }
+    .pp-article-t {
+      font-size: .95rem; font-weight: 700;
+      color: var(--c-text); margin-bottom: .35rem;
+      line-height: 1.3;
+    }
+    .pp-article-d {
+      font-size: .82rem; color: var(--c-muted);
+      line-height: 1.55;
+    }
+    .pp-article-d em { color: var(--c-blue); font-style: normal }
+    .pp-article-arrow {
+      font-size: 1.1rem; color: var(--c-muted);
+      flex-shrink: 0; transition: color .2s var(--ease), transform .2s var(--ease);
+    }
+    .pp-article-card:hover .pp-article-arrow { color: var(--c-blue); transform: translateX(4px) }
+
+    /* ── RESEARCH IMPORTANCE ── */
+    .pp-importance {
+      background: linear-gradient(135deg, rgba(74,158,255,.08) 0%, rgba(255,213,79,.06) 100%);
+      border: 1px solid rgba(74,158,255,.15);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+
+    /* ── FADE ── */
+    .pp-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s var(--ease), transform .5s var(--ease) }
+    .pp-fade.pp-vis { opacity: 1; transform: none }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .pp-era { grid-template-columns: 1fr }
+      .pp-era-aside { display: flex; align-items: center; gap: 1rem; padding-bottom: .5rem }
+      .pp-era-dot { margin-top: 0; flex-shrink: 0 }
+    }
+  </style>
+
+  <div class="pp">
+
+    <!-- ══════ HERO ══════ -->
+    <section class="pp-hero">
+      <canvas id="pp-stars"></canvas>
+      <div class="pp-glow pp-glow-blue"></div>
+      <div class="pp-glow pp-glow-gold"></div>
+
+      <div class="pp-wrap">
+        <div class="pp-hero-inner pp-fade">
+          <div class="pp-hero-eye">PhD Research &middot; University of P&eacute;cs</div>
+          <h1 class="pp-hero-title">Exploring the Development of Ukrainian Science Fiction</h1>
+          <p class="pp-hero-sub">
+            The genre of Ukrainian science fiction has undergone significant transformations,
+            shaped by the political, cultural, and technological shifts of each era. From its
+            origins in the early 20th century to its contemporary manifestations, Ukrainian SF
+            reflects a complex interplay of ideology, mysticism, and societal aspirations.
+            My PhD research focuses on this dynamic evolution, exploring how the genre has
+            mirrored and responded to the changing conditions of Ukrainian society.
+          </p>
+
+          <div class="pp-thesis pp-fade">
+            <div class="pp-thesis-t">
+              &ldquo;From Utopia to Dystopia: Ukrainian Science Fiction
+              and the Collapse of Techno-Communism&rdquo;
+            </div>
+            <div class="pp-thesis-m">
+              <strong>University of P&eacute;cs</strong> &middot;
+              Doctoral School of Philosophy &middot; Full-time, Started September 2023
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ TIMELINE OF ERAS ══════ -->
+    <section class="pp-sec">
+      <div class="pp-wrap">
+        <div class="pp-pill">Historical Overview</div>
+        <h2 class="pp-h2">The Evolution of Ukrainian Science Fiction</h2>
+
+        <div class="pp-eras">
+
+          <!-- 1920s -->
+          <div class="pp-era pp-fade">
+            <div class="pp-era-aside">
+              <div class="pp-era-decade">1920s</div>
+              <div class="pp-era-label">Foundations</div>
+              <div class="pp-era-dot"></div>
+            </div>
+            <div class="pp-era-body">
+              <h3>The Foundations of Ukrainian Science Fiction</h3>
+              <p>
+                Although fantastical elements in Ukrainian literature can be traced as far back as
+                <strong>The Paterik of the Kievan Caves Monastery</strong> in the 13th century and
+                later in the works of Peter Mohyla and Feofan Prokopovich, these texts do not qualify
+                as science fiction. Science fiction as a genre emerged in response to the ideals of
+                positivism, which held that scientific and technological progress was the ultimate path
+                to human betterment. Positivism dismissed theological and metaphysical approaches,
+                emphasizing practical, tangible advancements.
+              </p>
+              <p>
+                In Ukrainian SF, this philosophy became prominent in the 1920s, during a time of rapid
+                industrialization and utopian socialist dreams. Authors like <strong>Sandro Kasyanyuk</strong>
+                celebrated machines and technology, portraying humanity's partnership with these creations
+                as essential to achieving a better socialist future. His cycle <em>Machining Humanity</em>
+                reflects this optimism, describing harmonious coexistence between humans and machines.
+                However, the genre's early works were deeply intertwined with Soviet propaganda, which
+                often overshadowed the creative freedom of authors. This period saw a glorification of
+                technological progress as a means to support communist ideals, even as cracks in the
+                utopian vision began to appear.
+              </p>
+              <div class="pp-chips">
+                <span class="pp-chip">Sandro Kasyanyuk</span>
+                <span class="pp-chip">Machining Humanity</span>
+                <span class="pp-chip">Positivism</span>
+                <span class="pp-chip">Techno-Communism</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1930s–1960s -->
+          <div class="pp-era pp-fade">
+            <div class="pp-era-aside">
+              <div class="pp-era-decade">1930–60s</div>
+              <div class="pp-era-label">Disillusionment</div>
+              <div class="pp-era-dot"></div>
+            </div>
+            <div class="pp-era-body">
+              <h3>From Naive Optimism to Ideological Disillusionment</h3>
+              <p>
+                The optimistic view of technology in the 1920s reflected the ideals of
+                <strong>techno-communism</strong>, a vision rooted in Marxist materialism and positivist
+                thought. The belief that technological progress could lead to societal liberation and a
+                classless utopia was a central theme in early Soviet Ukrainian science fiction. This vision
+                is particularly evident in works like <em>Solar Machine</em> by <strong>Volodymyr Vynnychenko</strong>
+                and <em>Argonauts of the Universe</em> by <strong>Volodymyr Vladko</strong>. These works
+                embraced the idea that proletarians, empowered by advanced machinery, could triumph over
+                the bourgeoisie and establish a communist utopia.
+              </p>
+              <p>
+                Sandro Kasyanyuk's works, though less polished, represent an early and unique articulation
+                of techno-communism in Ukrainian science fiction. His <em>First Steps</em> depicts a mechanic
+                metaphorically entwined with the machines he operates, embodying the Marxist principle that
+                human labor and technology could harmonize to achieve revolutionary change. In <em>New Utopia</em>,
+                Kasyanyuk envisions a future where technological marvels effortlessly address all societal
+                needs, reflecting the era's unshaken faith in science and industrialization.
+              </p>
+              <p>
+                The end of this era in the 1960s marked a significant departure from the rigid framework of
+                Soviet Ukrainian techno-communism. Authors began intertwining science fiction with mysticism
+                and existential exploration. <strong>Oles Berdnyk</strong> stood out as a trailblazer, blending
+                visionary themes and religious mysticism into his novels. His works challenged the dominant
+                ideology by presenting alternative visions for humanity that transcended the boundaries of
+                science and technology, leading to his imprisonment on two separate occasions.
+              </p>
+              <div class="pp-chips">
+                <span class="pp-chip">Volodymyr Vynnychenko</span>
+                <span class="pp-chip">Solar Machine</span>
+                <span class="pp-chip">Volodymyr Vladko</span>
+                <span class="pp-chip">Argonauts of the Universe</span>
+                <span class="pp-chip">Oles Berdnyk</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1970s–1980s -->
+          <div class="pp-era pp-fade">
+            <div class="pp-era-aside">
+              <div class="pp-era-decade">1970–80s</div>
+              <div class="pp-era-label">Golden Age</div>
+              <div class="pp-era-dot"></div>
+            </div>
+            <div class="pp-era-body">
+              <h3>The Golden Age of Ukrainian Science Fiction</h3>
+              <p>
+                The 1970s and 1980s marked a <strong>Golden Age</strong> for Ukrainian science fiction.
+                Free from the heavy-handed propaganda of earlier decades, writers focused on philosophical
+                questions and explored new literary styles. Works from this era often grappled with issues
+                of identity, morality, and the nature of existence. <strong>Volodymyr Savchenko's</strong>
+                <em>Self-Discovery</em> tackled themes of cloning and individuality, prefiguring later
+                postmodern explorations of identity. Similarly, <strong>Ihor Rosokhovatskyi's</strong>
+                syhom trilogy, including <em>The Guest</em> and <em>The Last Signal</em>, questioned the
+                relationship between humanity and artificial intelligence.
+              </p>
+              <p>
+                <strong>Yevhen Filimonov</strong> and <strong>Viktor Polozhyi</strong> also contributed
+                to the genre with stories that blended scientific curiosity with existential dilemmas.
+                Filimonov's <em>The Ophthalmologist</em> and <em>The Music Box</em> explored the psychological
+                impacts of technology, while Polozhyi's <em>Solar Wind</em> delved into themes of memory,
+                identity, and perception.
+              </p>
+              <div class="pp-chips">
+                <span class="pp-chip">Volodymyr Savchenko</span>
+                <span class="pp-chip">Self-Discovery</span>
+                <span class="pp-chip">Ihor Rosokhovatskyi</span>
+                <span class="pp-chip">Yevhen Filimonov</span>
+                <span class="pp-chip">Viktor Polozhyi</span>
+                <span class="pp-chip">Solar Wind</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1990s -->
+          <div class="pp-era pp-fade">
+            <div class="pp-era-aside">
+              <div class="pp-era-decade">1990s</div>
+              <div class="pp-era-label">Postmodernism</div>
+              <div class="pp-era-dot"></div>
+            </div>
+            <div class="pp-era-body">
+              <h3>Postmodernism and the Challenges of the 1990s</h3>
+              <p>
+                The collapse of the Soviet Union in the 1990s brought economic hardship and a crisis of
+                identity for Ukrainian writers. Many authors began writing in Russian to access larger
+                markets, leading to a wave of re-Russification in Ukrainian science fiction. Writers like
+                <strong>Boris Stern</strong> adopted postmodernist approaches, blending irony and satire
+                with critiques of societal decay.
+              </p>
+              <p>
+                However, notable exceptions like <strong>Halyna Pahutyak</strong> resisted Russian cultural
+                influences. Her novel <em>The Servant from Dobromyl</em> drew on Ukrainian folklore and
+                mythology, portraying Soviet imperialism as a destructive force in contrast to the enduring
+                power of Ukrainian traditions.
+              </p>
+              <div class="pp-chips">
+                <span class="pp-chip">Boris Stern</span>
+                <span class="pp-chip">Halyna Pahutyak</span>
+                <span class="pp-chip">The Servant from Dobromyl</span>
+                <span class="pp-chip">Re-Russification</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2010s -->
+          <div class="pp-era pp-fade">
+            <div class="pp-era-aside">
+              <div class="pp-era-decade">2010s</div>
+              <div class="pp-era-label">Metamodernism</div>
+              <div class="pp-era-dot"></div>
+            </div>
+            <div class="pp-era-body">
+              <h3>The Metamodern Revolution of the 2010s</h3>
+              <p>
+                The 2010s brought about a <strong>metamodern revival</strong> in Ukrainian science fiction.
+                Writers began incorporating elements of European and American SF traditions, blending them
+                with local themes and concerns. <strong>Svetlana Taratorina's</strong> <em>Lazarus</em>
+                used folklore and historical parallels to critique Russian chauvinism. Similarly,
+                <strong>Maxim Gah's</strong> <em>The Fifth Park</em> offered a cyberpunk-inspired vision
+                of a world where technocratic utopias have failed, creating spaces for surreal and poetic
+                reflections on human existence.
+              </p>
+              <div class="pp-chips">
+                <span class="pp-chip">Svetlana Taratorina</span>
+                <span class="pp-chip">Lazarus</span>
+                <span class="pp-chip">Maxim Gah</span>
+                <span class="pp-chip">The Fifth Park</span>
+                <span class="pp-chip">Cyberpunk</span>
+                <span class="pp-chip">Metamodernism</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.pp-eras -->
+      </div>
+    </section>
+
+    <hr class="pp-divider">
+
+    <hr class="pp-divider">
+
+    <!-- ══════ ARTICLES ══════ -->
+    <section class="pp-sec">
+      <div class="pp-wrap">
+        <div class="pp-pill">Read More</div>
+        <h2 class="pp-h2">Articles &amp; Research</h2>
+        <div class="pp-articles">
+
+          <a href="{{ 'phd/ukrainian-sf-part-1/' | url }}" class="pp-article-card pp-fade">
+            <div class="pp-article-num">01</div>
+            <div class="pp-article-body">
+              <div class="pp-article-t">Science Fiction in Ukraine (Part I)</div>
+              <div class="pp-article-d">1920s–1960s: From the "Red Roaring Twenties" positivism of Sandro Kasyanyuk to the hippie-cosmist mysticism of Oles Berdnyk. Published in <em>Információs Társadalom</em> XXIII, no. 4 (2023).</div>
+            </div>
+            <div class="pp-article-arrow">&#8594;</div>
+          </a>
+
+          <a href="{{ 'phd/ukrainian-sf-part-2/' | url }}" class="pp-article-card pp-fade">
+            <div class="pp-article-num">02</div>
+            <div class="pp-article-body">
+              <div class="pp-article-t">Science Fiction in Ukraine (Part II)</div>
+              <div class="pp-article-d">1970s–2020s: The Golden Age, postmodern conformism, economic crisis, re-Russification, and the metamodern revolution. Published in <em>Információs Társadalom</em> XXIV, no. 3 (2024).</div>
+            </div>
+            <div class="pp-article-arrow">&#8594;</div>
+          </a>
+
+          <a href="{{ 'phd/kasyanyuk-techno-communism/' | url }}" class="pp-article-card pp-fade">
+            <div class="pp-article-num">03</div>
+            <div class="pp-article-body">
+              <div class="pp-article-t">Sandro Kasyanyuk: Enfant Terrible of Ukrainian Techno-Communism</div>
+              <div class="pp-article-d">A close reading of the first known Ukrainian SF writer — his machine-souls, industrial erotics, and naive positivist utopia. Published in <em>SLAVIA</em> 94, 2025, 4.</div>
+            </div>
+            <div class="pp-article-arrow">&#8594;</div>
+          </a>
+
+          <a href="{{ 'phd/mt-180-thesis/' | url }}" class="pp-article-card pp-fade">
+            <div class="pp-article-num">04</div>
+            <div class="pp-article-body">
+              <div class="pp-article-t">MT 180 &mdash; National Final 2025</div>
+              <div class="pp-article-d">Three minutes, one stage, one rap in French: presenting the collapse of positivism through Ukrainian science fiction at the <em>Ma Thèse en 180 Secondes</em> national final.</div>
+            </div>
+            <div class="pp-article-arrow">&#8594;</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="pp-divider">
+
+    <!-- ══════ IMPORTANCE ══════ -->
+    <section class="pp-sec">
+      <div class="pp-wrap-narrow">
+        <div class="pp-pill">Significance</div>
+        <h2 class="pp-h2">The Importance of This Research</h2>
+
+        <div class="pp-importance pp-fade">
+          <div class="pp-prose">
+            <p>
+              By studying the evolution of Ukrainian science fiction, my research seeks to illuminate
+              how literature reflects and shapes national identity. Ukrainian SF has oscillated between
+              ideologies — from the naive optimism of techno-communism to the existential reflections
+              of the Golden Age, and finally to the metamodernist experimentation of today.
+            </p>
+            <p>
+              These shifts not only mirror the history of Ukraine but also reveal the profound ways
+              in which fiction can respond to political and cultural challenges. Through this work,
+              I aim to contribute to a deeper understanding of Ukrainian literature and its place
+              within the global tradition of science fiction.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.pp -->
+
+  <script>
+  (function () {
+    /* ── STARFIELD ── */
+    var cv = document.getElementById('pp-stars');
+    if (!cv) return;
+    var cx = cv.getContext('2d'), stars = [], W, H;
+    function resize() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight }
+    function seed() {
+      stars = [];
+      for (var i = 0; i < 160; i++)
+        stars.push({ x: Math.random()*W, y: Math.random()*H,
+          r: Math.random()*1.2+.2, o: Math.random()*.4+.06,
+          s: Math.random()*.012+.004, p: Math.random()*Math.PI*2 });
+    }
+    function draw(t) {
+      cx.clearRect(0,0,W,H);
+      for (var i=0;i<stars.length;i++) {
+        var st=stars[i], op=st.o+.12*Math.sin(t*st.s+st.p);
+        cx.beginPath(); cx.arc(st.x,st.y,st.r,0,6.283);
+        cx.fillStyle='rgba(200,218,255,'+op+')'; cx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize',function(){resize();seed()});
+    resize(); seed(); requestAnimationFrame(draw);
+
+    /* ── SCROLL FADE ── */
+    var fades = document.querySelectorAll('.pp-fade');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('pp-vis'); obs.unobserve(e.target); }
+        });
+      }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+      fades.forEach(function(el) { obs.observe(el); });
+    } else {
+      fades.forEach(function(el) { el.classList.add('pp-vis'); });
+    }
+  }());
+  </script>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

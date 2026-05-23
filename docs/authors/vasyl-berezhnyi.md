@@ -1,4 +1,10 @@
+---
+template: author-page.html
+---
+
 # Vasyl Pavlovych Berezhnyi
+
+![Vasyl Berezhnyi](../assets/images/berezhnyi.png)
 
 ## Biography
 

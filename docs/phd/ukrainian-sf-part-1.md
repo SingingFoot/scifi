@@ -1,3 +1,7 @@
+---
+template: phd-article.html
+---
+
 # Science Fiction in Ukraine (part I)
 
 ![Ukrainian Science Fiction](../assets/images/scifi_ws2.png)

@@ -1,3 +1,7 @@
+---
+template: author-page.html
+---
+
 # Volodymyr Apollinaryovych Zayets
 
 ![Volodymyr Zayets](../assets/images/zayets2.jpg)

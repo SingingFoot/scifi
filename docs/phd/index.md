@@ -1,3 +1,7 @@
+---
+template: phd.html
+---
+
 # My PhD: Exploring the Development of Ukrainian Science Fiction
 
 The genre of Ukrainian science fiction (SF) has undergone significant transformations, shaped by the political, cultural, and technological shifts of each era. From its origins in the early 20th century to its contemporary manifestations, Ukrainian SF reflects a complex interplay of ideology, mysticism, and societal aspirations. My PhD research focuses on this dynamic evolution, exploring how the genre has mirrored and responded to the changing conditions of Ukrainian society.

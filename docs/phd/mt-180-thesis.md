@@ -1,3 +1,7 @@
+---
+template: phd-article.html
+---
+
 # My Participation in MT180 – National Final 2025
 
 ## What is MT180?

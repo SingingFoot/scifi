@@ -1,0 +1,628 @@
+{#-
+  Custom About Me / Bio page
+  Same dark cosmic design as home.html
+-#}
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── MkDocs overrides ── */
+    .md-header   { position: initial }
+    .md-main__inner { margin: 0 }
+    .md-content  { display: none }
+    @media screen and (min-width: 60em)    { .md-sidebar--secondary { display: none } }
+    @media screen and (min-width: 76.25em) { .md-sidebar--primary   { display: none } }
+
+    /* ── Design tokens (same as home) ── */
+    :root {
+      --c-bg:       #05050f;
+      --c-surface:  rgba(255,255,255,.04);
+      --c-border:   rgba(255,255,255,.08);
+      --c-blue:     #4a9eff;
+      --c-blue-dim: rgba(74,158,255,.12);
+      --c-gold:     #ffd54f;
+      --c-gold-dim: rgba(255,213,79,.12);
+      --c-text:     #e8e8f0;
+      --c-muted:    rgba(232,232,240,.50);
+      --radius:     12px;
+      --ease:       cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ── Base ── */
+    .bp {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    .bp a { color: inherit }
+    .bp-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem }
+
+    .bp-pill {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--c-blue); background: var(--c-blue-dim);
+      padding: .25rem .8rem; border-radius: 50px;
+      margin-bottom: .9rem;
+    }
+    .bp-h2 {
+      font-size: clamp(1.6rem,3vw,2.4rem);
+      font-weight: 800; color: #fff;
+      margin: 0 0 .75rem; line-height: 1.15;
+    }
+    .bp-h3 {
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--c-text); margin: 0 0 .4rem;
+    }
+    .bp-sec { padding: 4rem 0 }
+    .bp-divider {
+      border: none;
+      border-top: 1px solid var(--c-border);
+      margin: 0;
+    }
+
+    /* ── HERO / PROFILE ── */
+    .bp-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0 4rem;
+    }
+    #bp-stars { position: absolute; inset: 0; width: 100%; height: 100% }
+    .bp-glow {
+      position: absolute; border-radius: 50%;
+      filter: blur(120px); opacity: .14; pointer-events: none;
+    }
+    .bp-glow-blue { width: 500px; height: 500px; background: #1050ff; top: -10%; right: -5% }
+    .bp-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -10%; left: -5% }
+
+    .bp-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .bp-photo-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 420px;
+      margin-bottom: 2.2rem;
+    }
+    .bp-photo-wrap img { width: 100%; display: block; border-radius: var(--radius) }
+    .bp-photo-wrap::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: var(--radius);
+      border: 1.5px solid rgba(74,158,255,.25);
+      pointer-events: none;
+    }
+
+    .bp-hero-eye {
+      display: flex; align-items: center; gap: .6rem;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--c-gold); margin-bottom: 1rem;
+      margin-top: .5rem;
+    }
+    .bp-hero-eye::before {
+      content: ''; width: 28px; height: 2px;
+      background: var(--c-gold); flex-shrink: 0;
+    }
+    .bp-hero-name {
+      font-size: clamp(2rem,4vw,3rem);
+      font-weight: 800; color: #fff;
+      margin: 0 0 .4rem; line-height: 1.1;
+    }
+    .bp-hero-title {
+      font-size: 1rem; font-weight: 500;
+      color: var(--c-blue); margin: 0 0 1.5rem;
+    }
+    .bp-hero-bio {
+      font-size: 1rem; color: var(--c-muted);
+      line-height: 1.75; margin-bottom: 1.5rem;
+    }
+
+    /* academic links */
+    .bp-links { display: flex; flex-wrap: wrap; gap: .5rem }
+    .bp-link {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .35rem .9rem; border-radius: 50px;
+      font-size: .8rem; font-weight: 600;
+      border: 1px solid var(--c-border);
+      color: var(--c-muted); text-decoration: none;
+      transition: all .2s var(--ease);
+      background: rgba(255,255,255,.03);
+    }
+    .bp-link:hover { border-color: var(--c-blue); color: var(--c-blue) }
+    .bp-link-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--c-blue); flex-shrink: 0;
+    }
+
+    /* ── STATS ROW ── */
+    .bp-stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      max-width: 900px; margin: 0 auto;
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+      background: rgba(255,255,255,.02);
+      gap: 1rem;
+    }
+    .bp-stat-n {
+      font-size: 2rem; font-weight: 800;
+      color: var(--c-gold); line-height: 1; margin-bottom: .3rem;
+    }
+    .bp-stat-l {
+      font-size: .76rem; color: var(--c-muted);
+      text-transform: uppercase; letter-spacing: .08em;
+    }
+
+    /* ── THESIS CARD ── */
+    .bp-thesis {
+      background: var(--c-surface);
+      border: 1px solid rgba(74,158,255,.2);
+      border-radius: var(--radius);
+      padding: 2rem; margin-bottom: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .bp-thesis::before {
+      content: '\201C';
+      position: absolute; top: -.5rem; left: 1.2rem;
+      font-size: 8rem; color: var(--c-blue);
+      opacity: .07; font-family: Georgia, serif;
+      line-height: 1; pointer-events: none;
+    }
+    .bp-thesis-t { font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4 }
+    .bp-thesis-m { font-size: .875rem; color: var(--c-muted); margin-top: .5rem }
+    .bp-thesis-m strong { color: var(--c-blue) }
+
+    /* ── RESEARCH THEMES ── */
+    .bp-themes {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .9rem; margin-top: 1.5rem;
+    }
+    .bp-theme {
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 1.25rem;
+      transition: border-color .25s var(--ease);
+    }
+    .bp-theme:hover { border-color: rgba(74,158,255,.3) }
+    .bp-theme-t { font-size: .88rem; font-weight: 700; color: var(--c-text); margin-bottom: .3rem }
+    .bp-theme-d { font-size: .8rem; color: var(--c-muted); line-height: 1.5; margin: 0 }
+
+    /* ── CAREER TIMELINE ── */
+    .bp-jobs { display: flex; flex-direction: column; gap: .75rem }
+    .bp-job {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      align-items: start;
+    }
+    .bp-job-dates {
+      font-size: .76rem; font-weight: 700;
+      color: var(--c-gold); line-height: 1.4;
+      letter-spacing: .02em;
+    }
+    .bp-job-co {
+      font-size: .88rem; font-weight: 700; color: var(--c-text); margin-bottom: .2rem;
+    }
+    .bp-job-role {
+      font-size: .82rem; color: var(--c-blue); font-weight: 600; margin-bottom: .3rem;
+    }
+    .bp-job-desc { font-size: .8rem; color: var(--c-muted); line-height: 1.55; margin: 0 }
+
+    /* ── CONFERENCES ── */
+    .bp-conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem }
+    .bp-conf {
+      display: flex; align-items: flex-start; gap: .85rem;
+      padding: 1rem 1.1rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 10px;
+      transition: border-color .22s var(--ease);
+    }
+    .bp-conf:hover { border-color: rgba(74,158,255,.22) }
+    .bp-conf-yr {
+      flex-shrink: 0; font-size: .68rem; font-weight: 700;
+      color: var(--c-gold); background: var(--c-gold-dim);
+      padding: .22rem .55rem; border-radius: 4px;
+      letter-spacing: .05em; margin-top: .1rem;
+    }
+    .bp-conf-n { font-size: .84rem; font-weight: 600; color: var(--c-text); line-height: 1.4 }
+    .bp-conf-loc { font-size: .76rem; color: var(--c-muted); margin-top: .18rem }
+    .bp-conf-badge {
+      display: inline-block; font-size: .65rem; font-weight: 700;
+      padding: .1rem .45rem; border-radius: 4px;
+      background: rgba(255,213,79,.18); color: var(--c-gold);
+      margin-left: .4rem; vertical-align: middle;
+      letter-spacing: .05em; text-transform: uppercase;
+    }
+
+    /* ── BOOKS ROW ── */
+    .bp-books { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 1.5rem }
+    .bp-book { text-decoration: none; display: block; transition: transform .28s var(--ease) }
+    .bp-book:hover { transform: translateY(-6px) }
+    .bp-book-img {
+      aspect-ratio: 2/3; border-radius: 8px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,.08); background: #111;
+      margin-bottom: .6rem;
+    }
+    .bp-book-img img { width: 100%; height: 100%; object-fit: cover; display: block }
+    .bp-book-t { font-size: .78rem; font-weight: 700; color: var(--c-text); line-height: 1.3 }
+    .bp-book-y { font-size: .72rem; color: var(--c-gold); margin-top: .15rem }
+
+    /* ── PROSE ── */
+    .bp-prose p { color: var(--c-muted); font-size: 1rem; line-height: 1.75; margin-bottom: .9rem }
+    .bp-prose strong { color: var(--c-text) }
+
+    /* ── FADE ── */
+    .bp-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s var(--ease), transform .5s var(--ease) }
+    .bp-fade.bp-vis { opacity: 1; transform: none }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .bp-photo-wrap { max-width: 320px }
+      .bp-stats { grid-template-columns: repeat(2,1fr) }
+      .bp-themes { grid-template-columns: 1fr }
+      .bp-conf-grid { grid-template-columns: 1fr }
+      .bp-books { grid-template-columns: repeat(3,1fr) }
+      .bp-job { grid-template-columns: 1fr }
+    }
+    @media (max-width: 500px) {
+      .bp-books { grid-template-columns: repeat(2,1fr) }
+    }
+  </style>
+
+  <div class="bp">
+
+    <!-- ══════ HERO ══════ -->
+    <section class="bp-hero">
+      <canvas id="bp-stars"></canvas>
+      <div class="bp-glow bp-glow-blue"></div>
+      <div class="bp-glow bp-glow-gold"></div>
+
+      <div class="bp-wrap">
+        <div class="bp-hero-inner bp-fade">
+
+          <div class="bp-photo-wrap">
+            <img src="{{ 'assets/images/oleh.png' | url }}" alt="Oleh Shynkarenko">
+          </div>
+
+          <div class="bp-hero-eye">Researcher &middot; Writer &middot; Journalist</div>
+          <h1 class="bp-hero-name">Oleh Shynkarenko</h1>
+          <p class="bp-hero-title">PhD Candidate &middot; University of P&eacute;cs, Faculty of Philosophy</p>
+          <p class="bp-hero-bio">
+            A Ukrainian journalist, writer, and researcher with a lifelong passion for
+            literature, philosophy, and science fiction. My work spans from engineering
+            to creative writing, from broadcast journalism to academic research on
+            Ukrainian speculative literature.
+          </p>
+          <div class="bp-links">
+            <a href="https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ"
+               class="bp-link" target="_blank" rel="noopener">
+              <span class="bp-link-dot"></span>Google Scholar
+            </a>
+            <a href="https://orcid.org/0009-0001-1690-8967"
+               class="bp-link" target="_blank" rel="noopener">
+              <span class="bp-link-dot"></span>ORCID
+            </a>
+            <a href="https://medbiotech.academia.edu/OlehShynkarenko"
+               class="bp-link" target="_blank" rel="noopener">
+              <span class="bp-link-dot"></span>Academia
+            </a>
+            <a href="https://www.researchgate.net/profile/Oleh-Shynkarenko"
+               class="bp-link" target="_blank" rel="noopener">
+              <span class="bp-link-dot"></span>ResearchGate
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ STATS ══════ -->
+    <div class="bp-stats">
+      <div><div class="bp-stat-n">20+</div><div class="bp-stat-l">Years in Journalism</div></div>
+      <div><div class="bp-stat-n">6</div><div class="bp-stat-l">Fiction Books</div></div>
+      <div><div class="bp-stat-n">600+</div><div class="bp-stat-l">Articles Written</div></div>
+      <div><div class="bp-stat-n">15+</div><div class="bp-stat-l">Conferences</div></div>
+    </div>
+
+    <!-- ══════ PHD RESEARCH ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap">
+        <div class="bp-pill">Doctoral Research</div>
+        <h2 class="bp-h2">PhD in Philosophy</h2>
+
+        <div class="bp-thesis bp-fade">
+          <div class="bp-thesis-t">
+            &ldquo;From Utopia to Dystopia: Ukrainian Science Fiction
+            and the Collapse of Techno-Communism&rdquo;
+          </div>
+          <div class="bp-thesis-m">
+            <strong>University of P&eacute;cs</strong> &middot;
+            Doctoral School of Philosophy &middot; Started 2023
+          </div>
+        </div>
+
+        <div class="bp-themes">
+          <div class="bp-theme bp-fade">
+            <div class="bp-theme-t">Postcolonial Studies</div>
+            <p class="bp-theme-d">Ukraine as a cultural space under Russian imperial oppression and erasure.</p>
+          </div>
+          <div class="bp-theme bp-fade">
+            <div class="bp-theme-t">Positivism &amp; Its Decline</div>
+            <p class="bp-theme-d">How sci-fi responded to the rise and fall of Soviet positivist ideology.</p>
+          </div>
+          <div class="bp-theme bp-fade">
+            <div class="bp-theme-t">Metamodern Shifts</div>
+            <p class="bp-theme-d">Literary oscillations and transitions after the collapse of the USSR.</p>
+          </div>
+          <div class="bp-theme bp-fade">
+            <div class="bp-theme-t">Global Connections</div>
+            <p class="bp-theme-d">Ukrainian sci-fi in dialogue with world science fiction traditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="bp-divider">
+
+    <!-- ══════ MY BOOKS ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap">
+        <div class="bp-pill">Creative Work</div>
+        <h2 class="bp-h2">Fiction Books</h2>
+
+        <div class="bp-books">
+          <a href="{{ 'books/yak/' | url }}" class="bp-book bp-fade">
+            <div class="bp-book-img">
+              <img src="{{ 'assets/images/books/yak.jpg' | url }}" alt="How to Disappear Completely">
+            </div>
+            <div class="bp-book-t">How to Disappear Completely</div>
+            <div class="bp-book-y">2006</div>
+          </a>
+          <a href="{{ 'books/kaharlyk/' | url }}" class="bp-book bp-fade">
+            <div class="bp-book-img">
+              <img src="{{ 'assets/images/books/kaharlyk.jpg' | url }}" alt="Kaharlyk">
+            </div>
+            <div class="bp-book-t">Kaharlyk</div>
+            <div class="bp-book-y">2014</div>
+          </a>
+          <a href="{{ 'books/robots/' | url }}" class="bp-book bp-fade">
+            <div class="bp-book-img">
+              <img src="{{ 'assets/images/books/robots.jpg' | url }}" alt="The First Ukrainian Robots">
+            </div>
+            <div class="bp-book-t">The First Ukrainian Robots</div>
+            <div class="bp-book-y">2016</div>
+          </a>
+          <a href="{{ 'books/cherep/' | url }}" class="bp-book bp-fade">
+            <div class="bp-book-img">
+              <img src="{{ 'assets/images/books/cherep.jpg' | url }}" alt="Cherep">
+            </div>
+            <div class="bp-book-t">Cherep</div>
+            <div class="bp-book-y">2017</div>
+          </a>
+          <a href="{{ 'books/bandera/' | url }}" class="bp-book bp-fade">
+            <div class="bp-book-img">
+              <img src="{{ 'assets/images/books/bandera.jpg' | url }}" alt="Bandera Distortion">
+            </div>
+            <div class="bp-book-t">Bandera Distortion</div>
+            <div class="bp-book-y">2019</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="bp-divider">
+
+    <!-- ══════ PROFESSIONAL BACKGROUND ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap">
+        <div class="bp-pill">Career</div>
+        <h2 class="bp-h2">Professional Background</h2>
+
+        <div class="bp-jobs">
+          <div class="bp-job bp-fade">
+            <div class="bp-job-dates">Jul 2023 &ndash; Apr 2026</div>
+            <div>
+              <div class="bp-job-co">SimpliGov</div>
+              <div class="bp-job-role">Senior Technical Writer &middot; Budapest, Hungary (Remote)</div>
+              <p class="bp-job-desc">API &amp; developer documentation, release management, internal knowledge base on Confluence, user guides and video tutorials for a US government workflow platform.</p>
+            </div>
+          </div>
+          <div class="bp-job bp-fade">
+            <div class="bp-job-dates">Nov 2021 &ndash; Jul 2023</div>
+            <div>
+              <div class="bp-job-co">GlobalLogic</div>
+              <div class="bp-job-role">Senior Technical Writer &middot; Kyiv, Ukraine</div>
+              <p class="bp-job-desc">Developer and user documentation using MkDocs, GitHub, and VS Code. Clients included 3M, Verizon, NuvoAir.</p>
+            </div>
+          </div>
+          <div class="bp-job bp-fade">
+            <div class="bp-job-dates">Sep 2013 &ndash; Jul 2018</div>
+            <div>
+              <div class="bp-job-co">Hromadske Radio</div>
+              <div class="bp-job-role">Broadcast Journalist &middot; Kyiv, Ukraine</div>
+              <p class="bp-job-desc">Hosted philosophy and legal podcasts &ldquo;Legal Alphabet&rdquo; and &ldquo;Philosophical Drum&rdquo;. Produced news reports and media content.</p>
+            </div>
+          </div>
+          <div class="bp-job bp-fade">
+            <div class="bp-job-dates">Jun 2015 &ndash; Dec 2018</div>
+            <div>
+              <div class="bp-job-co">Ukrainian Helsinki Human Rights Union</div>
+              <div class="bp-job-role">Journalist &amp; Project Manager &middot; Kyiv, Ukraine</div>
+              <p class="bp-job-desc">Reported on court cases, legal reforms, and human rights. Produced articles, reports, and managed media outreach.</p>
+            </div>
+          </div>
+          <div class="bp-job bp-fade">
+            <div class="bp-job-dates">Jun 2001 &ndash; Jul 2007</div>
+            <div>
+              <div class="bp-job-co">Automation &amp; Instrumentation Engineer</div>
+              <div class="bp-job-role">Zaporizhzhya, Ukraine</div>
+              <p class="bp-job-desc">Managed automation unit and technical documentation in heating networks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="bp-divider">
+
+    <!-- ══════ CONFERENCES ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap">
+        <div class="bp-pill">International Presence</div>
+        <h2 class="bp-h2">Conferences &amp; Presentations</h2>
+
+        <div class="bp-conf-grid">
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <div class="bp-conf-n">AATSEEL 2026 &mdash; American Association of Teachers of Slavic &amp; East European Languages</div>
+              <div class="bp-conf-loc">New Orleans, LA, USA &middot; The Faces of War</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <div class="bp-conf-n">Philosophy in Technology &ndash; PinT 5th Edition</div>
+              <div class="bp-conf-loc">Wroc&#322;aw, Poland &middot; The Illusion of Understanding</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <div class="bp-conf-n">Budapest Workshop on Philosophy and Technology 2025</div>
+              <div class="bp-conf-loc">Budapest, Hungary &middot; Ethical Ghosts on a Robotic Battlefield</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <div class="bp-conf-n">Young Philosophers Conference 2025 &mdash; National University of Public Service</div>
+              <div class="bp-conf-loc">Budapest, Hungary &middot; Sandro Kasyanyuk: enfant terrible</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <div class="bp-conf-n">Contexts VIII &mdash; International Interdisciplinary Conference</div>
+              <div class="bp-conf-loc">Novi Sad, Serbia &middot; Vasyl Berezhnyi: Collapse of Techno-Communism</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <div class="bp-conf-n">Interdisciplinary Doctoral Student Conference (IDK2025)</div>
+              <div class="bp-conf-loc">P&eacute;cs, Hungary &middot; An Unfortunate Benjamin&rsquo;s Mistake</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2024</span>
+            <div>
+              <div class="bp-conf-n">
+                Interdisciplinary Doctoral Student Conference (IDK2024)
+                <span class="bp-conf-badge">Award</span>
+              </div>
+              <div class="bp-conf-loc">P&eacute;cs, Hungary &middot; Decline of Positivism in Ukrainian Sci-Fi</div>
+            </div>
+          </div>
+          <div class="bp-conf bp-fade">
+            <span class="bp-conf-yr">2023</span>
+            <div>
+              <div class="bp-conf-n">
+                Budapest Workshop on Philosophy and Technology 2023
+                <span class="bp-conf-badge">Keynote</span>
+              </div>
+              <div class="bp-conf-loc">Budapest, Hungary &middot; Science Fiction in Ukraine: 1920&ndash;2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="bp-divider">
+
+    <!-- ══════ WHY SCI-FI ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap" style="max-width:680px">
+        <div class="bp-pill">Motivation</div>
+        <h2 class="bp-h2">Why Ukrainian Sci-Fi?</h2>
+        <div class="bp-prose">
+          <p>
+            Growing up in a society where philosophy was often censored, I found intellectual
+            refuge in Ukrainian science fiction. Works by authors like Volodymyr Savchenko
+            inspired me to explore profound philosophical questions, blending my love for
+            literature and critical thinking.
+          </p>
+          <p>
+            Today, I believe Ukrainian science fiction is not only a lens through which to
+            understand the cultural history of Ukraine, but also a key to its future as part
+            of a vibrant, global intellectual community.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /.bp -->
+
+  <script>
+  (function () {
+    /* ── STARFIELD ── */
+    var cv = document.getElementById('bp-stars');
+    if (!cv) return;
+    var cx = cv.getContext('2d'), stars = [], W, H;
+    function resize() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight }
+    function seed() {
+      stars = [];
+      for (var i = 0; i < 160; i++)
+        stars.push({ x: Math.random()*W, y: Math.random()*H,
+          r: Math.random()*1.2+.2, o: Math.random()*.4+.06,
+          s: Math.random()*.012+.004, p: Math.random()*Math.PI*2 });
+    }
+    function draw(t) {
+      cx.clearRect(0,0,W,H);
+      for (var i=0;i<stars.length;i++) {
+        var st=stars[i], op=st.o+.12*Math.sin(t*st.s+st.p);
+        cx.beginPath(); cx.arc(st.x,st.y,st.r,0,6.283);
+        cx.fillStyle='rgba(200,218,255,'+op+')'; cx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('resize',function(){resize();seed()});
+    resize(); seed(); requestAnimationFrame(draw);
+
+    /* ── SCROLL FADE ── */
+    var fades = document.querySelectorAll('.bp-fade');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('bp-vis'); obs.unobserve(e.target); }
+        });
+      }, { threshold: .1, rootMargin: '0px 0px -30px 0px' });
+      fades.forEach(function(el) { obs.observe(el); });
+    } else {
+      fades.forEach(function(el) { el.classList.add('bp-vis'); });
+    }
+  }());
+  </script>
+{% endblock %}
+
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

@@ -1,3 +1,7 @@
+---
+template: authors.html
+---
+
 # Ukrainian Science Fiction Writers and Their Evolution
 
 Ukrainian science fiction (SF) has undergone significant transformations over the past century, influenced by shifting political ideologies, technological advancements, and cultural movements. The early 20th century saw the emergence of [Sandro Kasyanyuk](sandro-kasyanyuk.md), an industrial worker-turned-writer who pioneered Ukrainian proto-science fiction with his cycle Omachynennia Liudstva (The Mechanization of Humanity). His works reflected a naïve socialist utopianism, glorifying machines and portraying humans as mere operators of technology in the socialist future.

@@ -1,3 +1,7 @@
+---
+template: phd-article.html
+---
+
 # Sandro Kasyanyuk: Enfant Terrible of Ukrainian Techno-Communism
 
 **Oleh Shynkarenko (Pécs)**  
