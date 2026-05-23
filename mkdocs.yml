@@ -58,24 +58,9 @@ theme:
     - search.suggest
     - toc.follow
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/link
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off
-        name: Switch to system preference
+    scheme: slate
+    primary: black
+    accent: indigo
   font:
     text: Roboto
     code: Roboto Mono
@@ -86,6 +71,7 @@ theme:
 # Plugins
 plugins:
   - blog
+  - tags
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - minify:
@@ -121,6 +107,10 @@ extra:
     - icon: fontawesome/solid/book
       link: https://www.researchgate.net/profile/Oleh-Shynkarenko
       name: ResearchGate
+
+# Extra CSS
+extra_css:
+  - assets/stylesheets/articles-extra.css
 
 # Extensions
 markdown_extensions:
@@ -200,6 +190,7 @@ nav:
       - Portrait of a Russian Intellectual as a Crocodile: articles/portrait.md
       - "Metamodern Timescapes: The Changing Image of Time": articles/timescapes.md
   - My Books:
+    - books/index.md
     - How to disappear completely: books/yak.md
     - Kaharlyk: books/kaharlyk.md
     - The First Ukrainian Robots: books/robots.md

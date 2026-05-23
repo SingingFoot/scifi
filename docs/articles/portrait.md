@@ -1,3 +1,11 @@
+---
+description: How the Soviet cartoon characters Crocodile Gena and Cheburashka evolved from symbols of Marxist intellectual paternalism to icons of Russian imperialist propaganda in the war against Ukraine.
+tags:
+  - Cultural Critique
+  - Soviet History
+  - Russian Imperialism
+---
+
 # Portrait of a Russian Intellectual as a Crocodile
 
 Up until the 1960s there still remained in the USSR a naïve faith in Leninism, partly

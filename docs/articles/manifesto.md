@@ -1,3 +1,11 @@
+---
+description: A philosophical manifesto on metamodernism — the oscillation between irony and sincerity that defines contemporary art, consciousness, and culture beyond postmodernism.
+tags:
+  - Philosophy
+  - Cultural Theory
+  - Metamodernism
+---
+
 # **Metamodernism Manifesto**
 
 ![Metamodernism Manifesto](../assets/images/meta/1.png) 

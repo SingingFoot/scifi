@@ -1,0 +1,352 @@
+/* =============================================================
+   Academic Typography & Articles Section — Ukrainian Sci-Fi
+   ============================================================= */
+
+/* ----------------------------------------------------------
+   1. Body text: better reading rhythm
+   ---------------------------------------------------------- */
+
+.md-typeset {
+  line-height: 1.85;
+}
+
+.md-typeset p {
+  max-width: 72ch;       /* optimal academic line length */
+}
+
+/* ----------------------------------------------------------
+   2. Headings: clearer hierarchy, clean separators
+   ---------------------------------------------------------- */
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  margin-top: 2.8em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  letter-spacing: -0.01em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 1.8em;
+}
+
+/* ----------------------------------------------------------
+   3. Blockquotes: academic pull-quote style
+   ---------------------------------------------------------- */
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--md-primary-fg-color);
+  background-color: var(--md-default-fg-color--lightest);
+  border-radius: 0 4px 4px 0;
+  padding: 0.75em 1.1em;
+  margin: 1.6em 0;
+  font-style: italic;
+}
+
+.md-typeset blockquote p {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset blockquote p:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+/* ----------------------------------------------------------
+   4. Horizontal rules: subtle section breaks, always clears floats
+   ---------------------------------------------------------- */
+
+.md-typeset hr {
+  clear: both;
+  border: none;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin: 2.5em 0;
+}
+
+/* ----------------------------------------------------------
+   5. Image captions (italic paragraph after image)
+   ---------------------------------------------------------- */
+
+.md-typeset img {
+  border-radius: 4px;
+}
+
+/* Image captions: only a paragraph that contains *solely* an em
+   and that immediately follows a paragraph containing an image.
+   The :has() guard prevents this from matching inline italics. */
+.md-typeset p:has(> img) + p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.4em;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------------
+   6. Footnotes: clearly demarcated, smaller text
+   ---------------------------------------------------------- */
+
+.md-typeset .footnote {
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--md-default-fg-color--light);
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  padding-top: 1.5em;
+  margin-top: 3em;
+}
+
+.md-typeset .footnote ol {
+  margin: 0;
+  padding-left: 1.4em;
+}
+
+.md-typeset .footnote li {
+  margin-bottom: 0.4em;
+}
+
+.md-typeset .footnote-ref {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+/* ----------------------------------------------------------
+   7. Bibliography / References section
+   ---------------------------------------------------------- */
+
+/* Target "References" or "Bibliography" h2/h3 */
+.md-typeset h2#references,
+.md-typeset h2#bibliography,
+.md-typeset h3#bibliography,
+.md-typeset h3#references {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--md-default-fg-color--light);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* Reference paragraph lines */
+.md-typeset h2#references ~ p,
+.md-typeset h3#bibliography ~ p,
+.md-typeset h2#bibliography ~ p,
+.md-typeset h3.references ~ p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  padding-left: 1.6em;
+  text-indent: -1.6em;    /* hanging indent */
+}
+
+/* ----------------------------------------------------------
+   8. Lists: tighter for article content
+   ---------------------------------------------------------- */
+
+.md-typeset ul li,
+.md-typeset ol li {
+  margin-bottom: 0.3em;
+}
+
+/* ----------------------------------------------------------
+   9. Article index cards — hover polish
+   ---------------------------------------------------------- */
+
+.md-typeset .grid.cards > :is(ul, ol) > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Card topic tags */
+.article-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--md-primary-fg-color);
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 3px;
+  padding: 0.1em 0.45em;
+  margin-right: 0.3em;
+  margin-bottom: 0.6em;
+  vertical-align: middle;
+}
+
+/* Brighter tags in dark mode */
+[data-md-color-scheme="slate"] .article-tag {
+  color: #8fa8ff;
+  border-color: #8fa8ff;
+  background-color: rgba(143, 168, 255, 0.12);
+}
+
+/* Articles section intro */
+.articles-intro {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--md-default-fg-color);
+  margin-bottom: 2em;
+  border-left: 3px solid var(--md-primary-fg-color);
+  padding-left: 1em;
+  background-color: var(--md-default-fg-color--lightest);
+  padding: 1em 1.2em;
+  border-radius: 0 4px 4px 0;
+}
+
+/* =============================================================
+   BOOKS — Index grid & individual page layout
+   ============================================================= */
+
+/* ---- Book index: responsive cover grid ---- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem 2rem;
+  margin: 2rem 0 3rem;
+  align-items: start;
+}
+
+@media screen and (max-width: 640px) {
+  .book-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cover link — fixed height so all cards align */
+.book-card > a {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.book-card > a > img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.book-card > a:hover > img {
+  transform: scale(1.04);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.48);
+}
+
+/* Body below cover */
+.book-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 0.65rem;
+}
+
+.book-card-body > strong > a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+  font-size: 0.93rem;
+  line-height: 1.3;
+}
+
+[data-md-color-scheme="slate"] .book-card-body > strong > a {
+  color: #e8eaf0;
+}
+
+[data-md-color-scheme="slate"] .book-card-body > strong > a:hover {
+  color: #8fa8ff;
+}
+
+.book-year {
+  font-size: 0.74rem;
+  color: var(--md-default-fg-color--light);
+  letter-spacing: 0.02em;
+}
+
+.book-card-body > p {
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---- Individual book page: float-based header ---- */
+/* Single div with overflow:hidden creates a BFC that contains
+   the floated cover image — no text can escape or overlap.    */
+.book-page-header {
+  overflow: hidden;
+  margin-bottom: 2.2rem;
+}
+
+.book-page-header img {
+  float: left;
+  width: 185px;
+  margin: 0 2rem 1rem 0;
+  border-radius: 4px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.42);
+}
+
+@media screen and (max-width: 540px) {
+  .book-page-header img {
+    float: none;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 0 1.2rem;
+    display: block;
+  }
+}
+
+.book-pub {
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.7;
+  margin-bottom: 0.5rem !important;
+}
+
+.book-page-header blockquote {
+  margin-top: 0.8rem;
+  font-size: 0.88rem;
+}
+
+/* ---- Dark mode adjustments
+   ---------------------------------------------------------- */
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------------------------------------------------------
+   11. Article title on individual pages: subtitle context
+   ---------------------------------------------------------- */
+
+/* Publication context (the italic line right after h1) */
+.md-typeset h1 + p > em:first-child {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: -0.5em;
+  margin-bottom: 1.5em;
+  font-style: italic;
+}

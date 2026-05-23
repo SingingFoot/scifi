@@ -1,3 +1,11 @@
+---
+description: A genealogy of positivism from Aquinas through logical empiricism, Popper, and Foucault to the post-truth era of social media and AI-generated knowledge.
+tags:
+  - Philosophy of Science
+  - Epistemology
+  - Post-Truth
+---
+
 # From Counting Angels to Counting Likes: Science, Faith, and the Rise of Post-Truth
 
 *(Positivism’s Ghost: How Science Became a New Religion in the Post-Truth Era)*

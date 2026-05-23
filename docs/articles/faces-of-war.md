@@ -1,3 +1,11 @@
+---
+description: How Soviet and Ukrainian cinema shaped and distorted historical memory of war — from Dovzhenko's 1928 propaganda to contemporary films like Bad Roads and Cyborgs.
+tags:
+  - Film Criticism
+  - Ukrainian History
+  - Soviet Cinema
+---
+
 # The Faces of War: How Cinema Shapes and Distorts Historical Memory in Ukraine  
 
 **(Article for "Kino-Kolo" magazine, 24 1 (39) "Ukraine on Fire")**  
