@@ -170,7 +170,7 @@ under the influence of inertial force not so much relative to the walls of the
 bucket, but rather relative to the Earth's gravity. At a certain distance from the
 Earth, a similar experiment would not be possible at all.
 
-![Figure 1](../assets/images/timescapes/img-000.jpg)
+![Figure 1](../assets/images/timescapes/new.png)
 
 *Figure 1. Newton's Bucket Experiment scheme under two conditions: on Earth and in space.*
 
@@ -201,7 +201,7 @@ light, the closest to him, at moment “0,” and the second light—the distant
 moment “1.” If the engineer switches on a light on the train exactly at the moment
 he sees the distant light, the distant passenger will notice this at moment “2.”
 
-![Figure 2](../assets/images/timescapes/img-001.jpg)
+![Figure 2](../assets/images/timescapes/ein.png)
 
 *Figure 2. Illustration of the relativity of simultaneity.*
 
@@ -264,7 +264,7 @@ times (e.g., saying a time was future and will be past) fail, merely generating 
 infinite regress of the same contradiction, proving time is unreal. (McTaggart
 1908)
 
-![Figure 3](../assets/images/timescapes/img-002.jpg)
+![Figure 3](../assets/images/timescapes/ab.png)
 
 *Figure 3. McTaggart's distinction between A-series and B-series.*
 
