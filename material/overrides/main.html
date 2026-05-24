@@ -5,6 +5,65 @@
 {% block extrahead %}
   <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.7c86dd97.min.css' | url }}">
 
+  {#- Set data-lang on <html> immediately (before CSS) so body-level CSS rules apply without flash -#}
+  <script>
+  (function(){
+    var l = localStorage.getItem('site-lang') || 'en';
+    document.documentElement.setAttribute('data-lang', l);
+  }());
+  </script>
+
+  <style>
+    /* ── Nav language separation ─────────────────────────────────────
+       JS marks nav <li> items with .nav-uk-item or .nav-en-has-uk,
+       then adds .nav-ready to <html>. CSS only activates after that
+       so there is no premature hiding before items are classified.
+    ──────────────────────────────────────────────────────────────── */
+    html.nav-ready:not([data-lang="ua"]) .nav-uk-item  { display: none !important; }
+    html.nav-ready[data-lang="ua"]       .nav-uk-item  { display: list-item !important; }
+    html.nav-ready[data-lang="ua"]       .nav-en-has-uk{ display: none !important; }
+
+    /* ── Language switcher widget ─────────────────────────────────── */
+    #lang-sw {
+      position: fixed;
+      top: 56px;
+      right: 14px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      background: rgba(5,5,15,.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 6px;
+      overflow: hidden;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+    }
+    .ls-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: rgba(232,232,240,.4);
+      padding: .3rem .55rem;
+      transition: color .18s, background .18s;
+      line-height: 1;
+    }
+    .ls-btn:hover { color: #e8e8f0; }
+    .ls-btn.ls-active {
+      color: #4a9eff;
+      background: rgba(74,158,255,.12);
+    }
+    .ls-sep {
+      font-size: .65rem;
+      color: rgba(255,255,255,.15);
+      pointer-events: none;
+      line-height: 1;
+    }
+  </style>
+
   {#- Canonical URL -#}
   <link rel="canonical" href="{{ config.site_url }}{{ page.url }}" />
 
@@ -62,92 +121,127 @@
 {% block tabs %}
   {{ super() }}
 
-  {#- ── EN | UA LANGUAGE SWITCHER (shared across all pages) ── -#}
-  <style>
-    #lang-sw {
-      position: fixed;
-      top: 56px;
-      right: 14px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      background: rgba(5,5,15,.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 6px;
-      overflow: hidden;
-      font-family: 'DM Sans', -apple-system, sans-serif;
-    }
-    .ls-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      color: rgba(232,232,240,.4);
-      padding: .3rem .55rem;
-      transition: color .18s, background .18s;
-      line-height: 1;
-    }
-    .ls-btn:hover { color: #e8e8f0 }
-    .ls-btn.ls-active {
-      color: #4a9eff;
-      background: rgba(74,158,255,.12);
-    }
-    .ls-sep {
-      font-size: .65rem;
-      color: rgba(255,255,255,.15);
-      pointer-events: none;
-      line-height: 1;
-    }
-  </style>
-
+  {#- ── EN | UA LANGUAGE SWITCHER ── -#}
   <div id="lang-sw">
-    <button class="ls-btn ls-active" data-lang="en">EN</button>
+    <button class="ls-btn" data-lang="en">EN</button>
     <span class="ls-sep">|</span>
     <button class="ls-btn" data-lang="ua">UA</button>
   </div>
 
   <script>
   (function () {
-    var navMap = {
-      en: { 'Home':'Home', 'About me':'About me', 'My PhD':'My PhD',
-            'Authors':'Authors', 'My Articles':'My Articles', 'My Books':'My Books' },
-      ua: { 'Home':'Головна', 'About me':'Про мене', 'My PhD':'Мій PhD',
-            'Authors':'Автори', 'My Articles':'Мої статті', 'My Books':'Мої книги' }
+    var LANG_KEY = 'site-lang';
+
+    /* All UK page paths (absolute, trailing slash) */
+    var UK_PATHS = [
+      '/phd/uk/ukrainian-sf-part-1/',
+      '/phd/uk/ukrainian-sf-part-2/',
+      '/phd/uk/mt-180-thesis/',
+      '/phd/uk/kasyanyuk-techno-communism/'
+    ];
+
+    /* EN paths that have a UK equivalent */
+    var EN_HAS_UK = [
+      '/phd/ukrainian-sf-part-1/',
+      '/phd/ukrainian-sf-part-2/',
+      '/phd/mt-180-thesis/',
+      '/phd/kasyanyuk-techno-communism/'
+    ];
+
+    /* EN→UK redirect map */
+    var EN_TO_UK = {
+      '/phd/ukrainian-sf-part-1/':        '/phd/uk/ukrainian-sf-part-1/',
+      '/phd/ukrainian-sf-part-2/':        '/phd/uk/ukrainian-sf-part-2/',
+      '/phd/mt-180-thesis/':              '/phd/uk/mt-180-thesis/',
+      '/phd/kasyanyuk-techno-communism/': '/phd/uk/kasyanyuk-techno-communism/'
     };
+    var UK_TO_EN = {};
+    Object.keys(EN_TO_UK).forEach(function(k){ UK_TO_EN[EN_TO_UK[k]] = k; });
 
-    var btns = document.querySelectorAll('#lang-sw .ls-btn');
-    var currentLang = localStorage.getItem('site-lang') || 'en';
+    function isUkPath(p){ return p.indexOf('/uk/') !== -1; }
 
-    function applyLang(lang) {
-      /* swap all data-en / data-ua elements */
-      document.querySelectorAll('[data-en]').forEach(function(el) {
-        el.innerHTML = lang === 'ua' ? el.dataset.ua : el.dataset.en;
+    /* Mark nav <li> items by examining the browser's absolute link.href.
+       This correctly handles relative hrefs regardless of current page depth. */
+    function markNavItems() {
+      document.querySelectorAll('.md-nav__link').forEach(function(link) {
+        var li = link.closest('.md-nav__item');
+        if (!li) return;
+        var pathname;
+        try { pathname = new URL(link.href).pathname; } catch(e){ return; }
+
+        if (UK_PATHS.indexOf(pathname) !== -1) {
+          li.classList.add('nav-uk-item');
+        } else if (EN_HAS_UK.indexOf(pathname) !== -1) {
+          li.classList.add('nav-en-has-uk');
+        }
       });
-      /* translate main nav tabs */
-      var map = navMap[lang] || navMap.en;
-      document.querySelectorAll('.md-tabs__link').forEach(function(link) {
-        var txt = link.textContent.trim();
-        if (!link.dataset.navOrig) link.dataset.navOrig = txt;
-        if (map[link.dataset.navOrig]) link.textContent = map[link.dataset.navOrig];
-      });
-      /* update switcher button states */
-      btns.forEach(function(b) {
-        b.classList.toggle('ls-active', b.dataset.lang === lang);
-      });
-      currentLang = lang;
-      localStorage.setItem('site-lang', lang);
+      /* Activate CSS rules now that items are classified */
+      document.documentElement.classList.add('nav-ready');
     }
 
-    btns.forEach(function(btn) {
-      btn.addEventListener('click', function() { applyLang(btn.dataset.lang); });
-    });
+    function updateButtons(lang) {
+      document.querySelectorAll('#lang-sw .ls-btn').forEach(function(b){
+        b.classList.toggle('ls-active', b.dataset.lang === lang);
+      });
+    }
 
-    /* apply saved preference on load */
-    applyLang(currentLang);
+    /* Swap all data-en / data-ua content elements */
+    function swapContent(lang) {
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        var text = lang === 'ua' ? el.getAttribute('data-ua') : el.getAttribute('data-en');
+        if (text !== null) el.innerHTML = text;
+      });
+      /* Swap link hrefs that have data-href-en / data-href-ua */
+      document.querySelectorAll('[data-href-en]').forEach(function(el) {
+        el.href = lang === 'ua'
+          ? (el.getAttribute('data-href-ua') || el.getAttribute('data-href-en'))
+          : el.getAttribute('data-href-en');
+      });
+    }
+
+    function applyLang(lang, redirect) {
+      document.documentElement.setAttribute('data-lang', lang);
+      localStorage.setItem(LANG_KEY, lang);
+      updateButtons(lang);
+      swapContent(lang);
+
+      if (redirect) {
+        var p = window.location.pathname;
+        if (lang === 'ua' && !isUkPath(p) && EN_TO_UK[p]) {
+          window.location.href = EN_TO_UK[p]; return;
+        }
+        if (lang === 'en' && isUkPath(p) && UK_TO_EN[p]) {
+          window.location.href = UK_TO_EN[p]; return;
+        }
+      }
+    }
+
+    var savedLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    /* Guard: if user lands on a UK page while in EN mode, redirect to EN version */
+    var curPath = window.location.pathname;
+    if (savedLang === 'en' && isUkPath(curPath) && UK_TO_EN[curPath]) {
+      window.location.href = UK_TO_EN[curPath];
+    }
+
+    /* Restore button states immediately (lang is already set on <html> from <head>) */
+    updateButtons(savedLang);
+
+    /* Mark nav items and swap content once DOM is ready, then enable CSS */
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function(){
+        markNavItems();
+        swapContent(savedLang);
+      });
+    } else {
+      markNavItems();
+      swapContent(savedLang);
+    }
+
+    /* Button click handlers — #lang-sw is already in DOM above this script */
+    document.querySelectorAll('#lang-sw .ls-btn').forEach(function(btn){
+      btn.addEventListener('click', function(){ applyLang(btn.dataset.lang, true); });
+    });
   }());
   </script>
 {% endblock %}

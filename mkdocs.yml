@@ -41,8 +41,6 @@ theme:
   custom_dir: material/overrides
   features:
     - announce.dismiss
-    - content.action.edit
-    - content.action.view
     - content.code.annotate
     - content.code.copy
     - content.tooltips
@@ -82,6 +80,7 @@ plugins:
 hooks:
   - material/overrides/hooks/shortcodes.py
   - material/overrides/hooks/translations.py
+  - material/overrides/hooks/lang_switcher.py
 
 # Additional configuration
 extra:
@@ -173,6 +172,10 @@ nav:
     - Science Fiction in Ukraine (part II): phd/ukrainian-sf-part-2.md
     - MT 180: phd/mt-180-thesis.md
     - Sandro Kasyanyuk: phd/kasyanyuk-techno-communism.md
+    - НФ в Україні (частина І): phd/uk/ukrainian-sf-part-1.md
+    - НФ в Україні (частина ІІ): phd/uk/ukrainian-sf-part-2.md
+    - MT 180 (UA): phd/uk/mt-180-thesis.md
+    - Сандро Касянюк: phd/uk/kasyanyuk-techno-communism.md
   - Authors:
     - authors/index.md
     - Sandro Kasyanyuk: authors/sandro-kasyanyuk.md
@@ -181,14 +184,13 @@ nav:
     - Viktor Pologyj: authors/viktor-pologyj.md
   
   - My Articles:
-    - About my articles:
-      - articles/index.md
-      - Metamodernism Manifesto: articles/manifesto.md
-      - The Faces of War: articles/faces-of-war.md
-      - Struggle for reality: articles/struggle-for-reality.md
-      - Metamodern oscillation: articles/metamodern-oscillation-ostrykov.md
-      - Portrait of a Russian Intellectual as a Crocodile: articles/portrait.md
-      - "Metamodern Timescapes: The Changing Image of Time": articles/timescapes.md
+    - articles/index.md
+    - Metamodernism Manifesto: articles/manifesto.md
+    - The Faces of War: articles/faces-of-war.md
+    - Struggle for reality: articles/struggle-for-reality.md
+    - Metamodern oscillation: articles/metamodern-oscillation-ostrykov.md
+    - Portrait of a Russian Intellectual as a Crocodile: articles/portrait.md
+    - "Metamodern Timescapes: The Changing Image of Time": articles/timescapes.md
   - My Books:
     - books/index.md
     - How to disappear completely: books/yak.md

@@ -1,6 +1,6 @@
 {#-
-  Custom PhD Research page
-  Same dark cosmic design as home.html and bio.html
+  Custom PhD Research page — dark cosmic design.
+  Content is in {% block content %} so MkDocs renders the left sidebar correctly.
 -#}
 {% extends "main.html" %}
 
@@ -11,13 +11,35 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
 
   <style>
-    /* ── MkDocs overrides ── */
+    /* ── MkDocs layout ── */
     .md-header   { position: initial }
-    .md-main__inner { margin: 0 }
-    .md-content  { display: none }
+    .md-main__inner { margin-top: 0 }
+    /* Do NOT set .md-content { display:none } — that collapses the grid and hides the sidebar */
+    .md-content  { background: transparent !important }
+    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 !important }
     @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
 
-    /* ── Design tokens (same as home & bio) ── */
+    /* ── Base background ── */
+    body, .md-main, .md-main__inner, [data-md-color-scheme] {
+      background: #05050f !important;
+      color: #e8e8f0 !important;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    /* ── Left sidebar — dark theme ── */
+    .md-sidebar--primary,
+    .md-sidebar--primary .md-sidebar__scrollwrap {
+      background: rgba(5,5,15,.95) !important;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .md-nav__title { color: rgba(232,232,240,.55) !important; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase }
+    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
+    .md-nav__link:hover,
+    .md-nav__link--active { color: #4a9eff !important }
+    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
+    .md-nav__item--nested > .md-nav__link::after { color: rgba(232,232,240,.55) }
+
+    /* ── Design tokens ── */
     :root {
       --c-bg:       #05050f;
       --c-surface:  rgba(255,255,255,.04);
@@ -147,9 +169,7 @@
     }
     .pp-era:last-child { border-bottom: none }
 
-    .pp-era-aside {
-      padding-top: .2rem;
-    }
+    .pp-era-aside { padding-top: .2rem }
     .pp-era-decade {
       font-size: 2rem; font-weight: 800;
       color: var(--c-gold); line-height: 1;
@@ -176,8 +196,6 @@
     }
     .pp-era-body p:last-child { margin-bottom: 0 }
     .pp-era-body strong { color: var(--c-text) }
-
-    /* author / work pills inside era text */
     .pp-era-body .pp-ref {
       display: inline; font-style: normal;
       color: var(--c-blue); font-weight: 600;
@@ -256,7 +274,9 @@
       .pp-era-dot { margin-top: 0; flex-shrink: 0 }
     }
   </style>
+{% endblock %}
 
+{% block content %}
   <div class="pp">
 
     <!-- ══════ HERO ══════ -->
@@ -511,8 +531,6 @@
 
     <hr class="pp-divider">
 
-    <hr class="pp-divider">
-
     <!-- ══════ ARTICLES ══════ -->
     <section class="pp-sec">
       <div class="pp-wrap">
@@ -520,7 +538,10 @@
         <h2 class="pp-h2" data-en="Articles &amp; Research" data-ua="Статті та дослідження">Articles &amp; Research</h2>
         <div class="pp-articles">
 
-          <a href="{{ 'phd/ukrainian-sf-part-1/' | url }}" class="pp-article-card pp-fade">
+          <a href="{{ 'phd/ukrainian-sf-part-1/' | url }}"
+             data-href-en="{{ 'phd/ukrainian-sf-part-1/' | url }}"
+             data-href-ua="{{ 'phd/uk/ukrainian-sf-part-1/' | url }}"
+             class="pp-article-card pp-fade">
             <div class="pp-article-num">01</div>
             <div class="pp-article-body">
               <div class="pp-article-t"
@@ -533,20 +554,26 @@
             <div class="pp-article-arrow">&#8594;</div>
           </a>
 
-          <a href="{{ 'phd/ukrainian-sf-part-2/' | url }}" class="pp-article-card pp-fade">
+          <a href="{{ 'phd/ukrainian-sf-part-2/' | url }}"
+             data-href-en="{{ 'phd/ukrainian-sf-part-2/' | url }}"
+             data-href-ua="{{ 'phd/uk/ukrainian-sf-part-2/' | url }}"
+             class="pp-article-card pp-fade">
             <div class="pp-article-num">02</div>
             <div class="pp-article-body">
               <div class="pp-article-t"
                    data-en="Science Fiction in Ukraine (Part II)"
                    data-ua="Наукова фантастика в Україні (частина II)">Science Fiction in Ukraine (Part II)</div>
               <div class="pp-article-d"
-                   data-en="1970s&ndash;2020s: The Golden Age, postmodern conformism, economic crisis, re-Russification, and the metamodern revolution. Published in &lt;em&gt;Információs Társadalom&lt;/em&gt; XXIV, no.&nbsp;3 (2024)."
+                   data-en="1970s&ndash;2020s: The Golden Age, postmodern conformism, economic crisis, re-Russification, and the metamodern revolution. Published in &lt;em&gt;Información Társadalom&lt;/em&gt; XXIV, no.&nbsp;3 (2024)."
                    data-ua="1970–2020-ті: Золота доба, постмодерний конформізм, економічна криза, повторна русифікація та метамодерна революція. Опубліковано в &lt;em&gt;Información Társadalom&lt;/em&gt; XXIV, №3 (2024).">1970s&ndash;2020s: The Golden Age, postmodern conformism, economic crisis, re-Russification, and the metamodern revolution. Published in <em>Información Társadalom</em> XXIV, no.&nbsp;3 (2024).</div>
             </div>
             <div class="pp-article-arrow">&#8594;</div>
           </a>
 
-          <a href="{{ 'phd/kasyanyuk-techno-communism/' | url }}" class="pp-article-card pp-fade">
+          <a href="{{ 'phd/kasyanyuk-techno-communism/' | url }}"
+             data-href-en="{{ 'phd/kasyanyuk-techno-communism/' | url }}"
+             data-href-ua="{{ 'phd/uk/kasyanyuk-techno-communism/' | url }}"
+             class="pp-article-card pp-fade">
             <div class="pp-article-num">03</div>
             <div class="pp-article-body">
               <div class="pp-article-t"
@@ -559,7 +586,10 @@
             <div class="pp-article-arrow">&#8594;</div>
           </a>
 
-          <a href="{{ 'phd/mt-180-thesis/' | url }}" class="pp-article-card pp-fade">
+          <a href="{{ 'phd/mt-180-thesis/' | url }}"
+             data-href-en="{{ 'phd/mt-180-thesis/' | url }}"
+             data-href-ua="{{ 'phd/uk/mt-180-thesis/' | url }}"
+             class="pp-article-card pp-fade">
             <div class="pp-article-num">04</div>
             <div class="pp-article-body">
               <div class="pp-article-t">MT 180 &mdash; National Final 2025</div>
@@ -649,5 +679,4 @@
   </script>
 {% endblock %}
 
-{% block content %}{% endblock %}
 {% block footer %}{% endblock %}
