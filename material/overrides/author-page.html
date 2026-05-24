@@ -174,3 +174,65 @@
   </style>
 
 {% endblock %}
+
+{% block site_nav %}
+{%- set pg = page.url -%}
+{%- set act_idx        = pg == 'authors/' or pg == 'authors/uk/' -%}
+{%- set act_kasyanyuk  = 'sandro-kasyanyuk' in pg -%}
+{%- set act_berezhnyi  = 'vasyl-berezhnyi'  in pg -%}
+{%- set act_zayets     = 'volodymyr-zayets' in pg -%}
+{%- set act_pologyj    = 'viktor-pologyj'   in pg -%}
+<nav class="md-nav md-nav--primary" aria-label="Authors">
+  <label class="md-nav__title">
+    <span data-en="Authors" data-ua="Автори">Authors</span>
+  </label>
+  <ul class="md-nav__list" style="padding:.4rem 0">
+
+    <li class="md-nav__item{% if act_idx %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_idx %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/' | url }}"
+         data-href-en="{{ 'authors/' | url }}"
+         data-href-ua="{{ 'authors/uk/' | url }}">
+        <span data-en="Overview" data-ua="Огляд">Overview</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_kasyanyuk %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_kasyanyuk %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/sandro-kasyanyuk/' | url }}"
+         data-href-en="{{ 'authors/sandro-kasyanyuk/' | url }}"
+         data-href-ua="{{ 'authors/uk/sandro-kasyanyuk/' | url }}">
+        <span data-en="Sandro Kasyanyuk" data-ua="Сандро Касянюк">Sandro Kasyanyuk</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berezhnyi %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berezhnyi %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/vasyl-berezhnyi/' | url }}"
+         data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
+         data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
+        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_zayets %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_zayets %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-zayets/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-zayets/' | url }}"
+         data-href-ua="{{ 'authors/uk/volodymyr-zayets/' | url }}">
+        <span data-en="Volodymyr Zayets" data-ua="Володимир Заєць">Volodymyr Zayets</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
+        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+{% endblock %}

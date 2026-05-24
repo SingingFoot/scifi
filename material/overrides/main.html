@@ -133,6 +133,9 @@
     var LANG_KEY = 'site-lang';
 
     /* All UK page paths (absolute, trailing slash) */
+    /* NOTE: Authors paths are intentionally excluded — the authors sidebar uses
+       a hardcoded nav (block site_nav) with data-href-en/data-href-ua,
+       so it must NOT be marked by markNavItems() or CSS will hide it in UA mode. */
     var UK_PATHS = [
       '/phd/uk/ukrainian-sf-part-1/',
       '/phd/uk/ukrainian-sf-part-2/',
@@ -153,7 +156,12 @@
       '/phd/ukrainian-sf-part-1/':        '/phd/uk/ukrainian-sf-part-1/',
       '/phd/ukrainian-sf-part-2/':        '/phd/uk/ukrainian-sf-part-2/',
       '/phd/mt-180-thesis/':              '/phd/uk/mt-180-thesis/',
-      '/phd/kasyanyuk-techno-communism/': '/phd/uk/kasyanyuk-techno-communism/'
+      '/phd/kasyanyuk-techno-communism/': '/phd/uk/kasyanyuk-techno-communism/',
+      '/authors/':                        '/authors/uk/',
+      '/authors/sandro-kasyanyuk/':       '/authors/uk/sandro-kasyanyuk/',
+      '/authors/vasyl-berezhnyi/':        '/authors/uk/vasyl-berezhnyi/',
+      '/authors/volodymyr-zayets/':       '/authors/uk/volodymyr-zayets/',
+      '/authors/viktor-pologyj/':         '/authors/uk/viktor-pologyj/'
     };
     var UK_TO_EN = {};
     Object.keys(EN_TO_UK).forEach(function(k){ UK_TO_EN[EN_TO_UK[k]] = k; });

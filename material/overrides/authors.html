@@ -1,5 +1,5 @@
 {#-
-  Authors index page — dark cosmic style
+  Authors index page — dark cosmic style, sidebar-aware layout
 -#}
 {% extends "main.html" %}
 
@@ -10,12 +10,33 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
 
   <style>
-    /* ── MkDocs overrides ── */
-    .md-header   { position: initial }
-    .md-main__inner { margin: 0 }
-    .md-content  { display: none }
-    @media screen and (min-width: 60em)    { .md-sidebar--secondary { display: none } }
-    @media screen and (min-width: 76.25em) { .md-sidebar--primary   { display: none } }
+    /* ── Global background ── */
+    body,
+    .md-main,
+    .md-main__inner,
+    [data-md-color-scheme] {
+      background: #05050f !important;
+      color: #e8e8f0 !important;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+
+    /* ── Left sidebar: keep visible, dark-styled ── */
+    .md-sidebar--primary,
+    .md-sidebar--primary .md-sidebar__scrollwrap {
+      background: rgba(5,5,15,.95) !important;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .md-nav__title { color: rgba(232,232,240,.55) !important; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase }
+    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
+    .md-nav__link:hover, .md-nav__link--active { color: #4a9eff !important }
+    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
+
+    /* ── Right TOC: hidden ── */
+    @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
+
+    /* ── Content area: transparent, no padding (we handle it ourselves) ── */
+    .md-content  { background: transparent !important }
+    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 !important }
 
     /* ── Design tokens ── */
     :root {
@@ -32,27 +53,26 @@
       --ease:       cubic-bezier(.4,0,.2,1);
     }
 
-    .au { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--c-bg); color: var(--c-text); line-height: 1.65; overflow-x: hidden }
+    .au { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.65; overflow-x: hidden }
     .au a { color: inherit; text-decoration: none }
-    .au-wrap { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem }
+    .au-wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem }
 
     .au-pill { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--c-blue); background: var(--c-blue-dim); padding: .25rem .8rem; border-radius: 50px; margin-bottom: .9rem }
-    .au-h2 { font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 800; color: #fff; margin: 0 0 .75rem; line-height: 1.15 }
-    .au-sec { padding: 4rem 0 }
+    .au-h2 { font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; color: #fff; margin: 0 0 .75rem; line-height: 1.15 }
+    .au-sec { padding: 2.5rem 0 }
     .au-divider { border: none; border-top: 1px solid var(--c-border); margin: 0 }
 
     /* ── HERO ── */
-    .au-hero { position: relative; overflow: hidden; padding: 5rem 0 4rem }
+    .au-hero { position: relative; overflow: hidden; padding: 3.5rem 0 2.5rem }
     #au-stars { position: absolute; inset: 0; width: 100%; height: 100% }
     .au-glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .14; pointer-events: none }
     .au-glow-blue { width: 600px; height: 600px; background: #1050ff; top: -15%; right: -8% }
     .au-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -10%; left: -5% }
-
-    .au-hero-inner { position: relative; z-index: 1; max-width: 680px }
-    .au-hero-eye { display: flex; align-items: center; gap: .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-gold); margin-bottom: 1.1rem }
+    .au-hero-inner { position: relative; z-index: 1; max-width: 640px }
+    .au-hero-eye { display: flex; align-items: center; gap: .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-gold); margin-bottom: 1rem }
     .au-hero-eye::before { content: ''; width: 28px; height: 2px; background: var(--c-gold); flex-shrink: 0 }
-    .au-hero-title { font-size: clamp(2rem,4vw,3.2rem); font-weight: 800; color: #fff; margin: 0 0 1rem; line-height: 1.15 }
-    .au-hero-sub { font-size: 1rem; color: var(--c-muted); line-height: 1.8; max-width: 640px }
+    .au-hero-title { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 800; color: #fff; margin: 0 0 1rem; line-height: 1.15 }
+    .au-hero-sub { font-size: .95rem; color: var(--c-muted); line-height: 1.8; max-width: 600px }
 
     /* ── TIMELINE BAR ── */
     .au-timeline {
@@ -62,17 +82,13 @@
       border-bottom: 1px solid var(--c-border);
       background: rgba(255,255,255,.02);
     }
-    .au-era {
-      padding: 1.5rem 1.2rem;
-      border-right: 1px solid var(--c-border);
-      position: relative;
-    }
+    .au-era { padding: 1.1rem 1rem; border-right: 1px solid var(--c-border) }
     .au-era:last-child { border-right: none }
-    .au-era-dec { font-size: 1.1rem; font-weight: 800; color: var(--c-gold); margin-bottom: .2rem }
-    .au-era-lbl { font-size: .72rem; color: var(--c-muted); text-transform: uppercase; letter-spacing: .1em }
+    .au-era-dec { font-size: .95rem; font-weight: 800; color: var(--c-gold); margin-bottom: .2rem }
+    .au-era-lbl { font-size: .68rem; color: var(--c-muted); text-transform: uppercase; letter-spacing: .1em }
 
     /* ── AUTHOR CARDS ── */
-    .au-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 1rem }
+    .au-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 1rem }
     .au-card {
       display: flex; flex-direction: column;
       background: var(--c-surface);
@@ -83,53 +99,39 @@
       text-decoration: none;
     }
     .au-card:hover { border-color: rgba(74,158,255,.3); transform: translateY(-4px) }
-
-    /* cover strip */
-    .au-card-cover {
-      height: 200px; position: relative; overflow: hidden;
-      background: linear-gradient(135deg,#0a0e2a 0%,#111840 100%);
-    }
+    .au-card-cover { height: 150px; position: relative; overflow: hidden; background: linear-gradient(135deg,#0a0e2a 0%,#111840 100%) }
     .au-card-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform .4s var(--ease) }
     .au-card:hover .au-card-cover img { transform: scale(1.04) }
-    .au-card-cover-fade {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent 40%, var(--c-bg) 100%);
-    }
-
-    /* portrait bubble overlapping cover */
-    .au-card-portrait {
-      width: 80px; height: 80px; border-radius: 50%;
-      border: 3px solid var(--c-bg);
-      overflow: hidden;
-      background: #1a1a2e;
-      margin: -40px auto 0;
-      position: relative; z-index: 2;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .au-card-cover-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--c-bg) 100%) }
+    .au-card-portrait { width: 68px; height: 68px; border-radius: 50%; border: 3px solid var(--c-bg); overflow: hidden; background: #1a1a2e; margin: -34px auto 0; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; flex-shrink: 0 }
     .au-card-portrait img { width: 100%; height: 100%; object-fit: cover; display: block }
-    .au-card-portrait-initials { font-size: 1.4rem; font-weight: 800; color: var(--c-blue) }
-
-    .au-card-body { padding: .8rem 1.4rem 1.5rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center }
-    .au-card-name { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: .2rem }
-    .au-card-dates { font-size: .76rem; color: var(--c-gold); font-weight: 600; margin-bottom: .6rem; letter-spacing: .04em }
-    .au-card-tag { display: inline-block; font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-blue); background: var(--c-blue-dim); padding: .2rem .65rem; border-radius: 50px; margin-bottom: .8rem }
-    .au-card-desc { font-size: .82rem; color: var(--c-muted); line-height: 1.6; text-align: center; flex: 1 }
-    .au-card-cta { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1rem; font-size: .78rem; font-weight: 600; color: var(--c-blue) }
+    .au-card-portrait-initials { font-size: 1.2rem; font-weight: 800; color: var(--c-blue) }
+    .au-card-body { padding: .7rem 1.1rem 1.2rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center }
+    .au-card-name { font-size: .95rem; font-weight: 800; color: #fff; margin-bottom: .2rem }
+    .au-card-dates { font-size: .72rem; color: var(--c-gold); font-weight: 600; margin-bottom: .45rem; letter-spacing: .04em }
+    .au-card-tag { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-blue); background: var(--c-blue-dim); padding: .18rem .55rem; border-radius: 50px; margin-bottom: .65rem }
+    .au-card-desc { font-size: .78rem; color: var(--c-muted); line-height: 1.6; text-align: center; flex: 1 }
+    .au-card-cta { display: inline-flex; align-items: center; gap: .4rem; margin-top: .8rem; font-size: .74rem; font-weight: 600; color: var(--c-blue) }
     .au-card-cta::after { content: '→'; transition: transform .2s var(--ease) }
     .au-card:hover .au-card-cta::after { transform: translateX(4px) }
-
-    /* placeholder cover gradient per author */
     .au-cover-kasyanyuk { background: linear-gradient(135deg,#1a0533 0%,#3d0d6b 100%) }
     .au-cover-berezhnyi { background: linear-gradient(135deg,#051a33 0%,#0d3d6b 100%) }
     .au-cover-zayets    { background: linear-gradient(135deg,#0d1a05 0%,#1e3d0d 100%) }
     .au-cover-polozhyi  { background: linear-gradient(135deg,#1a1205 0%,#3d2b0d 100%) }
 
     /* ── INTRO TEXT ── */
-    .au-intro { max-width: 820px }
-    .au-intro p { font-size: 1rem; color: var(--c-muted); line-height: 1.8; margin-bottom: .9rem }
+    .au-intro p { font-size: .95rem; color: var(--c-muted); line-height: 1.8; margin-bottom: .9rem }
     .au-intro strong { color: var(--c-text) }
-    .au-intro a { color: var(--c-blue) }
+
+    /* ── FOOTER ── */
+    .md-footer { background: rgba(5,5,15,.98) !important; border-top: 1px solid var(--c-border) !important }
+    .md-footer-meta { background: transparent !important }
+    .md-footer__link { color: var(--c-muted) !important }
+    .md-footer__link:hover { color: var(--c-blue) !important }
+    .md-footer__title { color: var(--c-text) !important }
+
+    /* ── SCROLLBAR ── */
+    * { scrollbar-color: rgba(74,158,255,.25) transparent; scrollbar-width: thin }
 
     /* ── FADE ── */
     .au-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s var(--ease), transform .5s var(--ease) }
@@ -142,7 +144,9 @@
       .au-era:nth-child(2) { border-right: none }
     }
   </style>
+{% endblock %}
 
+{% block content %}
   <div class="au">
 
     <!-- ══════ HERO ══════ -->
@@ -152,9 +156,15 @@
       <div class="au-glow au-glow-gold"></div>
       <div class="au-wrap">
         <div class="au-hero-inner au-fade">
-          <div class="au-hero-eye">Ukrainian Science Fiction</div>
-          <h1 class="au-hero-title">Featured Authors</h1>
-          <p class="au-hero-sub">
+          <div class="au-hero-eye"
+               data-en="Ukrainian Science Fiction"
+               data-ua="Українська наукова фантастика">Ukrainian Science Fiction</div>
+          <h1 class="au-hero-title"
+              data-en="Featured Authors"
+              data-ua="Визначні автори">Featured Authors</h1>
+          <p class="au-hero-sub"
+             data-en="Ukrainian SF has undergone radical transformations over a century — shaped by political ideology, industrialisation, oppression, and cultural revival. These four writers represent pivotal moments in that journey: from naive techno-communism to existential postmodernism."
+             data-ua="Українська наукова фантастика зазнала радикальних перетворень упродовж століття — під впливом політичної ідеології, індустріалізації, репресій і культурного відродження. Ці четверо письменників уособлюють ключові моменти цього шляху: від наївного технокомунізму до екзистенційного постмодернізму.">
             Ukrainian SF has undergone radical transformations over a century — shaped by political ideology,
             industrialisation, oppression, and cultural revival. These four writers represent pivotal
             moments in that journey: from naive techno-communism to existential postmodernism.
@@ -167,32 +177,47 @@
     <div class="au-timeline">
       <div class="au-era">
         <div class="au-era-dec">1920s</div>
-        <div class="au-era-lbl">Proto-SF &amp; Techno-Communism</div>
+        <div class="au-era-lbl"
+             data-en="Proto-SF &amp; Techno-Communism"
+             data-ua="Протофантастика та технокомунізм">Proto-SF &amp; Techno-Communism</div>
       </div>
       <div class="au-era">
         <div class="au-era-dec">1940–60s</div>
-        <div class="au-era-lbl">Soviet Space Fiction &amp; Utopia</div>
+        <div class="au-era-lbl"
+             data-en="Soviet Space Fiction &amp; Utopia"
+             data-ua="Радянська космічна фантастика та утопія">Soviet Space Fiction &amp; Utopia</div>
       </div>
       <div class="au-era">
         <div class="au-era-dec">1970–80s</div>
-        <div class="au-era-lbl">Golden Age &amp; Philosophical SF</div>
+        <div class="au-era-lbl"
+             data-en="Golden Age &amp; Philosophical SF"
+             data-ua="Золота доба та філософська фантастика">Golden Age &amp; Philosophical SF</div>
       </div>
       <div class="au-era">
         <div class="au-era-dec">1990–2000s</div>
-        <div class="au-era-lbl">Postmodernism &amp; Identity</div>
+        <div class="au-era-lbl"
+             data-en="Postmodernism &amp; Identity"
+             data-ua="Постмодернізм та ідентичність">Postmodernism &amp; Identity</div>
       </div>
     </div>
 
     <!-- ══════ AUTHOR CARDS ══════ -->
     <section class="au-sec">
       <div class="au-wrap">
-        <div class="au-pill">Four Voices</div>
-        <h2 class="au-h2">Writers Who Shaped Ukrainian Sci-Fi</h2>
+        <div class="au-pill"
+             data-en="Four Voices"
+             data-ua="Чотири голоси">Four Voices</div>
+        <h2 class="au-h2"
+            data-en="Writers Who Shaped Ukrainian Sci-Fi"
+            data-ua="Письменники, що сформували українську фантастику">Writers Who Shaped Ukrainian Sci-Fi</h2>
 
         <div class="au-grid">
 
           <!-- Kasyanyuk -->
-          <a href="{{ 'authors/sandro-kasyanyuk/' | url }}" class="au-card au-fade">
+          <a href="{{ 'authors/sandro-kasyanyuk/' | url }}"
+             data-href-en="{{ 'authors/sandro-kasyanyuk/' | url }}"
+             data-href-ua="{{ 'authors/uk/sandro-kasyanyuk/' | url }}"
+             class="au-card au-fade">
             <div class="au-card-cover au-cover-kasyanyuk">
               <div class="au-card-cover-fade"></div>
             </div>
@@ -200,16 +225,27 @@
               <span class="au-card-portrait-initials">SK</span>
             </div>
             <div class="au-card-body">
-              <div class="au-card-name">Sandro Kasyanyuk</div>
+              <div class="au-card-name"
+                   data-en="Sandro Kasyanyuk"
+                   data-ua="Сандро Касянюк">Sandro Kasyanyuk</div>
               <div class="au-card-dates">c.&thinsp;1900 &ndash; unknown</div>
-              <span class="au-card-tag">Proto-SF &middot; Techno-Communism</span>
-              <p class="au-card-desc">Factory worker at Kharkiv's Elektrosila plant who became the first known Ukrainian science fiction writer — celebrating machines as living comrades of the proletariat.</p>
-              <span class="au-card-cta">Read biography</span>
+              <span class="au-card-tag"
+                    data-en="Proto-SF · Techno-Communism"
+                    data-ua="Протофантастика · Технокомунізм">Proto-SF &middot; Techno-Communism</span>
+              <p class="au-card-desc"
+                 data-en="Factory worker at Kharkiv's Elektrosila plant who became the first known Ukrainian science fiction writer — celebrating machines as living comrades of the proletariat."
+                 data-ua="Заводський робітник харківської «Електросили», що став першим відомим українським письменником-фантастом — оспівуючи машини як живих товаришів пролетаріату.">Factory worker at Kharkiv's Elektrosila plant who became the first known Ukrainian science fiction writer — celebrating machines as living comrades of the proletariat.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
             </div>
           </a>
 
           <!-- Berezhnyi -->
-          <a href="{{ 'authors/vasyl-berezhnyi/' | url }}" class="au-card au-fade">
+          <a href="{{ 'authors/vasyl-berezhnyi/' | url }}"
+             data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
+             data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}"
+             class="au-card au-fade">
             <div class="au-card-cover au-cover-berezhnyi">
               <img src="{{ 'assets/images/zemlya.png' | url }}" alt="В небі – Земля book cover">
               <div class="au-card-cover-fade"></div>
@@ -218,16 +254,27 @@
               <img src="{{ 'assets/images/berezhnyi.png' | url }}" alt="Vasyl Berezhnyi">
             </div>
             <div class="au-card-body">
-              <div class="au-card-name">Vasyl Berezhnyi</div>
+              <div class="au-card-name"
+                   data-en="Vasyl Berezhnyi"
+                   data-ua="Василь Бережній">Vasyl Berezhnyi</div>
               <div class="au-card-dates">1918 &ndash; 1988</div>
-              <span class="au-card-tag">Space SF &middot; Utopia</span>
-              <p class="au-card-desc">Journalist, war veteran, and prolific SF novelist whose debut <em>To the Starry Worlds</em> (1956) sold 165,000 copies — a leading figure in Soviet-era Ukrainian space fiction.</p>
-              <span class="au-card-cta">Read biography</span>
+              <span class="au-card-tag"
+                    data-en="Space SF · Utopia"
+                    data-ua="Космічна фантастика · Утопія">Space SF &middot; Utopia</span>
+              <p class="au-card-desc"
+                 data-en="Journalist, war veteran, and prolific SF novelist whose debut &lt;em&gt;To the Starry Worlds&lt;/em&gt; (1956) sold 165,000 copies — a leading figure in Soviet-era Ukrainian space fiction."
+                 data-ua="Журналіст, ветеран війни та плідний автор НФ-романів, чий дебют &lt;em&gt;«У зоряні світи»&lt;/em&gt; (1956) розійшовся тиражем 165 000 примірників — провідна постать радянської української космічної фантастики.">Journalist, war veteran, and prolific SF novelist whose debut <em>To the Starry Worlds</em> (1956) sold 165,000 copies — a leading figure in Soviet-era Ukrainian space fiction.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
             </div>
           </a>
 
           <!-- Zayets -->
-          <a href="{{ 'authors/volodymyr-zayets/' | url }}" class="au-card au-fade">
+          <a href="{{ 'authors/volodymyr-zayets/' | url }}"
+             data-href-en="{{ 'authors/volodymyr-zayets/' | url }}"
+             data-href-ua="{{ 'authors/uk/volodymyr-zayets/' | url }}"
+             class="au-card au-fade">
             <div class="au-card-cover au-cover-zayets">
               <img src="{{ 'assets/images/zayets-book.jpg' | url }}" alt="Temponauts book cover">
               <div class="au-card-cover-fade"></div>
@@ -236,16 +283,27 @@
               <img src="{{ 'assets/images/zayets2.jpg' | url }}" alt="Volodymyr Zayets">
             </div>
             <div class="au-card-body">
-              <div class="au-card-name">Volodymyr Zayets</div>
+              <div class="au-card-name"
+                   data-en="Volodymyr Zayets"
+                   data-ua="Володимир Заєць">Volodymyr Zayets</div>
               <div class="au-card-dates">1949 &ndash; 2002</div>
-              <span class="au-card-tag">Postmodernism &middot; Paradox</span>
-              <p class="au-card-desc">Pediatrician by day and satirical SF writer by night — master of unexpected plot twists and philosophical paradoxes. Died under mysterious circumstances in Yemen.</p>
-              <span class="au-card-cta">Read biography</span>
+              <span class="au-card-tag"
+                    data-en="Postmodernism · Paradox"
+                    data-ua="Постмодернізм · Парадокс">Postmodernism &middot; Paradox</span>
+              <p class="au-card-desc"
+                 data-en="Pediatrician by day and satirical SF writer by night — master of unexpected plot twists and philosophical paradoxes. Died under mysterious circumstances in Yemen."
+                 data-ua="Вдень — педіатр, вночі — письменник-сатирик: майстер несподіваних сюжетних поворотів і філософських парадоксів. Загинув за загадкових обставин у Ємені.">Pediatrician by day and satirical SF writer by night — master of unexpected plot twists and philosophical paradoxes. Died under mysterious circumstances in Yemen.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
             </div>
           </a>
 
           <!-- Polozhyi -->
-          <a href="{{ 'authors/viktor-pologyj/' | url }}" class="au-card au-fade">
+          <a href="{{ 'authors/viktor-pologyj/' | url }}"
+             data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
+             data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}"
+             class="au-card au-fade">
             <div class="au-card-cover au-cover-polozhyi">
               <img src="{{ 'assets/images/polozhiy-book.jpg' | url }}" alt="Solar Wind book cover">
               <div class="au-card-cover-fade"></div>
@@ -254,11 +312,19 @@
               <img src="{{ 'assets/images/polozhiy.jpg' | url }}" alt="Viktor Polozhyi">
             </div>
             <div class="au-card-body">
-              <div class="au-card-name">Viktor Polozhyi</div>
+              <div class="au-card-name"
+                   data-en="Viktor Polozhyi"
+                   data-ua="Віктор Положій">Viktor Polozhyi</div>
               <div class="au-card-dates">1949 &ndash; 2004</div>
-              <span class="au-card-tag">Philosophical SF &middot; Existentialism</span>
-              <p class="au-card-desc">Philologist, literary critic, and SF writer whose collection <em>Solar Wind</em> exemplifies the Golden Age of Ukrainian SF — paradoxical, humorous, and deeply philosophical.</p>
-              <span class="au-card-cta">Read biography</span>
+              <span class="au-card-tag"
+                    data-en="Philosophical SF · Existentialism"
+                    data-ua="Філософська фантастика · Екзистенціалізм">Philosophical SF &middot; Existentialism</span>
+              <p class="au-card-desc"
+                 data-en="Philologist, literary critic, and SF writer whose collection &lt;em&gt;Solar Wind&lt;/em&gt; exemplifies the Golden Age of Ukrainian SF — paradoxical, humorous, and deeply philosophical."
+                 data-ua="Філолог, літературний критик і письменник-фантаст, чия збірка &lt;em&gt;«Сонячний вітер»&lt;/em&gt; втілює Золоту добу української НФ — парадоксальну, гумористичну та глибоко філософську.">Philologist, literary critic, and SF writer whose collection <em>Solar Wind</em> exemplifies the Golden Age of Ukrainian SF — paradoxical, humorous, and deeply philosophical.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
             </div>
           </a>
 
@@ -271,29 +337,36 @@
     <!-- ══════ OVERVIEW TEXT ══════ -->
     <section class="au-sec">
       <div class="au-wrap">
-        <div class="au-pill">Context</div>
-        <h2 class="au-h2">A Century of Ukrainian Science Fiction</h2>
+        <div class="au-pill"
+             data-en="Context"
+             data-ua="Контекст">Context</div>
+        <h2 class="au-h2"
+            data-en="A Century of Ukrainian Science Fiction"
+            data-ua="Століття української наукової фантастики">A Century of Ukrainian Science Fiction</h2>
         <div class="au-intro au-fade">
-          <p>
+          <p data-en="Ukrainian science fiction has always been determined by the requirements of the time and the political situation. The fiction of the &lt;strong&gt;1920s&lt;/strong&gt; promoted the ideology of naive techno-communism — epitomised by Sandro Kasyanyuk, who portrayed machines as companions of the proletariat and technology as the key to a socialist paradise."
+             data-ua="Українська наукова фантастика завжди визначалась вимогами часу і політичною ситуацією. Фантастика &lt;strong&gt;1920-х&lt;/strong&gt; пропагувала ідеологію наївного технокомунізму — уособлену Сандром Касянюком, який зображував машини товаришами пролетаріату, а технологію — ключем до соціалістичного раю.">
             Ukrainian science fiction has always been determined by the requirements of the time and the political situation.
             The fiction of the <strong>1920s</strong> promoted the ideology of naive techno-communism — epitomised by
             Sandro Kasyanyuk, who portrayed machines as companions of the proletariat and technology as the key to
-            a socialist paradise. During the following decades it became obvious that the Soviet project had reached
-            a dead end, and its positivist component had not brought the desired results.
+            a socialist paradise.
           </p>
-          <p>
+          <p data-en="By the &lt;strong&gt;1940s–1950s&lt;/strong&gt;, Ukrainian SF transitioned into &quot;short-sighted fiction&quot; — novels focused on technological advancement within Soviet ideology, with the West cast as antagonist. &lt;strong&gt;Vasyl Berezhnyi&lt;/strong&gt; was among its most widely read practitioners: his debut novel sold 165,000 copies and was translated into more than nine languages."
+             data-ua="У &lt;strong&gt;1940–50-х&lt;/strong&gt; українська НФ перейшла у фазу «близькозорої прози». &lt;strong&gt;Василь Бережній&lt;/strong&gt; був одним із найпопулярніших її представників: його дебютний роман розійшовся тиражем 165 000 примірників і був перекладений більш як дев'ятьма мовами.">
             By the <strong>1940s–1950s</strong>, Ukrainian SF transitioned into "short-sighted fiction" — novels
             focused on technological advancement within Soviet ideology, with the West cast as antagonist.
             <strong>Vasyl Berezhnyi</strong> was among its most widely read practitioners: his debut novel sold
             165,000 copies and was translated into more than nine languages.
           </p>
-          <p>
+          <p data-en="The &lt;strong&gt;1970s–1980s&lt;/strong&gt; brought a Golden Age free from heavy-handed propaganda. &lt;strong&gt;Volodymyr Zayets&lt;/strong&gt; and &lt;strong&gt;Viktor Polozhyi&lt;/strong&gt; refined a distinctly Ukrainian voice — paradoxical, ironic, deeply human — that would resonate long after the Soviet collapse."
+             data-ua="&lt;strong&gt;1970–80-ті&lt;/strong&gt; принесли Золоту добу, вільну від нав'язливої пропаганди. &lt;strong&gt;Володимир Заєць&lt;/strong&gt; і &lt;strong&gt;Віктор Положій&lt;/strong&gt; відшліфували самобутній український голос — парадоксальний, іронічний, глибоко людяний.">
             The <strong>1970s–1980s</strong> brought a Golden Age free from heavy-handed propaganda. Writers explored
             philosophical questions of identity, memory, and artificial intelligence. <strong>Volodymyr Zayets</strong>
             and <strong>Viktor Polozhyi</strong> refined a distinctly Ukrainian voice — paradoxical, ironic, deeply
             human — that would resonate long after the Soviet collapse.
           </p>
-          <p>
+          <p data-en="Ukrainian SF writers consistently reflected the political and ideological struggles of their time, from industrial utopianism to dystopian critiques of totalitarianism. Their legacy remains a fascinating study of how literature can both serve ideology and challenge it."
+             data-ua="Українські письменники-фантасти незмінно відображали політичні й ідеологічні протиріччя свого часу — від промислового утопізму до дистопійної критики тоталітаризму. Їхня спадщина залишається захопливим свідченням того, як література може і служити ідеології, і кидати їй виклик.">
             Ukrainian SF writers consistently reflected the political and ideological struggles of their time,
             from industrial utopianism to dystopian critiques of totalitarianism. Their legacy remains a
             fascinating study of how literature can both serve ideology and challenge it.
@@ -340,5 +413,64 @@
   </script>
 {% endblock %}
 
-{% block content %}{% endblock %}
-{% block footer %}{% endblock %}
+{% block site_nav %}
+{%- set pg = page.url -%}
+{%- set act_idx        = pg == 'authors/' or pg == 'authors/uk/' -%}
+{%- set act_kasyanyuk  = 'sandro-kasyanyuk' in pg -%}
+{%- set act_berezhnyi  = 'vasyl-berezhnyi'  in pg -%}
+{%- set act_zayets     = 'volodymyr-zayets' in pg -%}
+{%- set act_pologyj    = 'viktor-pologyj'   in pg -%}
+<nav class="md-nav md-nav--primary" aria-label="Authors">
+  <label class="md-nav__title">
+    <span data-en="Authors" data-ua="Автори">Authors</span>
+  </label>
+  <ul class="md-nav__list" style="padding:.4rem 0">
+
+    <li class="md-nav__item{% if act_idx %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_idx %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/' | url }}"
+         data-href-en="{{ 'authors/' | url }}"
+         data-href-ua="{{ 'authors/uk/' | url }}">
+        <span data-en="Overview" data-ua="Огляд">Overview</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_kasyanyuk %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_kasyanyuk %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/sandro-kasyanyuk/' | url }}"
+         data-href-en="{{ 'authors/sandro-kasyanyuk/' | url }}"
+         data-href-ua="{{ 'authors/uk/sandro-kasyanyuk/' | url }}">
+        <span data-en="Sandro Kasyanyuk" data-ua="Сандро Касянюк">Sandro Kasyanyuk</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berezhnyi %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berezhnyi %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/vasyl-berezhnyi/' | url }}"
+         data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
+         data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
+        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_zayets %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_zayets %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-zayets/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-zayets/' | url }}"
+         data-href-ua="{{ 'authors/uk/volodymyr-zayets/' | url }}">
+        <span data-en="Volodymyr Zayets" data-ua="Володимир Заєць">Volodymyr Zayets</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
+        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+{% endblock %}
