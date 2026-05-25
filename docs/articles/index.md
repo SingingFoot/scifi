@@ -1,5 +1,5 @@
 ---
-template: section-hero.html
+template: article-index.html
 description: Essays by Oleh Shynkarenko on metamodernism, Ukrainian cinema, philosophy of science, and Soviet cultural history.
 pill: Academic Writing
 ---

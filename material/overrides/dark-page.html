@@ -1,26 +1,42 @@
 {#-
   Dark content page — matches the site's cosmic dark background.
-  Used by: all individual article and book pages.
+  Used by: all individual article and book pages (via article-page.html / book-page.html).
 -#}
 {% extends "main.html" %}
 
-{% block extrahead %}
+{% block tabs %}
   {{ super() }}
   <style>
     /* ── dark background matching the hero pages ── */
     body,
     .md-main,
     .md-main__inner,
-    .md-content,
-    .md-content__inner {
+    [data-md-color-scheme] {
       background: #05050f !important;
     }
 
+    /* ── Left sidebar nav ── */
+    .md-sidebar--primary,
+    .md-sidebar--primary .md-sidebar__scrollwrap {
+      background: rgba(5,5,15,.95) !important;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .md-nav__title {
+      color: rgba(232,232,240,.55) !important;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
+    .md-nav__link:hover,
+    .md-nav__link--active { color: #4a9eff !important }
+    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
+
+    /* ── hide right-hand TOC sidebar ── */
+    @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
+
     /* ── hide edit / view-source buttons ── */
     .md-content__button { display: none !important }
-
-    /* ── hide right-hand ToC sidebar (optional: remove if you want to keep it) ── */
-    /* @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } } */
 
     /* ── subtle top glow to echo the hero ── */
     .md-content__inner::before {

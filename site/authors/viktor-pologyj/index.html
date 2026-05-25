@@ -59,7 +59,8 @@
     /* All UK page paths (absolute, trailing slash) */
     /* NOTE: Authors paths are intentionally excluded — the authors sidebar uses
        a hardcoded nav (block site_nav) with data-href-en/data-href-ua,
-       so it must NOT be marked by markNavItems() or CSS will hide it in UA mode. */
+       so it must NOT be marked by markNavItems() or CSS will hide it in UA mode.
+       Articles paths are also excluded for the same reason. */
     var UK_PATHS = [
       '/phd/uk/ukrainian-sf-part-1/',
       '/phd/uk/ukrainian-sf-part-2/',
@@ -85,7 +86,19 @@
       '/authors/sandro-kasyanyuk/':       '/authors/uk/sandro-kasyanyuk/',
       '/authors/vasyl-berezhnyi/':        '/authors/uk/vasyl-berezhnyi/',
       '/authors/volodymyr-zayets/':       '/authors/uk/volodymyr-zayets/',
-      '/authors/viktor-pologyj/':         '/authors/uk/viktor-pologyj/'
+      '/authors/viktor-pologyj/':         '/authors/uk/viktor-pologyj/',
+      '/articles/':                       '/articles/uk/',
+      '/articles/manifesto/':             '/articles/uk/manifesto/',
+      '/articles/faces-of-war/':          '/articles/uk/faces-of-war/',
+      '/articles/struggle-for-reality/':  '/articles/uk/struggle-for-reality/',
+      '/articles/portrait/':             '/articles/uk/portrait/',
+      '/articles/timescapes/':            '/articles/uk/timescapes/',
+      '/books/':                          '/books/uk/',
+      '/books/yak/':                      '/books/uk/yak/',
+      '/books/kaharlyk/':                 '/books/uk/kaharlyk/',
+      '/books/robots/':                   '/books/uk/robots/',
+      '/books/cherep/':                   '/books/uk/cherep/',
+      '/books/bandera/':                  '/books/uk/bandera/'
     };
     var UK_TO_EN = {};
     Object.keys(EN_TO_UK).forEach(function(k){ UK_TO_EN[EN_TO_UK[k]] = k; });
@@ -159,14 +172,35 @@
     /* Restore button states immediately (lang is already set on <html> from <head>) */
     updateButtons(savedLang);
 
+    /* Inject data-en/data-ua onto horizontal tab links so swapContent() translates them */
+    var TAB_LABELS = {
+      'Home':        'Головна',
+      'About me':    'Про мене',
+      'My PhD':      'Моя дисертація',
+      'Authors':     'Автори',
+      'My Articles': 'Мої статті',
+      'My Books':    'Мої книги'
+    };
+    function markTabItems() {
+      document.querySelectorAll('.md-tabs__link').forEach(function(link) {
+        var txt = link.textContent.trim();
+        if (TAB_LABELS[txt]) {
+          link.setAttribute('data-en', txt);
+          link.setAttribute('data-ua', TAB_LABELS[txt]);
+        }
+      });
+    }
+
     /* Mark nav items and swap content once DOM is ready, then enable CSS */
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function(){
         markNavItems();
+        markTabItems();
         swapContent(savedLang);
       });
     } else {
       markNavItems();
+      markTabItems();
       swapContent(savedLang);
     }
 

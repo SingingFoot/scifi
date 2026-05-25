@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: book-page.html
 description: Oleh Shynkarenko's debut short fiction collection — a Smoloskyp Award winner that bends language, form, and the reader's sense of stability.
 tags:
   - Short Fiction

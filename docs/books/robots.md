@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: book-page.html
 description: A speculative love triangle that dismantles its own logic — asking whether any meaningful boundary remains between the human and the artificial.
 tags:
   - Novel

@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: article-page.html
 description: How Soviet and Ukrainian cinema shaped and distorted historical memory of war — from Dovzhenko's 1928 propaganda to contemporary films like Bad Roads and Cyborgs.
 tags:
   - Film Criticism

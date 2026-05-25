@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: article-page.html
 description: From Newton's absolute time and Einstein's relativity to the digiphrenia and narrative collapse of the smartphone era — how our experience of time has transformed across four cultural epochs.
 tags:
   - Philosophy of Time

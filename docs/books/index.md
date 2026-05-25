@@ -1,5 +1,5 @@
 ---
-template: section-hero.html
+template: book-index.html
 description: Fiction by Oleh Shynkarenko — novels and short fiction exploring metamodernism, post-apocalyptic Ukraine, propaganda, and the fragility of identity.
 pill: Creative Fiction
 ---

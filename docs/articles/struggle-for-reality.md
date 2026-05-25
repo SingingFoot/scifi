@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: article-page.html
 description: A genealogy of positivism from Aquinas through logical empiricism, Popper, and Foucault to the post-truth era of social media and AI-generated knowledge.
 tags:
   - Philosophy of Science

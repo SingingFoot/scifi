@@ -1,5 +1,5 @@
 ---
-template: dark-page.html
+template: article-page.html
 description: A philosophical manifesto on metamodernism — the oscillation between irony and sincerity that defines contemporary art, consciousness, and culture beyond postmodernism.
 tags:
   - Philosophy
