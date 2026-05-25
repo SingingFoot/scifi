@@ -182,10 +182,10 @@
 {%- set act_berezhnyi  = 'vasyl-berezhnyi'  in pg -%}
 {%- set act_zayets     = 'volodymyr-zayets' in pg -%}
 {%- set act_pologyj    = 'viktor-pologyj'   in pg -%}
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
 <nav class="md-nav md-nav--primary" aria-label="Authors">
-  <label class="md-nav__title">
-    <span data-en="Authors" data-ua="Автори">Authors</span>
-  </label>
   <ul class="md-nav__list" style="padding:.4rem 0">
 
     <li class="md-nav__item{% if act_idx %} md-nav__item--active{% endif %}">
@@ -235,4 +235,7 @@
 
   </ul>
 </nav>
+    </div>
+  </div>
+</div>
 {% endblock %}
