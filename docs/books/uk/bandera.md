@@ -8,10 +8,10 @@ tags:
   - Українська literatura
 ---
 
-# Спотворення Бандери
+# Бандера Distortion
 
 <div class="book-page-header" markdown>
-![Спотворення Бандери](../../assets/images/books/bandera.jpg)
+![Бандера Distortion](../../assets/images/books/bandera.jpg)
 
 <p class="book-pub" markdown>
 **Опубліковано:** 2019 · **Жанр:** Роман

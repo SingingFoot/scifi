@@ -51,9 +51,9 @@ pill: Creative Fiction
 </div>
 
 <div class="book-card">
-  <a href="bandera/"><img src="../../assets/images/books/bandera.jpg" alt="Спотворення Бандери"></a>
+  <a href="bandera/"><img src="../../assets/images/books/bandera.jpg" alt="Бандера Distortion"></a>
   <div class="book-card-body">
-    <strong><a href="bandera/">Спотворення Бандери</a></strong>
+    <strong><a href="bandera/">Бандера Distortion</a></strong>
     <span class="book-year">2019 · Роман</span>
     <p>Відмовляється звести Бандеру до єдиного сенсу — незручне дослідження того, як суспільства конструюють і ідеалізують чи демонізують історичних діячів.</p>
   </div>

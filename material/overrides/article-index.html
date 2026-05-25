@@ -6,28 +6,24 @@
 
 {% block tabs %}
   {{ super() }}
-  {# Re-show the primary sidebar that section-hero hides by default + dark styling #}
   <style>
-    @media screen and (min-width: 76.25em) {
-      .md-sidebar--primary { display: flex !important }
+    .sh-sidebar-panel .sh-nav__link {
+      color: rgba(232,232,240,.55);
+      font-size: .84rem;
+      text-decoration: none;
+      display: block;
+      padding: .35rem .75rem;
+      border-radius: .25rem;
+      line-height: 1.4;
     }
-    .md-sidebar--primary,
-    .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: rgba(5,5,15,.95) !important;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .md-nav__title {
-      color: rgba(232,232,240,.55) !important;
-      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
-    }
-    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
-    .md-nav__link:hover,
-    .md-nav__link--active { color: #4a9eff !important }
-    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
+    .sh-sidebar-panel .sh-nav__link:hover,
+    .sh-sidebar-panel .sh-nav__link--active { color: #4a9eff }
+    .sh-sidebar-panel ul { list-style: none; margin: 0; padding: .4rem 0 }
+    .sh-sidebar-panel li { margin: 0 }
   </style>
 {% endblock %}
 
-{% block site_nav %}
+{% block sh_sidebar %}
 {%- set pg = page.url -%}
 {%- set act_idx       = pg == 'articles/' or pg == 'articles/uk/' -%}
 {%- set act_manifesto = 'manifesto' in pg -%}
@@ -36,78 +32,74 @@
 {%- set act_ostrikov  = 'metamodern-oscillation-ostrykov' in pg -%}
 {%- set act_portrait  = 'portrait' in pg -%}
 {%- set act_time      = 'timescapes' in pg -%}
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-  <div class="md-sidebar__scrollwrap">
-    <div class="md-sidebar__inner">
-      <nav class="md-nav md-nav--primary" aria-label="Articles">
-<ul class="md-nav__list" style="padding:.4rem 0">
+<div class="sh-sidebar-panel">
+  <nav aria-label="Articles">
+    <ul>
 
-          <li class="md-nav__item{% if act_idx %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_idx %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/' | url }}"
-               data-href-en="{{ 'articles/' | url }}"
-               data-href-ua="{{ 'articles/uk/' | url }}">
-              <span data-en="Overview" data-ua="Огляд">Overview</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_idx %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/' | url }}"
+           data-href-en="{{ 'articles/' | url }}"
+           data-href-ua="{{ 'articles/uk/' | url }}">
+          <span data-en="Overview" data-ua="Огляд">Overview</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_manifesto %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_manifesto %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/manifesto/' | url }}"
-               data-href-en="{{ 'articles/manifesto/' | url }}"
-               data-href-ua="{{ 'articles/uk/manifesto/' | url }}">
-              <span data-en="Metamodernism Manifesto" data-ua="Маніфест метамодернізму">Metamodernism Manifesto</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_manifesto %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/manifesto/' | url }}"
+           data-href-en="{{ 'articles/manifesto/' | url }}"
+           data-href-ua="{{ 'articles/uk/manifesto/' | url }}">
+          <span data-en="Metamodernism Manifesto" data-ua="Маніфест метамодернізму">Metamodernism Manifesto</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_war %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_war %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/faces-of-war/' | url }}"
-               data-href-en="{{ 'articles/faces-of-war/' | url }}"
-               data-href-ua="{{ 'articles/uk/faces-of-war/' | url }}">
-              <span data-en="The Faces of War" data-ua="Обличчя війни">The Faces of War</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_war %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/faces-of-war/' | url }}"
+           data-href-en="{{ 'articles/faces-of-war/' | url }}"
+           data-href-ua="{{ 'articles/uk/faces-of-war/' | url }}">
+          <span data-en="The Faces of War" data-ua="Обличчя війни">The Faces of War</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_struggle %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_struggle %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/struggle-for-reality/' | url }}"
-               data-href-en="{{ 'articles/struggle-for-reality/' | url }}"
-               data-href-ua="{{ 'articles/uk/struggle-for-reality/' | url }}">
-              <span data-en="From Counting Angels to Counting Likes" data-ua="Від ангелів до лайків">From Counting Angels to Counting Likes</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_struggle %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/struggle-for-reality/' | url }}"
+           data-href-en="{{ 'articles/struggle-for-reality/' | url }}"
+           data-href-ua="{{ 'articles/uk/struggle-for-reality/' | url }}">
+          <span data-en="From Counting Angels to Counting Likes" data-ua="Від ангелів до лайків">From Counting Angels to Counting Likes</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_ostrikov %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_ostrikov %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}"
-               data-href-en="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}"
-               data-href-ua="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}">
-              <span data-en="Metamodern Oscillation" data-ua="Метамодерна осциляція">Metamodern Oscillation</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_ostrikov %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}"
+           data-href-en="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}"
+           data-href-ua="{{ 'articles/metamodern-oscillation-ostrykov/' | url }}">
+          <span data-en="Metamodern Oscillation" data-ua="Метамодерна осциляція">Metamodern Oscillation</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_portrait %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_portrait %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/portrait/' | url }}"
-               data-href-en="{{ 'articles/portrait/' | url }}"
-               data-href-ua="{{ 'articles/uk/portrait/' | url }}">
-              <span data-en="Portrait of a Russian Intellectual as a Crocodile" data-ua="Портрет інтелектуала як крокодила">Portrait of a Russian Intellectual as a Crocodile</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_portrait %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/portrait/' | url }}"
+           data-href-en="{{ 'articles/portrait/' | url }}"
+           data-href-ua="{{ 'articles/uk/portrait/' | url }}">
+          <span data-en="Portrait of a Russian Intellectual as a Crocodile" data-ua="Портрет інтелектуала як крокодила">Portrait of a Russian Intellectual as a Crocodile</span>
+        </a>
+      </li>
 
-          <li class="md-nav__item{% if act_time %} md-nav__item--active{% endif %}">
-            <a class="md-nav__link{% if act_time %} md-nav__link--active{% endif %}"
-               href="{{ 'articles/timescapes/' | url }}"
-               data-href-en="{{ 'articles/timescapes/' | url }}"
-               data-href-ua="{{ 'articles/uk/timescapes/' | url }}">
-              <span data-en="Metamodern Timescapes" data-ua="Метамодерні пейзажі часу">Metamodern Timescapes</span>
-            </a>
-          </li>
+      <li>
+        <a class="sh-nav__link{% if act_time %} sh-nav__link--active{% endif %}"
+           href="{{ 'articles/timescapes/' | url }}"
+           data-href-en="{{ 'articles/timescapes/' | url }}"
+           data-href-ua="{{ 'articles/uk/timescapes/' | url }}">
+          <span data-en="Metamodern Timescapes" data-ua="Метамодерні пейзажі часу">Metamodern Timescapes</span>
+        </a>
+      </li>
 
-        </ul>
-      </nav>
-    </div>
-  </div>
+    </ul>
+  </nav>
 </div>
 {% endblock %}

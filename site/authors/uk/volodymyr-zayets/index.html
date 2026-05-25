@@ -168,6 +168,10 @@
     if (savedLang === 'en' && isUkPath(curPath) && UK_TO_EN[curPath]) {
       window.location.href = UK_TO_EN[curPath];
     }
+    /* Guard: if user lands on an EN page while in UA mode, redirect to UK version */
+    if (savedLang === 'ua' && !isUkPath(curPath) && EN_TO_UK[curPath]) {
+      window.location.href = EN_TO_UK[curPath];
+    }
 
     /* Restore button states immediately (lang is already set on <html> from <head>) */
     updateButtons(savedLang);

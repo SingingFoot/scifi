@@ -86,12 +86,27 @@
       margin-bottom: -1px;
     }
 
+    /* ── content layout (sidebar + content columns) ── */
+    .sh-layout {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .sh-sidebar-panel {
+      width: 13rem;
+      flex-shrink: 0;
+      padding: 1.5rem 0 4rem 1.5rem;
+    }
+    @media screen and (max-width: 76.24em) {
+      .sh-sidebar-panel { display: none }
+    }
+
     /* ── content area ── */
     .sh-content {
       background: var(--c-bg);
       padding: 1rem 1.5rem 4rem;
-      max-width: 1200px;
-      margin: 0 auto;
+      flex: 1;
+      min-width: 0;
     }
 
     /* pass-through styles so MkDocs typeset classes still work in dark context */
@@ -131,9 +146,12 @@
     <div class="sh-fade-edge"></div>
 
     <!-- ══════ CONTENT ══════ -->
-    <div class="sh-content">
-      <div class="md-typeset sh-anim">
-        {{ page.content }}
+    <div class="sh-layout">
+      {% block sh_sidebar %}{% endblock %}
+      <div class="sh-content">
+        <div class="md-typeset sh-anim">
+          {{ page.content }}
+        </div>
       </div>
     </div>
 
