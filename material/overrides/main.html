@@ -5,10 +5,10 @@
 {% block extrahead %}
   <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.7c86dd97.min.css' | url }}">
 
-  {#- Set data-lang on <html> immediately (before CSS) so body-level CSS rules apply without flash -#}
+  {#- Set data-lang on <html> immediately (before CSS) — derived from URL, no localStorage -#}
   <script>
   (function(){
-    var l = localStorage.getItem('site-lang') || 'en';
+    var l = window.location.pathname.indexOf('/uk/') !== -1 ? 'ua' : 'en';
     document.documentElement.setAttribute('data-lang', l);
   }());
   </script>
@@ -130,8 +130,6 @@
 
   <script>
   (function () {
-    var LANG_KEY = 'site-lang';
-
     /* All UK page paths (absolute, trailing slash) */
     /* NOTE: Authors paths are intentionally excluded — the authors sidebar uses
        a hardcoded nav (block site_nav) with data-href-en/data-href-ua,
@@ -222,7 +220,6 @@
 
     function applyLang(lang, redirect) {
       document.documentElement.setAttribute('data-lang', lang);
-      localStorage.setItem(LANG_KEY, lang);
       updateButtons(lang);
       swapContent(lang);
 
@@ -237,19 +234,11 @@
       }
     }
 
-    var savedLang = localStorage.getItem(LANG_KEY) || 'en';
-
-    /* Guard: if user lands on a UK page while in EN mode, redirect to EN version */
+    /* Derive language from URL — EN pages are at /path/, UA pages at /path/uk/ */
     var curPath = window.location.pathname;
-    if (savedLang === 'en' && isUkPath(curPath) && UK_TO_EN[curPath]) {
-      window.location.href = UK_TO_EN[curPath];
-    }
-    /* Guard: if user lands on an EN page while in UA mode, redirect to UK version */
-    if (savedLang === 'ua' && !isUkPath(curPath) && EN_TO_UK[curPath]) {
-      window.location.href = EN_TO_UK[curPath];
-    }
+    var savedLang = isUkPath(curPath) ? 'ua' : 'en';
 
-    /* Restore button states immediately (lang is already set on <html> from <head>) */
+    /* Set button state to match the current page's language */
     updateButtons(savedLang);
 
     /* Inject data-en/data-ua onto horizontal tab links so swapContent() translates them */
