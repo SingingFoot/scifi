@@ -32,6 +32,10 @@ Apart from fiction, he was a **prominent literary critic** and served as an **ed
 
 He was also the **compiler of science fiction anthologies**, including *Adventures, Travels, and Science Fiction-80* (*ППФ-80*) and *PFF-84*, and a reviewer for *PFF-86*. His novella *Once Upon a Time There Was Ivan* gained significant literary attention.
 
+An amusing detail from his own memoirs: Polozhiy had originally set his sights on a technical education and twice failed to gain admission to the Moscow Engineering Physics Institute before drifting into philology at Kyiv University. The examiner who gave him top marks in his foreign-language entrance exam later turned out to be **Yevhen Berezniak**, famous in Soviet popular memory as the wartime intelligence officer "Major Vikhr."
+
+In his post-Soviet years Polozhiy also wrote two memoir-essay collections reflecting on his generation and his years at the Dovzhenko Film Studio: *Запрошую до співтворчості* (*I Invite You to Co-Creation*) and *Влада мистецтва* (*The Power of Art*), the latter preserving vivid sketches of actors and directors he worked alongside, including Oleksandr Kaidanovsky, a collaborator of Andrei Tarkovsky.
+
 ### Illness and Death  
 Polozhiy suffered from a **severe heart condition**, and doctors suggested **waiting for a transplant**. However, he passed away on **May 21, 2004**, at the age of **54**. He was laid to rest next to his father, Ivan Mykolayovych Polozhiy, at the **village cemetery in Yasnohorodka, Makariv Raion, Kyiv Oblast**.
 

@@ -91,3 +91,7 @@ Berezhnyi lived in Kyiv for most of his life. He was married to **Liubov Florian
 ### Death
 
 Vasyl Berezhnyi passed away on **March 19, 1988**, in Kyiv, leaving behind a lasting literary legacy in **Ukrainian science fiction**.
+
+### A Late Change of Tone
+
+Living for exactly seventy years, Berezhnyi's career bridged the early Soviet space-age optimism of the 1950s and the ideological fatigue of the 1980s. His late story *The Formula of the Cosmos* (*Формула Космосу*, 1986), written amid the stagnation and disillusionment of the late Brezhnev era, is notably more skeptical in tone than his earlier fiction — treating the cosmic ideals he had once celebrated with tragic, even absurdist, irony. Read alongside his early work, it marks Berezhnyi less as a single-note propagandist than as a writer whose fiction quietly tracked the entire rise and fall of Soviet techno-utopian confidence.

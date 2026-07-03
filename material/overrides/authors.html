@@ -118,6 +118,17 @@
     .au-cover-berezhnyi { background: linear-gradient(135deg,#051a33 0%,#0d3d6b 100%) }
     .au-cover-zayets    { background: linear-gradient(135deg,#0d1a05 0%,#1e3d0d 100%) }
     .au-cover-polozhyi  { background: linear-gradient(135deg,#1a1205 0%,#3d2b0d 100%) }
+    .au-cover-smolych       { background: linear-gradient(135deg,#330505 0%,#6b0d0d 100%) }
+    .au-cover-vynnychenko   { background: linear-gradient(135deg,#05221a 0%,#0d4a3a 100%) }
+    .au-cover-vladko        { background: linear-gradient(135deg,#0d1533 0%,#1a2e6b 100%) }
+    .au-cover-berdnyk       { background: linear-gradient(135deg,#33051f 0%,#6b0d45 100%) }
+    .au-cover-savchenko     { background: linear-gradient(135deg,#05262b 0%,#0d5560 100%) }
+    .au-cover-rosokhovatskyi{ background: linear-gradient(135deg,#1f0533 0%,#4a0d6b 100%) }
+    .au-cover-shcherbak     { background: linear-gradient(135deg,#052818 0%,#0d5c35 100%) }
+    .au-cover-berezin       { background: linear-gradient(135deg,#331005 0%,#6b2a0d 100%) }
+    .au-cover-ostrikov      { background: linear-gradient(135deg,#050d33 0%,#0d216b 100%) }
+
+    @media (min-width: 900px) { .au-grid { grid-template-columns: repeat(3,1fr) } }
 
     /* ── INTRO TEXT ── */
     .au-intro p { font-size: .95rem; color: var(--c-muted); line-height: 1.8; margin-bottom: .9rem }
@@ -205,8 +216,8 @@
     <section class="au-sec">
       <div class="au-wrap">
         <div class="au-pill"
-             data-en="Four Voices"
-             data-ua="Чотири голоси">Four Voices</div>
+             data-en="Thirteen Voices"
+             data-ua="Тринадцять голосів">Thirteen Voices</div>
         <h2 class="au-h2"
             data-en="Writers Who Shaped Ukrainian Sci-Fi"
             data-ua="Письменники, що сформували українську фантастику">Writers Who Shaped Ukrainian Sci-Fi</h2>
@@ -241,6 +252,87 @@
             </div>
           </a>
 
+          <!-- Smolych -->
+          <a href="{{ 'authors/yuriy-smolych/' | url }}"
+             data-href-en="{{ 'authors/yuriy-smolych/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-smolych">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">YS</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Yuriy Smolych"
+                   data-ua="Юрій Смолич">Yuriy Smolych</div>
+              <div class="au-card-dates">1900 &ndash; 1976</div>
+              <span class="au-card-tag"
+                    data-en="Founding SF · Secret Police"
+                    data-ua="Засновник НФ · Таємна поліція">Founding SF &middot; Secret Police</span>
+              <p class="au-card-desc"
+                 data-en="Kharkiv novelist whose &lt;em&gt;Beautiful Disasters&lt;/em&gt; trilogy founded Ukrainian science fiction — written by a man who was, for decades, also a recruited NKVD/KGB informant."
+                 data-ua="Харківський прозаїк, чия трилогія &lt;em&gt;«Прекрасні катастрофи»&lt;/em&gt; заклала основи української наукової фантастики — і водночас десятиліттями був завербованим інформатором НКВС/КДБ.">Kharkiv novelist whose <em>Beautiful Disasters</em> trilogy founded Ukrainian science fiction — written by a man who was, for decades, also a recruited NKVD/KGB informant.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Vynnychenko -->
+          <a href="{{ 'authors/volodymyr-vynnychenko/' | url }}"
+             data-href-en="{{ 'authors/volodymyr-vynnychenko/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-vynnychenko">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">VV</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Volodymyr Vynnychenko"
+                   data-ua="Володимир Винниченко">Volodymyr Vynnychenko</div>
+              <div class="au-card-dates">1880 &ndash; 1951</div>
+              <span class="au-card-tag"
+                    data-en="Statesman · Techno-Utopia"
+                    data-ua="Державний діяч · Техноутопія">Statesman &middot; Techno-Utopia</span>
+              <p class="au-card-desc"
+                 data-en="Head of the first twentieth-century Ukrainian government, twice defeated, who staged his own political disillusionment in the techno-utopian novel &lt;em&gt;The Sun Machine&lt;/em&gt; (1928)."
+                 data-ua="Очільник першого українського уряду ХХ століття, двічі зазнав поразки, і відобразив власне політичне розчарування в техноутопічному романі &lt;em&gt;«Сонячна машина»&lt;/em&gt; (1928).">Head of the first twentieth-century Ukrainian government, twice defeated, who staged his own political disillusionment in the techno-utopian novel <em>The Sun Machine</em> (1928).</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Vladko -->
+          <a href="{{ 'authors/volodymyr-vladko/' | url }}"
+             data-href-en="{{ 'authors/volodymyr-vladko/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-vladko">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">VV</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Volodymyr Vladko"
+                   data-ua="Володимир Владко">Volodymyr Vladko</div>
+              <div class="au-card-dates">1900 &ndash; 1974</div>
+              <span class="au-card-tag"
+                    data-en="Rockets · Robots"
+                    data-ua="Ракети · Роботи">Rockets &middot; Robots</span>
+              <p class="au-card-desc"
+                 data-en="Ukrainian science fiction's first genre specialist — dubbed the &quot;Ukrainian Jules Verne&quot; — whose &lt;em&gt;Argonauts of the Universe&lt;/em&gt; sent a Soviet crew to Venus."
+                 data-ua="Перший жанровий спеціаліст української наукової фантастики — «український Жюль Верн» — чиї &lt;em&gt;«Аргонавти Всесвіту»&lt;/em&gt; відправили радянський екіпаж на Венеру.">Ukrainian science fiction's first genre specialist — dubbed the "Ukrainian Jules Verne" — whose <em>Argonauts of the Universe</em> sent a Soviet crew to Venus.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
           <!-- Berezhnyi -->
           <a href="{{ 'authors/vasyl-berezhnyi/' | url }}"
              data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
@@ -264,6 +356,87 @@
               <p class="au-card-desc"
                  data-en="Journalist, war veteran, and prolific SF novelist whose debut &lt;em&gt;To the Starry Worlds&lt;/em&gt; (1956) sold 165,000 copies — a leading figure in Soviet-era Ukrainian space fiction."
                  data-ua="Журналіст, ветеран війни та плідний автор НФ-романів, чий дебют &lt;em&gt;«У зоряні світи»&lt;/em&gt; (1956) розійшовся тиражем 165 000 примірників — провідна постать радянської української космічної фантастики.">Journalist, war veteran, and prolific SF novelist whose debut <em>To the Starry Worlds</em> (1956) sold 165,000 copies — a leading figure in Soviet-era Ukrainian space fiction.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Berdnyk -->
+          <a href="{{ 'authors/oles-berdnyk/' | url }}"
+             data-href-en="{{ 'authors/oles-berdnyk/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-berdnyk">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">OB</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Oles Berdnyk"
+                   data-ua="Олесь Бердник">Oles Berdnyk</div>
+              <div class="au-card-dates">1926 &ndash; 2003</div>
+              <span class="au-card-tag"
+                    data-en="Mystic · Dissident"
+                    data-ua="Містик · Дисидент">Mystic &middot; Dissident</span>
+              <p class="au-card-desc"
+                 data-en="Camp survivor, Helsinki Group co-founder, and &quot;hippie-cosmist&quot; whose bestselling &lt;em&gt;Star Corsair&lt;/em&gt; (1971) broke decisively with Soviet techno-communist utopia."
+                 data-ua="В'язень таборів, співзасновник Гельсінської групи та «хіпі-косміст», чий бестселер &lt;em&gt;«Зоряний корсар»&lt;/em&gt; (1971) остаточно розірвав із радянською техноутопією.">Camp survivor, Helsinki Group co-founder, and "hippie-cosmist" whose bestselling <em>Star Corsair</em> (1971) broke decisively with Soviet techno-communist utopia.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Savchenko -->
+          <a href="{{ 'authors/volodymyr-savchenko/' | url }}"
+             data-href-en="{{ 'authors/volodymyr-savchenko/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-savchenko">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">VS</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Volodymyr Savchenko"
+                   data-ua="Володимир Савченко">Volodymyr Savchenko</div>
+              <div class="au-card-dates">1933 &ndash; 2005</div>
+              <span class="au-card-tag"
+                    data-en="Identity · Clones"
+                    data-ua="Ідентичність · Клони">Identity &middot; Clones</span>
+              <p class="au-card-desc"
+                 data-en="Engineer-turned-novelist whose &lt;em&gt;Self-Discovery&lt;/em&gt; (1967) dramatized cloning and identity decades before Western philosophy caught up with the same questions."
+                 data-ua="Інженер, що став письменником; його &lt;em&gt;«Відкриття себе»&lt;/em&gt; (1967) інсценувало клонування та ідентичність за десятиліття до того, як західна філософія дійшла до тих самих питань.">Engineer-turned-novelist whose <em>Self-Discovery</em> (1967) dramatized cloning and identity decades before Western philosophy caught up with the same questions.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Rosokhovatskyi -->
+          <a href="{{ 'authors/ihor-rosokhovatskyi/' | url }}"
+             data-href-en="{{ 'authors/ihor-rosokhovatskyi/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-rosokhovatskyi">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">IR</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Ihor Rosokhovatskyi"
+                   data-ua="Ігор Росоховатський">Ihor Rosokhovatskyi</div>
+              <div class="au-card-dates">1929 &ndash; 2015</div>
+              <span class="au-card-tag"
+                    data-en="AI · Syhoms"
+                    data-ua="ШІ · Сигоми">AI &middot; Syhoms</span>
+              <p class="au-card-desc"
+                 data-en="Science journalist who invented the &quot;syhom&quot; — a synthetic post-human — and gave Ukrainian SF its first serious engagement with machine ethics and AI alignment."
+                 data-ua="Науковий журналіст, який винайшов «сигома» — синтетичну постлюдину — і привніс в українську фантастику першу серйозну розмову про машинну етику та узгодження ШІ.">Science journalist who invented the "syhom" — a synthetic post-human — and gave Ukrainian SF its first serious engagement with machine ethics and AI alignment.</p>
               <span class="au-card-cta"
                     data-en="Read biography"
                     data-ua="Читати біографію">Read biography</span>
@@ -322,6 +495,87 @@
               <p class="au-card-desc"
                  data-en="Philologist, literary critic, and SF writer whose collection &lt;em&gt;Solar Wind&lt;/em&gt; exemplifies the Golden Age of Ukrainian SF — paradoxical, humorous, and deeply philosophical."
                  data-ua="Філолог, літературний критик і письменник-фантаст, чия збірка &lt;em&gt;«Сонячний вітер»&lt;/em&gt; втілює Золоту добу української НФ — парадоксальну, гумористичну та глибоко філософську.">Philologist, literary critic, and SF writer whose collection <em>Solar Wind</em> exemplifies the Golden Age of Ukrainian SF — paradoxical, humorous, and deeply philosophical.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Shcherbak -->
+          <a href="{{ 'authors/yuri-shcherbak/' | url }}"
+             data-href-en="{{ 'authors/yuri-shcherbak/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-shcherbak">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">YS</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Yuri Shcherbak"
+                   data-ua="Юрій Щербак">Yuri Shcherbak</div>
+              <div class="au-card-dates">b.&thinsp;1934</div>
+              <span class="au-card-tag"
+                    data-en="Diplomat · Dystopia"
+                    data-ua="Дипломат · Дистопія">Diplomat &middot; Dystopia</span>
+              <p class="au-card-desc"
+                 data-en="Physician, Chornobyl-era ecologist, and ambassador on four continents who returned to fiction in his late seventies with a near-future dystopian trilogy."
+                 data-ua="Лікар, еколог часів Чорнобиля та посол на чотирьох континентах, який повернувся до прози на восьмому десятку з дистопійною трилогією про близьке майбутнє.">Physician, Chornobyl-era ecologist, and ambassador on four continents who returned to fiction in his late seventies with a near-future dystopian trilogy.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Berezin -->
+          <a href="{{ 'authors/fedor-berezin/' | url }}"
+             data-href-en="{{ 'authors/fedor-berezin/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-berezin">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">FB</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Fedor Berezin"
+                   data-ua="Федір Березін">Fedor Berezin</div>
+              <div class="au-card-dates">b.&thinsp;1960</div>
+              <span class="au-card-tag"
+                    data-en="Future War"
+                    data-ua="Війна майбутнього">Future War</span>
+              <p class="au-card-desc"
+                 data-en="Former Soviet missile officer whose &quot;future war&quot; novels rehearsed a Russia-Donbas conflict years before 2014 — when he stepped into that war himself."
+                 data-ua="Колишній радянський офіцер-ракетник, чиї романи про «війну майбутнього» відрепетирували конфлікт на Донбасі за роки до 2014-го — коли він сам увійшов у цю війну.">Former Soviet missile officer whose "future war" novels rehearsed a Russia-Donbas conflict years before 2014 — when he stepped into that war himself.</p>
+              <span class="au-card-cta"
+                    data-en="Read biography"
+                    data-ua="Читати біографію">Read biography</span>
+            </div>
+          </a>
+
+          <!-- Ostrikov -->
+          <a href="{{ 'authors/pavlo-ostrikov/' | url }}"
+             data-href-en="{{ 'authors/pavlo-ostrikov/' | url }}"
+             class="au-card au-fade">
+            <div class="au-card-cover au-cover-ostrikov">
+              <div class="au-card-cover-fade"></div>
+            </div>
+            <div class="au-card-portrait">
+              <span class="au-card-portrait-initials">PO</span>
+            </div>
+            <div class="au-card-body">
+              <div class="au-card-name"
+                   data-en="Pavlo Ostrikov"
+                   data-ua="Павло Острiков">Pavlo Ostrikov</div>
+              <div class="au-card-dates">b.&thinsp;1990</div>
+              <span class="au-card-tag"
+                    data-en="Metamodern Film"
+                    data-ua="Метамодерне кіно">Metamodern Film</span>
+              <p class="au-card-desc"
+                 data-en="Director of &lt;em&gt;U Are the Universe&lt;/em&gt; (2024), a Ukrainian-Belgian space romance that oscillates between irony and sincerity — Ukrainian SF's newest, most metamodern voice."
+                 data-ua="Режисер фільму &lt;em&gt;«U Are the Universe»&lt;/em&gt; (2024), українсько-бельгійської космічної мелодрами, що коливається між іронією та щирістю — найновіший, найметамодерніший голос української фантастики.">Director of <em>U Are the Universe</em> (2024), a Ukrainian-Belgian space romance that oscillates between irony and sincerity — Ukrainian SF's newest, most metamodern voice.</p>
               <span class="au-card-cta"
                     data-en="Read biography"
                     data-ua="Читати біографію">Read biography</span>
@@ -415,11 +669,20 @@
 
 {% block site_nav %}
 {%- set pg = page.url -%}
-{%- set act_idx        = pg == 'authors/' or pg == 'authors/uk/' -%}
-{%- set act_kasyanyuk  = 'sandro-kasyanyuk' in pg -%}
-{%- set act_berezhnyi  = 'vasyl-berezhnyi'  in pg -%}
-{%- set act_zayets     = 'volodymyr-zayets' in pg -%}
-{%- set act_pologyj    = 'viktor-pologyj'   in pg -%}
+{%- set act_idx          = pg == 'authors/' or pg == 'authors/uk/' -%}
+{%- set act_kasyanyuk    = 'sandro-kasyanyuk'      in pg -%}
+{%- set act_smolych      = 'yuriy-smolych'         in pg -%}
+{%- set act_vynnychenko  = 'volodymyr-vynnychenko' in pg -%}
+{%- set act_vladko       = 'volodymyr-vladko'      in pg -%}
+{%- set act_berezhnyi    = 'vasyl-berezhnyi'       in pg -%}
+{%- set act_berdnyk      = 'oles-berdnyk'          in pg -%}
+{%- set act_savchenko    = 'volodymyr-savchenko'   in pg -%}
+{%- set act_rosokhovatskyi = 'ihor-rosokhovatskyi' in pg -%}
+{%- set act_pologyj      = 'viktor-pologyj'        in pg -%}
+{%- set act_zayets       = 'volodymyr-zayets'      in pg -%}
+{%- set act_shcherbak    = 'yuri-shcherbak'        in pg -%}
+{%- set act_berezin      = 'fedor-berezin'         in pg -%}
+{%- set act_ostrikov     = 'pavlo-ostrikov'        in pg -%}
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">
@@ -444,12 +707,69 @@
       </a>
     </li>
 
+    <li class="md-nav__item{% if act_smolych %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_smolych %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/yuriy-smolych/' | url }}"
+         data-href-en="{{ 'authors/yuriy-smolych/' | url }}">
+        <span data-en="Yuriy Smolych" data-ua="Юрій Смолич">Yuriy Smolych</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_vynnychenko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_vynnychenko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-vynnychenko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-vynnychenko/' | url }}">
+        <span data-en="Volodymyr Vynnychenko" data-ua="Володимир Винниченко">Volodymyr Vynnychenko</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_vladko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_vladko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-vladko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-vladko/' | url }}">
+        <span data-en="Volodymyr Vladko" data-ua="Володимир Владко">Volodymyr Vladko</span>
+      </a>
+    </li>
+
     <li class="md-nav__item{% if act_berezhnyi %} md-nav__item--active{% endif %}">
       <a class="md-nav__link{% if act_berezhnyi %} md-nav__link--active{% endif %}"
          href="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
         <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berdnyk %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berdnyk %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/oles-berdnyk/' | url }}"
+         data-href-en="{{ 'authors/oles-berdnyk/' | url }}">
+        <span data-en="Oles Berdnyk" data-ua="Олесь Бердник">Oles Berdnyk</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_savchenko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_savchenko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-savchenko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-savchenko/' | url }}">
+        <span data-en="Volodymyr Savchenko" data-ua="Володимир Савченко">Volodymyr Savchenko</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_rosokhovatskyi %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_rosokhovatskyi %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/ihor-rosokhovatskyi/' | url }}"
+         data-href-en="{{ 'authors/ihor-rosokhovatskyi/' | url }}">
+        <span data-en="Ihor Rosokhovatskyi" data-ua="Ігор Росоховатський">Ihor Rosokhovatskyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
+        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
       </a>
     </li>
 
@@ -462,12 +782,27 @@
       </a>
     </li>
 
-    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
-      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
-         href="{{ 'authors/viktor-pologyj/' | url }}"
-         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
-         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
-        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
+    <li class="md-nav__item{% if act_shcherbak %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_shcherbak %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/yuri-shcherbak/' | url }}"
+         data-href-en="{{ 'authors/yuri-shcherbak/' | url }}">
+        <span data-en="Yuri Shcherbak" data-ua="Юрій Щербак">Yuri Shcherbak</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berezin %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berezin %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/fedor-berezin/' | url }}"
+         data-href-en="{{ 'authors/fedor-berezin/' | url }}">
+        <span data-en="Fedor Berezin" data-ua="Федір Березін">Fedor Berezin</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_ostrikov %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_ostrikov %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/pavlo-ostrikov/' | url }}"
+         data-href-en="{{ 'authors/pavlo-ostrikov/' | url }}">
+        <span data-en="Pavlo Ostrikov" data-ua="Павло Острiков">Pavlo Ostrikov</span>
       </a>
     </li>
 

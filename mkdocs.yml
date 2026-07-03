@@ -179,15 +179,24 @@ nav:
   - Authors:
     - authors/index.md
     - Sandro Kasyanyuk: authors/sandro-kasyanyuk.md
+    - Yuriy Smolych: authors/yuriy-smolych.md
+    - Volodymyr Vynnychenko: authors/volodymyr-vynnychenko.md
+    - Volodymyr Vladko: authors/volodymyr-vladko.md
     - Vasyl Berezhnyi: authors/vasyl-berezhnyi.md
-    - Volodymyr Zayets: authors/volodymyr-zayets.md
+    - Oles Berdnyk: authors/oles-berdnyk.md
+    - Volodymyr Savchenko: authors/volodymyr-savchenko.md
+    - Ihor Rosokhovatskyi: authors/ihor-rosokhovatskyi.md
     - Viktor Pologyj: authors/viktor-pologyj.md
+    - Volodymyr Zayets: authors/volodymyr-zayets.md
+    - Yuri Shcherbak: authors/yuri-shcherbak.md
+    - Fedor Berezin: authors/fedor-berezin.md
+    - Pavlo Ostrikov: authors/pavlo-ostrikov.md
     - Автори (UA): authors/uk/index.md
     - Сандро Касянюк: authors/uk/sandro-kasyanyuk.md
     - Василь Бережній: authors/uk/vasyl-berezhnyi.md
     - Володимир Заєць: authors/uk/volodymyr-zayets.md
     - Віктор Положій: authors/uk/viktor-pologyj.md
-  
+
   - My Articles:
     - articles/index.md
     - Metamodernism Manifesto: articles/manifesto.md

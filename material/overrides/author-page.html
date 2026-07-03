@@ -177,11 +177,20 @@
 
 {% block site_nav %}
 {%- set pg = page.url -%}
-{%- set act_idx        = pg == 'authors/' or pg == 'authors/uk/' -%}
-{%- set act_kasyanyuk  = 'sandro-kasyanyuk' in pg -%}
-{%- set act_berezhnyi  = 'vasyl-berezhnyi'  in pg -%}
-{%- set act_zayets     = 'volodymyr-zayets' in pg -%}
-{%- set act_pologyj    = 'viktor-pologyj'   in pg -%}
+{%- set act_idx          = pg == 'authors/' or pg == 'authors/uk/' -%}
+{%- set act_kasyanyuk    = 'sandro-kasyanyuk'      in pg -%}
+{%- set act_smolych      = 'yuriy-smolych'         in pg -%}
+{%- set act_vynnychenko  = 'volodymyr-vynnychenko' in pg -%}
+{%- set act_vladko       = 'volodymyr-vladko'      in pg -%}
+{%- set act_berezhnyi    = 'vasyl-berezhnyi'       in pg -%}
+{%- set act_berdnyk      = 'oles-berdnyk'          in pg -%}
+{%- set act_savchenko    = 'volodymyr-savchenko'   in pg -%}
+{%- set act_rosokhovatskyi = 'ihor-rosokhovatskyi' in pg -%}
+{%- set act_pologyj      = 'viktor-pologyj'        in pg -%}
+{%- set act_zayets       = 'volodymyr-zayets'      in pg -%}
+{%- set act_shcherbak    = 'yuri-shcherbak'        in pg -%}
+{%- set act_berezin      = 'fedor-berezin'         in pg -%}
+{%- set act_ostrikov     = 'pavlo-ostrikov'        in pg -%}
 <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
   <div class="md-sidebar__scrollwrap">
     <div class="md-sidebar__inner">
@@ -206,12 +215,69 @@
       </a>
     </li>
 
+    <li class="md-nav__item{% if act_smolych %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_smolych %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/yuriy-smolych/' | url }}"
+         data-href-en="{{ 'authors/yuriy-smolych/' | url }}">
+        <span data-en="Yuriy Smolych" data-ua="Юрій Смолич">Yuriy Smolych</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_vynnychenko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_vynnychenko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-vynnychenko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-vynnychenko/' | url }}">
+        <span data-en="Volodymyr Vynnychenko" data-ua="Володимир Винниченко">Volodymyr Vynnychenko</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_vladko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_vladko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-vladko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-vladko/' | url }}">
+        <span data-en="Volodymyr Vladko" data-ua="Володимир Владко">Volodymyr Vladko</span>
+      </a>
+    </li>
+
     <li class="md-nav__item{% if act_berezhnyi %} md-nav__item--active{% endif %}">
       <a class="md-nav__link{% if act_berezhnyi %} md-nav__link--active{% endif %}"
          href="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
         <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berdnyk %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berdnyk %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/oles-berdnyk/' | url }}"
+         data-href-en="{{ 'authors/oles-berdnyk/' | url }}">
+        <span data-en="Oles Berdnyk" data-ua="Олесь Бердник">Oles Berdnyk</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_savchenko %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_savchenko %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/volodymyr-savchenko/' | url }}"
+         data-href-en="{{ 'authors/volodymyr-savchenko/' | url }}">
+        <span data-en="Volodymyr Savchenko" data-ua="Володимир Савченко">Volodymyr Savchenko</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_rosokhovatskyi %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_rosokhovatskyi %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/ihor-rosokhovatskyi/' | url }}"
+         data-href-en="{{ 'authors/ihor-rosokhovatskyi/' | url }}">
+        <span data-en="Ihor Rosokhovatskyi" data-ua="Ігор Росоховатський">Ihor Rosokhovatskyi</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
+         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
+        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
       </a>
     </li>
 
@@ -224,12 +290,27 @@
       </a>
     </li>
 
-    <li class="md-nav__item{% if act_pologyj %} md-nav__item--active{% endif %}">
-      <a class="md-nav__link{% if act_pologyj %} md-nav__link--active{% endif %}"
-         href="{{ 'authors/viktor-pologyj/' | url }}"
-         data-href-en="{{ 'authors/viktor-pologyj/' | url }}"
-         data-href-ua="{{ 'authors/uk/viktor-pologyj/' | url }}">
-        <span data-en="Viktor Pologyj" data-ua="Віктор Положій">Viktor Pologyj</span>
+    <li class="md-nav__item{% if act_shcherbak %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_shcherbak %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/yuri-shcherbak/' | url }}"
+         data-href-en="{{ 'authors/yuri-shcherbak/' | url }}">
+        <span data-en="Yuri Shcherbak" data-ua="Юрій Щербак">Yuri Shcherbak</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_berezin %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_berezin %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/fedor-berezin/' | url }}"
+         data-href-en="{{ 'authors/fedor-berezin/' | url }}">
+        <span data-en="Fedor Berezin" data-ua="Федір Березін">Fedor Berezin</span>
+      </a>
+    </li>
+
+    <li class="md-nav__item{% if act_ostrikov %} md-nav__item--active{% endif %}">
+      <a class="md-nav__link{% if act_ostrikov %} md-nav__link--active{% endif %}"
+         href="{{ 'authors/pavlo-ostrikov/' | url }}"
+         data-href-en="{{ 'authors/pavlo-ostrikov/' | url }}">
+        <span data-en="Pavlo Ostrikov" data-ua="Павло Острiков">Pavlo Ostrikov</span>
       </a>
     </li>
 
