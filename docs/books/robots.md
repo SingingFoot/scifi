@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![The First Ukrainian Robots](../assets/images/books/robots.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Published:** 2016 · **Genre:** Novel · **Original:** *Перші українські роботи*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Ukrainian Literature</span>
 
 > Not about machines but about the disappearance of clear definitions — where being human may simply mean being indistinguishable from the systems we create.
+
+</div>
 </div>
 
 ---

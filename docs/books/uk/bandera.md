@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Бандера Distortion](../../assets/images/books/bandera.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Опубліковано:** 2019 · **Жанр:** Роман
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Українська literatura</span>
 
 > Відмовляється звести Бандеру до єдиного сенсу — змушуючи нас запитати, навіщо нам потрібна проста історія, і чому ця потреба небезпечна.
+
+</div>
 </div>
 
 ---

@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Перші українські роботи](../../assets/images/books/robots.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Опубліковано:** 2016 · **Жанр:** Роман · **Оригінал:** *Перші українські роботи*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Українська literatura</span>
 
 > Не про машини, а про зникнення чітких визначень — де бути людиною може просто означати бути невідрізненним від систем, які ми створюємо.
+
+</div>
 </div>
 
 ---

@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Кагарлик](../../assets/images/books/kaharlyk.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Опубліковано:** 2014 · **Жанр:** Роман · **Оригінал:** *Кагарлик*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Українська literatura</span>
 
 > Апокаліпсис — не одинична подія, а стан думки: світ, де історія стала набором чуток, а ідентичність — набором конкуруючих завантажень.
+
+</div>
 </div>
 
 ---

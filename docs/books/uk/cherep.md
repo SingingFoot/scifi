@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Череп](../../assets/images/books/cherep.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Опубліковано:** 2017 · **Жанр:** Роман · **Оригінал:** *Череп*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Українська literatura</span>
 
 > Війна починається не зі зброї, а з мови, що стирає неоднозначність — іммерсивна модель того, як працює імперська свідомість зсередини.
+
+</div>
 </div>
 
 ---

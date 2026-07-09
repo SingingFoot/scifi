@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Bandera Distortion](../assets/images/books/bandera.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Published:** 2019 · **Genre:** Novel
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Ukrainian Literature</span>
 
 > Refuses to resolve Bandera into a single meaning — forcing us to confront why we need history to be simple, and why that need is dangerous.
+
+</div>
 </div>
 
 ---

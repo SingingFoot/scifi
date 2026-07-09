@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Cherep](../assets/images/books/cherep.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Published:** 2017 · **Genre:** Novel · **Original:** *Череп*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Ukrainian Literature</span>
 
 > War begins not with weapons, but with language that erases ambiguity — an immersive model of how imperial consciousness operates from within.
+
+</div>
 </div>
 
 ---

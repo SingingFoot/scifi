@@ -12,6 +12,8 @@ tags:
 <div class="book-page-header" markdown>
 ![How to Disappear Completely](../assets/images/books/yak.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Published:** 2006 · **Genre:** Short Fiction · **Original:** *Як зникнути повністю*  
 **Award:** Smoloskyp Literary Award 2006
@@ -22,6 +24,8 @@ tags:
 <span class="article-tag">Ukrainian Literature</span>
 
 > Small ruptures in the fabric of the ordinary — a debut that tests how far language, form, and the reader's sense of stability can bend.
+
+</div>
 </div>
 
 ---

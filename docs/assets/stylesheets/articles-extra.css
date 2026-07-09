@@ -288,29 +288,49 @@
   margin: 0;
 }
 
-/* ---- Individual book page: float-based header ---- */
-/* Single div with overflow:hidden creates a BFC that contains
-   the floated cover image — no text can escape or overlap.    */
+/* ---- Individual book page: flex-based header ---- */
+/* Cover sits in its own column; all the text (meta, tags, quote)
+   is grouped in .book-page-body so the row's height is set by the
+   taller of the two — normally the cover — and the quote is pinned
+   to the bottom of that column, so it always lines up with the
+   bottom edge of the cover regardless of how much meta/tag text
+   precedes it.                                                   */
 .book-page-header {
-  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
   margin-bottom: 2.2rem;
 }
 
+.book-page-header > p:first-child {
+  margin: 0;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
 .book-page-header img {
-  float: left;
+  display: block;
   width: 185px;
-  margin: 0 2rem 1rem 0;
   border-radius: 4px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.42);
 }
 
+.book-page-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
 @media screen and (max-width: 540px) {
-  .book-page-header img {
-    float: none;
+  .book-page-header {
+    flex-direction: column;
+  }
+  .book-page-header > p:first-child {
+    align-self: center;
     width: 100%;
     max-width: 220px;
-    margin: 0 0 1.2rem;
-    display: block;
+    margin-bottom: 1.2rem;
   }
 }
 
@@ -322,8 +342,15 @@
 }
 
 .book-page-header blockquote {
-  margin-top: 0.8rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
   font-size: 0.88rem;
+}
+
+@media screen and (max-width: 540px) {
+  .book-page-header blockquote {
+    margin-top: 0.8rem;
+  }
 }
 
 /* ---- Dark mode adjustments

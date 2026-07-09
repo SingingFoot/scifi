@@ -13,6 +13,8 @@ tags:
 <div class="book-page-header" markdown>
 ![Kaharlyk](../assets/images/books/kaharlyk.jpg)
 
+<div class="book-page-body" markdown>
+
 <p class="book-pub" markdown>
 **Published:** 2014 · **Genre:** Novel · **Original:** *Кагарлик*
 </p>
@@ -23,6 +25,8 @@ tags:
 <span class="article-tag">Ukrainian Literature</span>
 
 > The apocalypse is not a single event but a condition of thought — a world where history has become a set of rumors, and identity a set of competing uploads.
+
+</div>
 </div>
 
 ---
