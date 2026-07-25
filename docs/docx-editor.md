@@ -9,7 +9,7 @@ A lightweight tool for opening a `.docx` file, editing its text right in the pag
 <div class="docx-editor">
   <div class="docx-editor__toolbar">
     <input type="file" id="docx-file-input" accept=".docx">
-    <button type="button" id="docx-download-btn" disabled>Download as .docx</button>
+    <button type="button" id="docx-download-btn" disabled>Save as .docx</button>
   </div>
   <div id="docx-format-toolbar" class="docx-editor__format-toolbar">
     <button type="button" class="docx-fmt-btn" data-cmd="bold" title="Bold" disabled><strong>B</strong></button>
@@ -32,7 +32,7 @@ A lightweight tool for opening a `.docx` file, editing its text right in the pag
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.2/mammoth.browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.0.0/build/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 <script src="../assets/javascripts/docx-editor.js"></script>
 

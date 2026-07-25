@@ -1,7 +1,9 @@
 /*
  * Very simple in-browser .docx viewer/editor.
  * Open  -> mammoth.js converts the .docx to HTML for viewing/editing.
- * Save  -> html-docx-js repackages the edited HTML back into a .docx file.
+ * Save  -> the edited HTML is walked into real docx.js paragraphs/runs, so the
+ *          result is a genuine OOXML file that both Word and this same page's
+ *          mammoth-based viewer can read back correctly.
  * Everything runs client-side; no file ever leaves the browser.
  */
 (function () {
@@ -150,14 +152,86 @@
     reader.readAsArrayBuffer(file);
   });
 
-  downloadBtn.addEventListener("click", function () {
-    var html =
-      "<!DOCTYPE html><html><head><meta charset='utf-8'></head><body>" +
-      contentEl.innerHTML +
-      "</body></html>";
+  var HEADING_TAGS = {
+    h1: docx.HeadingLevel.HEADING_1,
+    h2: docx.HeadingLevel.HEADING_2,
+    h3: docx.HeadingLevel.HEADING_3,
+    h4: docx.HeadingLevel.HEADING_4,
+    h5: docx.HeadingLevel.HEADING_5,
+    h6: docx.HeadingLevel.HEADING_6,
+  };
 
-    var blob = htmlDocx.asBlob(html);
-    var name = currentName.replace(/\.docx$/i, "") + "-edited.docx";
-    saveAs(blob, name);
+  // Walks the edited HTML into a flat list of docx.TextRun, carrying bold/
+  // italic/underline/font/size down through nested <b>/<i>/<u>/<span> tags.
+  function buildRuns(node, props) {
+    var runs = [];
+    node.childNodes.forEach(function (child) {
+      if (child.nodeType === Node.TEXT_NODE) {
+        if (child.textContent) {
+          runs.push(new docx.TextRun(Object.assign({ text: child.textContent }, props)));
+        }
+        return;
+      }
+      if (child.nodeType !== Node.ELEMENT_NODE) {
+        return;
+      }
+      if (child.tagName === "BR") {
+        runs.push(new docx.TextRun({ text: "", break: 1 }));
+        return;
+      }
+
+      var childProps = Object.assign({}, props);
+      var tag = child.tagName.toLowerCase();
+      if (tag === "b" || tag === "strong") childProps.bold = true;
+      if (tag === "i" || tag === "em") childProps.italics = true;
+      if (tag === "u") childProps.underline = {};
+
+      var style = child.getAttribute("style") || "";
+      var sizeMatch = /font-size:\s*([\d.]+)pt/i.exec(style);
+      if (sizeMatch) childProps.size = Math.round(parseFloat(sizeMatch[1]) * 2);
+      var fontMatch = /font-family:\s*([^;]+)/i.exec(style);
+      if (fontMatch) childProps.font = fontMatch[1].replace(/["']/g, "").trim();
+      if (tag === "font" && child.hasAttribute("face")) {
+        childProps.font = child.getAttribute("face");
+      }
+
+      runs = runs.concat(buildRuns(child, childProps));
+    });
+    return runs;
+  }
+
+  // Walks the top-level block elements (headings, paragraphs, lists) into
+  // docx.Paragraph objects, one per visual line/list item.
+  function buildParagraphs(container) {
+    var paragraphs = [];
+    Array.prototype.forEach.call(container.children, function (el) {
+      var tag = el.tagName.toLowerCase();
+      if (HEADING_TAGS[tag]) {
+        paragraphs.push(new docx.Paragraph({ heading: HEADING_TAGS[tag], children: buildRuns(el, {}) }));
+      } else if (tag === "ul" || tag === "ol") {
+        Array.prototype.forEach.call(el.querySelectorAll(":scope > li"), function (li, index) {
+          var prefix = tag === "ul" ? "• " : index + 1 + ". ";
+          var runs = buildRuns(li, {});
+          runs.unshift(new docx.TextRun({ text: prefix }));
+          paragraphs.push(new docx.Paragraph({ children: runs }));
+        });
+      } else {
+        paragraphs.push(new docx.Paragraph({ children: buildRuns(el, {}) }));
+      }
+    });
+    if (paragraphs.length === 0) {
+      paragraphs.push(new docx.Paragraph({ text: "" }));
+    }
+    return paragraphs;
+  }
+
+  downloadBtn.addEventListener("click", function () {
+    var doc = new docx.Document({
+      sections: [{ children: buildParagraphs(contentEl) }],
+    });
+    docx.Packer.toBlob(doc).then(function (blob) {
+      var name = currentName.replace(/\.docx$/i, "") + "-edited.docx";
+      saveAs(blob, name);
+    });
   });
 })();
