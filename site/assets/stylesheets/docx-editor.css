@@ -1,0 +1,135 @@
+.docx-editor {
+  margin-top: 1.5em;
+}
+
+/* Give this page's whole grid (header, content, footer) more room so the
+   document itself can be as wide as possible without breaking the layout. */
+:root:has(#docx-content) .md-grid {
+  max-width: 90rem;
+}
+
+.docx-editor__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.docx-editor__toolbar input[type="file"] {
+  color: var(--md-default-fg-color);
+}
+
+.docx-editor__toolbar button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.5em 1.1em;
+  border: none;
+  border-radius: 0.25em;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+}
+
+.docx-editor__toolbar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.docx-editor__format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em;
+  margin-bottom: 0.75em;
+}
+
+.docx-fmt-btn {
+  font: inherit;
+  min-width: 2.2em;
+  padding: 0.35em 0.6em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2em;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+
+.docx-fmt-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.docx-fmt-btn--active {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-color: var(--md-primary-fg-color);
+}
+
+.docx-fmt-underline {
+  text-decoration: underline;
+}
+
+.docx-editor__sep {
+  width: 1px;
+  height: 1.4em;
+  background: var(--md-default-fg-color--lightest);
+  margin: 0 0.35em;
+}
+
+#docx-font-name,
+#docx-font-size {
+  font: inherit;
+  padding: 0.35em 0.5em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2em;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+#docx-font-size {
+  width: 4em;
+}
+
+#docx-font-name:disabled,
+#docx-font-size:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.docx-editor__status {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1em;
+}
+
+.docx-editor__status--error {
+  color: var(--md-typeset-mark-color, #e57373);
+}
+
+.docx-editor__content {
+  min-height: 85vh;
+  padding: 2em 3em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.25em;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.docx-editor__content,
+.docx-editor__content :is(h1, h2, h3, h4, h5, h6, p, li, span, strong, em, td, th) {
+  color: #000;
+}
+
+.docx-editor__content[contenteditable="true"] {
+  cursor: text;
+}
+
+.docx-editor__content p {
+  max-width: none;
+}
+
+.docx-editor__content img {
+  max-width: 100%;
+}

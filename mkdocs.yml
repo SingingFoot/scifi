@@ -110,6 +110,7 @@ extra:
 # Extra CSS
 extra_css:
   - assets/stylesheets/articles-extra.css
+  - assets/stylesheets/docx-editor.css
 
 # Extensions
 markdown_extensions:
@@ -224,3 +225,4 @@ nav:
     - Перші українські роботи: books/uk/robots.md
     - Череп: books/uk/cherep.md
     - Бандера Distortion: books/uk/bandera.md
+  - DOCx Editor: docx-editor.md
