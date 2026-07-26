@@ -2,6 +2,19 @@
   margin-top: 1.5em;
 }
 
+/* Pin the toolbars right below the theme's sticky header, with an opaque
+   background so they sit cleanly on top of the document pane while it
+   scrolls underneath — the same layering the theme's own header already
+   uses for the rest of the page. */
+.docx-editor__toolbars {
+  position: sticky;
+  top: 2.4rem;
+  z-index: 3;
+  background: var(--md-default-bg-color);
+  padding-top: 0.5em;
+  box-shadow: 0 0.35em 0.35em -0.35em rgba(0, 0, 0, 0.5);
+}
+
 /* Give this page's whole grid (header, content, footer) more room so the
    document itself can be as wide as possible without breaking the layout. */
 :root:has(#docx-content) .md-grid {
@@ -115,7 +128,11 @@
 }
 
 .docx-editor__content {
-  min-height: 85vh;
+  /* Bound to what's left of the viewport below the sticky toolbars, so the
+     document scrolls inside this box instead of growing the whole page. */
+  height: calc(100vh - 13rem);
+  min-height: 20rem;
+  overflow-y: auto;
   padding: 2em 3em;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 0.25em;
