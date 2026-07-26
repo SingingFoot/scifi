@@ -40,25 +40,40 @@
     });
   });
 
+  // Clicking into the font-name select or the font-size number input moves
+  // focus away from contentEl, which collapses/clears the text selection the
+  // user just made. Unlike the B/I/U buttons, these controls can't block that
+  // with preventDefault (the user needs to actually type/pick a value), so we
+  // save the last selection made inside contentEl and restore it right before
+  // running the format command.
+  var savedRange = null;
+
+  function restoreSelection() {
+    if (!savedRange) {
+      return;
+    }
+    var selection = document.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(savedRange);
+  }
+
   if (fontNameSelect) {
-    fontNameSelect.addEventListener("mousedown", function () {
-      contentEl.focus();
-    });
     fontNameSelect.addEventListener("change", function () {
+      contentEl.focus();
+      restoreSelection();
       document.execCommand("fontName", false, fontNameSelect.value);
       contentEl.focus();
     });
   }
 
   if (fontSizeInput) {
-    fontSizeInput.addEventListener("mousedown", function () {
-      contentEl.focus();
-    });
     fontSizeInput.addEventListener("change", function () {
       var pt = parseInt(fontSizeInput.value, 10);
       if (!pt) {
         return;
       }
+      contentEl.focus();
+      restoreSelection();
       // execCommand only understands the legacy 1-7 scale, so apply size 7
       // then rewrite the <font size="7"> it produces into a real pt value.
       document.execCommand("fontSize", false, "7");
@@ -85,6 +100,11 @@
     ) {
       return;
     }
+
+    if (selection.rangeCount) {
+      savedRange = selection.getRangeAt(0).cloneRange();
+    }
+
     fmtButtons.forEach(function (btn) {
       var cmd = btn.getAttribute("data-cmd");
       btn.classList.toggle("docx-fmt-btn--active", document.queryCommandState(cmd));
@@ -200,6 +220,19 @@
     return runs;
   }
 
+  var ALIGNMENT_MAP = {
+    left: docx.AlignmentType.LEFT,
+    center: docx.AlignmentType.CENTER,
+    right: docx.AlignmentType.RIGHT,
+    justify: docx.AlignmentType.JUSTIFIED,
+  };
+
+  // execCommand's justify* commands set text-align on the block-level element
+  // they're applied to, so that's where we read it back from on export.
+  function getAlignment(el) {
+    return ALIGNMENT_MAP[el.style.textAlign] || undefined;
+  }
+
   // Walks the top-level block elements (headings, paragraphs, lists) into
   // docx.Paragraph objects, one per visual line/list item.
   function buildParagraphs(container) {
@@ -207,16 +240,16 @@
     Array.prototype.forEach.call(container.children, function (el) {
       var tag = el.tagName.toLowerCase();
       if (HEADING_TAGS[tag]) {
-        paragraphs.push(new docx.Paragraph({ heading: HEADING_TAGS[tag], children: buildRuns(el, {}) }));
+        paragraphs.push(new docx.Paragraph({ heading: HEADING_TAGS[tag], alignment: getAlignment(el), children: buildRuns(el, {}) }));
       } else if (tag === "ul" || tag === "ol") {
         Array.prototype.forEach.call(el.querySelectorAll(":scope > li"), function (li, index) {
           var prefix = tag === "ul" ? "• " : index + 1 + ". ";
           var runs = buildRuns(li, {});
           runs.unshift(new docx.TextRun({ text: prefix }));
-          paragraphs.push(new docx.Paragraph({ children: runs }));
+          paragraphs.push(new docx.Paragraph({ alignment: getAlignment(li), children: runs }));
         });
       } else {
-        paragraphs.push(new docx.Paragraph({ children: buildRuns(el, {}) }));
+        paragraphs.push(new docx.Paragraph({ alignment: getAlignment(el), children: buildRuns(el, {}) }));
       }
     });
     if (paragraphs.length === 0) {

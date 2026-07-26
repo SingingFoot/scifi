@@ -26,6 +26,19 @@ A lightweight tool for opening a `.docx` file, editing its text right in the pag
       <option value="Verdana">Verdana</option>
     </select>
     <input type="number" id="docx-font-size" title="Font size (pt)" min="6" max="96" step="1" value="12" disabled>
+    <span class="docx-editor__sep"></span>
+    <button type="button" class="docx-fmt-btn" data-cmd="justifyLeft" title="Align left" disabled>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="3" y="9" width="12" height="2"/><rect x="3" y="14" width="18" height="2"/><rect x="3" y="19" width="12" height="2"/></svg>
+    </button>
+    <button type="button" class="docx-fmt-btn" data-cmd="justifyCenter" title="Align center" disabled>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="6" y="9" width="12" height="2"/><rect x="3" y="14" width="18" height="2"/><rect x="6" y="19" width="12" height="2"/></svg>
+    </button>
+    <button type="button" class="docx-fmt-btn" data-cmd="justifyRight" title="Align right" disabled>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="9" y="9" width="12" height="2"/><rect x="3" y="14" width="18" height="2"/><rect x="9" y="19" width="12" height="2"/></svg>
+    </button>
+    <button type="button" class="docx-fmt-btn" data-cmd="justifyFull" title="Justify" disabled>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="3" y="9" width="18" height="2"/><rect x="3" y="14" width="18" height="2"/><rect x="3" y="19" width="18" height="2"/></svg>
+    </button>
   </div>
   <div id="docx-status" class="docx-editor__status">Choose a .docx file to begin.</div>
   <div id="docx-content" class="docx-editor__content"></div>

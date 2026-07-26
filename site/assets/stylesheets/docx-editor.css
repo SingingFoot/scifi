@@ -45,6 +45,9 @@
 }
 
 .docx-fmt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font: inherit;
   min-width: 2.2em;
   padding: 0.35em 0.6em;
@@ -53,6 +56,10 @@
   background: var(--md-code-bg-color);
   color: var(--md-default-fg-color);
   cursor: pointer;
+}
+
+.docx-fmt-btn svg {
+  display: block;
 }
 
 .docx-fmt-btn:disabled {
