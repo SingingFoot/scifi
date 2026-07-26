@@ -35,7 +35,12 @@
       event.preventDefault();
     });
     btn.addEventListener("click", function () {
-      document.execCommand(btn.getAttribute("data-cmd"), false, null);
+      var cmd = btn.getAttribute("data-cmd");
+      if (!cmd) {
+        // Buttons like the footnote inserter have their own click handler.
+        return;
+      }
+      document.execCommand(cmd, false, null);
       contentEl.focus();
     });
   });
@@ -107,6 +112,9 @@
 
     fmtButtons.forEach(function (btn) {
       var cmd = btn.getAttribute("data-cmd");
+      if (!cmd) {
+        return;
+      }
       btn.classList.toggle("docx-fmt-btn--active", document.queryCommandState(cmd));
     });
 
@@ -129,6 +137,273 @@
       fontNameSelect.value = hasMatch ? family : "";
     }
   });
+
+  // ---------------------------------------------------------------------
+  // Footnotes
+  //
+  // A footnote is two linked pieces kept in sync by a shared, never-reused
+  // "uid": a <sup> reference mark inline in the text, and an entry in a
+  // footnotes block appended at the end of the document (mirroring how
+  // Word shows footnote text at the bottom of the page). Both the mark and
+  // the delete button are contenteditable="false" (atomic, like Word
+  // treats them); only the footnote's own text is editable. Numbers are
+  // never stored — they're recomputed from document order every time a
+  // footnote is added, deleted, or its reference is moved/removed, so
+  // renumbering is always automatic, like Word.
+  // ---------------------------------------------------------------------
+
+  var footnoteBtn = document.getElementById("docx-footnote-btn");
+  var footnoteUidCounter = 1;
+
+  function getFootnotesContainer() {
+    return document.getElementById("docx-footnotes");
+  }
+
+  function createFootnotesContainer() {
+    var existing = getFootnotesContainer();
+    if (existing) {
+      return existing;
+    }
+    var container = document.createElement("div");
+    container.id = "docx-footnotes";
+    container.className = "docx-footnotes";
+    container.setAttribute("contenteditable", "false");
+
+    var rule = document.createElement("hr");
+    rule.className = "docx-footnotes__rule";
+
+    var list = document.createElement("div");
+    list.className = "docx-footnotes__list";
+
+    container.appendChild(rule);
+    container.appendChild(list);
+    contentEl.appendChild(container);
+    return container;
+  }
+
+  function createFootnoteRefElement(uid) {
+    var sup = document.createElement("sup");
+    sup.className = "docx-footnote-ref";
+    sup.setAttribute("contenteditable", "false");
+    sup.dataset.footnoteUid = uid;
+    return sup;
+  }
+
+  function createFootnoteEntryElement(uid) {
+    var entry = document.createElement("div");
+    entry.className = "docx-footnote";
+    entry.dataset.footnoteUid = uid;
+    entry.setAttribute("contenteditable", "false");
+
+    var num = document.createElement("span");
+    num.className = "docx-footnote__num";
+
+    var text = document.createElement("span");
+    text.className = "docx-footnote__text";
+    text.setAttribute("contenteditable", "true");
+
+    var del = document.createElement("button");
+    del.type = "button";
+    del.className = "docx-footnote__delete";
+    del.title = "Delete footnote";
+    del.setAttribute("contenteditable", "false");
+    del.textContent = "×";
+
+    entry.appendChild(num);
+    entry.appendChild(text);
+    entry.appendChild(del);
+    return entry;
+  }
+
+  // Recomputes footnote numbers from the reference marks' document order,
+  // and reorders the footnote entries to match — exactly what Word does
+  // whenever a footnote is added, deleted, or moved.
+  function renumberFootnotes() {
+    var refs = Array.prototype.slice.call(contentEl.querySelectorAll("sup.docx-footnote-ref"));
+    var container = getFootnotesContainer();
+    if (refs.length === 0) {
+      if (container) {
+        container.remove();
+      }
+      return;
+    }
+    var list = container.querySelector(".docx-footnotes__list");
+    refs.forEach(function (ref, index) {
+      var n = index + 1;
+      ref.textContent = String(n);
+      var entry = list.querySelector('.docx-footnote[data-footnote-uid="' + ref.dataset.footnoteUid + '"]');
+      if (entry) {
+        entry.querySelector(".docx-footnote__num").textContent = n + ".";
+        list.appendChild(entry); // re-append in ref order to sort the list
+      }
+    });
+  }
+
+  // If the user deletes a reference mark directly from the text (backspace,
+  // cutting a paragraph, undo, ...) the matching footnote entry is now
+  // orphaned; drop it and renumber, same as Word does.
+  function pruneOrphanFootnotes() {
+    var container = getFootnotesContainer();
+    if (!container) {
+      return;
+    }
+    var liveUids = {};
+    Array.prototype.forEach.call(contentEl.querySelectorAll("sup.docx-footnote-ref"), function (ref) {
+      liveUids[ref.dataset.footnoteUid] = true;
+    });
+    var changed = false;
+    Array.prototype.forEach.call(container.querySelectorAll(".docx-footnote"), function (entry) {
+      if (!liveUids[entry.dataset.footnoteUid]) {
+        entry.remove();
+        changed = true;
+      }
+    });
+    if (changed) {
+      renumberFootnotes();
+    }
+  }
+
+  function deleteFootnote(uid) {
+    var ref = contentEl.querySelector('sup.docx-footnote-ref[data-footnote-uid="' + uid + '"]');
+    if (ref) {
+      ref.remove();
+    }
+    var container = getFootnotesContainer();
+    var entry = container && container.querySelector('.docx-footnote[data-footnote-uid="' + uid + '"]');
+    if (entry) {
+      entry.remove();
+    }
+    renumberFootnotes();
+  }
+
+  if (footnoteBtn) {
+    footnoteBtn.addEventListener("mousedown", function (event) {
+      event.preventDefault();
+    });
+    footnoteBtn.addEventListener("click", function () {
+      // Unlike the font-size/font-name controls, this button's mousedown
+      // handler already prevents focus from ever leaving contentEl, so the
+      // live selection is still whatever the user last set — no need (and
+      // it would be wrong) to restore the separately-cached savedRange.
+      var selection = document.getSelection();
+      var insertRange;
+      var startNode = selection.rangeCount > 0 ? selection.getRangeAt(0).startContainer : null;
+      var startEl = startNode && (startNode.nodeType === Node.ELEMENT_NODE ? startNode : startNode.parentElement);
+      var insertingInsideFootnotes = !!(startEl && startEl.closest && startEl.closest(".docx-footnotes"));
+
+      if (selection.rangeCount > 0 && contentEl.contains(startNode) && !insertingInsideFootnotes) {
+        insertRange = selection.getRangeAt(0);
+      } else {
+        // No usable selection in the main text (or the caret was inside
+        // another footnote, which Word doesn't allow) — insert at the end.
+        insertRange = document.createRange();
+        insertRange.selectNodeContents(contentEl);
+        insertRange.collapse(false);
+      }
+
+      var container = createFootnotesContainer();
+      var uid = "fn-" + footnoteUidCounter++;
+      var refEl = createFootnoteRefElement(uid);
+      insertRange.deleteContents();
+      insertRange.insertNode(refEl);
+      insertRange.setStartAfter(refEl);
+      insertRange.setEndAfter(refEl);
+      selection.removeAllRanges();
+      selection.addRange(insertRange);
+
+      var entry = createFootnoteEntryElement(uid);
+      container.querySelector(".docx-footnotes__list").appendChild(entry);
+      renumberFootnotes();
+
+      // Jump the caret into the new footnote's text, like Word does.
+      var textEl = entry.querySelector(".docx-footnote__text");
+      var textRange = document.createRange();
+      textRange.selectNodeContents(textEl);
+      textRange.collapse(true);
+      selection.removeAllRanges();
+      selection.addRange(textRange);
+      textEl.focus();
+    });
+  }
+
+  contentEl.addEventListener("click", function (event) {
+    var delBtn = event.target.closest && event.target.closest(".docx-footnote__delete");
+    if (!delBtn) {
+      return;
+    }
+    event.preventDefault();
+    var entry = delBtn.closest(".docx-footnote");
+    if (entry) {
+      deleteFootnote(entry.dataset.footnoteUid);
+    }
+  });
+
+  new MutationObserver(function () {
+    pruneOrphanFootnotes();
+  }).observe(contentEl, { childList: true, subtree: true });
+
+  // mammoth renders existing footnotes as a plain <ol> of <li id="footnote-N">
+  // appended after the document, with in-text <sup><a href="#footnote-N">
+  // markers. Convert that into our editable footnote UI so footnotes already
+  // in an opened file work the same as ones inserted here.
+  function importFootnotesFromMammoth() {
+    var noteList = null;
+    Array.prototype.forEach.call(contentEl.querySelectorAll(":scope > ol"), function (ol) {
+      if (ol.querySelector('li[id^="footnote-"], li[id^="endnote-"]')) {
+        noteList = ol;
+      }
+    });
+    if (!noteList) {
+      return;
+    }
+
+    var container = createFootnotesContainer();
+    var list = container.querySelector(".docx-footnotes__list");
+    var uidByNoteId = {};
+
+    Array.prototype.forEach.call(noteList.querySelectorAll(":scope > li[id]"), function (li) {
+      if (!/^(?:footnote|endnote)-/.test(li.id)) {
+        return;
+      }
+      var uid = "fn-" + footnoteUidCounter++;
+      uidByNoteId[li.id] = uid;
+
+      // Drop mammoth's "↑ back to text" link. It's usually merged into the
+      // same trailing <p> as the footnote's own text (not a separate
+      // paragraph), so target the link itself rather than assuming a
+      // whole last-child paragraph to remove.
+      var backLink = li.querySelector('a[href^="#footnote-ref-"], a[href^="#endnote-ref-"]');
+      if (backLink) {
+        var backLinkParent = backLink.parentElement;
+        var beforeBackLink = backLink.previousSibling;
+        if (beforeBackLink && beforeBackLink.nodeType === Node.TEXT_NODE && /^\s+$/.test(beforeBackLink.textContent)) {
+          beforeBackLink.remove();
+        }
+        backLink.remove();
+        if (backLinkParent && backLinkParent.tagName === "P" && !backLinkParent.textContent.trim() && !backLinkParent.querySelector("*")) {
+          backLinkParent.remove();
+        }
+      }
+
+      var entry = createFootnoteEntryElement(uid);
+      entry.querySelector(".docx-footnote__text").innerHTML = li.innerHTML || "";
+      list.appendChild(entry);
+    });
+    noteList.remove();
+
+    Array.prototype.forEach.call(
+      contentEl.querySelectorAll('sup > a[id^="footnote-ref-"], sup > a[id^="endnote-ref-"]'),
+      function (anchor) {
+        var uid = uidByNoteId[anchor.getAttribute("href").replace(/^#/, "")];
+        if (!uid) {
+          return;
+        }
+        anchor.parentElement.replaceWith(createFootnoteRefElement(uid));
+      }
+    );
+
+    renumberFootnotes();
+  }
 
   var currentName = "document.docx";
 
@@ -158,6 +433,7 @@
         .convertToHtml({ arrayBuffer: event.target.result })
         .then(function (result) {
           contentEl.innerHTML = result.value || "<p><em>(empty document)</em></p>";
+          importFootnotesFromMammoth();
           contentEl.setAttribute("contenteditable", "true");
           downloadBtn.disabled = false;
           setFormattingEnabled(true);
@@ -181,6 +457,11 @@
     h6: docx.HeadingLevel.HEADING_6,
   };
 
+  // Populated right before export (see collectFootnotes) so buildRuns can
+  // turn each <sup class="docx-footnote-ref"> into a real docx footnote
+  // reference instead of literal "1" text.
+  var footnoteExportIdByUid = {};
+
   // Walks the edited HTML into a flat list of docx.TextRun, carrying bold/
   // italic/underline/font/size down through nested <b>/<i>/<u>/<span> tags.
   function buildRuns(node, props) {
@@ -197,6 +478,13 @@
       }
       if (child.tagName === "BR") {
         runs.push(new docx.TextRun({ text: "", break: 1 }));
+        return;
+      }
+      if (child.classList.contains("docx-footnote-ref")) {
+        var exportId = footnoteExportIdByUid[child.dataset.footnoteUid];
+        if (exportId) {
+          runs.push(new docx.FootnoteReferenceRun(exportId));
+        }
         return;
       }
 
@@ -238,6 +526,9 @@
   function buildParagraphs(container) {
     var paragraphs = [];
     Array.prototype.forEach.call(container.children, function (el) {
+      if (el.id === "docx-footnotes") {
+        return;
+      }
       var tag = el.tagName.toLowerCase();
       if (HEADING_TAGS[tag]) {
         paragraphs.push(new docx.Paragraph({ heading: HEADING_TAGS[tag], alignment: getAlignment(el), children: buildRuns(el, {}) }));
@@ -258,9 +549,36 @@
     return paragraphs;
   }
 
+  // Assigns each footnote reference a docx-style numeric id (matching its
+  // current on-screen number) and builds the docx.Document "footnotes" map
+  // from each entry's editable text. Must run before buildParagraphs, which
+  // relies on footnoteExportIdByUid to turn refs into real footnote runs.
+  function collectFootnotes() {
+    var refs = Array.prototype.slice.call(contentEl.querySelectorAll("sup.docx-footnote-ref"));
+    var container = getFootnotesContainer();
+    footnoteExportIdByUid = {};
+    var footnotes = {};
+    refs.forEach(function (ref, index) {
+      var exportId = index + 1;
+      footnoteExportIdByUid[ref.dataset.footnoteUid] = exportId;
+      var entry = container
+        ? container.querySelector('.docx-footnote[data-footnote-uid="' + ref.dataset.footnoteUid + '"]')
+        : null;
+      var textEl = entry ? entry.querySelector(".docx-footnote__text") : null;
+      var runs = textEl ? buildRuns(textEl, {}) : [];
+      if (runs.length === 0) {
+        runs.push(new docx.TextRun({ text: "" }));
+      }
+      footnotes[exportId] = { children: [new docx.Paragraph({ children: runs })] };
+    });
+    return footnotes;
+  }
+
   downloadBtn.addEventListener("click", function () {
+    var footnotes = collectFootnotes();
     var doc = new docx.Document({
       sections: [{ children: buildParagraphs(contentEl) }],
+      footnotes: footnotes,
     });
     docx.Packer.toBlob(doc).then(function (blob) {
       var name = currentName.replace(/\.docx$/i, "") + "-edited.docx";

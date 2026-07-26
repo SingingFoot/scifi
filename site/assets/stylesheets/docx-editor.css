@@ -157,3 +157,76 @@
 .docx-editor__content img {
   max-width: 100%;
 }
+
+/* Footnotes — a short rule then a list of number + text + delete, matching
+   how Word shows footnote text at the bottom of the page. */
+.docx-footnote-ref {
+  cursor: default;
+}
+
+.docx-footnotes {
+  margin-top: 2em;
+  padding-top: 0.75em;
+}
+
+.docx-footnotes__rule {
+  width: 30%;
+  margin: 0 0 0.75em;
+  border: none;
+  border-top: 1px solid #000;
+}
+
+.docx-footnotes__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.docx-footnote {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  font-size: 0.85em;
+}
+
+.docx-footnote__num {
+  flex: none;
+}
+
+.docx-footnote__text {
+  flex: 1 1 auto;
+  cursor: text;
+  outline: none;
+  border-radius: 0.2em;
+}
+
+.docx-footnote__text:focus {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.docx-footnote__delete {
+  flex: none;
+  border: none;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1;
+  padding: 0 0.3em;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.docx-footnote:hover .docx-footnote__delete,
+.docx-footnote__delete:focus {
+  opacity: 1;
+}
+
+.docx-footnote__delete:hover {
+  color: #c0392b;
+}
+
+.docx-editor__content .docx-footnote,
+.docx-editor__content .docx-footnote-ref {
+  color: #000;
+}

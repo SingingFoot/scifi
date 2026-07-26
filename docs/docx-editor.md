@@ -40,6 +40,8 @@ A lightweight tool for opening a `.docx` file, editing its text right in the pag
       <button type="button" class="docx-fmt-btn" data-cmd="justifyFull" title="Justify" disabled>
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="3" y="4" width="18" height="2"/><rect x="3" y="9" width="18" height="2"/><rect x="3" y="14" width="18" height="2"/><rect x="3" y="19" width="18" height="2"/></svg>
       </button>
+      <span class="docx-editor__sep"></span>
+      <button type="button" id="docx-footnote-btn" class="docx-fmt-btn" title="Insert footnote" disabled>AB<sup>1</sup></button>
     </div>
     <div id="docx-status" class="docx-editor__status">Choose a .docx file to begin.</div>
   </div>
