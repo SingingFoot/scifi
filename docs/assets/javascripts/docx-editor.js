@@ -405,6 +405,187 @@
     renumberFootnotes();
   }
 
+  // ---------------------------------------------------------------------
+  // Explicit font-size / font-name recovery
+  //
+  // mammoth's HTML conversion only carries over bold/italic/underline,
+  // headings, lists, and images — it silently drops any direct character
+  // formatting like an explicit font size or font family on a run, even on
+  // the very first open of a file (this isn't specific to files this editor
+  // saved). Since docx-editor.js's own export path relies on inline
+  // style="font-size:...;font-family:..." to round-trip those, we recover
+  // them ourselves by reading the raw word/document.xml runs (mammoth
+  // parses this data internally but never emits it) and re-applying it as
+  // inline styles onto mammoth's output, matched up paragraph by paragraph.
+  // ---------------------------------------------------------------------
+
+  var W_NS = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
+
+  // Returns a promise for an array of per-paragraph run lists (one entry
+  // per top-level <w:p> in word/document.xml, in document order), each run
+  // being { text, sizePt, font }. Best-effort: resolves to [] on any
+  // failure so a parsing hiccup here never blocks opening the file.
+  function parseDirectRunFormatting(arrayBuffer) {
+    if (typeof JSZip === "undefined") {
+      return Promise.resolve([]);
+    }
+    return JSZip.loadAsync(arrayBuffer)
+      .then(function (zip) {
+        var file = zip.file("word/document.xml");
+        return file ? file.async("string") : null;
+      })
+      .then(function (xmlText) {
+        if (!xmlText) {
+          return [];
+        }
+        var xml = new DOMParser().parseFromString(xmlText, "application/xml");
+        var body = xml.getElementsByTagNameNS(W_NS, "body")[0];
+        if (!body) {
+          return [];
+        }
+        var paragraphs = [];
+        Array.prototype.forEach.call(body.childNodes, function (node) {
+          if (node.nodeType !== Node.ELEMENT_NODE || node.localName !== "p") {
+            return;
+          }
+          var runs = [];
+          Array.prototype.forEach.call(node.getElementsByTagNameNS(W_NS, "r"), function (r) {
+            var text = Array.prototype.map
+              .call(r.getElementsByTagNameNS(W_NS, "t"), function (t) {
+                return t.textContent;
+              })
+              .join("");
+            if (!text) {
+              // Runs with no <w:t> (footnote refs, breaks, drawings) don't
+              // contribute characters, so there's nothing here to style.
+              return;
+            }
+            var rPr = r.getElementsByTagNameNS(W_NS, "rPr")[0];
+            var sizePt = null;
+            var font = null;
+            if (rPr) {
+              var sz = rPr.getElementsByTagNameNS(W_NS, "sz")[0];
+              if (sz) {
+                var val = parseInt(sz.getAttributeNS(W_NS, "val"), 10);
+                if (val) {
+                  sizePt = val / 2;
+                }
+              }
+              var rFonts = rPr.getElementsByTagNameNS(W_NS, "rFonts")[0];
+              if (rFonts) {
+                font = rFonts.getAttributeNS(W_NS, "ascii") || null;
+              }
+            }
+            runs.push({ text: text, sizePt: sizePt, font: font });
+          });
+          paragraphs.push(runs);
+        });
+        return paragraphs;
+      })
+      .catch(function () {
+        return [];
+      });
+  }
+
+  // Wraps the [startOffset, endOffset) character range of a block
+  // element's text (by cumulative offset across its text nodes) in a new
+  // <span style="..."> — splitting text nodes as needed rather than using
+  // Range.surroundContents, since the range may cross existing <strong>/
+  // <em> tag boundaries.
+  function applyStyleToTextRange(root, startOffset, endOffset, styleText) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var textNodes = [];
+    var node;
+    while ((node = walker.nextNode())) {
+      textNodes.push(node);
+    }
+    var offset = 0;
+    textNodes.forEach(function (textNode) {
+      var nodeStart = offset;
+      var fullText = textNode.textContent;
+      offset += fullText.length;
+      var rangeStart = Math.max(startOffset, nodeStart);
+      var rangeEnd = Math.min(endOffset, nodeStart + fullText.length);
+      if (rangeStart >= rangeEnd) {
+        return;
+      }
+      var relStart = rangeStart - nodeStart;
+      var relEnd = rangeEnd - nodeStart;
+      var span = document.createElement("span");
+      span.setAttribute("style", styleText);
+      span.textContent = fullText.slice(relStart, relEnd);
+
+      var frag = document.createDocumentFragment();
+      if (relStart > 0) {
+        frag.appendChild(document.createTextNode(fullText.slice(0, relStart)));
+      }
+      frag.appendChild(span);
+      if (relEnd < fullText.length) {
+        frag.appendChild(document.createTextNode(fullText.slice(relEnd)));
+      }
+      textNode.parentNode.replaceChild(frag, textNode);
+    });
+  }
+
+  // Flattens contentEl's top-level children into one block per source
+  // <w:p> — expanding <ul>/<ol> into their <li> children — so it lines up
+  // in order with parseDirectRunFormatting's per-paragraph array.
+  function collectEnrichableBlocks(container) {
+    var blocks = [];
+    Array.prototype.forEach.call(container.children, function (el) {
+      if (el.id === "docx-footnotes") {
+        return;
+      }
+      if (el.tagName === "UL" || el.tagName === "OL") {
+        Array.prototype.forEach.call(el.querySelectorAll(":scope > li"), function (li) {
+          blocks.push(li);
+        });
+      } else {
+        blocks.push(el);
+      }
+    });
+    return blocks;
+  }
+
+  function enrichRunFormatting(container, paragraphs) {
+    var blocks = collectEnrichableBlocks(container);
+    var pi = 0;
+    blocks.forEach(function (block) {
+      if (pi >= paragraphs.length) {
+        return;
+      }
+      var runs = paragraphs[pi++];
+      var expectedText = runs
+        .map(function (r) {
+          return r.text;
+        })
+        .join("");
+      // If mammoth didn't produce exactly this paragraph's text here (a
+      // footnote reference mark, an image, a merged/split paragraph...),
+      // our offset math would no longer line up — skip rather than risk
+      // styling the wrong text.
+      if (block.textContent !== expectedText) {
+        return;
+      }
+      var offset = 0;
+      runs.forEach(function (run) {
+        var start = offset;
+        offset += run.text.length;
+        if (!run.sizePt && !run.font) {
+          return;
+        }
+        var styleParts = [];
+        if (run.sizePt) {
+          styleParts.push("font-size: " + run.sizePt + "pt");
+        }
+        if (run.font) {
+          styleParts.push("font-family: " + run.font);
+        }
+        applyStyleToTextRange(block, start, offset, styleParts.join("; "));
+      });
+    });
+  }
+
   var currentName = "document.docx";
 
   function setStatus(text, isError) {
@@ -429,11 +610,17 @@
       setStatus("Could not read the file.", true);
     };
     reader.onload = function (event) {
-      mammoth
-        .convertToHtml({ arrayBuffer: event.target.result })
-        .then(function (result) {
+      var arrayBuffer = event.target.result;
+      Promise.all([
+        mammoth.convertToHtml({ arrayBuffer: arrayBuffer }),
+        parseDirectRunFormatting(arrayBuffer),
+      ])
+        .then(function (results) {
+          var result = results[0];
+          var paragraphs = results[1];
           contentEl.innerHTML = result.value || "<p><em>(empty document)</em></p>";
           importFootnotesFromMammoth();
+          enrichRunFormatting(contentEl, paragraphs);
           contentEl.setAttribute("contenteditable", "true");
           downloadBtn.disabled = false;
           setFormattingEnabled(true);
@@ -478,6 +665,16 @@
       }
       if (child.tagName === "BR") {
         runs.push(new docx.TextRun({ text: "", break: 1 }));
+        return;
+      }
+      if (child.tagName === "IMG") {
+        // ImageRun takes the data-URI mammoth embedded directly, sized to
+        // however the image is actually showing on screen right now (its
+        // intrinsic pixel size, since nothing here resizes images), so the
+        // export always matches what the user sees in the editor.
+        var width = child.naturalWidth || parseInt(child.getAttribute("width"), 10) || 300;
+        var height = child.naturalHeight || parseInt(child.getAttribute("height"), 10) || 150;
+        runs.push(new docx.ImageRun({ data: child.getAttribute("src"), transformation: { width: width, height: height } }));
         return;
       }
       if (child.classList.contains("docx-footnote-ref")) {

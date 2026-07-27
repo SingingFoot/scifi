@@ -49,6 +49,7 @@ A lightweight tool for opening a `.docx` file, editing its text right in the pag
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/mammoth@1.7.2/mammoth.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/docx@8.0.0/build/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
 <script src="../assets/javascripts/docx-editor.js"></script>
