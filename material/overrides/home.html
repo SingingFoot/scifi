@@ -87,10 +87,30 @@
     .hp-hero-span { font-size: clamp(.9rem,1.4vw,1.05rem); font-weight: 700; letter-spacing: .12em; color: var(--c-gold); margin: 1.1rem 0 0; display: block }
     .hp-hero-desc { font-size: 1.05rem; color: var(--c-muted); line-height: 1.75; margin: 1.3rem 0 2rem; max-width: 500px }
     .hp-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap }
-    .hp-hero-visual { display: flex; justify-content: center; align-items: center }
     .hp-hero-img-ring { position: relative; width: 100%; max-width: 430px }
     .hp-hero-img-ring::before { content: ''; position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(74,158,255,.13) 0%, transparent 68%) }
     .hp-hero-img-ring img { width: 100%; height: auto; display: block; position: relative; z-index: 1; filter: drop-shadow(0 24px 64px rgba(74,158,255,.28)) }
+
+    /* Books picture, now inline under the "1920 — 2020" mark — fills the column width */
+    .hp-hero-book { width: 100%; margin: 1.1rem 0 1.5rem }
+    .hp-hero-book-frame { width: 100%; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 20px 50px rgba(74,158,255,.16) }
+    .hp-hero-book-frame img { width: 100%; height: auto; display: block }
+
+    /* ─────────────────────────────────────────────────
+       5b. HERO — LATEST NEWS WIDGET
+    ───────────────────────────────────────────────── */
+    .hp-hero-widget { display: flex; align-items: center }
+    .hp-news-card { width: 100%; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.6rem 1.75rem 1rem; backdrop-filter: blur(6px) }
+    .hp-news-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.1rem }
+    .hp-news-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-gold); box-shadow: 0 0 10px rgba(255,213,79,.7); flex-shrink: 0 }
+    .hp-news-title { font-size: 1rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; margin: 0 }
+    .hp-news-list { list-style: none; margin: 0; padding: 0 }
+    .hp-news-item { border-bottom: 1px solid var(--c-border) }
+    .hp-news-item:last-child { border-bottom: none }
+    .hp-news-link { display: block; padding: .8rem .05rem; font-size: .92rem; line-height: 1.45; color: var(--c-text); text-decoration: none; transition: color .2s var(--ease), padding-left .2s var(--ease) }
+    .hp-news-link:hover { color: var(--c-blue); padding-left: .35rem }
+    .hp-news-link--important { font-weight: 800; color: #fff }
+    .hp-news-link--important:hover { color: var(--c-gold) }
 
     /* ─────────────────────────────────────────────────
        6. STATS BAR
@@ -118,7 +138,7 @@
     .hp-thesis-meta { font-size: .875rem; color: var(--c-muted) }
     .hp-thesis-meta strong { color: var(--c-blue) }
     .hp-timeline { display: flex; border-radius: var(--radius); overflow: hidden; margin-bottom: 2rem; border: 1px solid var(--c-border) }
-    .hp-tl-seg { flex: 1; padding: .9rem 1rem; border-right: 1px solid var(--c-border) }
+    .hp-tl-seg { flex: 1; min-width: 0; padding: .9rem 1rem; border-right: 1px solid var(--c-border) }
     .hp-tl-seg:last-child { border-right: none }
     .hp-tl-era { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .35rem }
     .hp-tl-desc { font-size: .78rem; color: var(--c-muted); line-height: 1.4 }
@@ -215,7 +235,6 @@
     ───────────────────────────────────────────────── */
     @media (max-width: 960px) {
       .hp-hero-inner   { grid-template-columns: 1fr; gap: 2rem }
-      .hp-hero-visual  { display: none }
       .hp-stats-grid   { grid-template-columns: repeat(2,1fr) }
       .hp-phd-grid     { grid-template-columns: 1fr }
       .hp-authors-grid { grid-template-columns: repeat(2,1fr) }
@@ -253,6 +272,13 @@
           </h1>
           <span class="hp-hero-span">1920 &mdash; 2020</span>
 
+          <div class="hp-hero-book">
+            <div class="hp-hero-book-frame">
+              <img src="{{ 'assets/images/illustration2.png' | url }}"
+                   alt="Ukrainian Sci-Fi Illustration" width="620" height="254">
+            </div>
+          </div>
+
           <p class="hp-hero-desc"
              data-en="A century of Ukrainian speculative imagination &mdash; from utopian visions of techno-communism to dystopian collapse. Academic research by Oleh Shynkarenko: PhD candidate, writer, and journalist."
              data-ua="Сто років української фантастики &mdash; від утопічних мрій техно-комунізму до метамодерної революції. Академічне дослідження Олега Шинкаренка: докторанта, письменника і журналіста.">
@@ -269,10 +295,42 @@
           </div>
         </div>
 
-        <div class="hp-hero-visual">
-          <div class="hp-hero-img-ring">
-            <img src="{{ 'assets/images/illustration.png' | url }}"
-                 alt="Ukrainian Sci-Fi Illustration" width="860" height="620">
+        <div class="hp-hero-widget">
+          <div class="hp-news-card">
+            <div class="hp-news-head">
+              <span class="hp-news-dot"></span>
+              <h2 class="hp-news-title" data-en="Latest News" data-ua="Останні новини">Latest News</h2>
+            </div>
+            <ul class="hp-news-list">
+              <li class="hp-news-item">
+                <a class="hp-news-link hp-news-link--important"
+                   href="{{ 'blog/2026/08/24/vladko-paper-submitted-to-aatseel-2027/' | url }}"
+                   target="_blank" rel="noopener noreferrer"
+                   data-en="Vladko paper submitted to AATSEEL 2027"
+                   data-ua="Доповідь про Владка подано на конференцію AATSEEL 2027">Vladko paper submitted to AATSEEL 2027</a>
+              </li>
+              <li class="hp-news-item">
+                <a class="hp-news-link hp-news-link--important"
+                   href="{{ 'blog/2026/08/22/zayets-article-accepted-at-the-journal-of-science-fiction-and-philosophy/' | url }}"
+                   target="_blank" rel="noopener noreferrer"
+                   data-en="Article on Zayets accepted by the Journal of Science Fiction and Philosophy"
+                   data-ua="Статтю про Заєця прийнято до друку в Journal of Science Fiction and Philosophy">Article on Zayets accepted by the Journal of Science Fiction and Philosophy</a>
+              </li>
+              <li class="hp-news-item">
+                <a class="hp-news-link hp-news-link--important"
+                   href="{{ 'blog/2026/08/05/rosokhovatskyi-and-dick-article-now-under-review-at-science-fiction-studies/' | url }}"
+                   target="_blank" rel="noopener noreferrer"
+                   data-en="Rosokhovatskyi and Dick article now under review at Science Fiction Studies"
+                   data-ua="Статтю про Рос&#243;ховатського і Діка розглядають у Science Fiction Studies">Rosokhovatskyi and Dick article now under review at Science Fiction Studies</a>
+              </li>
+              <li class="hp-news-item">
+                <a class="hp-news-link hp-news-link--important"
+                   href="{{ 'blog/2026/06/25/berezhnyi-article-set-for-publication-in-slavia/' | url }}"
+                   target="_blank" rel="noopener noreferrer"
+                   data-en="Berezhnyi article set for publication in Slavia"
+                   data-ua="Статтю про Бережного прийнято до друку в журналі Slavia">Berezhnyi article set for publication in Slavia</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
