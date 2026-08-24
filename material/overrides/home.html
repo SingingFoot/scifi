@@ -151,7 +151,7 @@
     .hp-tl-seg:nth-child(3) .hp-tl-era { color: #42a6f2 }
     .hp-tl-seg:nth-child(4) .hp-tl-era { color: #2090ef }
     .hp-themes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem }
-    .hp-theme-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.4rem; transition: border-color .25s var(--ease), transform .25s var(--ease) }
+    .hp-theme-card { min-width: 0; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.4rem; transition: border-color .25s var(--ease), transform .25s var(--ease) }
     .hp-theme-card:hover { border-color: rgba(74,158,255,.35); transform: translateY(-3px) }
     .hp-theme-t { font-size: .9rem; font-weight: 700; color: var(--c-text); margin-bottom: .3rem }
     .hp-theme-d { font-size: .82rem; color: var(--c-muted); margin: 0; line-height: 1.5 }
@@ -160,7 +160,7 @@
        9. AUTHORS
     ───────────────────────────────────────────────── */
     .hp-authors-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem }
-    .hp-author-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 0; text-decoration: none; display: block; text-align: center; transition: all .28s var(--ease) }
+    .hp-author-card { min-width: 0; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 0; text-decoration: none; display: block; text-align: center; transition: all .28s var(--ease) }
     .hp-author-card:hover { border-color: var(--c-gold); transform: translateY(-5px); box-shadow: 0 14px 44px rgba(255,213,79,.1) }
     .hp-author-cover-wrap { width: 100%; aspect-ratio: 3/4; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0; background: linear-gradient(135deg, #0d1248, #1a2580); position: relative }
     .hp-author-cover-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s var(--ease) }
@@ -178,7 +178,7 @@
     ───────────────────────────────────────────────── */
     .hp-books-sec { background: rgba(255,213,79,.015); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border) }
     .hp-books-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: .9rem; max-width: 820px }
-    .hp-book-card { text-decoration: none; display: block; transition: transform .28s var(--ease) }
+    .hp-book-card { min-width: 0; text-decoration: none; display: block; transition: transform .28s var(--ease) }
     .hp-book-card:hover { transform: translateY(-7px) }
     .hp-book-img-wrap { aspect-ratio: 2/3; border-radius: 8px; margin-bottom: .75rem; overflow: hidden; border: 1px solid rgba(255,255,255,.08); background: #111 }
     .hp-book-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s var(--ease) }
@@ -191,7 +191,7 @@
        11. ARTICLES
     ───────────────────────────────────────────────── */
     .hp-art-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem }
-    .hp-art-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; transition: all .28s var(--ease) }
+    .hp-art-card { min-width: 0; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.5rem; text-decoration: none; display: flex; flex-direction: column; transition: all .28s var(--ease) }
     .hp-art-card:hover { border-color: rgba(74,158,255,.32); transform: translateY(-3px); box-shadow: 0 8px 32px rgba(74,158,255,.08) }
     .hp-art-tag { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-blue); margin-bottom: .65rem }
     .hp-art-t { font-size: .92rem; font-weight: 700; color: var(--c-text); line-height: 1.45; flex: 1 }
@@ -203,7 +203,8 @@
     ───────────────────────────────────────────────── */
     .hp-conf-sec { background: rgba(255,255,255,.015); border-top: 1px solid var(--c-border) }
     .hp-conf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem }
-    .hp-conf-item { display: flex; align-items: flex-start; gap: .85rem; padding: 1rem 1.1rem; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; transition: border-color .22s var(--ease) }
+    .hp-conf-item { display: flex; align-items: flex-start; gap: .85rem; padding: 1rem 1.1rem; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; transition: border-color .22s var(--ease); min-width: 0 }
+    .hp-conf-item > div { min-width: 0 }
     .hp-conf-item:hover { border-color: rgba(74,158,255,.22) }
     .hp-conf-yr { flex-shrink: 0; font-size: .68rem; font-weight: 700; color: var(--c-gold); background: var(--c-gold-dim); padding: .22rem .55rem; border-radius: 4px; letter-spacing: .05em; margin-top: .1rem }
     .hp-conf-n { font-size: .84rem; font-weight: 600; color: var(--c-text); line-height: 1.4 }
@@ -247,6 +248,10 @@
       .hp-books-grid   { grid-template-columns: repeat(2,1fr) }
       .hp-art-grid     { grid-template-columns: 1fr }
       .hp-themes-grid  { grid-template-columns: 1fr }
+      .hp-authors-grid { grid-template-columns: 1fr }
+      .hp-timeline     { flex-direction: column }
+      .hp-tl-seg       { border-right: none; border-bottom: 1px solid var(--c-border) }
+      .hp-tl-seg:last-child { border-bottom: none }
     }
   </style>
 
