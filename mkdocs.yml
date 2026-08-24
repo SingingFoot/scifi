@@ -68,7 +68,8 @@ theme:
 
 # Plugins
 plugins:
-  - blog
+  - blog:
+      blog_dir: news
   - tags
   - search:
       separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
@@ -165,7 +166,7 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - News: blog/index.md
+  - News: news/index.md
   - About me:
     - Bio: bio.md
   - My PhD:

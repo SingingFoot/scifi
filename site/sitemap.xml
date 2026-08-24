@@ -141,30 +141,6 @@
          <lastmod>2026-08-24</lastmod>
     </url>
     <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/2026/08/24/vladko-paper-submitted-to-aatseel-2027/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/2026/06/25/berezhnyi-article-set-for-publication-in-slavia/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/2026/06/22/ostrikov-article-accepted-by-galaxies/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/2026/08/05/rosokhovatskyi-and-dick-article-now-under-review-at-science-fiction-studies/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/2026/08/22/zayets-article-accepted-at-the-journal-of-science-fiction-and-philosophy/</loc>
-         <lastmod>2026-08-24</lastmod>
-    </url>
-    <url>
          <loc>https://sci-fi-ua.netlify.app/books/</loc>
          <lastmod>2026-08-24</lastmod>
     </url>
@@ -213,6 +189,30 @@
          <lastmod>2026-08-24</lastmod>
     </url>
     <url>
+         <loc>https://sci-fi-ua.netlify.app/news/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/news/2026/08/24/vladko-paper-submitted-to-aatseel-2027/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/news/2026/06/25/berezhnyi-article-set-for-publication-in-slavia/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/news/2026/06/22/ostrikov-article-accepted-by-galaxies/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/news/2026/08/05/rosokhovatskyi-and-dick-article-now-under-review-at-science-fiction-studies/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
+         <loc>https://sci-fi-ua.netlify.app/news/2026/08/22/zayets-article-accepted-at-the-journal-of-science-fiction-and-philosophy/</loc>
+         <lastmod>2026-08-24</lastmod>
+    </url>
+    <url>
          <loc>https://sci-fi-ua.netlify.app/phd/</loc>
          <lastmod>2026-08-24</lastmod>
     </url>
@@ -249,11 +249,11 @@
          <lastmod>2026-08-24</lastmod>
     </url>
     <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/archive/2026/</loc>
+         <loc>https://sci-fi-ua.netlify.app/news/archive/2026/</loc>
          <lastmod>2026-08-24</lastmod>
     </url>
     <url>
-         <loc>https://sci-fi-ua.netlify.app/blog/category/news/</loc>
+         <loc>https://sci-fi-ua.netlify.app/news/category/news/</loc>
          <lastmod>2026-08-24</lastmod>
     </url>
 </urlset>
