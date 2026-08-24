@@ -90,7 +90,7 @@ extra:
     deprecated: Deprecated
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+    property: G-W4669Q49D0
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/SingingFoot
