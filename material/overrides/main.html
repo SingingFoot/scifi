@@ -31,13 +31,17 @@
       z-index: 999;
       display: flex;
       align-items: center;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+    }
+    .ls-pill {
+      display: flex;
+      align-items: center;
       background: rgba(5,5,15,.88);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,.1);
       border-radius: 6px;
       overflow: hidden;
-      font-family: 'DM Sans', -apple-system, sans-serif;
     }
     .ls-btn {
       background: none;
@@ -61,6 +65,25 @@
       color: rgba(255,255,255,.15);
       pointer-events: none;
       line-height: 1;
+    }
+
+    /* Below the tablet breakpoint the header shrinks to a single compact
+       row (hamburger · logo · search icon) with no room to spare, so the
+       switcher moves out of that row entirely and becomes its own slim,
+       full-width bar directly beneath the header — proportional, with
+       generous tap targets, and never competing for space with anything. */
+    @media screen and (max-width: 76.234375em) {
+      #lang-sw {
+        position: static;
+        top: auto;
+        right: auto;
+        width: 100%;
+        justify-content: flex-end;
+        padding: .5rem .8rem;
+        background: rgba(255,255,255,.025);
+        border-bottom: 1px solid rgba(255,255,255,.07);
+      }
+      .ls-btn { padding: .4rem .75rem; font-size: .76rem; }
     }
   </style>
 
@@ -123,9 +146,11 @@
 
   {#- ── EN | UA LANGUAGE SWITCHER ── -#}
   <div id="lang-sw">
-    <button class="ls-btn" data-lang="en">EN</button>
-    <span class="ls-sep">|</span>
-    <button class="ls-btn" data-lang="ua">UA</button>
+    <div class="ls-pill">
+      <button class="ls-btn" data-lang="en">EN</button>
+      <span class="ls-sep">|</span>
+      <button class="ls-btn" data-lang="ua">UA</button>
+    </div>
   </div>
 
   <script>
