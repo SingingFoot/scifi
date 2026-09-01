@@ -82,11 +82,24 @@
     .bp-glow-blue { width: 500px; height: 500px; background: #1050ff; top: -10%; right: -5% }
     .bp-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -10%; left: -5% }
 
+    /* The hero runs wider than the rest of the page so it can hold two
+       columns: the profile on the left, the citation metrics on the right. */
+    .bp-wrap--wide { max-width: 1160px }
     .bp-hero-inner {
       position: relative; z-index: 1;
-      max-width: 680px;
+      max-width: 1120px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+      gap: 2.75rem;
+      align-items: start;
     }
+        .bp-hero-main { min-width: 0 }
+    /* Metrics sit in the left column, but stay AFTER the profile in the
+       markup so the page still reads name-first for screen readers and
+       stacks name-first once the columns collapse. */
+    .bp-hero-side { min-width: 0; order: -1 }
+    .bp-hero-side .bp-cite { margin-top: 0; max-width: none }
 
     .bp-photo-wrap {
       position: relative;
@@ -205,7 +218,7 @@
       align-items: center; justify-content: flex-end; height: 100%;
     }
     .bp-cite-v {
-      font-size: .58rem; font-weight: 700; color: var(--c-muted);
+      font-size: .53rem; font-weight: 700; color: var(--c-muted);
       line-height: 1; margin-bottom: 3px; font-variant-numeric: tabular-nums;
     }
     .bp-cite-bar {
@@ -222,7 +235,7 @@
     .bp-cite-years { display: flex; gap: 3px; margin-top: .35rem }
     .bp-cite-y {
       flex: 1 1 0; min-width: 0; text-align: center;
-      font-size: .56rem; color: var(--c-muted);
+      font-size: .5rem; color: var(--c-muted);
       font-variant-numeric: tabular-nums;
     }
     .bp-cite-note {
@@ -364,6 +377,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
+      .bp-hero-inner { grid-template-columns: 1fr; gap: 0 }
+      .bp-hero-side { order: 0 }
+      .bp-hero-side .bp-cite { margin-top: 1.6rem }
       .bp-photo-wrap { max-width: 320px }
       .bp-stats { grid-template-columns: repeat(2,1fr) }
       .bp-themes { grid-template-columns: 1fr }
@@ -384,8 +400,10 @@
       <div class="bp-glow bp-glow-blue"></div>
       <div class="bp-glow bp-glow-gold"></div>
 
-      <div class="bp-wrap">
+      <div class="bp-wrap bp-wrap--wide">
         <div class="bp-hero-inner bp-fade">
+
+          <div class="bp-hero-main">
 
           <div class="bp-photo-wrap">
             <img src="{{ 'assets/images/oleh.png' | url }}" alt="Oleh Shynkarenko">
@@ -435,6 +453,9 @@
             </a>
           </div>
 
+          </div><!-- /bp-hero-main -->
+
+          <div class="bp-hero-side">
           <!-- ══════ CITATION METRICS (Google Scholar) ══════ -->
           <div class="bp-cite">
             <div class="bp-cite-head">
@@ -532,6 +553,7 @@
               Citations per year, 2014&ndash;2026. 2026 is a partial year (hatched).
             </p>
           </div>
+          </div><!-- /bp-hero-side -->
 
         </div>
       </div>
