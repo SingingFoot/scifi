@@ -324,11 +324,16 @@
       border-radius: var(--radius) !important;
       max-width: 100% !important;
     }
-    /* Float portrait right on wide screens */
+    /* Float portrait right on wide screens.
+       max-width must be !important: the generic `.md-typeset img` rule above
+       also uses !important and would otherwise win, letting portraits render
+       at their full container width (~740px). */
     .md-typeset p > img:first-of-type,
     .md-typeset > p:first-of-type img {
       float: right;
-      max-width: 280px;
+      width: 370px;
+      max-width: 370px !important;
+      height: auto;
       margin: 0 0 1.5rem 2rem;
       border-radius: var(--radius) !important;
       border: 1px solid rgba(74,158,255,.2) !important;

@@ -4,6 +4,9 @@ template: author-page.html
 
 # Sandro Kasyanyuk
 
+![Шляхи мистецтва, no. 1, 1922 — the journal in which Kasyanyuk published](../assets/images/shliakhy-mystetstva-1922.jpg)
+*No photograph of Kasyanyuk is known to exist. Shown instead: the 1922 title page of **Шляхи мистецтва** (Ways of Art, Kharkiv), the journal that printed "Кроки перші" on pp. 29–34 and called it "the beginning of Ukrainian proletarian prose." Scan: Korolenko State Scientific Library, Kharkiv.*
+
 ## Sandro Kasyanyuk – Ukrainian Soviet Writer and Pioneer of Proto-Science Fiction
 
 *Biographical Overview*
