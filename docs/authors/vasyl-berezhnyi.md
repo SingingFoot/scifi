@@ -92,6 +92,40 @@ Berezhnyi lived in Kyiv for most of his life. He was married to **Liubov Florian
 
 Vasyl Berezhnyi passed away on **March 19, 1988**, in Kyiv, leaving behind a lasting literary legacy in **Ukrainian science fiction**.
 
-### A Late Change of Tone
+## From Techno-Communism to Postmodern Irony
 
-Living for exactly seventy years, Berezhnyi's career bridged the early Soviet space-age optimism of the 1950s and the ideological fatigue of the 1980s. His late story *The Formula of the Cosmos* (*Формула Космосу*, 1986), written amid the stagnation and disillusionment of the late Brezhnev era, is notably more skeptical in tone than his earlier fiction — treating the cosmic ideals he had once celebrated with tragic, even absurdist, irony. Read alongside his early work, it marks Berezhnyi less as a single-note propagandist than as a writer whose fiction quietly tracked the entire rise and fall of Soviet techno-utopian confidence.
+Berezhnyi's seventy years (1918–1988) spanned revolutionary fervour, wartime trauma, Stalinist repression, the Khrushchev space age, and Brezhnev-era decay. His fiction tracks that whole arc, and it does so along a line that runs strikingly parallel to the history of positivism itself: from confidence that science would deliver happiness, through doubt, to the ironic relativism of the 1980s. Two books mark the poles — the 1956 novel *To the Starry Worlds*, naive and doctrinaire, and the 1986 collection *Labyrinth*, whose story *The Formula of the Cosmos* buries the earlier dream without ceremony.
+
+His work remains barely studied. Oksana Tykhovska, one of only two scholars to devote an article to him, notes that there is "not a single literary study" of Berezhnyi — despite mass print runs and translations across Europe.
+
+### 1956: The Moon as Ideological Stage
+
+*To the Starry Worlds* appeared a year before Sputnik and sold out a first run of 65,000; the publisher raised the second printing to 100,000, which sold out too. Its characters do not converse so much as issue editorials, a habit carried over from Berezhnyi's decade of party journalism: "Only a great, highly organized collective — such as modern humanity — can take the step into space! ... We want to make the Moon a stronghold of advanced science, not a military base, as the magnates of imperialism are planning!"
+
+The novel's ideological centre is a staged confrontation on the lunar surface between the Soviet professor Pluhar and Dick, representative of the firm "Atomik-Welt," who announces that "this territory, and everything on it, under it, and above it" belongs to his company — "we have documents!" Pluhar's reply is dry: "Perhaps your firms are selling the stars of the Milky Way wholesale and retail?" Dick dreams of an atomic catapult — "whoever holds the Moon, holds the Earth!" — and of a villa, a yacht, and "elegant women, ready for fun." He even twists the Manifesto into consumerism: "The proletariat has nothing to lose, but it can gain everything. *Gain!*" The Soviet Zahorskyi answers with a Latin tag: "your philosophy is that of a wolf. *Homo homini lupus est* — that's your creed."
+
+This is not a debate but a political performance, and its most revealing feature is what Berezhnyi cannot imagine: that anyone outside the USSR might feel curiosity, or the thrill of exploration. The only motive he grants foreigners is enrichment.
+
+### Performative Conformity
+
+Berezhnyi's commitment was not, however, naive. He lived through the postwar Zhdanovshchina, when writers were disciplined through public self-criticism and coerced denunciation. A letter to Oles Honchar dated 29 August 1946 records his private verdict on one such gathering: "The meeting dragged on for a long time and was terribly boring. So many intrigues! So much political opportunism and speculation! So much pettiness and foolishness! All of it kept flying into my head — until it was buzzing. Of course, there were some good, serious, profound speeches. But there were very few of those." He knew, in other words, what the rhetoric of progress and collective achievement was concealing.
+
+A second disillusionment was geopolitical. Soviet science fiction had imagined the Moon as a stage for confrontation between systems — cosmonauts debating philosophy with their Western counterparts. A 1963 Soviet song promised that "even our enemies have long been convinced" the USSR would get there first, addressing the Moon as a lover "long in love with Soviet people." What happened instead was that Americans stood alone in the Sea of Tranquility, speaking only to Houston. The stage Berezhnyi had written for never existed.
+
+### The Evolution of a Joke
+
+The change is easiest to see in his humour. In 1956 it is affectionate and situational: exploring an alien ruin, a daughter scolds her father — "Ah, Dad, why didn't you bring the vacuum cleaner from home!" A bureaucrat filling out travel papers writes "Space rocket" in the field marked *Type of transport*. The satire is gentle, still in love with the cosmic dream.
+
+Thirty years later the jokes have turned. An astrophysicist mentions his plutonium-powered heart stimulator; his companion edges away from the table, and he reassures her that "it's not the plutonium used in the bomb dropped on Nagasaki. That was plutonium-239; I only have a little plutonium-238." What had been the emblem of Soviet progress now produces flinching. Told of a cosmic discovery, the same woman asks only whether it might have paid.
+
+### The Lost Formula
+
+*The Formula of the Cosmos* is set in a 1980s Kyiv whose streets still carry the names of Marx, Lenin, and Pushkin, now hollow. Kyrylo Fedotovych, a retired astrophysicist, queues for cheaper herring and mocks himself for still caring about cosmic mysteries — "*Комедія, та й годі*" ("A farce, nothing more"). He learns that a dead colleague's final manuscript, possibly containing a unifying formula of the universe, has been used by the widow to wrap fish and as toilet paper. "Those formulas killed him," she says, and she agrees to hand over what remains only once told it might fetch money — a detail that would have been unthinkable in 1956, and which quietly concedes that money mattered inside the USSR too.
+
+Kyrylo dies when the widow accidentally triggers his cardio-stimulator. The manuscript is not the casualty of malice but of indifference: "The folder flew to the side, opened, and the wind instantly scattered the white sheets, throwing them above the rooftops, and they disappeared into the heights." Nobody thinks to stop it. Berezhnyi does not rage; he simply lets the fading happen. The tragedy is not that the scientist was wrong but that the world stopped caring what he represented.
+
+Even the covers register the shift. The 1956 novel came from *Molod* — formerly *Young Bolshevik* — with weightless cosmonauts against a clean celestial field. *Labyrinth* came in 1986 from *Radiansky Pysmennyk*, its cover a maze of surreal architecture and a fragmented figure. That such an ideologically corrosive story could be published at all, five years before the USSR collapsed, suggests the censors had themselves stopped believing in the purpose of their work.
+
+### Assessment
+
+Berezhnyi's trajectory is emblematic of Ukrainian science fiction as a whole, which began by glorifying the positivist ideals of techno-communism and ended in disillusionment with technological progress — the same path travelled by positivism itself. By the late twentieth century science was no longer a religion promising happiness but a tool whose benefit or harm depended on who controlled it. Had the USSR collapsed sooner, Berezhnyi's postmodern turn might have coincided with parallel movements in free literatures. That he made the turn at all, and late, under censorship, shows how sharply he read the world around him.
