@@ -36,7 +36,7 @@ My professional experience includes over:
 
     **SimpliGov** | *Senior Technical Writer*
 
-    📅 Jul 2023 – Apr 2026 | Budapest, Hungary (Remote)
+    📅 Jul 2023 – May 2026 | Budapest, Hungary (Remote)
 
     API & Developer Documentation: Designing and maintaining comprehensive API references to ensure a seamless integration experience for external developers.
     Release Management: Owning the end-to-end process for Release Notes and Status Page updates, ensuring transparent communication regarding product evolution and system reliability.
