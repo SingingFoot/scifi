@@ -354,6 +354,31 @@
       letter-spacing: .05em; text-transform: uppercase;
     }
 
+    /* ── PUBLICATIONS ── */
+    .bp-pub-group {
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--c-muted); margin: 1.7rem 0 .65rem;
+    }
+    .bp-pubs { display: flex; flex-direction: column; gap: .6rem }
+    .bp-pub {
+      display: flex; align-items: flex-start; gap: .85rem;
+      padding: .95rem 1.1rem;
+      background: var(--c-surface);
+      border: 1px solid var(--c-border);
+      border-radius: 10px;
+      transition: border-color .22s var(--ease);
+    }
+    .bp-pub:hover { border-color: rgba(74,158,255,.22) }
+    .bp-pub-t { font-size: .9rem; font-weight: 600; color: var(--c-text); line-height: 1.4; text-decoration: none }
+    a.bp-pub-t:hover { color: var(--c-blue) }
+    .bp-pub-v { font-size: .78rem; color: var(--c-muted); margin-top: .2rem; line-height: 1.5 }
+    .bp-pub-doi {
+      display: inline-block; margin-top: .3rem; font-size: .74rem;
+      font-family: var(--md-code-font-family, ui-monospace, monospace);
+      color: var(--c-blue); text-decoration: none; word-break: break-all;
+    }
+    .bp-pub-doi:hover { text-decoration: underline }
+
     /* ── BOOKS ROW ── */
     .bp-books { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 1.5rem }
     .bp-book { text-decoration: none; display: block; transition: transform .28s var(--ease) }
@@ -451,6 +476,10 @@
                class="bp-link" target="_blank" rel="noopener">
               <span class="bp-link-dot"></span>PhilPeople
             </a>
+            <a href="https://m2.mtmt.hu/gui2/?type=authors&mode=browse&sel=authors10090617"
+               class="bp-link" target="_blank" rel="noopener">
+              <span class="bp-link-dot"></span>MTMT
+            </a>
           </div>
 
           </div><!-- /bp-hero-main -->
@@ -473,13 +502,13 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td data-en="Citations" data-ua="Цитувань">Citations</td><td class="n">205</td><td class="n dim">125</td></tr>
+                <tr><td data-en="Citations" data-ua="Цитувань">Citations</td><td class="n">205</td><td class="n dim">126</td></tr>
                 <tr><td>h-index</td><td class="n">7</td><td class="n dim">5</td></tr>
                 <tr><td>i10-index</td><td class="n">5</td><td class="n dim">3</td></tr>
               </tbody>
             </table>
 
-            <div class="bp-cite-plot" role="img" aria-label="Citations per year: 2014 1, 2015 3, 2016 13, 2017 14, 2018 12, 2019 15, 2020 15, 2021 10, 2022 19, 2023 20, 2024 26, 2025 35, 2026 13">
+            <div class="bp-cite-plot" role="img" aria-label="Citations per year: 2014 1, 2015 3, 2016 13, 2017 14, 2018 12, 2019 15, 2020 15, 2021 10, 2022 20, 2023 20, 2024 26, 2025 35, 2026 13">
             <div class="bp-cite-col" title="2014: 1 citations">
               <span class="bp-cite-v">1</span>
               <div class="bp-cite-bar" style="height:2.5%"></div>
@@ -512,9 +541,9 @@
               <span class="bp-cite-v">10</span>
               <div class="bp-cite-bar" style="height:25%"></div>
             </div>
-            <div class="bp-cite-col" title="2022: 19 citations">
-              <span class="bp-cite-v">19</span>
-              <div class="bp-cite-bar" style="height:47.5%"></div>
+            <div class="bp-cite-col" title="2022: 20 citations">
+              <span class="bp-cite-v">20</span>
+              <div class="bp-cite-bar" style="height:50%"></div>
             </div>
             <div class="bp-cite-col" title="2023: 20 citations">
               <span class="bp-cite-v">20</span>
@@ -614,6 +643,113 @@
           <div class="bp-theme bp-fade">
             <div class="bp-theme-t" data-en="Global Connections" data-ua="Глобальні зв&rsquo;язки">Global Connections</div>
             <p class="bp-theme-d" data-en="Ukrainian sci-fi in dialogue with world science fiction traditions." data-ua="Українська фантастика у діалозі зі світовою традицією.">Ukrainian sci-fi in dialogue with world science fiction traditions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="bp-divider">
+
+    <!-- ══════ SELECTED PUBLICATIONS ══════ -->
+    <section class="bp-sec">
+      <div class="bp-wrap">
+        <div class="bp-pill" data-en="Peer-Reviewed Research" data-ua="Рецензовані дослідження">Peer-Reviewed Research</div>
+        <h2 class="bp-h2" data-en="Selected Publications" data-ua="Вибрані публікації">Selected Publications</h2>
+
+        <div class="bp-pub-group" data-en="Journal articles &middot; Scopus-indexed" data-ua="Статті в журналах &middot; Scopus">Journal articles &middot; Scopus-indexed</div>
+        <div class="bp-pubs">
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <a class="bp-pub-t" href="{{ 'phd/kasyanyuk-techno-communism/' | url }}">Sandro Kasyanyuk</a>
+                <span class="bp-conf-badge">Scopus Q3</span>
+              <div class="bp-pub-v"><em>Slavia</em> 94, no. 4 (2025): 430&ndash;441</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.58377/slav.2025.4.02" target="_blank" rel="noopener">doi:10.58377/slav.2025.4.02</a>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2024</span>
+            <div>
+              <a class="bp-pub-t" href="{{ 'phd/ukrainian-sf-part-2/' | url }}">Science Fiction in Ukraine, 1920&ndash;2020 (Part Two)</a>
+                <span class="bp-conf-badge">Scopus Q3</span>
+              <div class="bp-pub-v"><em>Inform&aacute;ci&oacute;s T&aacute;rsadalom</em> 24, no. 3 (2024): 61&ndash;83</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.22503/inftars.XXIV.2024.3.4" target="_blank" rel="noopener">doi:10.22503/inftars.XXIV.2024.3.4</a>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2023</span>
+            <div>
+              <a class="bp-pub-t" href="{{ 'phd/ukrainian-sf-part-1/' | url }}">Science Fiction in Ukraine: 1920&ndash;2020 (Part One)</a>
+                <span class="bp-conf-badge">Scopus Q3</span>
+              <div class="bp-pub-v"><em>Inform&aacute;ci&oacute;s T&aacute;rsadalom</em> 23, no. 4 (2023): 58&ndash;72</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.22503/inftars.XXIII.2023.4.4" target="_blank" rel="noopener">doi:10.22503/inftars.XXIII.2023.4.4</a>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2017</span>
+            <div>
+              <span class="bp-pub-t">Sound Unbound: How a New Ukrainian Radio Station Was Built from Scratch Using Crowdfunding</span>
+                <span class="bp-conf-badge">Scopus</span>
+              <div class="bp-pub-v"><em>Index on Censorship</em> 46, no. 3 (2017): 14&ndash;16 &middot; SAGE</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.1177/0306422017730785" target="_blank" rel="noopener">doi:10.1177/0306422017730785</a>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2016</span>
+            <div>
+              <span class="bp-pub-t">Posting into the Future: How Facebook Updates during the Maidan Protests Were Turned into a Futuristic Novel</span>
+                <span class="bp-conf-badge">Scopus</span>
+              <div class="bp-pub-v"><em>Index on Censorship</em> 45, no. 2 (2016): 111&ndash;118 &middot; SAGE</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.1177/0306422016657038" target="_blank" rel="noopener">doi:10.1177/0306422016657038</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-pub-group" data-en="Forthcoming" data-ua="Готуються до друку">Forthcoming</div>
+        <div class="bp-pubs">
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <span class="bp-pub-t">Vasyl Berezhnyi: Collapse of Techno-Communism</span>
+                <span class="bp-conf-badge" data-en="In press" data-ua="До друку">In press</span>
+              <div class="bp-pub-v"><em>Slavia</em>, no. 3 (2026)</div>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <span class="bp-pub-t" data-en="Article on Volodymyr Zayets" data-ua="Стаття про Володимира Зайця">Article on Volodymyr Zayets</span>
+                <span class="bp-conf-badge" data-en="Accepted" data-ua="Прийнято">Accepted</span>
+              <div class="bp-pub-v"><em>Journal of Science Fiction and Philosophy</em></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bp-pub-group" data-en="Book chapter &amp; working papers" data-ua="Розділ книги та робочі тексти">Book chapter &amp; working papers</div>
+        <div class="bp-pubs">
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2025</span>
+            <div>
+              <span class="bp-pub-t">Time Does Not Pass at a Constant Speed</span>
+                <span class="bp-conf-badge" data-en="Book chapter" data-ua="Розділ книги">Book chapter</span>
+              <div class="bp-pub-v" data-en="With Eszter Utasi and T&uuml;nde K&aacute;rmen Major; includes the section &ldquo;The Twin Paradox, or the End of the Transcendent&rdquo;. In &lt;em&gt;Image and Time: A Game-Changer Approach&lt;/em&gt;, ed. Krist&oacute;f Ny&iacute;ri. University of P&eacute;cs, 2025, pp. 17&ndash;66" data-ua="Співавтори: Eszter Utasi, T&uuml;nde K&aacute;rmen Major; містить підрозділ &ldquo;The Twin Paradox, or the End of the Transcendent&rdquo;. У книзі &lt;em&gt;Image and Time: A Game-Changer Approach&lt;/em&gt;, ред. Krist&oacute;f Ny&iacute;ri. University of P&eacute;cs, 2025, с. 17&ndash;66">With Eszter Utasi and T&uuml;nde K&aacute;rmen Major; includes the section &ldquo;The Twin Paradox, or the End of the Transcendent&rdquo;. In <em>Image and Time: A Game-Changer Approach</em>, ed. Krist&oacute;f Ny&iacute;ri. University of P&eacute;cs, 2025, pp. 17&ndash;66</div>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <span class="bp-pub-t">The Illusion of Understanding: Beyond the Chinese Room</span>
+              <div class="bp-pub-v" data-en="Working paper &middot; Zenodo" data-ua="Робочий текст &middot; Zenodo">Working paper &middot; Zenodo</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.5281/zenodo.22639192" target="_blank" rel="noopener">doi:10.5281/zenodo.22639192</a>
+            </div>
+          </div>
+          <div class="bp-pub bp-fade">
+            <span class="bp-conf-yr">2026</span>
+            <div>
+              <a class="bp-pub-t" href="{{ 'articles/manifesto/' | url }}">Metamodernism Manifesto</a>
+              <div class="bp-pub-v" data-en="Working paper &middot; Zenodo" data-ua="Робочий текст &middot; Zenodo">Working paper &middot; Zenodo</div>
+              <a class="bp-pub-doi" href="https://doi.org/10.5281/zenodo.22146759" target="_blank" rel="noopener">doi:10.5281/zenodo.22146759</a>
+            </div>
           </div>
         </div>
       </div>
