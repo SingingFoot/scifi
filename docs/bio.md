@@ -8,7 +8,7 @@ template: bio.html
 
 ![Oleh Shynkarenko](assets/images/oleh.png)
 
-- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ)
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ) — 206 citations, h-index 7, i10-index 5 *(September 2026)*
 
 - [ORCID](https://orcid.org/0009-0001-1690-8967)
 
@@ -140,6 +140,13 @@ I have authored six fiction books, including:
 My work has been published in both Ukrainian and English, with international recognition for my unique voice and perspective. Beyond literature, I have produced over 600 articles and 200+ radio podcasts, engaging with topics ranging from philosophy to human rights.
 
 ## Publications and Presentations
+
+### Peer-reviewed articles
+
+- **Vasyl Berezhnyi: Collapse of Techno-Communism** — *Slavia: časopis pro slovanskou filologii* 95, 2026, 3, pp. 280–296. [https://doi.org/10.58377/slav.2026.3.03](https://doi.org/10.58377/slav.2026.3.03)
+- **Pavlo Ostrikov: Metamodern Oscillation in _U Are the Universe_** — *Galaxies*, no. 96 (2026). [https://galaxiessf.com/](https://galaxiessf.com/)
+
+### Conference presentations
 
 I am proud to have presented my research at international conferences, including:
 

@@ -47,7 +47,7 @@ pill: Academic Writing
 
     [:octicons-arrow-right-24: Читати есе](struggle-for-reality.md)
 
--   **[Метамодерна осциляція в «Ти є Космос»](../metamodern-oscillation-ostrykov.md)**
+-   **[Метамодерна осциляція в «Ти — космос»](metamodern-oscillation-ostrykov.md)**
 
     ---
 
@@ -56,7 +56,7 @@ pill: Academic Writing
 
     Фільм Павла Остриков «Ти є Космос» (2024) проаналізовано крізь шість конкуруючих інтерпретаційних рамок: куртуазне кохання, мотив «Мільйон алих троянд», «2001» Кубрика, екзистенціалізм, лаканівський психоаналіз і геополітична алегорія. Демонстрація метамодерної герменевтики на практиці.
 
-    [:octicons-arrow-right-24: Читати есе](../metamodern-oscillation-ostrykov.md)
+    [:octicons-arrow-right-24: Читати есе](metamodern-oscillation-ostrykov.md)
 
 -   **[Портрет російського інтелектуала як крокодила](portrait.md)**
 

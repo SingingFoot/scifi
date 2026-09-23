@@ -82,6 +82,7 @@ hooks:
   - material/overrides/hooks/shortcodes.py
   - material/overrides/hooks/translations.py
   - material/overrides/hooks/lang_switcher.py
+  - material/overrides/hooks/nav_lang.py
   - material/overrides/hooks/latest_news.py
 
 # Additional configuration
@@ -176,6 +177,7 @@ nav:
     - Science Fiction in Ukraine (part II): phd/ukrainian-sf-part-2.md
     - MT 180: phd/mt-180-thesis.md
     - Sandro Kasyanyuk: phd/kasyanyuk-techno-communism.md
+    - Vasyl Berezhnyi: phd/berezhnyi-techno-communism.md
     - НФ в Україні (частина І): phd/uk/ukrainian-sf-part-1.md
     - НФ в Україні (частина ІІ): phd/uk/ukrainian-sf-part-2.md
     - MT 180 (UA): phd/uk/mt-180-thesis.md
@@ -213,6 +215,7 @@ nav:
     - Маніфест метамодернізму: articles/uk/manifesto.md
     - Обличчя війни: articles/uk/faces-of-war.md
     - Від ангелів до лайків: articles/uk/struggle-for-reality.md
+    - Метамодерна осциляція: articles/uk/metamodern-oscillation-ostrykov.md
     - Портрет інтелектуала як крокодила: articles/uk/portrait.md
     - Метамодерні пейзажі часу: articles/uk/timescapes.md
   - My Books:

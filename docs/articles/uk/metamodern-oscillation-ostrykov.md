@@ -1,10 +1,10 @@
 ---
 template: article-page.html
-description: Analysis of Pavlo Ostrikov's Ukrainian sci-fi film "You Are the Cosmos" (2024) through six interpretive frameworks — courtly love, existentialism, Kubrick, and geopolitical allegory.
+description: Аналіз українського науково-фантастичного фільму Павла Острікова «Ти — космос» (2024) крізь шість інтерпретаційних рамок — куртуазне кохання, екзистенціалізм, Кубрик і геополітична алегорія.
 tags:
-  - Film Analysis
-  - Metamodernism
-  - Ukrainian Cinema
+  - Аналіз фільму
+  - Метамодернізм
+  - Українське кіно
 ---
 
 # Метамодерна осциляція у фільмі Павла Острікова «Ти — космос»

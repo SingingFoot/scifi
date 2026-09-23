@@ -47,14 +47,14 @@ A collection of essays spanning metamodernism, film criticism, philosophy of sci
 
     [:octicons-arrow-right-24: Read essay](struggle-for-reality.md)
 
--   **[Metamodern Oscillation in *You Are the Cosmos*](metamodern-oscillation-ostrykov.md)**
+-   **[Metamodern Oscillation in *U Are the Universe*](metamodern-oscillation-ostrykov.md)**
 
     ---
 
     <span class="article-tag">Film Analysis</span>
     <span class="article-tag">Metamodernism</span>
 
-    Pavlo Ostrikov's 2024 Ukrainian science-fiction film analysed through six competing interpretive frameworks: courtly love, the "Million Red Roses" motif, Kubrick's *2001*, existentialism, Lacanian psychoanalysis, and geopolitical allegory. A demonstration of metamodern hermeneutics in practice. *In Ukrainian.*
+    Pavlo Ostrikov's 2024 Ukrainian science-fiction film analysed through six competing interpretive frameworks: courtly love, the "Million Scarlet Roses" motif, Kubrick's *2001*, existentialism, Lacanian psychoanalysis, and geopolitical allegory. A demonstration of metamodern hermeneutics in practice.
 
     [:octicons-arrow-right-24: Read essay](metamodern-oscillation-ostrykov.md)
 
