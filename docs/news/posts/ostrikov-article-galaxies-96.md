@@ -7,9 +7,9 @@ categories:
 
 # <span data-en="Ostrikov Article Appears in Galaxies No. 96" data-ua="Статтю про Острикова надруковано в 96-му номері Galaxies">Ostrikov Article Appears in Galaxies No. 96</span>
 
-<p data-en="Oleh Shynkarenko&#x27;s article &quot;Pavlo Ostrikov: Metamodern Oscillation in &lt;em&gt;U Are the Universe&lt;/em&gt;&quot; appears, in French translation, in issue 96 of &lt;a href=&quot;https://galaxiessf.com/&quot;&gt;Galaxies&lt;/a&gt;, the French science-fiction magazine. The issue is now available for &lt;a href=&quot;https://galaxiessf.com/produit/precommandes/&quot;&gt;pre-order&lt;/a&gt;."
-   data-ua="Стаття Олега Шинкаренка «Pavlo Ostrikov: Metamodern Oscillation in &lt;em&gt;U Are the Universe&lt;/em&gt;» у французькому перекладі виходить у 96-му номері французького журналу фантастики &lt;a href=&quot;https://galaxiessf.com/&quot;&gt;Galaxies&lt;/a&gt;. Номер уже можна &lt;a href=&quot;https://galaxiessf.com/produit/precommandes/&quot;&gt;передзамовити&lt;/a&gt;.">
-Oleh Shynkarenko's article "Pavlo Ostrikov: Metamodern Oscillation in <em>U Are the Universe</em>" appears, in French translation, in issue 96 of <a href="https://galaxiessf.com/">Galaxies</a>, the French science-fiction magazine. The issue is now available for <a href="https://galaxiessf.com/produit/precommandes/">pre-order</a>.
+<p data-en="Oleh Shynkarenko&#x27;s article &quot;Pavlo Ostrikov: Metamodern Oscillation in &lt;i&gt;U Are the Universe&lt;/i&gt;&quot; appears, in French translation, in issue 96 of &lt;a href=&quot;https://galaxiessf.com/&quot;&gt;Galaxies&lt;/a&gt;, the French science-fiction magazine. The issue is now available for &lt;a href=&quot;https://galaxiessf.com/produit/precommandes/&quot;&gt;pre-order&lt;/a&gt;."
+   data-ua="Стаття Олега Шинкаренка «Pavlo Ostrikov: Metamodern Oscillation in &lt;i&gt;U Are the Universe&lt;/i&gt;» у французькому перекладі виходить у 96-му номері французького журналу фантастики &lt;a href=&quot;https://galaxiessf.com/&quot;&gt;Galaxies&lt;/a&gt;. Номер уже можна &lt;a href=&quot;https://galaxiessf.com/produit/precommandes/&quot;&gt;передзамовити&lt;/a&gt;.">
+Oleh Shynkarenko's article "Pavlo Ostrikov: Metamodern Oscillation in <i>U Are the Universe</i>" appears, in French translation, in issue 96 of <a href="https://galaxiessf.com/">Galaxies</a>, the French science-fiction magazine. The issue is now available for <a href="https://galaxiessf.com/produit/precommandes/">pre-order</a>.
 </p>
 
 <!-- more -->
