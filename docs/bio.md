@@ -8,7 +8,7 @@ template: bio.html
 
 ![Oleh Shynkarenko](assets/images/oleh.png)
 
-- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ) — 206 citations, h-index 7, i10-index 5 *(September 2026)*
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ) — 207 citations, h-index 7, i10-index 5 *(October 2026)*
 
 - [ORCID](https://orcid.org/0009-0001-1690-8967)
 
