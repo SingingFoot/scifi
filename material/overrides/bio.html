@@ -415,6 +415,44 @@
     @media (max-width: 500px) {
       .bp-books { grid-template-columns: repeat(2,1fr) }
     }
+    /* ── READERS MAP ── */
+    .bp-map-wrap {
+      background: var(--c-surface); border: 1px solid var(--c-border);
+      border-radius: var(--radius); padding: 1rem; margin-top: 1.5rem;
+    }
+    #bp-map { width: 100%; height: auto; display: block }
+    .bp-map-c { fill: rgba(255,255,255,.05); stroke: rgba(255,255,255,.16); stroke-width: .4 }
+    .bp-map-has { cursor: pointer; transition: stroke .15s }
+    .bp-map-has:hover { stroke: #fff; stroke-width: 1.1 }
+    .bp-map-dot { stroke: var(--c-bg); stroke-width: 1.2; cursor: pointer }
+    .bp-map-dot:hover { stroke: #fff }
+    .bp-map-legend {
+      display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1rem;
+      margin-top: .9rem; font-size: .78rem; color: var(--c-muted);
+    }
+    .bp-map-legend b { color: var(--c-text); font-weight: 700 }
+    .bp-map-legend i {
+      display: inline-block; width: 20px; height: 10px; border-radius: 2px;
+      margin-right: .4rem; vertical-align: -1px;
+    }
+    .bp-map-legend i.bp-map-none { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.16) }
+    .bp-map-src { font-size: .78rem; color: var(--c-muted); margin: .9rem 0 0 }
+    .bp-map-src a { color: var(--c-blue); text-decoration: none }
+    .bp-map-all { margin-top: 1rem; font-size: .84rem }
+    .bp-map-all summary { cursor: pointer; color: var(--c-blue); font-weight: 600 }
+    .bp-map-all table { border-collapse: collapse; margin-top: .8rem; width: 100%; max-width: 520px; font-variant-numeric: tabular-nums }
+    .bp-map-all th, .bp-map-all td { text-align: left; padding: .3rem .8rem .3rem 0; border-bottom: 1px solid var(--c-border) }
+    .bp-map-all th { color: var(--c-muted); font-weight: 600 }
+    .bp-map-all th:nth-child(n+3), .bp-map-all td:nth-child(n+3) { text-align: right }
+    #bp-map-tip {
+      position: fixed; z-index: 50; display: none; pointer-events: none;
+      background: #12122a; color: var(--c-text); border: 1px solid rgba(74,158,255,.35);
+      border-radius: 8px; padding: .45rem .7rem; font-size: .8rem; line-height: 1.4;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      box-shadow: 0 6px 24px rgba(0,0,0,.5);
+    }
+    #bp-map-tip strong { display: block; color: #fff }
+    #bp-map-tip span { color: var(--c-muted) }
   </style>
 
   <div class="bp">
@@ -587,6 +625,59 @@
         </div>
       </div>
     </section>
+
+    <!-- ══════ READERSHIP MAP ══════ -->
+    <section class="bp-sec" style="padding-top:1rem">
+      <div class="bp-wrap">
+        <div class="bp-pill" data-en="Readership" data-ua="Читачі">Readership</div>
+        <h2 class="bp-h2" data-en="Readers Around the World" data-ua="Читачі у світі">Readers Around the World</h2>
+        <div class="bp-prose">
+          <p data-en="My papers on Academia.edu have been viewed <strong>1,730 times</strong> in <strong>93 countries</strong>. Hover over a country, or tap it, to see the details."
+             data-ua="Мої публікації на Academia.edu переглянули <strong>1730 разів</strong> у <strong>93 країнах</strong>. Наведіть курсор на країну або торкніться її, щоб побачити подробиці.">
+            My papers on Academia.edu have been viewed <strong>1,730 times</strong> in
+            <strong>93 countries</strong>. Hover over a country, or tap it, to see the details.
+          </p>
+        </div>
+
+        <div class="bp-map-wrap bp-fade" id="bp-map-wrap">
+          <svg id="bp-map" viewBox="0 0 900 440" role="img"
+               aria-label="World map of Academia.edu views by country"
+               data-src="https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-110m.json"></svg>
+          <div class="bp-map-legend">
+            <b data-en="Views" data-ua="Перегляди">Views</b>
+            <span><i style="background:#184f95"></i>1</span>
+            <span><i style="background:#256abf"></i>2&ndash;5</span>
+            <span><i style="background:#3987e5"></i>6&ndash;15</span>
+            <span><i style="background:#6da7ec"></i>16&ndash;50</span>
+            <span><i style="background:#9ec5f4"></i>51&ndash;150</span>
+            <span><i style="background:#cde2fb"></i>151+</span>
+            <span><i class="bp-map-none"></i><span data-en="none" data-ua="немає">none</span></span>
+          </div>
+        </div>
+
+        <p class="bp-map-src"
+           data-en="Source: <a href=&quot;https://medbiotech.academia.edu/OlehShynkarenko&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Academia.edu</a> analytics, all-time views as of 12 October 2026."
+           data-ua="Джерело: аналітика <a href=&quot;https://medbiotech.academia.edu/OlehShynkarenko&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Academia.edu</a>, перегляди за весь час станом на 12 жовтня 2026 року.">
+          Source: <a href="https://medbiotech.academia.edu/OlehShynkarenko" target="_blank" rel="noopener">Academia.edu</a> analytics, all-time views as of 12 October 2026.
+        </p>
+
+        <details class="bp-map-all" id="bp-map-all">
+          <summary data-en="All 93 countries" data-ua="Усі 93 країни">All 93 countries</summary>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th data-en="Country" data-ua="Країна">Country</th>
+                <th data-en="Views" data-ua="Перегляди">Views</th>
+                <th data-en="Share" data-ua="Частка">Share</th>
+              </tr>
+            </thead>
+            <tbody id="bp-map-rows"></tbody>
+          </table>
+        </details>
+      </div>
+    </section>
+
 
     <!-- ══════ STATS ══════ -->
     <div class="bp-stats">
@@ -1185,6 +1276,12 @@
     }
   }());
   </script>
+
+  <div id="bp-map-tip" role="status"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="{{ 'assets/javascripts/readers-map.js' | url }}"></script>
 {% endblock %}
 
 {% block content %}{% endblock %}
