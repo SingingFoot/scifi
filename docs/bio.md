@@ -26,7 +26,7 @@ I am a Ukrainian journalist, writer, and researcher with a lifelong passion for 
 
 ## Professional Background
 
-Born in Zaporizhzhya, Ukraine, I hold a bachelor's degree in Automation of Technological Processes and Production from Zaporizhzhya State Engineering Academy and a postgraduate diploma in English Translation from the Classic Private University in Ukraine. I am currently pursuing my PhD at the University of Pécs[^1], focusing on the intersection of science fiction, philosophy, and cultural studies.
+Born in Zaporizhzhya, Ukraine, I hold a Specialist degree (a five-year full higher education, equivalent to Master's level) in Automation of Technological Processes and Production from Zaporizhzhya State Engineering Academy, with the qualification of automation engineer, and a second Specialist diploma (retraining) in Translation, with the qualification of English translator, from the Classic Private University in Zaporizhzhya. I am currently pursuing my PhD at the University of Pécs[^1], focusing on the intersection of science fiction, philosophy, and cultural studies.
 
 My professional experience includes over:
 
