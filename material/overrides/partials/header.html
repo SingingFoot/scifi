@@ -21,9 +21,9 @@
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
-          <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
-             style="color:inherit;text-decoration:none;"
-             aria-label="Go to home page">
+          <a href="{{ '/uk/' if (page and page.meta and page.meta.i18n and page.meta.i18n.lang == 'uk') else (config.extra.homepage | d(nav.homepage.url, true) | url) }}"
+             class="site-title"
+             aria-label="Home">
             <span class="md-ellipsis">
               {{ config.site_name }}
             </span>
@@ -51,6 +51,20 @@
     {% if config.extra.alternate %}
       {% include "partials/alternate.html" %}
     {% endif %}
+    {#- EN | UA switcher: plain links between the two language versions -#}
+    {% set i18n = page.meta.i18n if page and page.meta and page.meta.i18n else {} %}
+    <nav class="lang-switch" aria-label="Language / Мова">
+      {% if i18n.inline %}
+        <button type="button" class="lang-switch__opt" data-set-lang="en" lang="en">EN</button>
+        <button type="button" class="lang-switch__opt" data-set-lang="uk" lang="uk">UA</button>
+      {% elif i18n.lang == "uk" %}
+        {% if i18n.switch_url %}<a class="lang-switch__opt" href="{{ i18n.switch_url }}" hreflang="en" lang="en">EN</a>{% else %}<span class="lang-switch__opt is-disabled" title="English version not available">EN</span>{% endif %}
+        <span class="lang-switch__opt is-current" aria-current="true" lang="uk">UA</span>
+      {% else %}
+        <span class="lang-switch__opt is-current" aria-current="true" lang="en">EN</span>
+        {% if i18n.switch_url %}<a class="lang-switch__opt" href="{{ i18n.switch_url }}" hreflang="uk" lang="uk"{% if not i18n.alt_url %} title="Українська версія цієї сторінки ще не готова — перейти до розділу"{% endif %}>UA</a>{% else %}<span class="lang-switch__opt is-disabled" title="Українська версія недоступна">UA</span>{% endif %}
+      {% endif %}
+    </nav>
     {% if "material/search" in config.plugins %}
       <label class="md-header__button md-icon" for="__search">
         {% set icon = config.theme.icon.search or "material/magnify" %}

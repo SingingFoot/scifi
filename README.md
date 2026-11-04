@@ -35,3 +35,51 @@ The 2010s brought about a metamodern revival in Ukrainian science fiction. Write
 ## The Importance of My Research
 
 By studying the evolution of Ukrainian science fiction, my research seeks to illuminate how literature reflects and shapes national identity. Ukrainian SF has oscillated between ideologies, from the naive optimism of techno-communism to the existential reflections of the Golden Age, and finally to the metamodernist experimentation of today. These shifts not only mirror the history of Ukraine but also reveal the profound ways in which fiction can respond to political and cultural challenges. Through this work, I aim to contribute to a deeper understanding of Ukrainian literature and its place within the global tradition of science fiction.
+
+---
+
+## Working on the site
+
+The site is built with [MkDocs](https://www.mkdocs.org/) and the Material theme.
+Custom page templates live in `material/overrides/`, content in `docs/`.
+
+```bash
+python3 -m pip install --user beautifulsoup4   # once: needed by the EN/UA build step
+mkdocs serve              # live preview at http://127.0.0.1:8000
+mkdocs build -d _preview  # static build; double-click preview.command to view it
+```
+
+### Design system
+
+All colours, fonts, spacing and motion are defined once as CSS variables in
+`docs/assets/stylesheets/site.css` (dark background, light text, one amber
+accent; Literata for reading, IBM Plex Sans for interface text). Templates only
+refer to these variables, so changing a colour there changes it everywhere.
+Animation is limited to hover states and a gentle fade-in (`.reveal`), and is
+switched off for readers who prefer reduced motion.
+
+### Two languages (English / Ukrainian)
+
+* **Long pages exist twice.** `docs/some/page.md` is English and
+  `docs/some/uk/page.md` is Ukrainian. Pairs are detected from the path alone
+  (`material/overrides/hooks/i18n.py`) — nothing to register. The EN | UA
+  switcher, `hreflang` tags, `<html lang>` and navigation all follow from that.
+* **Short interface strings in templates** are written side by side:
+  `<span data-en="Authors" data-ua="Автори">Authors</span>`. On Ukrainian
+  pages the Ukrainian text is put in at build time, so both versions are plain,
+  indexable HTML.
+* **Links**: link to the English URL; on Ukrainian pages the build rewrites it
+  to the Ukrainian twin automatically when one exists.
+* **News posts** keep both languages in one file (`data-en` / `data-ua`) and
+  switch in the browser.
+* To add a translation: copy `page.md` to `uk/page.md`, translate, add it to
+  `nav` in `mkdocs.yml` next to the English page. Tab and section labels are
+  translated in `NAV_UA` in `hooks/i18n.py`.
+
+### SEO and AI search
+
+Every page gets a title, description (front-matter `description:`), canonical
+URL, Open Graph / Twitter cards, `hreflang` alternates and JSON-LD (`Person`,
+`ScholarlyArticle`, `Book`, `BreadcrumbList`). `docs/llms.txt` summarises the
+site for AI assistants; `docs/robots.txt` allows search and AI crawlers. Give
+each new page a factual one- or two-sentence `description:`.

@@ -7,7 +7,7 @@ out of the widget but remain available on the News page.
 import re
 
 # Number of items the home-page news widget holds.
-MAX_ITEMS = 8
+MAX_ITEMS = 5
 
 # The Ukrainian headline lives in the data-ua attribute of the post's H1 span.
 TITLE_UA = re.compile(r'<span[^>]*\bdata-ua="([^"]*)"', re.IGNORECASE)
@@ -30,6 +30,7 @@ def on_env(env, config, files, **kwargs):
             "url": post.url,
             "title": post.title,
             "title_ua": match.group(1) if match else post.title,
+            "date": _created(post),
         })
 
     env.globals["latest_news"] = latest

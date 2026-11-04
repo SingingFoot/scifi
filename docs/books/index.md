@@ -7,7 +7,7 @@ pill: Creative Fiction
 # My Books
 
 <div class="articles-intro" markdown>
-Five works of fiction spanning surrealist short prose, post-apocalyptic speculative novels, and politically charged satire — each interrogating identity, language, memory, and the Ukrainian experience through a metamodern lens.
+Five books in Ukrainian and one English translation, spanning surrealist short prose, post-apocalyptic speculative novels, and politically charged satire — each interrogating identity, language, memory, and the Ukrainian experience through a metamodern lens.
 </div>
 
 ---
@@ -29,6 +29,15 @@ Five works of fiction spanning surrealist short prose, post-apocalyptic speculat
     <strong><a href="kaharlyk/">Kaharlyk</a></strong>
     <span class="book-year">2014 · Novel</span>
     <p>A post-apocalyptic Ukraine a century after Russian-Ukrainian war — where history has become a set of rumors and identity a set of competing uploads.</p>
+  </div>
+</div>
+
+<div class="book-card">
+  <a href="kaharlyk-en/"><img src="../assets/images/books/kaharlyk-en.jpg" alt="Kaharlyk, English edition"></a>
+  <div class="book-card-body">
+    <strong><a href="kaharlyk-en/">Kaharlyk (English translation)</a></strong>
+    <span class="book-year">2016 · Novel in translation</span>
+    <p>The English edition of <em>Kaharlyk</em>, translated by Stephen Komarnyckyj and published by Kalyna Language Press in the UK.</p>
   </div>
 </div>
 

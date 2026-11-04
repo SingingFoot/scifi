@@ -5,7 +5,7 @@ tags:
   - Роман
   - Політична проза
   - Гротеск
-  - Українська literatura
+  - Українська література
 ---
 
 # Череп
@@ -22,7 +22,7 @@ tags:
 <span class="article-tag">Політична проза</span>
 <span class="article-tag">Гротеск</span>
 <span class="article-tag">Сатира</span>
-<span class="article-tag">Українська literatura</span>
+<span class="article-tag">Українська література</span>
 
 > Війна починається не зі зброї, а з мови, що стирає неоднозначність — іммерсивна модель того, як працює імперська свідомість зсередини.
 

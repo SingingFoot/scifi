@@ -12,25 +12,25 @@
     .md-main,
     .md-main__inner,
     [data-md-color-scheme] {
-      background: #05050f !important;
+      background: var(--ink-0) !important;
     }
 
     /* ── Left sidebar nav ── */
     .md-sidebar--primary,
     .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: rgba(5,5,15,.95) !important;
+      background: rgba(15,14,13,.95) !important;
       border-right: 1px solid rgba(255,255,255,.08);
     }
     .md-nav__title {
-      color: rgba(232,232,240,.55) !important;
+      color: rgba(236,230,219,.55) !important;
       font-size: .72rem;
       letter-spacing: .12em;
       text-transform: uppercase;
     }
-    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
+    .md-nav__link  { color: rgba(236,230,219,.55) !important; font-size: .84rem }
     .md-nav__link:hover,
-    .md-nav__link--active { color: #4a9eff !important }
-    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
+    .md-nav__link--active { color: var(--amber) !important }
+    .md-nav__item--active > .md-nav__link { color: var(--amber) !important; font-weight: 600 }
 
     /* ── hide right-hand TOC sidebar ── */
     @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
@@ -52,11 +52,11 @@
 
     /* ── readable text on dark bg ── */
     .md-typeset {
-      --md-default-fg-color:           #e8e8f0;
-      --md-default-fg-color--light:    rgba(232,232,240,.65);
-      --md-default-fg-color--lighter:  rgba(232,232,240,.40);
-      --md-default-fg-color--lightest: rgba(232,232,240,.12);
-      --md-default-bg-color:           #05050f;
+      --md-default-fg-color:           var(--paper);
+      --md-default-fg-color--light:    rgba(236,230,219,.65);
+      --md-default-fg-color--lighter:  rgba(236,230,219,.40);
+      --md-default-fg-color--lightest: rgba(236,230,219,.12);
+      --md-default-bg-color:           var(--ink-0);
     }
   </style>
 {% endblock %}

@@ -1,0 +1,24 @@
+# Ukrainian Sci-Fi — research by Oleh Shynkarenko
+
+> Bilingual (English / Ukrainian) research site on the history of Ukrainian science fiction, 1920–2020, maintained by Oleh Shynkarenko, a Ukrainian writer, journalist and PhD candidate at the University of Pécs, Hungary (Doctoral School of Literary and Cultural Studies, Faculty of Humanities and Social Sciences). Dissertation: "From Utopia to Dystopia: Ukrainian Science Fiction and the Collapse of Techno-Communism".
+
+English pages live at /path/, Ukrainian versions at /path/uk/ where they exist.
+
+## Research
+- [Dissertation overview](https://sci-fi-ua.netlify.app/phd/): the argument and its periods (1920s techno-communism to post-Soviet irony)
+- [Science Fiction in Ukraine, part I](https://sci-fi-ua.netlify.app/phd/ukrainian-sf-part-1/) and [part II](https://sci-fi-ua.netlify.app/phd/ukrainian-sf-part-2/): survey articles
+- [Sandro Kasyanyuk](https://sci-fi-ua.netlify.app/phd/kasyanyuk-techno-communism/): article in Slavia 94 (2025)
+- [Vasyl Berezhnyi](https://sci-fi-ua.netlify.app/phd/berezhnyi-techno-communism/): article in Slavia 95 (2026), doi:10.58377/slav.2026.3.03
+- [Volodymyr Zayets](https://sci-fi-ua.netlify.app/phd/zayets-ukrainian-postmodern/): article in the Journal of Science Fiction and Philosophy (2026)
+
+## Authors
+- [Ukrainian science fiction writers](https://sci-fi-ua.netlify.app/authors/): profiles of Kasyanyuk, Smolych, Vynnychenko, Vladko, Berezhnyi, Berdnyk, Savchenko, Rosokhovatskyi, Polozhyi, Zayets, Shcherbak, Berezin, Ostrikov
+
+## Other writing
+- [Essays and articles](https://sci-fi-ua.netlify.app/articles/): metamodernism, film, philosophy of science
+- [Fiction](https://sci-fi-ua.netlify.app/books/): five books by the author in Ukrainian (2006–2019) and the English translation of Kaharlyk (tr. Stephen Komarnyckyj, Kalyna Language Press, 2016): https://sci-fi-ua.netlify.app/books/kaharlyk-en/
+- [News](https://sci-fi-ua.netlify.app/news/): publications, conferences
+
+## About
+- [Biography](https://sci-fi-ua.netlify.app/bio/)
+- ORCID: https://orcid.org/0009-0001-1690-8967

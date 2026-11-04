@@ -8,7 +8,7 @@ template: bio.html
 
 ![Oleh Shynkarenko](assets/images/oleh.png)
 
-- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ) — 211 citations, h-index 7, i10-index 5 *(October 2026)*
+- [Google Scholar](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ) — 216 citations, h-index 7, i10-index 5 *(November 2026)*
 
 - [ORCID](https://orcid.org/0009-0001-1690-8967)
 
@@ -158,7 +158,7 @@ I am proud to have presented my research at international conferences, including
 - **Passau Summer School for Applied Ethics** (Passau, Germany, 2024): Accepted to discuss my topic in a multidisciplinary setting.
 - **SOFIKON 2025 Szentágothai Higher Education Interdisciplinary Conference** (Pécs, Hungary, 2025) Presentation “The Decline of Positivism and the Evolution of Ukrainian Science Fiction”.
 - **Collision Points XII** (Veszprém, Hungary, 2025): Presentation "From Mysticism to Mechanism: The Intellectual Evolution of the Human Mind" (Savchenko, Baudrillard, and Dennett: postmodern representation of individuality).
-- **Young Philosophers Conference 10** (Pécs, Hungary, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
+- **Young Philosophers Conference 10** (Budapest, Hungary, 2025): Presentation "Sandro Kasyanyuk: enfant terrible of Ukrainian techno-communism".
 - **Interdisciplinary Doctoral Student Conference 2025** (Pécs, Hungary, IDK2025): Presentation on "An unfortunate Benjamin's mistake".
 
     ??? note "An unfortunate Benjamin's mistake"

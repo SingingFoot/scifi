@@ -50,3 +50,7 @@ Shynkarenko's satire is relentless but not careless. The absurdities accumulate 
 The novel resists easy conclusions. Its structure is undeniably uneven — even the author acknowledges its looseness — but that looseness is inseparable from its subject. *Kaharlyk* is not about the end of the world so much as the end of coherence. It asks what happens when history, identity and language no longer align — and whether human beings can continue to live, think and narrate under those conditions.
 
 The answer, unsettlingly, is yes. But only by turning reality itself into something provisional, assembled from fragments, like the novel we are reading.
+
+---
+
+**In English:** *Kaharlyk*, translated by Stephen Komarnyckyj, Kalyna Language Press, 2016 — [edition details, reader reviews and press](kaharlyk-en.md).

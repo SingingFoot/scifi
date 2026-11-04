@@ -1,1 +1,2 @@
 /blog/*  /news/:splat  301
+/docx-editor/*  /  301

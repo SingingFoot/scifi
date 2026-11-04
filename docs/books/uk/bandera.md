@@ -5,7 +5,7 @@ tags:
   - Роман
   - Історична проза
   - Політична проза
-  - Українська literatura
+  - Українська література
 ---
 
 # Бандера Distortion
@@ -22,7 +22,7 @@ tags:
 <span class="article-tag">Історична проза</span>
 <span class="article-tag">Політична проза</span>
 <span class="article-tag">Метамодернізм</span>
-<span class="article-tag">Українська literatura</span>
+<span class="article-tag">Українська література</span>
 
 > Відмовляється звести Бандеру до єдиного сенсу — змушуючи нас запитати, навіщо нам потрібна проста історія, і чому ця потреба небезпечна.
 

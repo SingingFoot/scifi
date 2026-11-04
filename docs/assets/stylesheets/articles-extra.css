@@ -188,9 +188,9 @@
 
 /* Brighter tags in dark mode */
 [data-md-color-scheme="slate"] .article-tag {
-  color: #8fa8ff;
-  border-color: #8fa8ff;
-  background-color: rgba(143, 168, 255, 0.12);
+  color: var(--amber);
+  border-color: var(--amber);
+  background-color: var(--amber-lo);
 }
 
 /* Articles section intro */
@@ -268,11 +268,11 @@
 }
 
 [data-md-color-scheme="slate"] .book-card-body > strong > a {
-  color: #e8eaf0;
+  color: var(--paper);
 }
 
 [data-md-color-scheme="slate"] .book-card-body > strong > a:hover {
-  color: #8fa8ff;
+  color: var(--amber);
 }
 
 .book-year {

@@ -27,6 +27,7 @@ pygments~=2.16
 pymdown-extensions~=10.2
 
 # Requirements for plugins
+beautifulsoup4>=4.9      # used by material/overrides/hooks/i18n.py (EN/UA build step)
 babel~=2.10
 colorama~=0.4
 paginate~=0.5

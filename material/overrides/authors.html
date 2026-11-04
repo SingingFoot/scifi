@@ -1,158 +1,71 @@
 {#-
-  Authors index page — dark cosmic style, sidebar-aware layout
+  Authors index (EN: docs/authors/index.md, UA: docs/authors/uk/index.md).
 -#}
 {% extends "main.html" %}
 
 {% block tabs %}
   {{ super() }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-
   <style>
-    /* ── Global background ── */
-    body,
-    .md-main,
-    .md-main__inner,
-    [data-md-color-scheme] {
-      background: #05050f !important;
-      color: #e8e8f0 !important;
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    }
-
-    /* ── Left sidebar: keep visible, dark-styled ── */
-    .md-sidebar--primary,
-    .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: rgba(5,5,15,.95) !important;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .md-nav__title { color: rgba(232,232,240,.55) !important; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase }
-    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
-    .md-nav__link:hover, .md-nav__link--active { color: #4a9eff !important }
-    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
-
-    /* ── Right TOC: hidden ── */
+    /* ── Page frame: left author list stays, table of contents hidden ── */
     @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
+    .md-content { background: transparent }
+    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 1.2rem !important }
+    .md-content__inner::before { display: none }
 
-    /* ── Content area: transparent, no padding (we handle it ourselves) ── */
-    .md-content  { background: transparent !important }
-    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 !important }
-
-    /* ── Design tokens ── */
-    :root {
-      --c-bg:       #05050f;
-      --c-surface:  rgba(255,255,255,.04);
-      --c-border:   rgba(255,255,255,.08);
-      --c-blue:     #4a9eff;
-      --c-blue-dim: rgba(74,158,255,.12);
-      --c-gold:     #ffd54f;
-      --c-gold-dim: rgba(255,213,79,.12);
-      --c-text:     #e8e8f0;
-      --c-muted:    rgba(232,232,240,.50);
-      --radius:     12px;
-      --ease:       cubic-bezier(.4,0,.2,1);
-    }
-
-    .au { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.65; overflow-x: hidden }
+    .au { font-family: var(--font-sans); color: var(--paper); line-height: 1.6 }
     .au a { color: inherit; text-decoration: none }
-    .au-wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem }
+    .au-wrap { max-width: 60rem; margin: 0 auto; padding: 0 .5rem }
 
-    .au-pill { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--c-blue); background: var(--c-blue-dim); padding: .25rem .8rem; border-radius: 50px; margin-bottom: .9rem }
-    .au-h2 { font-size: clamp(1.4rem,2.5vw,2rem); font-weight: 800; color: #fff; margin: 0 0 .75rem; line-height: 1.15 }
-    .au-sec { padding: 2.5rem 0 }
-    .au-divider { border: none; border-top: 1px solid var(--c-border); margin: 0 }
+    /* header */
+    .au-hero { padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem }
+    .au-hero-eye { font: 500 .68rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem }
+    .au-hero-title { font: 500 var(--step-3)/1.12 var(--font-display) !important; color: var(--paper-hi); letter-spacing: -.015em; margin: 0 0 1.1rem }
+    .au-hero-sub { font: 400 1.1rem/1.7 var(--font-serif); color: var(--dim); margin: 0; max-width: var(--measure) }
 
-    /* ── HERO ── */
-    .au-hero { position: relative; overflow: hidden; padding: 3.5rem 0 2.5rem }
-    #au-stars { position: absolute; inset: 0; width: 100%; height: 100% }
-    .au-glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .14; pointer-events: none }
-    .au-glow-blue { width: 600px; height: 600px; background: #1050ff; top: -15%; right: -8% }
-    .au-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -10%; left: -5% }
-    .au-hero-inner { position: relative; z-index: 1; max-width: 640px }
-    .au-hero-eye { display: flex; align-items: center; gap: .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--c-gold); margin-bottom: 1rem }
-    .au-hero-eye::before { content: ''; width: 28px; height: 2px; background: var(--c-gold); flex-shrink: 0 }
-    .au-hero-title { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 800; color: #fff; margin: 0 0 1rem; line-height: 1.15 }
-    .au-hero-sub { font-size: .95rem; color: var(--c-muted); line-height: 1.8; max-width: 600px }
+    /* era strip */
+    .au-timeline { max-width: 60rem; margin: 0 auto 1rem; padding: 0 .5rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line) }
+    .au-era { padding: .9rem 1rem .9rem 0 }
+    .au-era + .au-era { padding-left: 1rem; border-left: 1px solid var(--line) }
+    .au-era-dec { font: 500 .8rem/1.4 var(--font-mono); color: var(--amber) }
+    .au-era-lbl { font: 400 .8rem/1.45 var(--font-sans); color: var(--dim); margin-top: .15rem }
 
-    /* ── TIMELINE BAR ── */
-    .au-timeline {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border-top: 1px solid var(--c-border);
-      border-bottom: 1px solid var(--c-border);
-      background: rgba(255,255,255,.02);
-    }
-    .au-era { padding: 1.1rem 1rem; border-right: 1px solid var(--c-border) }
-    .au-era:last-child { border-right: none }
-    .au-era-dec { font-size: .95rem; font-weight: 800; color: var(--c-gold); margin-bottom: .2rem }
-    .au-era-lbl { font-size: .68rem; color: var(--c-muted); text-transform: uppercase; letter-spacing: .1em }
+    /* sections */
+    .au-sec { padding: clamp(2.5rem, 5vw, 3.5rem) 0 }
+    .au-sec + .au-divider + .au-sec, .au-divider { border: 0; border-top: 1px solid var(--line); margin: 0 }
+    .au-pill { display: block; font: 500 .66rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint) !important; margin: 0 0 .5rem }
+    .au-h2 { font: 500 var(--step-2)/1.2 var(--font-serif) !important; color: var(--paper-hi); margin: 0 0 2rem }
 
-    /* ── AUTHOR CARDS ── */
-    .au-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.25rem; margin-top: 1rem }
-    .au-card {
-      display: flex; flex-direction: column;
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: border-color .25s var(--ease), transform .25s var(--ease);
-      text-decoration: none;
-    }
-    .au-card:hover { border-color: rgba(74,158,255,.3); transform: translateY(-4px) }
-    .au-card-cover { height: 150px; position: relative; overflow: hidden; background: linear-gradient(135deg,#0a0e2a 0%,#111840 100%) }
-    .au-card-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform .4s var(--ease) }
-    .au-card:hover .au-card-cover img { transform: scale(1.04) }
-    .au-card-cover-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--c-bg) 100%) }
-    .au-card-portrait { width: 68px; height: 68px; border-radius: 50%; border: 3px solid var(--c-bg); overflow: hidden; background: #1a1a2e; margin: -34px auto 0; position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; flex-shrink: 0 }
+    /* author cards */
+    .au-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem 1.75rem }
+    .au-card { display: flex; flex-direction: column; min-width: 0 }
+    .au-card:hover { transform: none !important }
+    .au-card-cover { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: var(--radius); background: var(--ink-1) }
+    .au-card-cover img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(.35) contrast(1.02); transition: filter var(--dur) var(--ease) }
+    .au-card:hover .au-card-cover img { filter: none }
+    .au-card-cover-fade { display: none }
+    .au-card-portrait { width: 2.75rem; height: 2.75rem; border-radius: 50%; overflow: hidden; margin: -1.375rem 0 0 .9rem; position: relative; border: 2px solid var(--ink-0); background: var(--ink-2) }
     .au-card-portrait img { width: 100%; height: 100%; object-fit: cover; display: block }
-    .au-card-portrait-initials { font-size: 1.2rem; font-weight: 800; color: var(--c-blue) }
-    .au-card-body { padding: .7rem 1.1rem 1.2rem; text-align: center; flex: 1; display: flex; flex-direction: column; align-items: center }
-    .au-card-name { font-size: .95rem; font-weight: 800; color: #fff; margin-bottom: .2rem }
-    .au-card-dates { font-size: .72rem; color: var(--c-gold); font-weight: 600; margin-bottom: .45rem; letter-spacing: .04em }
-    .au-card-tag { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c-blue); background: var(--c-blue-dim); padding: .18rem .55rem; border-radius: 50px; margin-bottom: .65rem }
-    .au-card-desc { font-size: .78rem; color: var(--c-muted); line-height: 1.6; text-align: center; flex: 1 }
-    .au-card-cta { display: inline-flex; align-items: center; gap: .4rem; margin-top: .8rem; font-size: .74rem; font-weight: 600; color: var(--c-blue) }
-    .au-card-cta::after { content: '→'; transition: transform .2s var(--ease) }
-    .au-card:hover .au-card-cta::after { transform: translateX(4px) }
-    .au-cover-kasyanyuk { background: linear-gradient(135deg,#1a0533 0%,#3d0d6b 100%) }
-    .au-cover-berezhnyi { background: linear-gradient(135deg,#051a33 0%,#0d3d6b 100%) }
-    .au-cover-zayets    { background: linear-gradient(135deg,#0d1a05 0%,#1e3d0d 100%) }
-    .au-cover-polozhyi  { background: linear-gradient(135deg,#1a1205 0%,#3d2b0d 100%) }
-    .au-cover-smolych       { background: linear-gradient(135deg,#330505 0%,#6b0d0d 100%) }
-    .au-cover-vynnychenko   { background: linear-gradient(135deg,#05221a 0%,#0d4a3a 100%) }
-    .au-cover-vladko        { background: linear-gradient(135deg,#0d1533 0%,#1a2e6b 100%) }
-    .au-cover-berdnyk       { background: linear-gradient(135deg,#33051f 0%,#6b0d45 100%) }
-    .au-cover-savchenko     { background: linear-gradient(135deg,#05262b 0%,#0d5560 100%) }
-    .au-cover-rosokhovatskyi{ background: linear-gradient(135deg,#1f0533 0%,#4a0d6b 100%) }
-    .au-cover-shcherbak     { background: linear-gradient(135deg,#052818 0%,#0d5c35 100%) }
-    .au-cover-berezin       { background: linear-gradient(135deg,#331005 0%,#6b2a0d 100%) }
-    .au-cover-ostrikov      { background: linear-gradient(135deg,#050d33 0%,#0d216b 100%) }
+    .au-card-body { padding: .7rem 0 0; display: flex; flex-direction: column; flex: 1 }
+    .au-card-name { font: 500 1.2rem/1.3 var(--font-serif); color: var(--paper-hi); transition: color var(--dur) var(--ease) }
+    .au-card:hover .au-card-name { color: var(--amber-hi) }
+    .au-card-dates { font: 400 .75rem/1.5 var(--font-mono); color: var(--faint); margin-top: .1rem }
+    .au-card-tag { font: 500 .66rem/1.4 var(--font-mono) !important; letter-spacing: .08em; text-transform: uppercase; color: var(--amber) !important; background: none !important; padding: 0 !important; margin: .55rem 0 0 }
+    .au-card-desc { font: 400 .9rem/1.6 var(--font-sans); color: var(--dim); margin: .5rem 0 .8rem; flex: 1 }
+    .au-card-cta { font: 500 .82rem/1 var(--font-sans); color: var(--amber) }
+    .au-card-cta::after { content: " \2192"; display: inline-block; transition: transform var(--dur) var(--ease) }
+    .au-card:hover .au-card-cta::after { transform: translateX(3px) }
 
-    @media (min-width: 900px) { .au-grid { grid-template-columns: repeat(3,1fr) } }
+    /* overview */
+    .au-intro p { font: 400 1.04rem/1.75 var(--font-serif); color: var(--paper); margin: 0 0 1rem; max-width: var(--measure) }
+    .au-intro strong { color: var(--paper-hi); font-weight: 600 }
 
-    /* ── INTRO TEXT ── */
-    .au-intro p { font-size: .95rem; color: var(--c-muted); line-height: 1.8; margin-bottom: .9rem }
-    .au-intro strong { color: var(--c-text) }
-
-    /* ── FOOTER ── */
-    .md-footer { background: rgba(5,5,15,.98) !important; border-top: 1px solid var(--c-border) !important }
-    .md-footer-meta { background: transparent !important }
-    .md-footer__link { color: var(--c-muted) !important }
-    .md-footer__link:hover { color: var(--c-blue) !important }
-    .md-footer__title { color: var(--c-text) !important }
-
-    /* ── SCROLLBAR ── */
-    * { scrollbar-color: rgba(74,158,255,.25) transparent; scrollbar-width: thin }
-
-    /* ── FADE ── */
-    .au-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s var(--ease), transform .5s var(--ease) }
-    .au-fade.au-vis { opacity: 1; transform: none }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
+    @media (max-width: 960px) { .au-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+    @media (max-width: 600px) {
       .au-grid { grid-template-columns: 1fr }
-      .au-timeline { grid-template-columns: repeat(2,1fr) }
-      .au-era:nth-child(2) { border-right: none }
+      .au-timeline { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+      .au-era:nth-child(3) { padding-left: 0; border-left: 0 }
+      .au-era:nth-child(n+3) { border-top: 1px solid var(--line) }
     }
   </style>
 {% endblock %}
@@ -162,24 +75,17 @@
 
     <!-- ══════ HERO ══════ -->
     <section class="au-hero">
-      <canvas id="au-stars"></canvas>
-      <div class="au-glow au-glow-blue"></div>
-      <div class="au-glow au-glow-gold"></div>
       <div class="au-wrap">
         <div class="au-hero-inner au-fade">
           <div class="au-hero-eye"
                data-en="Ukrainian Science Fiction"
                data-ua="Українська наукова фантастика">Ukrainian Science Fiction</div>
           <h1 class="au-hero-title"
-              data-en="Featured Authors"
-              data-ua="Визначні автори">Featured Authors</h1>
+              data-en="Ukrainian science fiction writers"
+              data-ua="Українські письменники-фантасти">Ukrainian science fiction writers</h1>
           <p class="au-hero-sub"
-             data-en="Ukrainian SF has undergone radical transformations over a century — shaped by political ideology, industrialisation, oppression, and cultural revival. These four writers represent pivotal moments in that journey: from naive techno-communism to existential postmodernism."
-             data-ua="Українська наукова фантастика зазнала радикальних перетворень упродовж століття — під впливом політичної ідеології, індустріалізації, репресій і культурного відродження. Ці четверо письменників уособлюють ключові моменти цього шляху: від наївного технокомунізму до екзистенційного постмодернізму.">
-            Ukrainian SF has undergone radical transformations over a century — shaped by political ideology,
-            industrialisation, oppression, and cultural revival. These four writers represent pivotal
-            moments in that journey: from naive techno-communism to existential postmodernism.
-          </p>
+             data-en="Profiles of thirteen Ukrainian science fiction writers, from the techno-communist enthusiasts of the 1920s to the late-Soviet postmodernists and the post-1991 generation, with biographies, key works and their place in the history of the genre."
+             data-ua="Профілі тринадцяти українських письменників-фантастів — від технокомуністичних ентузіастів 1920-х до пізньорадянських постмодерністів і покоління після 1991 року: біографії, ключові твори та місце в історії жанру.">Profiles of thirteen Ukrainian science fiction writers, from the techno-communist enthusiasts of the 1920s to the late-Soviet postmodernists and the post-1991 generation, with biographies, key works and their place in the history of the genre.</p>
         </div>
       </div>
     </section>
@@ -216,11 +122,11 @@
     <section class="au-sec">
       <div class="au-wrap">
         <div class="au-pill"
-             data-en="Thirteen Voices"
-             data-ua="Тринадцять голосів">Thirteen Voices</div>
+             data-en="Profiles"
+             data-ua="Профілі">Profiles</div>
         <h2 class="au-h2"
-            data-en="Writers Who Shaped Ukrainian Sci-Fi"
-            data-ua="Письменники, що сформували українську фантастику">Writers Who Shaped Ukrainian Sci-Fi</h2>
+            data-en="Thirteen writers"
+            data-ua="Тринадцять письменників">Thirteen writers</h2>
 
         <div class="au-grid">
 
@@ -352,7 +258,7 @@
             <div class="au-card-body">
               <div class="au-card-name"
                    data-en="Vasyl Berezhnyi"
-                   data-ua="Василь Бережній">Vasyl Berezhnyi</div>
+                   data-ua="Василь Бережний">Vasyl Berezhnyi</div>
               <div class="au-card-dates">1918 &ndash; 1988</div>
               <span class="au-card-tag"
                     data-en="Space SF · Utopia"
@@ -634,40 +540,6 @@
 
   </div><!-- /.au -->
 
-  <script>
-  (function () {
-    var cv = document.getElementById('au-stars');
-    if (!cv) return;
-    var cx = cv.getContext('2d'), stars = [], W, H;
-    function resize() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight }
-    function seed() {
-      stars = [];
-      for (var i = 0; i < 160; i++)
-        stars.push({ x: Math.random()*W, y: Math.random()*H,
-          r: Math.random()*1.2+.2, o: Math.random()*.4+.06,
-          s: Math.random()*.012+.004, p: Math.random()*Math.PI*2 });
-    }
-    function draw(t) {
-      cx.clearRect(0,0,W,H);
-      for (var i=0;i<stars.length;i++) {
-        var st=stars[i], op=st.o+.12*Math.sin(t*st.s+st.p);
-        cx.beginPath(); cx.arc(st.x,st.y,st.r,0,6.283);
-        cx.fillStyle='rgba(200,218,255,'+op+')'; cx.fill();
-      }
-      requestAnimationFrame(draw);
-    }
-    window.addEventListener('resize',function(){resize();seed()});
-    resize(); seed(); requestAnimationFrame(draw);
-
-    var fades = document.querySelectorAll('.au-fade');
-    if ('IntersectionObserver' in window) {
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('au-vis'); obs.unobserve(e.target); } });
-      }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
-      fades.forEach(function(el) { obs.observe(el); });
-    } else { fades.forEach(function(el) { el.classList.add('au-vis'); }); }
-  }());
-  </script>
 {% endblock %}
 
 {% block site_nav %}
@@ -739,7 +611,7 @@
          href="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
-        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережний">Vasyl Berezhnyi</span>
       </a>
     </li>
 

@@ -1,5 +1,5 @@
 {#-
-  Custom PhD Research page — dark cosmic design.
+  PhD page (EN: docs/phd/index.md, UA: docs/phd/uk/index.md).
   Content is in {% block content %} so MkDocs renders the left sidebar correctly.
 -#}
 {% extends "main.html" %}
@@ -7,271 +7,67 @@
 {% block tabs %}
   {{ super() }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-
   <style>
-    /* ── MkDocs layout ── */
-    .md-header   { position: initial }
+    /* ── Page frame: left section nav stays, table of contents hidden ── */
     .md-main__inner { margin-top: 0 }
-    /* Do NOT set .md-content { display:none } — that collapses the grid and hides the sidebar */
-    .md-content  { background: transparent !important }
-    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 !important }
+    .md-content { background: transparent }
+    .md-content__inner { padding: 0 !important; max-width: none !important; margin: 0 1.2rem !important }
+    .md-content__inner::before { display: none }
     @media screen and (min-width: 60em) { .md-sidebar--secondary { display: none } }
 
-    /* ── Base background ── */
-    body, .md-main, .md-main__inner, [data-md-color-scheme] {
-      background: #05050f !important;
-      color: #e8e8f0 !important;
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    }
+    .pp { font-family: var(--font-sans); color: var(--paper) }
+    .pp a { color: inherit; text-decoration: none }
+    .pp-wrap, .pp-wrap-narrow { max-width: 46rem; margin: 0 auto; padding: 0 .5rem }
 
-    /* ── Left sidebar — dark theme ── */
-    .md-sidebar--primary,
-    .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: rgba(5,5,15,.95) !important;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .md-nav__title { color: rgba(232,232,240,.55) !important; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase }
-    .md-nav__link  { color: rgba(232,232,240,.55) !important; font-size: .84rem }
-    .md-nav__link:hover,
-    .md-nav__link--active { color: #4a9eff !important }
-    .md-nav__item--active > .md-nav__link { color: #4a9eff !important; font-weight: 600 }
-    .md-nav__item--nested > .md-nav__link::after { color: rgba(232,232,240,.55) }
+    /* header */
+    .pp-hero { padding: clamp(2.5rem, 6vw, 4.5rem) 0 2.5rem }
+    .pp-hero-eye { font: 500 .68rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem }
+    .pp-hero-title { font: 500 var(--step-3)/1.12 var(--font-display) !important; color: var(--paper-hi); letter-spacing: -.015em; margin: 0 0 1.2rem }
+    .pp-hero-sub { font: 400 1.1rem/1.7 var(--font-serif); color: var(--dim); margin: 0 0 2rem; max-width: var(--measure) }
+    .pp-thesis { border-left: 2px solid var(--amber); padding: .2rem 0 .2rem 1.25rem }
+    .pp-thesis-t { font: italic 400 var(--step-1)/1.4 var(--font-serif); color: var(--paper-hi); margin-bottom: .45rem }
+    .pp-thesis-m { font: 400 .85rem/1.6 var(--font-sans); color: var(--faint) }
+    .pp-thesis-m strong { color: var(--paper); font-weight: 500 }
 
-    /* ── Design tokens ── */
-    :root {
-      --c-bg:       #05050f;
-      --c-surface:  rgba(255,255,255,.04);
-      --c-border:   rgba(255,255,255,.08);
-      --c-blue:     #4a9eff;
-      --c-blue-dim: rgba(74,158,255,.12);
-      --c-gold:     #ffd54f;
-      --c-gold-dim: rgba(255,213,79,.12);
-      --c-text:     #e8e8f0;
-      --c-muted:    rgba(232,232,240,.50);
-      --radius:     12px;
-      --ease:       cubic-bezier(.4,0,.2,1);
-    }
+    /* sections */
+    .pp-sec { padding: clamp(2.5rem, 5vw, 3.5rem) 0; border-top: 1px solid var(--line) }
+    .pp-pill { display: block; font: 500 .66rem/1.4 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--faint) !important; margin: 0 0 .5rem }
+    .pp-h2 { font: 500 var(--step-2)/1.2 var(--font-serif) !important; color: var(--paper-hi); margin: 0 0 2rem }
+    .pp-divider { display: none }
 
-    /* ── Base ── */
-    .pp {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--c-bg);
-      color: var(--c-text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-    .pp a { color: inherit }
-    .pp-wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem }
-    .pp-wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem }
+    /* eras: year column + text */
+    .pp-eras { border-top: 1px solid var(--line) }
+    .pp-era { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1.75rem; padding: 2rem 0; border-bottom: 1px solid var(--line) }
+    .pp-era-aside { position: sticky; top: 6rem; align-self: start }
+    .pp-era-decade { font: 500 .85rem/1.4 var(--font-mono); color: var(--amber) }
+    .pp-era-label { font: 400 .78rem/1.4 var(--font-sans); color: var(--faint); margin-top: .2rem }
+    .pp-era-dot { display: none }
+    .pp-era-body h3 { font: 500 var(--step-1)/1.35 var(--font-serif); color: var(--paper-hi); margin: 0 0 .8rem }
+    .pp-era-body p, .pp-prose p { font: 400 1.04rem/1.75 var(--font-serif); color: var(--paper); margin: 0 0 1rem; max-width: var(--measure) }
+    .pp-era-body strong, .pp-prose strong { color: var(--paper-hi); font-weight: 600 }
+    .pp-chips { display: flex; flex-wrap: wrap; gap: .25rem .9rem; margin-top: 1rem }
+    .pp-chip { font: 400 .75rem/1.5 var(--font-mono); color: var(--faint) }
+    .pp-chip::before { content: "· "; color: var(--line-2) }
 
-    .pp-pill {
-      display: inline-block;
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--c-blue); background: var(--c-blue-dim);
-      padding: .25rem .8rem; border-radius: 50px;
-      margin-bottom: .9rem;
-    }
-    .pp-h2 {
-      font-size: clamp(1.6rem,3vw,2.4rem);
-      font-weight: 800; color: #fff;
-      margin: 0 0 1rem; line-height: 1.15;
-    }
-    .pp-sec { padding: 4rem 0 }
-    .pp-divider {
-      border: none;
-      border-top: 1px solid var(--c-border);
-      margin: 0;
-    }
+    /* articles */
+    .pp-articles { border-top: 1px solid var(--line) }
+    .pp-article-card { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; gap: 1rem; align-items: baseline; padding: 1.2rem 0; border-bottom: 1px solid var(--line) }
+    .pp-article-card:hover { transform: none !important }
+    .pp-article-num { font: 400 .78rem/1 var(--font-mono); color: var(--faint) }
+    .pp-article-t { font: 400 1.12rem/1.4 var(--font-serif); color: var(--paper-hi); transition: color var(--dur) var(--ease) }
+    .pp-article-d { font: 400 .88rem/1.55 var(--font-sans); color: var(--dim); margin-top: .3rem }
+    .pp-article-d em { color: var(--paper); font-style: italic }
+    .pp-article-arrow { color: var(--faint); transition: transform var(--dur) var(--ease), color var(--dur) var(--ease) }
+    .pp-article-card:hover .pp-article-t, .pp-article-card:hover .pp-article-arrow { color: var(--amber-hi) }
+    .pp-article-card:hover .pp-article-arrow { transform: translateX(3px) }
 
-    /* ── PROSE ── */
-    .pp-prose p {
-      color: var(--c-muted); font-size: 1rem;
-      line-height: 1.8; margin-bottom: 1rem;
-    }
-    .pp-prose strong { color: var(--c-text) }
-    .pp-prose em { color: var(--c-blue); font-style: normal; font-weight: 600 }
+    .pp-importance { background: none; border: 0; padding: 0 }
 
-    /* ── HERO ── */
-    .pp-hero {
-      position: relative;
-      overflow: hidden;
-      padding: 5rem 0 4.5rem;
-    }
-    #pp-stars { position: absolute; inset: 0; width: 100%; height: 100% }
-    .pp-glow {
-      position: absolute; border-radius: 50%;
-      filter: blur(120px); opacity: .14; pointer-events: none;
-    }
-    .pp-glow-blue { width: 600px; height: 600px; background: #1050ff; top: -20%; right: -10% }
-    .pp-glow-gold { width: 400px; height: 400px; background: #ffb300; bottom: -15%; left: -8% }
-
-    .pp-hero-inner {
-      position: relative; z-index: 1;
-      max-width: 760px;
-    }
-    .pp-hero-eye {
-      display: flex; align-items: center; gap: .6rem;
-      font-size: .72rem; font-weight: 700;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: var(--c-gold); margin-bottom: 1.1rem;
-    }
-    .pp-hero-eye::before {
-      content: ''; width: 28px; height: 2px;
-      background: var(--c-gold); flex-shrink: 0;
-    }
-    .pp-hero-title {
-      font-size: clamp(1.9rem,4vw,3rem);
-      font-weight: 800; color: #fff;
-      margin: 0 0 1rem; line-height: 1.15;
-    }
-    .pp-hero-sub {
-      font-size: 1rem; color: var(--c-muted);
-      line-height: 1.8; max-width: 680px;
-      margin-bottom: 0;
-    }
-
-    /* ── THESIS CARD ── */
-    .pp-thesis {
-      background: var(--c-surface);
-      border: 1px solid rgba(74,158,255,.2);
-      border-radius: var(--radius);
-      padding: 2rem; margin-top: 2.5rem;
-      position: relative; overflow: hidden;
-      max-width: 760px;
-    }
-    .pp-thesis::before {
-      content: '\201C';
-      position: absolute; top: -.5rem; left: 1.2rem;
-      font-size: 8rem; color: var(--c-blue);
-      opacity: .07; font-family: Georgia, serif;
-      line-height: 1; pointer-events: none;
-    }
-    .pp-thesis-t {
-      font-size: 1.15rem; font-weight: 700; color: #fff;
-      line-height: 1.45; margin-bottom: .7rem;
-    }
-    .pp-thesis-m { font-size: .875rem; color: var(--c-muted) }
-    .pp-thesis-m strong { color: var(--c-blue) }
-
-    /* ── ERA TIMELINE ── */
-    .pp-eras { display: flex; flex-direction: column; gap: 0 }
-
-    .pp-era {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 0 2.5rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--c-border);
-      position: relative;
-    }
-    .pp-era:last-child { border-bottom: none }
-
-    .pp-era-aside { padding-top: .2rem }
-    .pp-era-decade {
-      font-size: 2rem; font-weight: 800;
-      color: var(--c-gold); line-height: 1;
-      margin-bottom: .35rem;
-    }
-    .pp-era-label {
-      font-size: .68rem; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--c-muted);
-    }
-    .pp-era-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--c-blue); margin-top: 1.2rem;
-      box-shadow: 0 0 10px var(--c-blue);
-    }
-
-    .pp-era-body h3 {
-      font-size: 1.15rem; font-weight: 800; color: #fff;
-      margin: 0 0 .8rem; line-height: 1.3;
-    }
-    .pp-era-body p {
-      font-size: .95rem; color: var(--c-muted);
-      line-height: 1.8; margin-bottom: .85rem;
-    }
-    .pp-era-body p:last-child { margin-bottom: 0 }
-    .pp-era-body strong { color: var(--c-text) }
-    .pp-era-body .pp-ref {
-      display: inline; font-style: normal;
-      color: var(--c-blue); font-weight: 600;
-    }
-
-    /* ── AUTHOR CHIPS ── */
-    .pp-chips {
-      display: flex; flex-wrap: wrap; gap: .5rem;
-      margin-top: 1rem;
-    }
-    .pp-chip {
-      font-size: .78rem; font-weight: 600;
-      color: var(--c-text);
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      padding: .28rem .75rem; border-radius: 50px;
-    }
-
-    /* ── ARTICLE CARDS ── */
-    .pp-articles { display: flex; flex-direction: column; gap: .75rem; margin-top: .5rem }
-    .pp-article-card {
-      display: grid;
-      grid-template-columns: 52px 1fr 28px;
-      gap: 1.2rem;
-      align-items: center;
-      padding: 1.25rem 1.4rem;
-      background: var(--c-surface);
-      border: 1px solid var(--c-border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: border-color .22s var(--ease), background .22s var(--ease);
-    }
-    .pp-article-card:hover {
-      border-color: rgba(74,158,255,.35);
-      background: rgba(74,158,255,.05);
-    }
-    .pp-article-num {
-      font-size: 1.6rem; font-weight: 800;
-      color: rgba(74,158,255,.25);
-      line-height: 1; font-variant-numeric: tabular-nums;
-      flex-shrink: 0;
-    }
-    .pp-article-card:hover .pp-article-num { color: var(--c-blue) }
-    .pp-article-t {
-      font-size: .95rem; font-weight: 700;
-      color: var(--c-text); margin-bottom: .35rem;
-      line-height: 1.3;
-    }
-    .pp-article-d {
-      font-size: .82rem; color: var(--c-muted);
-      line-height: 1.55;
-    }
-    .pp-article-d em { color: var(--c-blue); font-style: normal }
-    .pp-article-arrow {
-      font-size: 1.1rem; color: var(--c-muted);
-      flex-shrink: 0; transition: color .2s var(--ease), transform .2s var(--ease);
-    }
-    .pp-article-card:hover .pp-article-arrow { color: var(--c-blue); transform: translateX(4px) }
-
-    /* ── RESEARCH IMPORTANCE ── */
-    .pp-importance {
-      background: linear-gradient(135deg, rgba(74,158,255,.08) 0%, rgba(255,213,79,.06) 100%);
-      border: 1px solid rgba(74,158,255,.15);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-    }
-
-    /* ── FADE ── */
-    .pp-fade { opacity: 0; transform: translateY(20px); transition: opacity .5s var(--ease), transform .5s var(--ease) }
-    .pp-fade.pp-vis { opacity: 1; transform: none }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .pp-era { grid-template-columns: 1fr }
-      .pp-era-aside { display: flex; align-items: center; gap: 1rem; padding-bottom: .5rem }
-      .pp-era-dot { margin-top: 0; flex-shrink: 0 }
+      .pp-era { grid-template-columns: 1fr; gap: .6rem }
+      .pp-era-aside { position: static; display: flex; gap: .75rem; align-items: baseline }
+      .pp-article-card { grid-template-columns: 1fr auto }
+      .pp-article-num { display: none }
     }
   </style>
 {% endblock %}
@@ -281,34 +77,21 @@
 
     <!-- ══════ HERO ══════ -->
     <section class="pp-hero">
-      <canvas id="pp-stars"></canvas>
-      <div class="pp-glow pp-glow-blue"></div>
-      <div class="pp-glow pp-glow-gold"></div>
 
       <div class="pp-wrap">
         <div class="pp-hero-inner pp-fade">
           <div class="pp-hero-eye"
-               data-en="PhD Research &middot; University of P&eacute;cs"
-               data-ua="Докторські дослідження &middot; Університет Печа">PhD Research &middot; University of P&eacute;cs</div>
+               data-en="Dissertation &middot; University of P&eacute;cs"
+               data-ua="Дисертація &middot; Печський університет">Dissertation &middot; University of P&eacute;cs</div>
           <h1 class="pp-hero-title"
               data-en="Exploring the Development of Ukrainian Science Fiction"
               data-ua="Дослідження розвитку української наукової фантастики">Exploring the Development of Ukrainian Science Fiction</h1>
           <p class="pp-hero-sub"
-             data-en="The genre of Ukrainian science fiction has undergone significant transformations, shaped by the political, cultural, and technological shifts of each era. From its origins in the early 20th century to its contemporary manifestations, Ukrainian SF reflects a complex interplay of ideology, mysticism, and societal aspirations. My PhD research focuses on this dynamic evolution, exploring how the genre has mirrored and responded to the changing conditions of Ukrainian society."
-             data-ua="Жанр української наукової фантастики пройшов крізь глибокі трансформації — під впливом політичних, культурних і технологічних зрушень кожної доби. Від своїх витоків на початку XX століття до сучасних форм українська НФ відображає складне переплетення ідеології, містицизму та суспільних прагнень. Моє докторське дослідження зосереджено на цій динамічній еволюції — на тому, як жанр відбивав і осмислював мінливі умови українського суспільства.">
-            The genre of Ukrainian science fiction has undergone significant transformations,
-            shaped by the political, cultural, and technological shifts of each era. From its
-            origins in the early 20th century to its contemporary manifestations, Ukrainian SF
-            reflects a complex interplay of ideology, mysticism, and societal aspirations.
-            My PhD research focuses on this dynamic evolution, exploring how the genre has
-            mirrored and responded to the changing conditions of Ukrainian society.
-          </p>
+             data-en="My dissertation follows a century of Ukrainian science fiction, from the 1920s to the 2020s. It argues that the genre rose with the positivist, techno-communist belief that technology would bring a just society, and that its later turns — to mysticism, to philosophical doubt, to postmodern irony — record how that belief fell apart."
+             data-ua="Моя дисертація простежує столітню історію української наукової фантастики — від 1920-х до 2020-х. Я доводжу, що жанр постав разом із позитивістською, технокомуністичною вірою в те, що техніка збудує справедливе суспільство, а його пізніші повороти — до містики, філософського сумніву, постмодерної іронії — фіксують, як ця віра розпадалася.">My dissertation follows a century of Ukrainian science fiction, from the 1920s to the 2020s. It argues that the genre rose with the positivist, techno-communist belief that technology would bring a just society, and that its later turns — to mysticism, to philosophical doubt, to postmodern irony — record how that belief fell apart.</p>
 
           <div class="pp-thesis pp-fade">
-            <div class="pp-thesis-t">
-              &ldquo;From Utopia to Dystopia: Ukrainian Science Fiction
-              and the Collapse of Techno-Communism&rdquo;
-            </div>
+            <div class="pp-thesis-t" data-en="&ldquo;From Utopia to Dystopia: Ukrainian Science Fiction and the Collapse of Techno-Communism&rdquo;" data-ua="&laquo;Від утопії до антиутопії: українська наукова фантастика та крах технокомунізму&raquo;">&ldquo;From Utopia to Dystopia: Ukrainian Science Fiction and the Collapse of Techno-Communism&rdquo;</div>
             <div class="pp-thesis-m"
                  data-en="&lt;strong&gt;University of P&eacute;cs&lt;/strong&gt; &middot; Doctoral School of Literary and Cultural Studies &middot; Full-time, Started September 2023"
                  data-ua="&lt;strong&gt;Університет Печа&lt;/strong&gt; &middot; Докторська школа літературознавства та культурології &middot; Денна форма, розпочато вересень 2023">
@@ -364,9 +147,9 @@
               </p>
               <div class="pp-chips">
                 <span class="pp-chip" data-en="Sandro Kasyanyuk" data-ua="Сандро Касянюк">Sandro Kasyanyuk</span>
-                <span class="pp-chip" data-en="Machining Humanity" data-ua="Машинізація людяності">Machining Humanity</span>
+                <span class="pp-chip" data-en="Machining Humanity" data-ua="Омашинення людства">Machining Humanity</span>
                 <span class="pp-chip" data-en="Positivism" data-ua="Позитивізм">Positivism</span>
-                <span class="pp-chip" data-en="Techno-Communism" data-ua="Техно-комунізм">Techno-Communism</span>
+                <span class="pp-chip" data-en="Techno-Communism" data-ua="Технокомунізм">Techno-Communism</span>
               </div>
             </div>
           </div>
@@ -382,7 +165,7 @@
               <h3 data-en="From Naive Optimism to Ideological Disillusionment"
                   data-ua="Від наївного оптимізму до ідеологічного розчарування">From Naive Optimism to Ideological Disillusionment</h3>
               <p data-en="The optimistic view of technology in the 1920s reflected the ideals of &lt;strong&gt;techno-communism&lt;/strong&gt;, a vision rooted in Marxist materialism and positivist thought. The belief that technological progress could lead to societal liberation and a classless utopia was a central theme in early Soviet Ukrainian science fiction. This vision is particularly evident in works like &lt;em&gt;Solar Machine&lt;/em&gt; by &lt;strong&gt;Volodymyr Vynnychenko&lt;/strong&gt; and &lt;em&gt;Argonauts of the Universe&lt;/em&gt; by &lt;strong&gt;Volodymyr Vladko&lt;/strong&gt;. These works embraced the idea that proletarians, empowered by advanced machinery, could triumph over the bourgeoisie and establish a communist utopia."
-                 data-ua="Оптимістичний погляд на технологію у 1920-х відображав ідеали &lt;strong&gt;техно-комунізму&lt;/strong&gt; — концепції, що виросла з марксистського матеріалізму та позитивістської думки. Переконання, що прогрес здатний призвести до суспільного звільнення й безкласової утопії, було центральною темою ранньої радянської НФ. Найвиразніше це виявляється у «&lt;em&gt;Сонячній машині&lt;/em&gt;» &lt;strong&gt;Володимира Винниченка&lt;/strong&gt; та «&lt;em&gt;Аргонавтах всесвіту&lt;/em&gt;» &lt;strong&gt;Володимира Владка&lt;/strong&gt;. Ці твори розвивали ідею, що пролетарі, озброєні передовими машинами, здатні перемогти буржуазію і збудувати комуністичну утопію.">
+                 data-ua="Оптимістичний погляд на технологію у 1920-х відображав ідеали &lt;strong&gt;технокомунізму&lt;/strong&gt; — концепції, що виросла з марксистського матеріалізму та позитивістської думки. Переконання, що прогрес здатний призвести до суспільного звільнення й безкласової утопії, було центральною темою ранньої радянської НФ. Найвиразніше це виявляється у «&lt;em&gt;Сонячній машині&lt;/em&gt;» &lt;strong&gt;Володимира Винниченка&lt;/strong&gt; та «&lt;em&gt;Аргонавтах всесвіту&lt;/em&gt;» &lt;strong&gt;Володимира Владка&lt;/strong&gt;. Ці твори розвивали ідею, що пролетарі, озброєні передовими машинами, здатні перемогти буржуазію і збудувати комуністичну утопію.">
                 The optimistic view of technology in the 1920s reflected the ideals of
                 <strong>techno-communism</strong>, a vision rooted in Marxist materialism and positivist
                 thought. The belief that technological progress could lead to societal liberation and a
@@ -393,7 +176,7 @@
                 the bourgeoisie and establish a communist utopia.
               </p>
               <p data-en="Sandro Kasyanyuk's works, though less polished, represent an early and unique articulation of techno-communism in Ukrainian science fiction. His &lt;em&gt;First Steps&lt;/em&gt; depicts a mechanic metaphorically entwined with the machines he operates, embodying the Marxist principle that human labor and technology could harmonize to achieve revolutionary change. In &lt;em&gt;New Utopia&lt;/em&gt;, Kasyanyuk envisions a future where technological marvels effortlessly address all societal needs, reflecting the era's unshaken faith in science and industrialization."
-                 data-ua="Твори Сандра Касянюка, хоча й не позбавлені шорсткостей, є ранньою й самобутньою артикуляцією техно-комунізму в українській НФ. Його &lt;em&gt;Перші кроки&lt;/em&gt; зображують механіка, який метафорично зростається з машинами, що їх обслуговує, — втілюючи марксистський принцип гармонії людської праці й технології в ім'я революційних перетворень. У &lt;em&gt;Новій утопії&lt;/em&gt; Касянюк малює майбутнє, де технологічні дива без зусиль вирішують усі суспільні проблеми, — відображаючи непохитну віру доби в науку й індустріалізацію.">
+                 data-ua="Твори Сандра Касянюка, хоча й не позбавлені шорсткостей, є ранньою й самобутньою артикуляцією технокомунізму в українській НФ. Його &lt;em&gt;Перші кроки&lt;/em&gt; зображують механіка, який метафорично зростається з машинами, що їх обслуговує, — втілюючи марксистський принцип гармонії людської праці й технології в ім'я революційних перетворень. У &lt;em&gt;Новій утопії&lt;/em&gt; Касянюк малює майбутнє, де технологічні дива без зусиль вирішують усі суспільні проблеми, — відображаючи непохитну віру доби в науку й індустріалізацію.">
                 Sandro Kasyanyuk's works, though less polished, represent an early and unique articulation
                 of techno-communism in Ukrainian science fiction. His <em>First Steps</em> depicts a mechanic
                 metaphorically entwined with the machines he operates, embodying the Marxist principle that
@@ -402,7 +185,7 @@
                 needs, reflecting the era's unshaken faith in science and industrialization.
               </p>
               <p data-en="The end of this era in the 1960s marked a significant departure from the rigid framework of Soviet Ukrainian techno-communism. Authors began intertwining science fiction with mysticism and existential exploration. &lt;strong&gt;Oles Berdnyk&lt;/strong&gt; stood out as a trailblazer, blending visionary themes and religious mysticism into his novels. His works challenged the dominant ideology by presenting alternative visions for humanity that transcended the boundaries of science and technology, leading to his imprisonment on two separate occasions."
-                 data-ua="Кінець цієї доби у 1960-х ознаменував суттєвий відхід від жорсткої рамки радянського техно-комунізму. Автори почали поєднувати НФ з містицизмом і екзистенційними пошуками. &lt;strong&gt;Олесь Бердник&lt;/strong&gt; вирізнявся як першопрохідець, вплітаючи у свої романи провидницькі теми й релігійний містицизм. Його твори кидали виклик панівній ідеології, пропонуючи альтернативні образи людського майбутнього поза межами науки й технології — що двічі призводило його до ув'язнення.">
+                 data-ua="Кінець цієї доби у 1960-х ознаменував суттєвий відхід від жорсткої рамки радянського технокомунізму. Автори почали поєднувати НФ з містицизмом і екзистенційними пошуками. &lt;strong&gt;Олесь Бердник&lt;/strong&gt; вирізнявся як першопрохідець, вплітаючи у свої романи провидницькі теми й релігійний містицизм. Його твори кидали виклик панівній ідеології, пропонуючи альтернативні образи людського майбутнього поза межами науки й технології — що двічі призводило його до ув'язнення.">
                 The end of this era in the 1960s marked a significant departure from the rigid framework of
                 Soviet Ukrainian techno-communism. Authors began intertwining science fiction with mysticism
                 and existential exploration. <strong>Oles Berdnyk</strong> stood out as a trailblazer, blending
@@ -534,7 +317,7 @@
     <!-- ══════ ARTICLES ══════ -->
     <section class="pp-sec">
       <div class="pp-wrap">
-        <div class="pp-pill" data-en="Read More" data-ua="Читати далі">Read More</div>
+        <div class="pp-pill" data-en="Publications" data-ua="Публікації">Publications</div>
         <h2 class="pp-h2" data-en="Articles &amp; Research" data-ua="Статті та дослідження">Articles &amp; Research</h2>
         <div class="pp-articles">
 
@@ -578,7 +361,7 @@
             <div class="pp-article-body">
               <div class="pp-article-t"
                    data-en="Sandro Kasyanyuk: Enfant Terrible of Ukrainian Techno-Communism"
-                   data-ua="Сандро Касянюк: enfant terrible українського техно-комунізму">Sandro Kasyanyuk: Enfant Terrible of Ukrainian Techno-Communism</div>
+                   data-ua="Сандро Касянюк: enfant terrible українського технокомунізму">Sandro Kasyanyuk: Enfant Terrible of Ukrainian Techno-Communism</div>
               <div class="pp-article-d"
                    data-en="A close reading of the first known Ukrainian SF writer — his machine-souls, industrial erotics, and naive positivist utopia. Published in &lt;em&gt;SLAVIA&lt;/em&gt; 94, 2025, 4."
                    data-ua="Детальне прочитання першого відомого українського письменника-фантаста — його машино-душі, індустріальна еротика і наївна позитивістська утопія. Опубліковано в &lt;em&gt;SLAVIA&lt;/em&gt; 94, 2025, 4.">A close reading of the first known Ukrainian SF writer — his machine-souls, industrial erotics, and naive positivist utopia. Published in <em>SLAVIA</em> 94, 2025, 4.</div>
@@ -617,7 +400,7 @@
         <div class="pp-importance pp-fade">
           <div class="pp-prose">
             <p data-en="By studying the evolution of Ukrainian science fiction, my research seeks to illuminate how literature reflects and shapes national identity. Ukrainian SF has oscillated between ideologies — from the naive optimism of techno-communism to the existential reflections of the Golden Age, and finally to the metamodernist experimentation of today."
-               data-ua="Досліджуючи еволюцію української фантастики, я прагну показати, як література відображає і формує національну ідентичність. Українська НФ коливалась між ідеологіями — від наївного оптимізму техно-комунізму до екзистенційних роздумів Золотої доби і, нарешті, до метамодерністських експериментів сьогодення.">
+               data-ua="Досліджуючи еволюцію української фантастики, я прагну показати, як література відображає і формує національну ідентичність. Українська НФ коливалась між ідеологіями — від наївного оптимізму технокомунізму до екзистенційних роздумів Золотої доби і, нарешті, до метамодерністських експериментів сьогодення.">
               By studying the evolution of Ukrainian science fiction, my research seeks to illuminate
               how literature reflects and shapes national identity. Ukrainian SF has oscillated between
               ideologies — from the naive optimism of techno-communism to the existential reflections
@@ -637,46 +420,6 @@
 
   </div><!-- /.pp -->
 
-  <script>
-  (function () {
-    /* ── STARFIELD ── */
-    var cv = document.getElementById('pp-stars');
-    if (!cv) return;
-    var cx = cv.getContext('2d'), stars = [], W, H;
-    function resize() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight }
-    function seed() {
-      stars = [];
-      for (var i = 0; i < 160; i++)
-        stars.push({ x: Math.random()*W, y: Math.random()*H,
-          r: Math.random()*1.2+.2, o: Math.random()*.4+.06,
-          s: Math.random()*.012+.004, p: Math.random()*Math.PI*2 });
-    }
-    function draw(t) {
-      cx.clearRect(0,0,W,H);
-      for (var i=0;i<stars.length;i++) {
-        var st=stars[i], op=st.o+.12*Math.sin(t*st.s+st.p);
-        cx.beginPath(); cx.arc(st.x,st.y,st.r,0,6.283);
-        cx.fillStyle='rgba(200,218,255,'+op+')'; cx.fill();
-      }
-      requestAnimationFrame(draw);
-    }
-    window.addEventListener('resize',function(){resize();seed()});
-    resize(); seed(); requestAnimationFrame(draw);
-
-    /* ── SCROLL FADE ── */
-    var fades = document.querySelectorAll('.pp-fade');
-    if ('IntersectionObserver' in window) {
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('pp-vis'); obs.unobserve(e.target); }
-        });
-      }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
-      fades.forEach(function(el) { obs.observe(el); });
-    } else {
-      fades.forEach(function(el) { el.classList.add('pp-vis'); });
-    }
-  }());
-  </script>
 {% endblock %}
 
 {% block footer %}{% endblock %}

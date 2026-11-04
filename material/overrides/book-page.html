@@ -8,7 +8,8 @@
 {%- set pg = page.url -%}
 {%- set act_idx  = pg == 'books/' or pg == 'books/uk/' -%}
 {%- set act_yak  = 'books/yak' in pg or 'books/uk/yak' in pg -%}
-{%- set act_kah  = 'books/kaharlyk' in pg or 'books/uk/kaharlyk' in pg -%}
+{%- set act_kah  = ('books/kaharlyk' in pg or 'books/uk/kaharlyk' in pg) and 'kaharlyk-en' not in pg -%}
+{%- set act_kae  = 'kaharlyk-en' in pg -%}
 {%- set act_rob  = 'books/robots' in pg or 'books/uk/robots' in pg -%}
 {%- set act_che  = 'books/cherep' in pg or 'books/uk/cherep' in pg -%}
 {%- set act_ban  = 'books/bandera' in pg or 'books/uk/bandera' in pg -%}
@@ -42,6 +43,15 @@
                data-href-en="{{ 'books/kaharlyk/' | url }}"
                data-href-ua="{{ 'books/uk/kaharlyk/' | url }}">
               <span data-en="Kaharlyk" data-ua="Кагарлик">Kaharlyk</span>
+            </a>
+          </li>
+
+          <li class="md-nav__item{% if act_kae %} md-nav__item--active{% endif %}">
+            <a class="md-nav__link{% if act_kae %} md-nav__link--active{% endif %}"
+               href="{{ 'books/kaharlyk-en/' | url }}"
+               data-href-en="{{ 'books/kaharlyk-en/' | url }}"
+               data-href-ua="{{ 'books/uk/kaharlyk-en/' | url }}">
+              <span data-en="Kaharlyk (English)" data-ua="«Кагарлик» англійською">Kaharlyk (English)</span>
             </a>
           </li>
 

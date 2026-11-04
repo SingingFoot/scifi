@@ -7,35 +7,19 @@
 {% block tabs %}
   {{ super() }}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --c-bg:       #05050f;
-      --c-surface:  rgba(255,255,255,.04);
-      --c-border:   rgba(255,255,255,.08);
-      --c-blue:     #4a9eff;
-      --c-blue-dim: rgba(74,158,255,.12);
-      --c-gold:     #ffd54f;
-      --c-gold-dim: rgba(255,213,79,.12);
-      --c-text:     #e8e8f0;
-      --c-muted:    rgba(232,232,240,.55);
-      --radius:     10px;
-      --ease:       cubic-bezier(.4,0,.2,1);
-    }
 
     /* ── Base ── */
     body, .md-main, .md-main__inner, [data-md-color-scheme] {
       background: var(--c-bg) !important;
       color: var(--c-text) !important;
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-family: var(--font-sans) !important;
     }
 
     /* ── Left sidebar nav ── */
     .md-sidebar--primary,
     .md-sidebar--primary .md-sidebar__scrollwrap {
-      background: rgba(5,5,15,.95) !important;
+      background: rgba(15,14,13,.95) !important;
       border-right: 1px solid var(--c-border);
     }
     .md-nav__title { color: var(--c-muted) !important; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase }
@@ -52,10 +36,10 @@
 
     /* ── H1 — author name ── */
     .md-typeset h1 {
-      font-family: 'DM Sans', sans-serif !important;
+      font-family: var(--font-serif);
       font-size: clamp(1.9rem,4vw,3rem) !important;
-      font-weight: 800 !important;
-      color: #fff !important;
+      font-weight: 500 !important;
+      color: var(--paper-hi) !important;
       line-height: 1.15 !important;
       margin: 0 0 1.2rem !important;
       border: none !important; padding: 0 !important;
@@ -69,10 +53,10 @@
 
     /* ── H2 — biography sections ── */
     .md-typeset h2 {
-      font-family: 'DM Sans', sans-serif !important;
+      font-family: var(--font-sans);
       font-size: 1.25rem !important;
-      font-weight: 800 !important;
-      color: #fff !important;
+      font-weight: 500 !important;
+      color: var(--paper-hi) !important;
       border: none !important; padding: 0 !important;
       margin-top: 2.5rem !important; margin-bottom: .6rem !important;
     }
@@ -115,13 +99,13 @@
     .md-typeset p > img:first-of-type,
     .md-typeset > p:first-of-type img {
       float: right;
-      width: 370px;
+      width: min(370px, 45%);
       max-width: 370px !important;
       height: auto;
       margin: 0 0 1.5rem 2rem;
       border-radius: var(--radius) !important;
-      border: 1px solid rgba(74,158,255,.2) !important;
-      box-shadow: 0 0 40px rgba(74,158,255,.1);
+      border: 1px solid rgba(227,163,94,.2) !important;
+      box-shadow: none;
     }
 
     /* ── Meta table (bold lines like **Birth:** ...) ── */
@@ -149,7 +133,7 @@
     /* ── Blockquotes ── */
     .md-typeset blockquote {
       border-left: 3px solid var(--c-blue) !important;
-      background: rgba(74,158,255,.06) !important;
+      background: rgba(227,163,94,.06) !important;
       border-radius: 0 var(--radius) var(--radius) 0 !important;
       padding: 1rem 1.4rem !important; margin: 1.5rem 0 !important;
       font-style: italic !important;
@@ -160,21 +144,22 @@
     .md-typeset hr { border: none !important; border-top: 1px solid var(--c-border) !important; margin: 2.5rem 0 !important; clear: both }
 
     /* ── Code ── */
-    .md-typeset code { background: rgba(74,158,255,.1) !important; color: var(--c-blue) !important; border-radius: 4px !important; padding: .1em .35em !important }
+    .md-typeset code { background: rgba(227,163,94,.1) !important; color: var(--c-blue) !important; border-radius: 4px !important; padding: .1em .35em !important }
 
     /* ── Footer ── */
-    .md-footer { background: rgba(5,5,15,.98) !important; border-top: 1px solid var(--c-border) !important }
+    .md-footer { background: rgba(15,14,13,.98) !important; border-top: 1px solid var(--c-border) !important }
     .md-footer-meta { background: transparent !important }
     .md-footer__link { color: var(--c-muted) !important }
     .md-footer__link:hover { color: var(--c-blue) !important }
     .md-footer__title { color: var(--c-text) !important }
 
     /* ── Scrollbar ── */
-    * { scrollbar-color: rgba(74,158,255,.25) transparent; scrollbar-width: thin }
+    * { scrollbar-color: rgba(227,163,94,.25) transparent; scrollbar-width: thin }
 
     /* ── Mobile ── */
     @media (max-width: 600px) {
-      .md-typeset p > img:first-of-type { float: none; max-width: 100%; margin: 0 0 1.2rem }
+      .md-typeset p > img:first-of-type,
+      .md-typeset > p:first-of-type img { float: none; width: 100%; max-width: 100% !important; margin: 0 0 1.2rem }
     }
   </style>
 
@@ -249,7 +234,7 @@
          href="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-en="{{ 'authors/vasyl-berezhnyi/' | url }}"
          data-href-ua="{{ 'authors/uk/vasyl-berezhnyi/' | url }}">
-        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережній">Vasyl Berezhnyi</span>
+        <span data-en="Vasyl Berezhnyi" data-ua="Василь Бережний">Vasyl Berezhnyi</span>
       </a>
     </li>
 

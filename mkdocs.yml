@@ -23,16 +23,17 @@ site_name: Ukrainian Sci-Fi
 site_url: https://sci-fi-ua.netlify.app/
 site_author: Oleh Shynkarenko
 site_description: >-
-  Ukrainian science fiction literature — past, present, and future.
-  Research by Oleh Shynkarenko: PhD candidate, writer, journalist from Ukraine.
-  Articles, books, authors, and academic work on Ukrainian sci-fi.
+  Research on a century of Ukrainian science fiction (1920–2020) by Oleh
+  Shynkarenko, Ukrainian writer and PhD candidate at the University of Pécs:
+  author profiles, peer-reviewed articles, essays and fiction, in English and
+  Ukrainian.
 
 # Repository
 repo_name: SingingFoot
 repo_url: https://github.com/SingingFoot/scifi
 
 # Copyright
-copyright: Copyright &copy; 2025 Oleh Shynkarenko
+copyright: Copyright &copy; 2025&ndash;2026 Oleh Shynkarenko
 
 # Configuration
 theme:
@@ -60,8 +61,8 @@ theme:
     primary: black
     accent: indigo
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: IBM Plex Sans
+    code: IBM Plex Mono
   favicon: assets/favicon.png
   icon:
     logo: assets/logo.png
@@ -81,9 +82,9 @@ plugins:
 hooks:
   - material/overrides/hooks/shortcodes.py
   - material/overrides/hooks/translations.py
-  - material/overrides/hooks/lang_switcher.py
   - material/overrides/hooks/nav_lang.py
   - material/overrides/hooks/latest_news.py
+  - material/overrides/hooks/i18n.py
 
 # Additional configuration
 extra:
@@ -113,7 +114,6 @@ extra:
 # Extra CSS
 extra_css:
   - assets/stylesheets/articles-extra.css
-  - assets/stylesheets/docx-editor.css
 
 # Extensions
 markdown_extensions:
@@ -169,9 +169,8 @@ markdown_extensions:
 nav:
   - Home: index.md
   - News: news/index.md
-  - About me:
-    - Bio: bio.md
-  - My PhD:
+  - About: bio.md
+  - PhD:
     - phd/index.md
     - Science Fiction in Ukraine (part I): phd/ukrainian-sf-part-1.md
     - Science Fiction in Ukraine (part II): phd/ukrainian-sf-part-2.md
@@ -200,11 +199,11 @@ nav:
     - Pavlo Ostrikov: authors/pavlo-ostrikov.md
     - Автори (UA): authors/uk/index.md
     - Сандро Касянюк: authors/uk/sandro-kasyanyuk.md
-    - Василь Бережній: authors/uk/vasyl-berezhnyi.md
+    - Василь Бережний: authors/uk/vasyl-berezhnyi.md
     - Володимир Заєць: authors/uk/volodymyr-zayets.md
     - Віктор Положій: authors/uk/viktor-pologyj.md
 
-  - My Articles:
+  - Articles:
     - articles/index.md
     - Metamodernism Manifesto: articles/manifesto.md
     - The Faces of War: articles/faces-of-war.md
@@ -219,17 +218,18 @@ nav:
     - Метамодерна осциляція: articles/uk/metamodern-oscillation-ostrykov.md
     - Портрет інтелектуала як крокодила: articles/uk/portrait.md
     - Метамодерні пейзажі часу: articles/uk/timescapes.md
-  - My Books:
+  - Books:
     - books/index.md
     - How to disappear completely: books/yak.md
     - Kaharlyk: books/kaharlyk.md
+    - Kaharlyk (English): books/kaharlyk-en.md
     - The First Ukrainian Robots: books/robots.md
     - Cherep: books/cherep.md
     - Bandera Distortion: books/bandera.md
     - Мої книги: books/uk/index.md
     - Як зникнути повністю: books/uk/yak.md
     - Кагарлик: books/uk/kaharlyk.md
+    - Кагарлик англійською: books/uk/kaharlyk-en.md
     - Перші українські роботи: books/uk/robots.md
     - Череп: books/uk/cherep.md
     - Бандера Distortion: books/uk/bandera.md
-  - DOCx Editor: docx-editor.md

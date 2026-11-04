@@ -1,319 +1,138 @@
 {#-
-  This file was automatically generated - do not edit
+  Site shell: fonts, design system, language switcher, SEO metadata.
+  Language data (page.meta.i18n) is prepared by hooks/i18n.py.
 -#}
 {% extends "base.html" %}
+{% set i18n = page.meta.i18n if page and page.meta and page.meta.i18n else {"lang": "en", "html_lang": "en"} %}
+{% set is_uk = i18n.lang == "uk" %}
+{% set desc = (page.meta.description if page and page.meta and page.meta.description else config.site_description) | striptags | trim %}
+{% set page_url = config.site_url ~ (page.url if page else "") %}
+{% set og_image = page.meta.image if page and page.meta and page.meta.image else "assets/images/illustration2.png" %}
+
+{% block fonts %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap">
+  <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+{% endblock %}
+
 {% block extrahead %}
   <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.7c86dd97.min.css' | url }}">
+  <link rel="stylesheet" href="{{ 'assets/stylesheets/site.css' | url }}">
 
-  {#- Set data-lang on <html> immediately (before CSS) — derived from URL, no localStorage -#}
-  <script>
-  (function(){
-    var l = window.location.pathname.indexOf('/uk/') !== -1 ? 'ua' : 'en';
-    document.documentElement.setAttribute('data-lang', l);
-  }());
+  {#- Language alternates -#}
+  {% if i18n.en_url %}<link rel="alternate" hreflang="en" href="{{ config.site_url | trim('/') }}{{ i18n.en_url }}">{% endif %}
+  {% if i18n.uk_url %}<link rel="alternate" hreflang="uk" href="{{ config.site_url | trim('/') }}{{ i18n.uk_url }}">{% endif %}
+  {% if i18n.en_url %}<link rel="alternate" hreflang="x-default" href="{{ config.site_url | trim('/') }}{{ i18n.en_url }}">{% endif %}
+
+  {#- Open Graph / social cards -#}
+  <meta property="og:type" content="{{ 'article' if page and page.meta and (page.meta.template in ['phd-article.html', 'article-page.html', 'blog-post.html'] or page.meta.date) else 'website' }}">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:locale" content="{{ 'uk_UA' if is_uk else 'en_GB' }}">
+  {% if i18n.alt_url %}<meta property="og:locale:alternate" content="{{ 'en_GB' if is_uk else 'uk_UA' }}">{% endif %}
+  <meta property="og:title" content="{{ page.title | striptags if page and page.title else config.site_name }}">
+  <meta property="og:description" content="{{ desc }}">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:image" content="{{ config.site_url }}{{ og_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@OlehShynkarenko">
+  <meta name="twitter:title" content="{{ page.title | striptags if page and page.title else config.site_name }}">
+  <meta name="twitter:description" content="{{ desc }}">
+  <meta name="twitter:image" content="{{ config.site_url }}{{ og_image }}">
+  <meta name="author" content="{{ 'Олег Шинкаренко' if is_uk else 'Oleh Shynkarenko' }}">
+  <link rel="alternate" type="text/plain" title="LLM site guide" href="{{ config.site_url }}llms.txt">
+
+  {#- Structured data -#}
+  {% set person %}
+  {
+    "@type": "Person",
+    "@id": "{{ config.site_url }}#oleh-shynkarenko",
+    "name": "Oleh Shynkarenko",
+    "alternateName": "Олег Шинкаренко",
+    "url": "{{ config.site_url }}bio/",
+    "image": "{{ config.site_url }}assets/images/oleh.png",
+    "jobTitle": "PhD candidate in Literary and Cultural Studies",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Pécs",
+      "department": "Doctoral School of Literary and Cultural Studies, Faculty of Humanities and Social Sciences",
+      "url": "https://pte.hu/"
+    },
+    "nationality": "Ukrainian",
+    "knowsAbout": ["Ukrainian science fiction", "Soviet science fiction", "Techno-communism", "Metamodernism", "Philosophy of technology"],
+    "sameAs": [
+      "https://orcid.org/0009-0001-1690-8967",
+      "https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ",
+      "https://www.researchgate.net/profile/Oleh-Shynkarenko",
+      "https://medbiotech.academia.edu/OlehShynkarenko",
+      "https://cgscholar.com/user-profile/211765",
+      "https://github.com/SingingFoot",
+      "https://x.com/OlehShynkarenko"
+    ]
+  }
+  {% endset %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {% if page and page.is_homepage or (i18n.url == "/uk/") %}
+      {
+        "@type": "WebSite",
+        "@id": "{{ config.site_url }}#website",
+        "name": "{{ config.site_name }}",
+        "url": "{{ config.site_url }}",
+        "inLanguage": ["en", "uk"],
+        "description": {{ desc | tojson }},
+        "author": {"@id": "{{ config.site_url }}#oleh-shynkarenko"}
+      },
+      {% endif %}
+      {% if page and page.meta and page.meta.template in ["phd-article.html", "article-page.html"] %}
+      {
+        "@type": "ScholarlyArticle",
+        "headline": {{ (page.title | striptags) | tojson }},
+        "description": {{ desc | tojson }},
+        "inLanguage": "{{ i18n.html_lang }}",
+        "url": "{{ page_url }}",
+        "author": {"@id": "{{ config.site_url }}#oleh-shynkarenko"}
+        {%- if page.meta.doi %}, "sameAs": "https://doi.org/{{ page.meta.doi }}"{% endif %}
+      },
+      {% elif page and page.meta and page.meta.template == "book-page.html" %}
+      {
+        "@type": "Book",
+        "name": {{ (page.title | striptags) | tojson }},
+        "description": {{ desc | tojson }},
+        "url": "{{ page_url }}",
+        "author": {"@id": "{{ config.site_url }}#oleh-shynkarenko"}
+      },
+      {% endif %}
+      {% if page and page.ancestors %}
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "{{ 'Головна' if is_uk else 'Home' }}", "item": "{{ config.site_url }}{{ 'uk/' if is_uk else '' }}"},
+          {"@type": "ListItem", "position": 2, "name": {{ (page.title | striptags) | tojson }}, "item": "{{ page_url }}"}
+        ]
+      },
+      {% endif %}
+      {{ person }}
+    ]
+  }
   </script>
 
-  <style>
-    /* ── Nav language separation ─────────────────────────────────────
-       JS marks nav <li> items with .nav-uk-item or .nav-en-has-uk,
-       then adds .nav-ready to <html>. CSS only activates after that
-       so there is no premature hiding before items are classified.
-    ──────────────────────────────────────────────────────────────── */
-    html.nav-ready:not([data-lang="ua"]) .nav-uk-item  { display: none !important; }
-    html.nav-ready[data-lang="ua"]       .nav-uk-item  { display: list-item !important; }
-    html.nav-ready[data-lang="ua"]       .nav-en-has-uk{ display: none !important; }
-
-    /* ── Language switcher widget ─────────────────────────────────── */
-    #lang-sw {
-      position: absolute;
-      top: 56px;
-      right: 14px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      font-family: 'DM Sans', -apple-system, sans-serif;
-    }
-    .ls-pill {
-      display: flex;
-      align-items: center;
-      background: rgba(5,5,15,.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .ls-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      color: rgba(232,232,240,.4);
-      padding: .3rem .55rem;
-      transition: color .18s, background .18s;
-      line-height: 1;
-    }
-    .ls-btn:hover { color: #e8e8f0; }
-    .ls-btn.ls-active {
-      color: #4a9eff;
-      background: rgba(74,158,255,.12);
-    }
-    .ls-sep {
-      font-size: .65rem;
-      color: rgba(255,255,255,.15);
-      pointer-events: none;
-      line-height: 1;
-    }
-
-    /* Below the tablet breakpoint the header shrinks to a single compact
-       row (hamburger · logo · search icon) with no room to spare, so the
-       switcher moves out of that row entirely and becomes its own slim,
-       full-width bar directly beneath the header — proportional, with
-       generous tap targets, and never competing for space with anything. */
-    @media screen and (max-width: 76.234375em) {
-      #lang-sw {
-        position: static;
-        top: auto;
-        right: auto;
-        width: 100%;
-        justify-content: flex-end;
-        padding: .5rem .8rem;
-        background: rgba(255,255,255,.025);
-        border-bottom: 1px solid rgba(255,255,255,.07);
-      }
-      .ls-btn { padding: .4rem .75rem; font-size: .76rem; }
-    }
-  </style>
-
-  {#- Canonical URL -#}
-  <link rel="canonical" href="{{ config.site_url }}{{ page.url }}" />
-
-  {#- Open Graph -#}
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="{{ config.site_name }}" />
-  <meta property="og:title" content="{{ page.title }} — {{ config.site_name }}" />
-  <meta property="og:description" content="{{ config.site_description }}" />
-  <meta property="og:url" content="{{ config.site_url }}{{ page.url }}" />
-  <meta property="og:image" content="{{ config.site_url }}assets/logo.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="{{ page.title }} — {{ config.site_name }}" />
-  <meta name="twitter:description" content="{{ config.site_description }}" />
-
-  {#- Author & geo -#}
-  <meta name="author" content="Oleh Shynkarenko" />
-  <meta name="geo.region" content="UA" />
-
-  {#- JSON-LD structured data (homepage only) -#}
-  {% if page.url == "" or page.url == "./" %}
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Oleh Shynkarenko",
-      "url": "{{ config.site_url }}",
-      "sameAs": [
-        "https://github.com/SingingFoot",
-        "https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ",
-        "https://orcid.org/0009-0001-1690-8967",
-        "https://www.researchgate.net/profile/Oleh-Shynkarenko",
-        "https://medbiotech.academia.edu/OlehShynkarenko"
-      ],
-      "jobTitle": "PhD Candidate, Writer, Journalist",
-      "description": "Ukrainian journalist, writer, and researcher specialising in science fiction literature and philosophy.",
-      "knowsAbout": ["Ukrainian science fiction", "Metamodernism", "Philosophy", "Ukrainian literature"]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "{{ config.site_name }}",
-      "url": "{{ config.site_url }}",
-      "description": "{{ config.site_description }}",
-      "author": {
-        "@type": "Person",
-        "name": "Oleh Shynkarenko"
-      }
-    }
-  ]
+  {#- Inline-bilingual pages (news posts) switch strings in the browser -#}
+  {% if i18n.inline %}
+  <script>
+    (function () {
+      try { if (localStorage.getItem("site-lang") === "uk") document.documentElement.setAttribute("data-inline-lang", "uk"); } catch (e) {}
+    }());
   </script>
   {% endif %}
 {% endblock %}
 
-{% block tabs %}
-  {{ super() }}
+{% block announce %}{% endblock %}
 
-  {#- ── EN | UA LANGUAGE SWITCHER ── -#}
-  <div id="lang-sw">
-    <div class="ls-pill">
-      <button class="ls-btn" data-lang="en">EN</button>
-      <span class="ls-sep">|</span>
-      <button class="ls-btn" data-lang="ua">UA</button>
-    </div>
-  </div>
-
-  <script>
-  (function () {
-    /* All UK page paths (absolute, trailing slash) */
-    /* NOTE: Authors paths are intentionally excluded — the authors sidebar uses
-       a hardcoded nav (block site_nav) with data-href-en/data-href-ua,
-       so it must NOT be marked by markNavItems() or CSS will hide it in UA mode.
-       Articles paths are also excluded for the same reason. */
-    var UK_PATHS = [
-      '/phd/uk/ukrainian-sf-part-1/',
-      '/phd/uk/ukrainian-sf-part-2/',
-      '/phd/uk/mt-180-thesis/',
-      '/phd/uk/kasyanyuk-techno-communism/'
-    ];
-
-    /* EN paths that have a UK equivalent */
-    var EN_HAS_UK = [
-      '/phd/ukrainian-sf-part-1/',
-      '/phd/ukrainian-sf-part-2/',
-      '/phd/mt-180-thesis/',
-      '/phd/kasyanyuk-techno-communism/'
-    ];
-
-    /* EN→UK redirect map */
-    var EN_TO_UK = {
-      '/phd/ukrainian-sf-part-1/':        '/phd/uk/ukrainian-sf-part-1/',
-      '/phd/ukrainian-sf-part-2/':        '/phd/uk/ukrainian-sf-part-2/',
-      '/phd/mt-180-thesis/':              '/phd/uk/mt-180-thesis/',
-      '/phd/kasyanyuk-techno-communism/': '/phd/uk/kasyanyuk-techno-communism/',
-      '/authors/':                        '/authors/uk/',
-      '/authors/sandro-kasyanyuk/':       '/authors/uk/sandro-kasyanyuk/',
-      '/authors/vasyl-berezhnyi/':        '/authors/uk/vasyl-berezhnyi/',
-      '/authors/volodymyr-zayets/':       '/authors/uk/volodymyr-zayets/',
-      '/authors/viktor-pologyj/':         '/authors/uk/viktor-pologyj/',
-      '/articles/':                       '/articles/uk/',
-      '/articles/manifesto/':             '/articles/uk/manifesto/',
-      '/articles/faces-of-war/':          '/articles/uk/faces-of-war/',
-      '/articles/metamodern-oscillation-ostrykov/': '/articles/uk/metamodern-oscillation-ostrykov/',
-      '/articles/struggle-for-reality/':  '/articles/uk/struggle-for-reality/',
-      '/articles/portrait/':             '/articles/uk/portrait/',
-      '/articles/timescapes/':            '/articles/uk/timescapes/',
-      '/books/':                          '/books/uk/',
-      '/books/yak/':                      '/books/uk/yak/',
-      '/books/kaharlyk/':                 '/books/uk/kaharlyk/',
-      '/books/robots/':                   '/books/uk/robots/',
-      '/books/cherep/':                   '/books/uk/cherep/',
-      '/books/bandera/':                  '/books/uk/bandera/'
-    };
-    var UK_TO_EN = {};
-    Object.keys(EN_TO_UK).forEach(function(k){ UK_TO_EN[EN_TO_UK[k]] = k; });
-
-    function isUkPath(p){ return p.indexOf('/uk/') !== -1; }
-
-    /* Mark nav <li> items by examining the browser's absolute link.href.
-       This correctly handles relative hrefs regardless of current page depth. */
-    function markNavItems() {
-      document.querySelectorAll('.md-nav__link').forEach(function(link) {
-        var li = link.closest('.md-nav__item');
-        if (!li) return;
-        var pathname;
-        try { pathname = new URL(link.href).pathname; } catch(e){ return; }
-
-        if (UK_PATHS.indexOf(pathname) !== -1) {
-          li.classList.add('nav-uk-item');
-        } else if (EN_HAS_UK.indexOf(pathname) !== -1) {
-          li.classList.add('nav-en-has-uk');
-        }
-      });
-      /* Activate CSS rules now that items are classified */
-      document.documentElement.classList.add('nav-ready');
-    }
-
-    function updateButtons(lang) {
-      document.querySelectorAll('#lang-sw .ls-btn').forEach(function(b){
-        b.classList.toggle('ls-active', b.dataset.lang === lang);
-      });
-    }
-
-    /* Swap all data-en / data-ua content elements */
-    function swapContent(lang) {
-      document.querySelectorAll('[data-en]').forEach(function(el) {
-        var text = lang === 'ua' ? el.getAttribute('data-ua') : el.getAttribute('data-en');
-        if (text !== null) el.innerHTML = text;
-      });
-      /* Swap link hrefs that have data-href-en / data-href-ua */
-      document.querySelectorAll('[data-href-en]').forEach(function(el) {
-        el.href = lang === 'ua'
-          ? (el.getAttribute('data-href-ua') || el.getAttribute('data-href-en'))
-          : el.getAttribute('data-href-en');
-      });
-    }
-
-    function applyLang(lang, redirect) {
-      document.documentElement.setAttribute('data-lang', lang);
-      updateButtons(lang);
-      swapContent(lang);
-
-      if (redirect) {
-        var p = window.location.pathname;
-        if (lang === 'ua' && !isUkPath(p) && EN_TO_UK[p]) {
-          window.location.href = EN_TO_UK[p]; return;
-        }
-        if (lang === 'en' && isUkPath(p) && UK_TO_EN[p]) {
-          window.location.href = UK_TO_EN[p]; return;
-        }
-      }
-    }
-
-    /* Derive language from URL — EN pages are at /path/, UA pages at /path/uk/ */
-    var curPath = window.location.pathname;
-    var savedLang = isUkPath(curPath) ? 'ua' : 'en';
-
-    /* Set button state to match the current page's language */
-    updateButtons(savedLang);
-
-    /* Inject data-en/data-ua onto horizontal tab links so swapContent() translates them */
-    var TAB_LABELS = {
-      'Home':        'Головна',
-      'News':        'Новини',
-      'About me':    'Про мене',
-      'My PhD':      'Моя дисертація',
-      'Authors':     'Автори',
-      'My Articles': 'Мої статті',
-      'My Books':    'Мої книги'
-    };
-    function markTabItems() {
-      document.querySelectorAll('.md-tabs__link').forEach(function(link) {
-        var txt = link.textContent.trim();
-        if (TAB_LABELS[txt]) {
-          link.setAttribute('data-en', txt);
-          link.setAttribute('data-ua', TAB_LABELS[txt]);
-        }
-      });
-    }
-
-    /* Mark nav items and swap content once DOM is ready, then enable CSS */
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function(){
-        markNavItems();
-        markTabItems();
-        swapContent(savedLang);
-      });
-    } else {
-      markNavItems();
-      markTabItems();
-      swapContent(savedLang);
-    }
-
-    /* Button click handlers — #lang-sw is already in DOM above this script */
-    document.querySelectorAll('#lang-sw .ls-btn').forEach(function(btn){
-      btn.addEventListener('click', function(){ applyLang(btn.dataset.lang, true); });
-    });
-  }());
-  </script>
-{% endblock %}
-
-{% block announce %}
-{#
-  Announce bar — currently unused.
-#}
-{% endblock %}
 {% block scripts %}
   {{ super() }}
   <script src="{{ 'assets/javascripts/custom.9e5da760.min.js' | url }}"></script>
+  <script src="{{ 'assets/javascripts/site.js' | url }}" defer></script>
 {% endblock %}
