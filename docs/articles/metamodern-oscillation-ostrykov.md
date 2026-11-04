@@ -10,7 +10,7 @@ tags:
 # Pavlo Ostrikov: Metamodern Oscillation in *U Are the Universe*
 
 **Oleh Shynkarenko**  
-*University of Pécs · Doctoral School of Philosophy*  
+*University of Pécs · Doctoral School of Literary and Cultural Studies*  
 *Originally published in [Galaxies](https://galaxiessf.com/), no. 96 (2026)*
 
 This article reads Pavlo Ostrikov's film *U Are the Universe* (2024) as a distinctly metamodern work that departs from earlier currents in Ukrainian science fiction. Its organizing principle is oscillation — a continuous alternation between irony and sincerity that structures the tone, the plot, the protagonist, and the aesthetic register alike, and that prevents the film from settling into a single stable meaning. The article first situates this principle within the twentieth-century transformation of interpretive theory, from modernist claims to singular authoritative meaning, through postmodern plurality, to the provisional hierarchies of meaning proposed by metamodernism. It then applies six competing readings to the film — courtly, the "Million Scarlet Roses" model of the asymmetrical gift, a comparison with Kubrick's *2001: A Space Odyssey*, and pessimistic, existential, psychoanalytic, anti-technocratic, and migrant readings — not in order to establish which is correct, but to test how each illuminates a different ethical and narrative dimension of the same work. The film emerges as a reflection on interpretation itself, in which meaning survives as oscillation rather than as stable truth.

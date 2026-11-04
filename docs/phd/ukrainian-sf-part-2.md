@@ -11,7 +11,7 @@ The Ukrainian authors of the 1970s focused on the search for the purpose of huma
 **Keywords**: Ukraine, science fiction, existentialism, postmodernism, metamodernism
 
 **Author Information**  
-**Oleh Shynkarenko**, PhD Candidate in Philosophy, University of Pécs, Faculty of Philosophy  
+**Oleh Shynkarenko**, PhD Candidate in Literary and Cultural Studies, University of Pécs, Faculty of Humanities and Social Sciences  
 [Google Scholar Profile](https://scholar.google.com/citations?hl=en&user=1yCMKj4AAAAJ)  
 [ORCID](https://orcid.org/0009-0001-1690-8967)
 
