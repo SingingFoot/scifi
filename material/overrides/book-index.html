@@ -36,6 +36,7 @@
     <div class="md-sidebar__inner">
       <nav class="md-nav md-nav--primary" aria-label="Books">
         <ul class="md-nav__list" style="padding:.4rem 0">
+{% include "partials/mobile-sections.html" %}
           <li class="md-nav__item{% if act_idx %} md-nav__item--active{% endif %}">
             <a class="md-nav__link{% if act_idx %} md-nav__link--active{% endif %}"
                href="{{ 'books/' | url }}" data-href-en="{{ 'books/' | url }}" data-href-ua="{{ 'books/uk/' | url }}">

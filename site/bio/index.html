@@ -40,7 +40,9 @@
     /* ── Page frame (no Markdown body, no sidebars) ── */
     .md-main__inner { margin: 0; max-width: none }
     .md-content  { display: none }
-    .md-sidebar  { display: none }
+    /* no sidebars on desktop; on phones the primary sidebar IS the slide-out menu */
+    .md-sidebar--secondary { display: none }
+    @media screen and (min-width: 76.25em) { .md-sidebar--primary { display: none } }
 
     .bp { font-family: var(--font-sans); color: var(--paper); line-height: 1.6 }
     .bp a { color: inherit; text-decoration: none }

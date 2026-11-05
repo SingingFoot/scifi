@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<DECLAR xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="F0103309.XSD">
+  <DECLARHEAD>
+    <TIN>2780902498</TIN>
+    <C_DOC>F01</C_DOC>
+    <C_DOC_SUB>033</C_DOC_SUB>
+    <C_DOC_VER>9</C_DOC_VER>
+    <C_DOC_TYPE>0</C_DOC_TYPE>
+    <C_DOC_CNT>1</C_DOC_CNT>
+    <C_REG>8</C_REG>
+    <C_RAJ>29</C_RAJ>
+    <PERIOD_MONTH>9</PERIOD_MONTH>
+    <PERIOD_TYPE>4</PERIOD_TYPE>
+    <PERIOD_YEAR>2026</PERIOD_YEAR>
+    <C_STI_ORIG>829</C_STI_ORIG>
+    <C_DOC_STAN>1</C_DOC_STAN>
+    <LINKED_DOCS xsi:nil="true"/>
+    <D_FILL>05112026</D_FILL>
+    <SOFTWARE>Taxer 0.26.0714</SOFTWARE>
+  </DECLARHEAD>
+  <DECLARBODY>
+    <HZ>1</HZ>
+    <H3KV>1</H3KV>
+    <HZY>2026</HZY>
+    <HZYP xsi:nil="true"/>
+    <HSTI>Головне Управління ДПС у Запорізькій області, Олександрівська ДПІ (Шевченківський р-н м.Запоріжжя)</HSTI>
+    <HNAME>Шинкаренко Олег Вікторович</HNAME>
+    <HLOC>місто Запоріжжя, вул. Миколи Краснова, буд. 7-А, кв. 141</HLOC>
+    <HEMAIL>singingfoot@gmail.com</HEMAIL>
+    <HTEL>380935635793</HTEL>
+    <HTIN>2780902498</HTIN>
+    <HNACTL>0</HNACTL>
+    <T1RXXXXG1S ROWNUM="1">62.01</T1RXXXXG1S>
+    <T1RXXXXG2S ROWNUM="1">Комп'ютерне програмування</T1RXXXXG2S>
+    <R02G1 xsi:nil="true"/>
+    <R02G2 xsi:nil="true"/>
+    <R02G3 xsi:nil="true"/>
+    <R02G4 xsi:nil="true"/>
+    <R001G3>0.00</R001G3>
+    <R002G3>0.00</R002G3>
+    <R03G1 xsi:nil="true"/>
+    <R03G2 xsi:nil="true"/>
+    <R03G3 xsi:nil="true"/>
+    <R03G4 xsi:nil="true"/>
+    <R003G3>0.00</R003G3>
+    <R004G3>0.00</R004G3>
+    <R005G3>0.00</R005G3>
+    <R006G3>0.00</R006G3>
+    <R007G3>0.00</R007G3>
+    <R008G3>0.00</R008G3>
+    <R009G3>0.00</R009G3>
+    <R010G3>0.00</R010G3>
+    <R011G3>0.00</R011G3>
+    <R012G3>0.00</R012G3>
+    <R013G3>0.00</R013G3>
+    <R0141G3>0.00</R0141G3>
+    <R0142G3>0.00</R0142G3>
+    <R014G3>0.00</R014G3>
+    <R015G3>0.00</R015G3>
+    <R016G3>0.00</R016G3>
+    <R017G3>0.00</R017G3>
+    <R018G3>0.00</R018G3>
+    <R019G1 xsi:nil="true"/>
+    <R019G3>0.00</R019G3>
+    <R020G3>0.00</R020G3>
+    <R021G3>0.00</R021G3>
+    <R08G1 xsi:nil="true"/>
+    <R08G2 xsi:nil="true"/>
+    <R08G3 xsi:nil="true"/>
+    <R08G4 xsi:nil="true"/>
+    <R08G5 xsi:nil="true"/>
+    <R08G6 xsi:nil="true"/>
+    <R08G7 xsi:nil="true"/>
+    <R08G8 xsi:nil="true"/>
+    <R08G9 xsi:nil="true"/>
+    <R08G10 xsi:nil="true"/>
+    <R08G11 xsi:nil="true"/>
+    <R08G12 xsi:nil="true"/>
+    <R022G3>0.00</R022G3>
+    <R023G3>0.00</R023G3>
+    <R024G3>0.00</R024G3>
+    <R025G3>0.00</R025G3>
+    <R026G3>0.00</R026G3>
+    <R027G3>0.00</R027G3>
+    <R028G3 xsi:nil="true"/>
+    <R029G3>0.00</R029G3>
+    <HJAR xsi:nil="true"/>
+    <HD1 xsi:nil="true"/>
+    <HD2 xsi:nil="true"/>
+    <HFILL>05112026</HFILL>
+    <HEXECUTOR>Шинкаренко Олег Вікторович</HEXECUTOR>
+    <HKEXECUTOR>2780902498</HKEXECUTOR>
+    <HBOS>Шинкаренко Олег Вікторович</HBOS>
+  </DECLARBODY>
+</DECLAR>

@@ -193,7 +193,8 @@ a.lang-switch__opt:hover, button.lang-switch__opt:hover { color: var(--paper-hi)
 .md-typeset .footnote { font-family: var(--font-sans); font-size: .82rem; color: var(--dim); border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1rem; }
 .md-typeset .footnote ol { padding-left: 1.4em; }
 .md-typeset .footnote li { max-width: none; }
-.md-typeset .footnote-ref { font-family: var(--font-sans); font-weight: 600; text-decoration: none; }
+.md-typeset .footnote-ref, .md-typeset sup a[href^="#fn"] { font-family: var(--font-sans); font-weight: 600; text-decoration: none; color: var(--amber) !important; }
+.md-typeset .footnote-ref:hover { color: var(--amber-hi) !important; }
 .md-typeset .footnote-backref { color: var(--faint); text-decoration: none; }
 
 /* admonitions */
@@ -339,3 +340,8 @@ a.lang-switch__opt:hover, button.lang-switch__opt:hover { color: var(--paper-hi)
   .book h3, .book p, .author h3, .author p, .talks b, .talks small, .bp-book-t { overflow-wrap: anywhere; hyphens: auto; }
   .talks li { grid-template-columns: 2.75rem minmax(0, 1fr); gap: .75rem; }
 }
+
+/* main sections in the slide-out menu of pages with their own section menu */
+.mobile-sections__label { font: 500 .62rem/1.4 var(--font-mono) !important; letter-spacing: .14em; text-transform: uppercase; color: var(--faint) !important; pointer-events: none; }
+.mobile-sections--end { margin-top: .6rem; }
+@media screen and (min-width: 76.25em) { .mobile-sections { display: none !important; } }

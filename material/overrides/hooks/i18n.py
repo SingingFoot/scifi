@@ -140,6 +140,8 @@ def _nav_for_lang(soup: BeautifulSoup, lang: str, base: str):
         target = _abs(href, base)
         tlang = _lang_of_url.get(target, "en")
         li = a.find_parent("li")
+        if li is not None and "mobile-sections" in (li.get("class") or []):
+            continue  # fixed main-section links; rewritten to UA twins below
         is_tab = "md-tabs__link" in (a.get("class") or [])
         if lang == "en":
             if tlang == "uk" and li is not None and not is_tab:

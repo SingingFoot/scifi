@@ -16,7 +16,9 @@
   <style>
     .md-main__inner { margin: 0; max-width: none }
     .md-content { display: none }
-    .md-sidebar { display: none }
+    /* no sidebars on desktop; on phones the primary sidebar IS the slide-out menu */
+    .md-sidebar--secondary { display: none }
+    @media screen and (min-width: 76.25em) { .md-sidebar--primary { display: none } }
 
     .home { color: var(--paper); font-family: var(--font-sans) }
     .home a { color: inherit; text-decoration: none }
